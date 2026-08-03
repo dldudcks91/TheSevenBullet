@@ -47,7 +47,8 @@
 
 | 주제 | 문서 |
 |---|---|
-| **게임 전체 설계** — 기획 단일 출처 | [GAME_DESIGN.md](docs/game_design/GAME_DESIGN.md) *(작성 예정)* |
+| **게임 전체 설계** — 기획 단일 출처 | [GAME_DESIGN.md](docs/game_design/GAME_DESIGN.md) |
+| 격자 모델 갈림길 (3×3 영웅 / 4×4 포커) — 미결정, 판단 근거 기록 | [GRID_MODEL_OPTIONS.md](docs/game_design/GRID_MODEL_OPTIONS.md) |
 
 > 세부 문서(전투·시너지·유닛·씬 등)는 기획이 진행되며 이 표에 추가한다. **문서를 만들기 전에 항목을 미리 적어두지 않는다** — 없는 파일을 가리키는 죽은 링크를 남기지 않기 위함이다.
 

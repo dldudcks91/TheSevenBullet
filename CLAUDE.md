@@ -5,7 +5,7 @@
 > 이 파일은 Claude와의 **협업 규칙 + 문서 지도("어디를 봐야 하는지")**만 담는다.
 > **게임 디자인·시스템 규칙·수치는 여기에 적지 않는다** — 단일 출처는 [docs/game_design/GAME_DESIGN.md](docs/game_design/GAME_DESIGN.md) 다.
 
-> **현재 상태:** 신규 프로젝트. 기획은 백지에서 시작한다. 레퍼런스 방향은 "뿔레전쟁형" 오토배틀(읽히는 전투 코어 + 조합/성장 메타). 툴링(스킬·에이전트·컨벤션)은 TheSevenAutoBattle에서 가져온 골격이다.
+> **현재 상태:** 신규 프로젝트. 기획은 백지에서 시작한다. 장르·방향은 [GAME_DESIGN.md](docs/game_design/GAME_DESIGN.md)에만 적는다 — **오토배틀러가 아니다.** 툴링(스킬·에이전트·컨벤션)은 TheSevenAutoBattle에서 가져온 골격이라, 오토배틀러/오토체스 전제가 남은 서술이 곳곳에 있다.
 
 ---
 
@@ -48,7 +48,8 @@
 | 주제 | 문서 |
 |---|---|
 | **게임 전체 설계** — 기획 단일 출처 | [GAME_DESIGN.md](docs/game_design/GAME_DESIGN.md) |
-| 격자 모델 갈림길 (3×3 영웅 / 4×4 포커) — 미결정, 판단 근거 기록 | [GRID_MODEL_OPTIONS.md](docs/game_design/GRID_MODEL_OPTIONS.md) |
+| 격자 모델 갈림길 (3×3 영웅 / 4×4 포커) — **결정 완료**, 왜 그렇게 정했는지의 기록 | [GRID_MODEL_OPTIONS.md](docs/game_design/GRID_MODEL_OPTIONS.md) |
+| 스프라이트 카탈로그 — 진영 × 역할, 사용 가능 등급 | [sprite_catalog.csv](src/data/sprite_catalog.csv) |
 
 > 세부 문서(전투·시너지·유닛·씬 등)는 기획이 진행되며 이 표에 추가한다. **문서를 만들기 전에 항목을 미리 적어두지 않는다** — 없는 파일을 가리키는 죽은 링크를 남기지 않기 위함이다.
 

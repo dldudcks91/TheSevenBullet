@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TheSevenBullet"
-run/main_scene="res://prototypes/grid_wall_defense/proto.tscn"
+run/main_scene="res://prototypes/poker_grid/proto.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [display]

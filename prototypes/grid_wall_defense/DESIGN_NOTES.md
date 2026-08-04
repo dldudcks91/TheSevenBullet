@@ -11,7 +11,11 @@
 
 ## 실행
 
-Godot 4로 `TheSevenBullet` 폴더를 열면 `prototypes/grid_wall_defense/proto.tscn`이 메인 씬이다. F5.
+Godot 4로 `TheSevenBullet` 폴더를 연다. 메인 씬이 `poker_grid`로 바뀌어 있으면
+`project.godot`의 `run/main_scene`을 `res://prototypes/grid_wall_defense/proto.tscn`으로 되돌린다. F5.
+
+**화면 배치:** 왼쪽부터 **병력(3×3) → 성벽 → 몬스터 진입로**. 성벽은 병력 오른쪽 타격 지점에 서고,
+몬스터는 오른쪽에서 걸어와 성벽 앞에서 멈춰 성벽을 때린다. 성벽은 위에서부터 무너진다.
 
 - 하단 트레이에서 영웅 클릭 → 격자 칸 클릭해서 배치 (같은 영웅 중복 가능)
 - 배치된 영웅 클릭 → 제거
@@ -69,7 +73,9 @@ Godot 4로 `TheSevenBullet` 폴더를 열면 `prototypes/grid_wall_defense/proto
 ## 취한 단축
 
 - 수치 전부 하드코딩, 밸런싱 안 함
-- 에셋 없음 — 전부 `_draw()`로 사각형/원
+- 에셋은 TheSevenAutoBattle의 minifolks 스프라이트 + Galmuri 폰트를 `assets/`로 복사해 씀.
+  스프라이트 로딩도 그쪽 `sprite_frame_loader.gd`를 프로토용으로 줄여 베낀 것이다(import 금지, 복사만).
+  성벽·격자·HUD는 여전히 `_draw()` 도형이다
 - 에러 처리 없음
 - **실시간 delta 기반.** 틱 방식은 아직 미결이고 이 프로토가 검증할 대상이 아니라서 그대로 뒀다
 - 영웅 사거리 없음 — 전원 처음부터 계속 때린다. 사거리를 넣으면 열(column) 변수가 섞여서 인접 검증이 오염된다

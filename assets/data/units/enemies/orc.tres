@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BattleUnitData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/cards/UnitData.gd" id="1_ud"]
+
+[resource]
+script = ExtResource("1_ud")
+id = &"orc"
+display_name = "Orc"
+max_hp = 90
+attack = 8
+attack_range = 30.0
+move_speed = 75.0
+attack_interval = 1.1
+cost = 0
+price = 0
+team = 1

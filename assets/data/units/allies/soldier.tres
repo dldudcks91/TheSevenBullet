@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BattleUnitData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/cards/UnitData.gd" id="1_ud"]
+
+[resource]
+script = ExtResource("1_ud")
+id = &"soldier"
+display_name = "Soldier"
+max_hp = 100
+attack = 10
+attack_range = 30.0
+move_speed = 80.0
+attack_interval = 1.0
+cost = 2
+price = 3
+team = 0

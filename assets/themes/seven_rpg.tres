@@ -1,0 +1,52 @@
+[gd_resource type="Theme" load_steps=10 format=3]
+
+[ext_resource type="FontFile" path="res://assets/fonts/Galmuri11.ttf" id="1_font_main"]
+[ext_resource type="StyleBox" path="res://assets/themes/sb_panel_outset.tres" id="2_sb_panel"]
+[ext_resource type="StyleBox" path="res://assets/themes/sb_panel_inset.tres" id="3_sb_inset"]
+[ext_resource type="StyleBox" path="res://assets/themes/sb_button_normal.tres" id="4_sb_btn_n"]
+[ext_resource type="StyleBox" path="res://assets/themes/sb_button_hover.tres" id="5_sb_btn_h"]
+[ext_resource type="StyleBox" path="res://assets/themes/sb_button_pressed.tres" id="6_sb_btn_p"]
+[ext_resource type="StyleBox" path="res://assets/themes/sb_button_primary.tres" id="7_sb_btn_pri"]
+[ext_resource type="StyleBox" path="res://assets/themes/sb_button_primary_hover.tres" id="8_sb_btn_pri_h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_focus"]
+
+[resource]
+default_font = ExtResource("1_font_main")
+default_font_size = 14
+Button/colors/font_color = Color(0.91, 0.91, 0.941, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(0.627, 0.627, 0.753, 1)
+Button/colors/font_disabled_color = Color(0.376, 0.376, 0.502, 1)
+Button/styles/normal = ExtResource("4_sb_btn_n")
+Button/styles/hover = ExtResource("5_sb_btn_h")
+Button/styles/pressed = ExtResource("6_sb_btn_p")
+Button/styles/disabled = ExtResource("4_sb_btn_n")
+Button/styles/focus = SubResource("StyleBoxEmpty_focus")
+ButtonPrimary/base_type = &"Button"
+ButtonPrimary/colors/font_color = Color(1, 1, 1, 1)
+ButtonPrimary/colors/font_hover_color = Color(1, 1, 1, 1)
+ButtonPrimary/font_sizes/font_size = 18
+ButtonPrimary/styles/normal = ExtResource("7_sb_btn_pri")
+ButtonPrimary/styles/hover = ExtResource("8_sb_btn_pri_h")
+ButtonPrimary/styles/pressed = ExtResource("7_sb_btn_pri")
+ButtonPrimary/styles/disabled = ExtResource("7_sb_btn_pri")
+ButtonPrimary/styles/focus = SubResource("StyleBoxEmpty_focus")
+Label/colors/font_color = Color(0.91, 0.91, 0.941, 1)
+LabelEnemy/base_type = &"Label"
+LabelEnemy/colors/font_color = Color(0.941, 0.251, 0.251, 1)
+LabelGold/base_type = &"Label"
+LabelGold/colors/font_color = Color(0.973, 0.847, 0.188, 1)
+LabelGold/font_sizes/font_size = 16
+LabelMuted/base_type = &"Label"
+LabelMuted/colors/font_color = Color(0.376, 0.376, 0.502, 1)
+LabelMuted/font_sizes/font_size = 11
+LabelPlayer/base_type = &"Label"
+LabelPlayer/colors/font_color = Color(0.251, 0.847, 0.439, 1)
+LabelTitle/base_type = &"Label"
+LabelTitle/colors/font_color = Color(0.878, 0.188, 0.188, 1)
+LabelTitle/font_sizes/font_size = 28
+PanelContainer/styles/panel = ExtResource("2_sb_panel")
+Panel/styles/panel = ExtResource("2_sb_panel")
+PanelInset/base_type = &"PanelContainer"
+PanelInset/styles/panel = ExtResource("3_sb_inset")

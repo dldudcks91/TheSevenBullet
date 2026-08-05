@@ -5,7 +5,9 @@
 > 이 파일은 Claude와의 **협업 규칙 + 문서 지도("어디를 봐야 하는지")**만 담는다.
 > **게임 디자인·시스템 규칙·수치는 여기에 적지 않는다** — 단일 출처는 [docs/game_design/GAME_DESIGN.md](docs/game_design/GAME_DESIGN.md) 다.
 
-> **현재 상태:** 신규 프로젝트. 기획은 백지에서 시작한다. 장르·방향은 [GAME_DESIGN.md](docs/game_design/GAME_DESIGN.md)에만 적는다 — **오토배틀러가 아니다.** 툴링(스킬·에이전트·컨벤션)은 TheSevenAutoBattle에서 가져온 골격이라, 오토배틀러/오토체스 전제가 남은 서술이 곳곳에 있다.
+> **현재 상태:** 기획 중. 전투 모델은 큰 틀이 잡혔고 구현은 시작 전이다. 장르·방향은 [GAME_DESIGN.md](docs/game_design/GAME_DESIGN.md)에만 적는다 — **오토배틀러가 아니라 로그라이크 타워디펜스다.** 다음에 무엇을 정해야 하는지는 그 문서의 「미결」에 모여 있다.
+>
+> 툴링(스킬·에이전트·컨벤션)은 TheSevenAutoBattle에서 가져온 골격이라, 오토배틀러/오토체스 전제가 남은 서술이 곳곳에 있다. `prototypes/` 두 개도 현재 설계보다 앞선 시점의 것이라 그대로 참고하면 안 된다.
 
 ---
 

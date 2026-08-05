@@ -3,6 +3,10 @@
 > **PROTOTYPE - NOT FOR PRODUCTION.** 버리는 코드다. `src/`에서 이 폴더를 import하지 않는다.
 > Date: 2026-08-03
 > 짝 프로토: [grid_wall_defense](../grid_wall_defense/) — 3×3 인접 모델
+>
+> **폐기됨.** 4×4 포커 모델은 채택하지 않기로 결정됐다. 아래 내용은 그 판단을 위해 만든
+> 기록이며 현재 설계와 어긋난다. 결론과 이유는 [GRID_MODEL_OPTIONS.md](../../docs/game_design/GRID_MODEL_OPTIONS.md),
+> 확정 설계는 [GAME_DESIGN.md](../../docs/game_design/GAME_DESIGN.md)에 있다.
 
 ## 핵심 질문
 

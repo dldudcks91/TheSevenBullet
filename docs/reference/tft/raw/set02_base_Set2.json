@@ -1,7 +1,7 @@
 {
  "set_number": 2,
  "set_stage": "base",
- "set_mutator": "2",
+ "set_mutator": "Set2",
  "set_name_ingame": "War of the Elements",
  "patch": "10.5",
  "source": "https://raw.communitydragon.org/10.5/cdragon/tft/en_us.json",

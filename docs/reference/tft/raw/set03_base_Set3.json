@@ -1,7 +1,7 @@
 {
  "set_number": 3,
  "set_stage": "base",
- "set_mutator": "3",
+ "set_mutator": "Set3",
  "set_name_ingame": "Galaxies",
  "patch": "10.11",
  "source": "https://raw.communitydragon.org/10.11/cdragon/tft/en_us.json",

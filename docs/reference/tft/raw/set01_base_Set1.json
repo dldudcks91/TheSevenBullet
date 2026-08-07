@@ -1,7 +1,7 @@
 {
  "set_number": 1,
  "set_stage": "base",
- "set_mutator": "1",
+ "set_mutator": "Set1",
  "set_name_ingame": "Base",
  "patch": "9.21",
  "source": "https://raw.communitydragon.org/9.21/cdragon/tft/en_us.json",

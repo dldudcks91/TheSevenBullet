@@ -1,541 +1,541 @@
 ﻿set_label,set_number,set_stage,set_mutator,patch,champion_api_name,champion_name,ability_name,variable_name,star1_3,idx0,idx1,idx2,idx3,idx4,idx5,idx6
-Set 1,1,base,1,9.21,Aatrox,Aatrox,The Darkin Blade,Damage,300/600/900,0,300,600,900,1200,1500,1800
-Set 1,1,base,1,9.21,Ahri,Ahri,Orb of Deception,Damage,100/200/300,50,100,200,300,400,500,475
-Set 1,1,base,1,9.21,Ahri,Ahri,Orb of Deception,HexRange,3,3,3,3,3,3,3,3
-Set 1,1,base,1,9.21,Akali,Akali,Five Point Strike,ConeDeg,30,30,30,30,30,30,30,30
-Set 1,1,base,1,9.21,Akali,Akali,Five Point Strike,Damage,200/350/500,50,200,350,500,650,800,950
-Set 1,1,base,1,9.21,Akali,Akali,Five Point Strike,HexRange,1,1,1,1,1,1,1,1
-Set 1,1,base,1,9.21,Anivia,Anivia,Glacial Storm,AttackSpeedSlow,50/70/90,30,50,70,90,110,130,150
-Set 1,1,base,1,9.21,Anivia,Anivia,Glacial Storm,StormDuration,6,6,6,6,6,6,6,6
-Set 1,1,base,1,9.21,Anivia,Anivia,Glacial Storm,TotalDamage,800/1100/1400,500,800,1100,1400,1700,2000,2300
-Set 1,1,base,1,9.21,Ashe,Ashe,Enchanted Crystal Arrow,Damage,200/400/600,0,200,400,600,800,1000,1200
-Set 1,1,base,1,9.21,Ashe,Ashe,Enchanted Crystal Arrow,StunDurationPerSquare,1/1.5/2,0.5,1,1.5,2,2.5,3,3.5
-Set 1,1,base,1,9.21,Aurelion Sol,Aurelion Sol,Voice of Light,Damage,250/500/750,50,250,500,750,1000,1250,1500
-Set 1,1,base,1,9.21,Aurelion Sol,Aurelion Sol,Voice of Light,HexRange,8,8,8,8,8,8,8,8
-Set 1,1,base,1,9.21,Blitzcrank,Blitzcrank,Rocket Grab,Damage,250/550/850,-50,250,550,850,1150,1450,1750
-Set 1,1,base,1,9.21,Blitzcrank,Blitzcrank,Rocket Grab,StunDuration,2.5,2.5,2.5,2.5,2.5,2.5,2.5,2.5
-Set 1,1,base,1,9.21,Brand,Brand,Pyroclasm,Damage,250/450/650,50,250,450,650,850,1050,1250
-Set 1,1,base,1,9.21,Brand,Brand,Pyroclasm,MaxBounces,4/6/20,4,4,6,20,20,20,20
-Set 1,1,base,1,9.21,Braum,Braum,Unbreakable,ShieldDR,70/80/90,60,70,80,90,100,110,120
-Set 1,1,base,1,9.21,Braum,Braum,Unbreakable,ShieldDuration,4,4,4,4,4,4,4,4
-Set 1,1,base,1,9.21,Camille,Camille,The Hextech Ultimatum,Damage,200/325/450,75,200,325,450,575,700,825
-Set 1,1,base,1,9.21,Camille,Camille,The Hextech Ultimatum,Duration,4/5/6,3,4,5,6,7,8,9
-Set 1,1,base,1,9.21,Cho'Gath,Cho'Gath,Rupture,Damage,200/400/600,0,200,400,600,800,1000,1200
-Set 1,1,base,1,9.21,Cho'Gath,Cho'Gath,Rupture,KnockDuration,1.5/1.75/2,1.25,1.5,1.75,2,2.25,2.5,2.75
-Set 1,1,base,1,9.21,Cho'Gath,Cho'Gath,Rupture,RuptureDelay,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
-Set 1,1,base,1,9.21,Darius,Darius,Decimate,Damage,150/200/250,100,150,200,250,300,350,400
-Set 1,1,base,1,9.21,Darius,Darius,Decimate,Heal,100/150/200,50,100,150,200,250,300,350
-Set 1,1,base,1,9.21,Darius,Darius,Decimate,HexRange,1,1,1,1,1,1,1,1
-Set 1,1,base,1,9.21,Draven,Draven,Spinning Axes,ADMult,1.5/2/2.5,1,1.5,2,2.5,3,3.5,4
-Set 1,1,base,1,9.21,Draven,Draven,Spinning Axes,ASBuff,1,1,1,1,1,1,1,1
-Set 1,1,base,1,9.21,Draven,Draven,Spinning Axes,BuffDuration,5.75,5.75,5.75,5.75,5.75,5.75,5.75,5.75
-Set 1,1,base,1,9.21,Elise,Elise,Spider Form,Lifesteal,0.6/0.9/1.2,0.3,0.6,0.9,1.2,1.5,1.8,2.1
-Set 1,1,base,1,9.21,Elise,Elise,Spider Form,NumSpiderlings,1/2/4,1,1,2,4,5,6,7
-Set 1,1,base,1,9.21,Elise,Elise,Spider Form,SpiderFormDuration,60,60,60,60,60,60,60,60
-Set 1,1,base,1,9.21,Evelynn,Evelynn,Last Caress,BlinkBackDistance,3,3,3,3,3,3,3,3
-Set 1,1,base,1,9.21,Evelynn,Evelynn,Last Caress,CritMultiplier,3/4/5,2,3,4,5,6,7,8
-Set 1,1,base,1,9.21,Evelynn,Evelynn,Last Caress,CritThreshold,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
-Set 1,1,base,1,9.21,Evelynn,Evelynn,Last Caress,Damage,200/300/400,100,200,300,400,500,600,700
-Set 1,1,base,1,9.21,Fiora,Fiora,Riposte,BlockDuration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
-Set 1,1,base,1,9.21,Fiora,Fiora,Riposte,Damage,100/250/400,-50,100,250,400,550,700,850
-Set 1,1,base,1,9.21,Fiora,Fiora,Riposte,StunDuration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
-Set 1,1,base,1,9.21,Gangplank,Gangplank,Powder Kegs,Damage,150/250/350,50,150,250,350,450,550,650
-Set 1,1,base,1,9.21,Garen,Garen,Judgement,DamagePerTick,40/65/90,15,40,65,90,115,140,165
-Set 1,1,base,1,9.21,Garen,Garen,Judgement,ETotalTicks,9,9,9,9,9,9,9,9
-Set 1,1,base,1,9.21,Garen,Garen,Judgement,SpinDuration,4,4,4,4,4,4,4,4
-Set 1,1,base,1,9.21,Gnar,Gnar,GNAR!,Damage,200/300/400,100,200,300,400,500,600,700
-Set 1,1,base,1,9.21,Gnar,Gnar,GNAR!,RCCDuration,2,2,2,2,2,2,2,2
-Set 1,1,base,1,9.21,Gnar,Gnar,GNAR!,RKnockbackDistance,500,500,500,500,500,500,500,500
-Set 1,1,base,1,9.21,Gnar,Gnar,GNAR!,TransformAD,50/100/150,0,50,100,150,200,250,300
-Set 1,1,base,1,9.21,Gnar,Gnar,GNAR!,TransformDuration,60,60,60,60,60,60,60,60
-Set 1,1,base,1,9.21,Gnar,Gnar,GNAR!,TransformHealth,250/450/650,50,250,450,650,850,1050,1250
-Set 1,1,base,1,9.21,Graves,Graves,Buckshot,DamageMultiplier,0.05/0.1/0.15,0,0.05,0.1,0.15,0.2,0.25,0.3
-Set 1,1,base,1,9.21,Jayce,Jayce,Transform Mercury Cannon,AAMax,3/5/7,1,3,5,7,9,11,13
-Set 1,1,base,1,9.21,Jayce,Jayce,Transform Mercury Cannon,CCDuration,2.5/4.25/6,0.75,2.5,4.25,6,7.75,9.5,11.25
-Set 1,1,base,1,9.21,Jayce,Jayce,Transform Mercury Cannon,Damage,200/350/500,50,200,350,500,650,800,950
-Set 1,1,base,1,9.21,Jayce,Jayce,Transform Mercury Cannon,HexRange,1,1,1,1,1,1,1,1
-Set 1,1,base,1,9.21,Jayce,Jayce,Transform Mercury Cannon,KnockbackDistance,3,3,3,3,3,3,3,3
-Set 1,1,base,1,9.21,Jayce,Jayce,Transform Mercury Cannon,RangeIncrease,3,3,3,3,3,3,3,3
-Set 1,1,base,1,9.21,Jayce,Jayce,Transform Mercury Cannon,TransformDuration,60,60,60,60,60,60,60,60
-Set 1,1,base,1,9.21,Jinx,Jinx,Get Excited!,AttackSpeedBonus,0.6/0.8/1,0.4,0.6,0.8,1,1.2,1.4,1.6
-Set 1,1,base,1,9.21,Jinx,Jinx,Get Excited!,BuffDuration,60,60,60,60,60,60,60,60
-Set 1,1,base,1,9.21,Jinx,Jinx,Get Excited!,HitWindow,4,4,4,4,4,4,4,4
-Set 1,1,base,1,9.21,Jinx,Jinx,Get Excited!,RocketDamage,100/200/300,0,100,200,300,400,500,600
-Set 1,1,base,1,9.21,Kai'Sa,Kai'Sa,Killer Instinct,ASPercent,0.5/0.75/1,0.25,0.5,0.75,1,1.25,1.5,1.75
-Set 1,1,base,1,9.21,Kai'Sa,Kai'Sa,Killer Instinct,Duration,3,3,3,3,3,3,3,3
-Set 1,1,base,1,9.21,Kai'Sa,Kai'Sa,Killer Instinct,ShieldAmount,400/700/1000,100,400,700,1000,1300,1600,1900
-Set 1,1,base,1,9.21,Karthus,Karthus,Requiem,Damage,350/600/850,100,350,600,850,1100,1350,1600
-Set 1,1,base,1,9.21,Karthus,Karthus,Requiem,NumberOfTargets,5/7/9,3,5,7,9,11,13,15
-Set 1,1,base,1,9.21,Kassadin,Kassadin,Nether Blade,ManaSteal,25/50/75,0,25,50,75,100,125,150
-Set 1,1,base,1,9.21,Kassadin,Kassadin,Nether Blade,ShieldDuration,4,4,4,4,4,4,4,4
-Set 1,1,base,1,9.21,Katarina,Katarina,Death Lotus,DamagePerTick,45/70/95,20,45,70,95,120,145,170
-Set 1,1,base,1,9.21,Katarina,Katarina,Death Lotus,Duration,2.5,2.5,2.5,2.5,2.5,2.5,2.5,2.5
-Set 1,1,base,1,9.21,Katarina,Katarina,Death Lotus,GrievousWoundsDuration,3,3,3,3,3,3,3,3
-Set 1,1,base,1,9.21,Katarina,Katarina,Death Lotus,NumberOfTargets,4/6/8,2,4,6,8,10,12,14
-Set 1,1,base,1,9.21,Katarina,Katarina,Death Lotus,TicksPerSecond,6,6,6,6,6,6,6,6
-Set 1,1,base,1,9.21,Katarina,Katarina,Death Lotus,TotalDamage,750/1125/1500,375,750,1125,1500,1875,2250,2625
-Set 1,1,base,1,9.21,Kayle,Kayle,Divine Judgement,ShieldDuration,2/2.5/3,1.5,2,2.5,3,3.5,4,4.5
-Set 1,1,base,1,9.21,Kayle,Kayle,Divine Judgement,Targets,1/2/3,0,1,2,3,4,5,6
-Set 1,1,base,1,9.21,Kennen,Kennen,Slicing Maelstrom,Damage,225/450/675,0,225,450,675,900,1125,1350
-Set 1,1,base,1,9.21,Kennen,Kennen,Slicing Maelstrom,Duration,3,3,3,3,3,3,3,3
-Set 1,1,base,1,9.21,Kennen,Kennen,Slicing Maelstrom,StunDuration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
-Set 1,1,base,1,9.21,Kennen,Kennen,Slicing Maelstrom,TickRate,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
-Set 1,1,base,1,9.21,Kha'Zix,Kha'Zix,Taste their Fear,Damage,150/250/350,50,150,250,350,450,550,650
-Set 1,1,base,1,9.21,Kha'Zix,Kha'Zix,Taste their Fear,IsolationDamage,400/600/800,200,400,600,800,1000,1200,1400
-Set 1,1,base,1,9.21,Kindred,Kindred,Lamb's Respite,Duration,3/4/5,2,3,4,5,6,7,8
-Set 1,1,base,1,9.21,Kindred,Kindred,Lamb's Respite,MinHealth,300/600/900,0,300,600,900,1200,1500,1800
-Set 1,1,base,1,9.21,Leona,Leona,Solar Flare,CCDuration,5/7/9,3,5,7,9,11,13,15
-Set 1,1,base,1,9.21,Leona,Leona,Solar Flare,Damage,175/250/325,100,175,250,325,400,475,550
-Set 1,1,base,1,9.21,Leona,Leona,Solar Flare,DelayTime,0.625,0.625,0.625,0.625,0.625,0.625,0.625,0.625
-Set 1,1,base,1,9.21,Lissandra,Lissandra,Frozen Tomb,Damage,175/325/475,25,175,325,475,625,775,925
-Set 1,1,base,1,9.21,Lissandra,Lissandra,Frozen Tomb,EnemyStunDuration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
-Set 1,1,base,1,9.21,Lissandra,Lissandra,Frozen Tomb,MaxHexRange,3,3,3,3,3,3,3,3
-Set 1,1,base,1,9.21,Lissandra,Lissandra,Frozen Tomb,SelfDuration,2,2,2,2,2,2,2,2
-Set 1,1,base,1,9.21,Lissandra,Lissandra,Frozen Tomb,SelfUltHealthPercent,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
-Set 1,1,base,1,9.21,Lissandra,Lissandra,Frozen Tomb,SlowAmount,2,2,2,2,2,2,2,2
-Set 1,1,base,1,9.21,Lissandra,Lissandra,Frozen Tomb,SlowDuration,3,3,3,3,3,3,3,3
-Set 1,1,base,1,9.21,Lissandra,Lissandra,Frozen Tomb,SlowFieldDuration,3,0,3,3,3,3,3,3
-Set 1,1,base,1,9.21,Lucian,Lucian,Relentless Pursuit,FirstShotRatio,1,1,1,1,1,1,1,1
-Set 1,1,base,1,9.21,Lucian,Lucian,Relentless Pursuit,SecondShotDamage,125/250/375,0,125,250,375,500,625,750
-Set 1,1,base,1,9.21,Lulu,Lulu,Wild Growth,BonusHealth,300/400/500,200,300,400,500,600,700,800
-Set 1,1,base,1,9.21,Lulu,Lulu,Wild Growth,BuffDuration,6,6,6,6,6,6,6,6
-Set 1,1,base,1,9.21,Lulu,Lulu,Wild Growth,CCDuration,1.25,1.25,1.25,1.25,1.25,1.25,1.25,1.25
-Set 1,1,base,1,9.21,Lulu,Lulu,Wild Growth,Targets,1/2/3,0,1,2,3,4,5,6
-Set 1,1,base,1,9.21,Miss Fortune,Miss Fortune,Bullet Time,ChannelDuration,3,3,3,3,3,3,3,3
-Set 1,1,base,1,9.21,Miss Fortune,Miss Fortune,Bullet Time,HexRange,6,6,6,6,6,6,6,6
-Set 1,1,base,1,9.21,Miss Fortune,Miss Fortune,Bullet Time,TotalDamage,1300/2000/2700,600,1300,2000,2700,3400,4100,4800
-Set 1,1,base,1,9.21,Miss Fortune,Miss Fortune,Bullet Time,Waves,14,14,14,14,14,14,14,14
-Set 1,1,base,1,9.21,Mordekaiser,Mordekaiser,Obliterate,Damage,250/500/750,0,250,500,750,1000,1250,1500
-Set 1,1,base,1,9.21,Mordekaiser,Mordekaiser,Obliterate,MaceLength,625,625,625,625,625,625,625,625
-Set 1,1,base,1,9.21,Mordekaiser,Mordekaiser,Obliterate,MaceStartDistance,400,400,400,400,400,400,400,400
-Set 1,1,base,1,9.21,Mordekaiser,Mordekaiser,Obliterate,RectangleWidth,160,160,160,160,160,160,160,160
-Set 1,1,base,1,9.21,Morgana,Morgana,Soul Shackles,CanCastRange,575,575,575,575,575,575,575,575
-Set 1,1,base,1,9.21,Morgana,Morgana,Soul Shackles,ChainDuration,3,3,3,3,3,3,3,3
-Set 1,1,base,1,9.21,Morgana,Morgana,Soul Shackles,Damage,175/300/425,50,175,300,425,550,675,800
-Set 1,1,base,1,9.21,Morgana,Morgana,Soul Shackles,SlowPercent,20,20,20,20,20,20,20,20
-Set 1,1,base,1,9.21,Morgana,Morgana,Soul Shackles,StunDuration,2/4/6,0,2,4,6,8,10,12
-Set 1,1,base,1,9.21,Nidalee,Nidalee,Primal Surge,ADInCougar,20/70/120,-30,20,70,120,170,220,270
-Set 1,1,base,1,9.21,Nidalee,Nidalee,Primal Surge,AnimTime,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
-Set 1,1,base,1,9.21,Nidalee,Nidalee,Primal Surge,HoTDuration,6,6,6,6,6,6,6,6
-Set 1,1,base,1,9.21,Nidalee,Nidalee,Primal Surge,HoTTotalHeal,150/375/600,-75,150,375,600,825,1050,1275
-Set 1,1,base,1,9.21,Nidalee,Nidalee,Primal Surge,TransformDuration,60,60,60,60,60,60,60,60
-Set 1,1,base,1,9.21,Pantheon,Pantheon,Grand Starfall,BurnDuration,10,10,10,10,10,10,10,10
-Set 1,1,base,1,9.21,Pantheon,Pantheon,Grand Starfall,BurnPercent,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2
-Set 1,1,base,1,9.21,Pantheon,Pantheon,Grand Starfall,PercentHealthDamage,0.1/0.2/0.3,0,0.1,0.2,0.3,0.4,0.5,0.6
-Set 1,1,base,1,9.21,Pantheon,Pantheon,Grand Starfall,Radius,450,450,450,450,450,450,450,450
-Set 1,1,base,1,9.21,Pantheon,Pantheon,Grand Starfall,StunDuration,2,2,2,2,2,2,2,2
-Set 1,1,base,1,9.21,Poppy,Poppy,Keeper's Verdict,DamagePart2,300/500/700,100,300,500,700,900,1100,1300
-Set 1,1,base,1,9.21,Poppy,Poppy,Keeper's Verdict,KnockbackDurationPart2,1,1,1,1,1,1,1,1
-Set 1,1,base,1,9.21,Poppy,Poppy,Keeper's Verdict,NumberOfTargets,1/2/3,0,1,2,3,4,5,6
-Set 1,1,base,1,9.21,Poppy,Poppy,Keeper's Verdict,PoppyAnimLockDuration,0.75,0.75,0.75,0.75,0.75,0.75,0.75,0.75
-Set 1,1,base,1,9.21,Poppy,Poppy,Keeper's Verdict,StunDuration,2/3/4,1,2,3,4,5,6,7
-Set 1,1,base,1,9.21,Pyke,Pyke,Phantom Undertow,Damage,150/200/250,100,150,200,250,300,350,400
-Set 1,1,base,1,9.21,Pyke,Pyke,Phantom Undertow,StunDelay,1,1,1,1,1,1,1,1
-Set 1,1,base,1,9.21,Pyke,Pyke,Phantom Undertow,StunDuration,1.5/2/2.5,1,1.5,2,2.5,3,3.5,4
-Set 1,1,base,1,9.21,Rek'Sai,Rek'Sai,Burrow,BurrowDuration,1,1,1,1,1,1,1,1
-Set 1,1,base,1,9.21,Rek'Sai,Rek'Sai,Burrow,HealAmount,150/300/450,75,150,300,450,600,750,900
-Set 1,1,base,1,9.21,Rek'Sai,Rek'Sai,Burrow,HealTickRate,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
-Set 1,1,base,1,9.21,Rek'Sai,Rek'Sai,Burrow,KnockupDamage,200/350/500,50,200,350,500,650,800,950
-Set 1,1,base,1,9.21,Rek'Sai,Rek'Sai,Burrow,KnockupDuration,1.75,1.75,1.75,1.75,1.75,1.75,1.75,1.75
-Set 1,1,base,1,9.21,Rengar,Rengar,Savagery,ADMult,2/3/4,1,2,3,4,5,6,7
-Set 1,1,base,1,9.21,Rengar,Rengar,Savagery,ASBuff,0.3/0.5/0.7,0.1,0.3,0.5,0.7,0.9,1.1,1.3
-Set 1,1,base,1,9.21,Rengar,Rengar,Savagery,BuffDuration,6,6,6,6,6,6,6,6
-Set 1,1,base,1,9.21,Rengar,Rengar,Savagery,CritBuff,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25
-Set 1,1,base,1,9.21,Sejuani,Sejuani,Glacial Prison,Damage,100/175/250,25,100,175,250,325,400,475
-Set 1,1,base,1,9.21,Sejuani,Sejuani,Glacial Prison,ExplosionDelay,2,0,2,2,2,2,2,2
-Set 1,1,base,1,9.21,Sejuani,Sejuani,Glacial Prison,StunDuration,2/3.5/5,0.5,2,3.5,5,6.5,8,9.5
-Set 1,1,base,1,9.21,Shen,Shen,Spirit's Refuge,ZoneDuration,3/4/5,2,3,4,5,6,7,8
-Set 1,1,base,1,9.21,Shyvana,Shyvana,Dragon's Descent,ADWhileDragon,100/150/200,50,100,150,200,250,300,350
-Set 1,1,base,1,9.21,Shyvana,Shyvana,Dragon's Descent,BurnDamage,200/300/400,100,200,300,400,500,600,700
-Set 1,1,base,1,9.21,Shyvana,Shyvana,Dragon's Descent,BurnDuration,3,3,3,3,3,3,3,3
-Set 1,1,base,1,9.21,Shyvana,Shyvana,Dragon's Descent,ExtraAARange,480,480,480,480,480,480,480,480
-Set 1,1,base,1,9.21,Shyvana,Shyvana,Dragon's Descent,TransformDuration,60,60,60,60,60,60,60,60
-Set 1,1,base,1,9.21,Swain,Swain,Demonflare,DamagePerTick,40/80/120,0,40,80,120,160,200,240
-Set 1,1,base,1,9.21,Swain,Swain,Demonflare,HealPerTick,30/60/90,0,30,60,90,120,150,180
-Set 1,1,base,1,9.21,Swain,Swain,Demonflare,HealthIncrease,,,,,,,,
-Set 1,1,base,1,9.21,Swain,Swain,Demonflare,SoulFlareDamage,300/600/900,0,300,600,900,1200,1500,1800
-Set 1,1,base,1,9.21,Swain,Swain,Demonflare,TotalDamage,480/960/1440,0,480,960,1440,1920,2400,2880
-Set 1,1,base,1,9.21,Swain,Swain,Demonflare,TotalHeal,360/720/1080,0,360,720,1080,1440,1800,2160
-Set 1,1,base,1,9.21,Swain,Swain,Demonflare,TransformDuration,6,6,6,6,6,6,6,6
-Set 1,1,base,1,9.21,Tristana,Tristana,Explosive Charge,ChargeBaseDamage,70/110/150,30,70,110,150,190,230,270
-Set 1,1,base,1,9.21,Tristana,Tristana,Explosive Charge,ExplosiveChargeDuration,4,4,4,4,4,4,4,4
-Set 1,1,base,1,9.21,Tristana,Tristana,Explosive Charge,MaxChargeDamage,175/275/375,75,175,275,375,475,575,675
-Set 1,1,base,1,9.21,Tristana,Tristana,Explosive Charge,PercentDamageIncreasePerStack,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
-Set 1,1,base,1,9.21,Twisted Fate,Twisted Fate,Pick a Card,BlueCardDamage,150/250/350,50,150,250,350,450,550,650
-Set 1,1,base,1,9.21,Twisted Fate,Twisted Fate,Pick a Card,BlueCardManaRestore,30/50/70,10,30,50,70,90,110,130
-Set 1,1,base,1,9.21,Twisted Fate,Twisted Fate,Pick a Card,GoldCardDamage,150/250/350,50,150,250,350,450,550,650
-Set 1,1,base,1,9.21,Twisted Fate,Twisted Fate,Pick a Card,GoldCardStunDuration,2/3/4,1,2,3,4,5,6,7
-Set 1,1,base,1,9.21,Twisted Fate,Twisted Fate,Pick a Card,RedCardDamage,150/250/350,50,150,250,350,450,550,650
-Set 1,1,base,1,9.21,Varus,Varus,Piercing Arrow,Damage,300/550/800,50,300,550,800,1050,1300,1550
-Set 1,1,base,1,9.21,Varus,Varus,Piercing Arrow,HexRange,8,8,8,8,8,8,8,8
-Set 1,1,base,1,9.21,Vayne,Vayne,Silver Bolts,PercentDamage,0.08/0.12/0.16,0.04,0.08,0.12,0.16,0.2,0.24,0.28
-Set 1,1,base,1,9.21,Veigar,Veigar,Primordial Burst,Damage,350/650/950,50,350,650,950,1250,1550,1850
-Set 1,1,base,1,9.21,Veigar,Veigar,Primordial Burst,LowerStarDamage,19999,19999,19999,19999,19999,19999,19999,19999
-Set 1,1,base,1,9.21,Vi,Vi,Assault and Battery,CCDuration,2/2.5/3,1.5,2,2.5,3,3.5,4,4.5
-Set 1,1,base,1,9.21,Vi,Vi,Assault and Battery,Damage,300/500/700,100,300,500,700,900,1100,1300
-Set 1,1,base,1,9.21,Vi,Vi,Assault and Battery,MoveSpeed,1000,1000,1000,1000,1000,1000,1000,1000
-Set 1,1,base,1,9.21,Vi,Vi,Assault and Battery,OthersCCDuration,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25
-Set 1,1,base,1,9.21,Volibear,Volibear,Thunder Claws,BuffDuration,20,20,20,20,20,20,20,20
-Set 1,1,base,1,9.21,Volibear,Volibear,Thunder Claws,ChainADMult,0.8/0.9/1,0.7,0.8,0.9,1,1.1,1.2,1.3
-Set 1,1,base,1,9.21,Volibear,Volibear,Thunder Claws,HexRange,1,1,1,1,1,1,1,1
-Set 1,1,base,1,9.21,Volibear,Volibear,Thunder Claws,MaxBounces,2/3/4,1,2,3,4,5,6,7
-Set 1,1,base,1,9.21,Volibear,Volibear,Thunder Claws,SizeIncrease,0.08,0.08,0.08,0.08,0.08,0.08,0.08,0.08
-Set 1,1,base,1,9.21,Warwick,Warwick,Infinite Duress,BaseDamage,150/225/300,75,150,225,300,375,450,525
-Set 1,1,base,1,9.21,Warwick,Warwick,Infinite Duress,DashHexSpeed,6,6,6,6,6,6,6,6
-Set 1,1,base,1,9.21,Warwick,Warwick,Infinite Duress,Duration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
-Set 1,1,base,1,9.21,Warwick,Warwick,Infinite Duress,Hits,3,3,3,3,3,3,3,3
-Set 1,1,base,1,9.21,Yasuo,Yasuo,Steel Tempest,Damage,150/350/550,-50,150,350,550,750,950,1150
-Set 1,1,base,1,9.21,Yasuo,Yasuo,Steel Tempest,QCountForEmpower,2,2,2,2,2,2,2,2
-Set 1,1,base,1,9.21,Yasuo,Yasuo,Steel Tempest,QEmpowerHexRange,6,6,6,6,6,6,6,6
-Set 1,1,base,1,9.21,Yasuo,Yasuo,Steel Tempest,QHexRange,2,2,2,2,2,2,2,2
-Set 1,1,base,1,9.21,Yasuo,Yasuo,Steel Tempest,QKnockupDuration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
-Set 1,1,base,1,9.21,Yasuo,Yasuo,Steel Tempest,QWidth,75,75,75,75,75,75,75,75
-Set 1,1,base,1,9.21,Zed,Zed,Razor Shuriken,Damage,200/350/500,50,200,350,500,650,800,950
-Set 1,1,base,1,9.21,Zed,Zed,Razor Shuriken,HexRange,4,4,4,4,4,4,4,4
-Set 2,2,base,2,10.5,TFT2_Aatrox,Aatrox,The Arclight Blade,Damage,300/600/1200,0,300,600,1200,1200,1250,1500
-Set 2,2,base,2,10.5,TFT2_Amumu,Amumu,Curse of the Sad Mummy,RDamage,100/200/1337,0,100,200,1337,800,1000,1200
-Set 2,2,base,2,10.5,TFT2_Amumu,Amumu,Curse of the Sad Mummy,RDuration,1.5/2/10,1,1.5,2,10,10,10,10
-Set 2,2,base,2,10.5,TFT2_Amumu,Amumu,Curse of the Sad Mummy,RRange,3,3,3,3,3,3,3,3
-Set 2,2,base,2,10.5,TFT2_Annie,Annie,Tibbers!,HexRange,1,1,1,1,1,1,1,1
-Set 2,2,base,2,10.5,TFT2_Annie,Annie,Tibbers!,StunDamage,100/200/300,0,100,200,300,400,500,600
-Set 2,2,base,2,10.5,TFT2_Annie,Annie,Tibbers!,TibbersDamage,125/350/1500,-50,125,350,1500,750,950,1150
-Set 2,2,base,2,10.5,TFT2_Annie,Annie,Tibbers!,TibbersHP,1600/2200/3000,1600,1600,2200,3000,3000,3000,3000
-Set 2,2,base,2,10.5,TFT2_Ashe,Ashe,Ranger's Focus,AttackSpeed,0.5/0.75/1,0.25,0.5,0.75,1,1.25,1.5,1.75
-Set 2,2,base,2,10.5,TFT2_Ashe,Ashe,Ranger's Focus,Duration,5,5,5,5,5,5,5,5
-Set 2,2,base,2,10.5,TFT2_Ashe,Ashe,Ranger's Focus,NumArrows,5,5,5,5,5,5,5,5
-Set 2,2,base,2,10.5,TFT2_Ashe,Ashe,Ranger's Focus,PercentADPerArrow,0.3/0.35/0.75,0.25,0.3,0.35,0.75,0.75,0.75,0.75
-Set 2,2,base,2,10.5,TFT2_Azir,Azir,Arise!,SoldierDamage,150/275/450,25,150,275,450,525,650,775
-Set 2,2,base,2,10.5,TFT2_Azir,Azir,Arise!,SoldierDuration,6,6,6,6,6,6,6,6
-Set 2,2,base,2,10.5,TFT2_Brand,Brand,Pyroclasm,Damage,225/300/600,175,225,300,600,600,600,600
-Set 2,2,base,2,10.5,TFT2_Brand,Brand,Pyroclasm,MaxBounces,5/7/20,4,5,7,20,20,20,20
-Set 2,2,base,2,10.5,TFT2_Braum,Braum,Unbreakable,ShieldDR,80/85/90,75,80,85,90,95,100,105
-Set 2,2,base,2,10.5,TFT2_Braum,Braum,Unbreakable,ShieldDuration,4,4,4,4,4,4,4,4
-Set 2,2,base,2,10.5,TFT2_Diana,Diana,Flame Cascade,OrbDamage,80/100/120,60,80,100,120,140,160,180
-Set 2,2,base,2,10.5,TFT2_Diana,Diana,Flame Cascade,Orbs,3/4/6,2,3,4,6,7,7,8
-Set 2,2,base,2,10.5,TFT2_Diana,Diana,Flame Cascade,ShieldDuration,4,4,4,4,4,4,4,4
-Set 2,2,base,2,10.5,TFT2_Diana,Diana,Flame Cascade,ShieldValue,150/250/350,50,150,250,350,450,550,650
-Set 2,2,base,2,10.5,TFT2_DrMundo,Dr. Mundo,Adrenaline Rush,BaseDamage,50/100/200,0,50,100,200,200,250,300
-Set 2,2,base,2,10.5,TFT2_DrMundo,Dr. Mundo,Adrenaline Rush,Duration,8,8,8,8,8,8,8,8
-Set 2,2,base,2,10.5,TFT2_DrMundo,Dr. Mundo,Adrenaline Rush,HealRatio,1/1.25/1.5,0.75,1,1.25,1.5,1.75,2,2.25
-Set 2,2,base,2,10.5,TFT2_DrMundo,Dr. Mundo,Adrenaline Rush,HealthPercent,1.25,1.25,1.25,1.25,1.25,1.25,1.25,1.25
-Set 2,2,base,2,10.5,TFT2_Ezreal,Ezreal,Ice Shot,BaseDamage,250/450/900,0,250,450,900,900,1000,1200
-Set 2,2,base,2,10.5,TFT2_Ivern,Ivern,Triggerseed,Duration,5,5,5,5,5,5,5,5
-Set 2,2,base,2,10.5,TFT2_Ivern,Ivern,Triggerseed,ShieldAmount,200/300/400,100,200,300,400,500,600,700
-Set 2,2,base,2,10.5,TFT2_Janna,Janna,Monsoon,Duration,3,3,3,3,3,3,3,3
-Set 2,2,base,2,10.5,TFT2_Janna,Janna,Monsoon,HealAmountPercent,25/35/200,10,25,35,200,200,200,100
-Set 2,2,base,2,10.5,TFT2_Janna,Janna,Monsoon,Radius,3,3,3,3,3,3,3,3
-Set 2,2,base,2,10.5,TFT2_Janna,Janna,Monsoon,StunDuration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
-Set 2,2,base,2,10.5,TFT2_Janna,Janna,Monsoon,TicksPerSecond,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
-Set 2,2,base,2,10.5,TFT2_Jax,Jax,Counter Strike,AttackRadius,1,1,1,1,1,1,1,1
-Set 2,2,base,2,10.5,TFT2_Jax,Jax,Counter Strike,Damage,150/300/550,50,150,300,550,550,550,650
-Set 2,2,base,2,10.5,TFT2_Jax,Jax,Counter Strike,Duration,2,2,2,2,2,2,2,2
-Set 2,2,base,2,10.5,TFT2_Jax,Jax,Counter Strike,StunDuration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
-Set 2,2,base,2,10.5,TFT2_Karma,Karma,Inspire,Duration,5,5,5,5,5,5,5,5
-Set 2,2,base,2,10.5,TFT2_Karma,Karma,Inspire,ShieldAmount,250/400/800,100,250,400,800,700,850,1000
-Set 2,2,base,2,10.5,TFT2_Karma,Karma,Inspire,StatsValue,35/50/100,20,35,50,100,100,120,140
-Set 2,2,base,2,10.5,TFT2_Khazix,Kha'Zix,Arid Assault,Damage,100/200/500,0,100,200,500,500,500,500
-Set 2,2,base,2,10.5,TFT2_Khazix,Kha'Zix,Arid Assault,Duration,2/1.25/0.5,2.75,2,1.25,0.5,-0.25,-1,-1.75
-Set 2,2,base,2,10.5,TFT2_Khazix,Kha'Zix,Arid Assault,MSBuff,1000/1500/2000,500,1000,1500,2000,2500,3000,3500
-Set 2,2,base,2,10.5,TFT2_Khazix,Kha'Zix,Arid Assault,ManaRefund,5/10/15,0,5,10,15,20,25,30
-Set 2,2,base,2,10.5,TFT2_Kindred,Kindred,Dance of Dread,Damage,150/325/650,-25,150,325,650,675,850,1025
-Set 2,2,base,2,10.5,TFT2_Kindred,Kindred,Dance of Dread,GrievousWoundsDuration,5,5,5,5,5,5,5,5
-Set 2,2,base,2,10.5,TFT2_Kindred,Kindred,Dance of Dread,HexRange,2,2,2,2,2,2,2,2
-Set 2,2,base,2,10.5,TFT2_KogMaw,Kog'Maw,Living Artillery,Damage,150/300/500,0,150,300,500,600,750,900
-Set 2,2,base,2,10.5,TFT2_KogMaw,Kog'Maw,Living Artillery,DelayTime,0.35,0.35,0.35,0.35,0.35,0.35,0.35,0.35
-Set 2,2,base,2,10.5,TFT2_LeBlanc,LeBlanc,Ethereal Chain,Damage,225/475/800,-50,225,475,800,950,1200,1450
-Set 2,2,base,2,10.5,TFT2_LeBlanc,LeBlanc,Ethereal Chain,DelayTime,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
-Set 2,2,base,2,10.5,TFT2_LeBlanc,LeBlanc,Ethereal Chain,NumTargets,1,1,1,1,1,1,1,1
-Set 2,2,base,2,10.5,TFT2_LeBlanc,LeBlanc,Ethereal Chain,StunDuration,1.5,0,1.5,1.5,1.5,1.5,1.5,1.5
-Set 2,2,base,2,10.5,TFT2_Leona,Leona,Lunar Barrier,Duration,4,4,4,4,4,4,4,4
-Set 2,2,base,2,10.5,TFT2_Leona,Leona,Lunar Barrier,FlatDamageReduction,40/80/120,0,40,80,120,160,200,240
-Set 2,2,base,2,10.5,TFT2_Lucian,Lucian,The Culling,AttacksPerSecondCoefficient,1,1,1,1,1,1,1,1
-Set 2,2,base,2,10.5,TFT2_Lucian,Lucian,The Culling,BaseDamage,40/50/100,30,40,50,100,100,80,90
-Set 2,2,base,2,10.5,TFT2_Lucian,Lucian,The Culling,Duration,4,4,4,4,4,4,4,4
-Set 2,2,base,2,10.5,TFT2_Lucian,Lucian,The Culling,NumShots,12,12,12,12,12,12,12,12
-Set 2,2,base,2,10.5,TFT2_Lucian,Lucian,The Culling,TADRatio,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
-Set 2,2,base,2,10.5,TFT2_LuxCrystal,Lux,Final Spark,Damage,550/900/99999,200,550,900,99999,1400,1700,2000
-Set 2,2,base,2,10.5,TFT2_LuxElectric,Lux,Final Spark,Damage,550/900/99999,200,550,900,99999,1400,1700,2000
-Set 2,2,base,2,10.5,TFT2_LuxGlacial,Lux,Final Spark,Damage,550/900/99999,200,550,900,99999,1400,1700,2000
-Set 2,2,base,2,10.5,TFT2_LuxInferno,Lux,Final Spark,Damage,550/900/99999,200,550,900,99999,1400,1700,2000
-Set 2,2,base,2,10.5,TFT2_LuxLight,Lux,Final Spark,Damage,550/900/99999,200,550,900,99999,1400,1700,2000
-Set 2,2,base,2,10.5,TFT2_LuxMetal,Lux,Final Spark,Damage,550/900/99999,200,550,900,99999,1400,1700,2000
-Set 2,2,base,2,10.5,TFT2_LuxOcean,Lux,Final Spark,Damage,550/900/99999,200,550,900,99999,1400,1700,2000
-Set 2,2,base,2,10.5,TFT2_LuxShadow,Lux,Final Spark,Damage,550/900/99999,200,550,900,99999,1400,1700,2000
-Set 2,2,base,2,10.5,TFT2_LuxWind,Lux,Final Spark,Damage,550/900/99999,200,550,900,99999,1400,1700,2000
-Set 2,2,base,2,10.5,TFT2_LuxWoodland,Lux,Final Spark,Damage,550/900/99999,200,550,900,99999,1400,1700,2000
-Set 2,2,base,2,10.5,TFT2_LuxCrystal,Lux,Final Spark,ManaRefund,50,50,50,50,50,50,50,50
-Set 2,2,base,2,10.5,TFT2_LuxElectric,Lux,Final Spark,ManaRefund,50,50,50,50,50,50,50,50
-Set 2,2,base,2,10.5,TFT2_LuxGlacial,Lux,Final Spark,ManaRefund,50,50,50,50,50,50,50,50
-Set 2,2,base,2,10.5,TFT2_LuxInferno,Lux,Final Spark,ManaRefund,50,50,50,50,50,50,50,50
-Set 2,2,base,2,10.5,TFT2_LuxLight,Lux,Final Spark,ManaRefund,50,50,50,50,50,50,50,50
-Set 2,2,base,2,10.5,TFT2_LuxMetal,Lux,Final Spark,ManaRefund,50,50,50,50,50,50,50,50
-Set 2,2,base,2,10.5,TFT2_LuxOcean,Lux,Final Spark,ManaRefund,50,50,50,50,50,50,50,50
-Set 2,2,base,2,10.5,TFT2_LuxShadow,Lux,Final Spark,ManaRefund,50,50,50,50,50,50,50,50
-Set 2,2,base,2,10.5,TFT2_LuxWind,Lux,Final Spark,ManaRefund,50,50,50,50,50,50,50,50
-Set 2,2,base,2,10.5,TFT2_LuxWoodland,Lux,Final Spark,ManaRefund,50,50,50,50,50,50,50,50
-Set 2,2,base,2,10.5,TFT2_Malphite,Malphite,Unstoppable Force,Damage,150/300/1000,0,150,300,1000,1000,1000,900
-Set 2,2,base,2,10.5,TFT2_Malphite,Malphite,Unstoppable Force,KnockupDuration,1,1,1,1,1,1,1,1
-Set 2,2,base,2,10.5,TFT2_Malphite,Malphite,Unstoppable Force,Radius,2,2,2,2,2,2,2,2
-Set 2,2,base,2,10.5,TFT2_Malphite,Malphite,Unstoppable Force,StunDuration,2/2.5/5,1.5,2,2.5,5,3.5,4,4.5
-Set 2,2,base,2,10.5,TFT2_Malzahar,Malzahar,Shadow Swarm,NumVoidlings,2/3/4,1,2,3,4,5,6,7
-Set 2,2,base,2,10.5,TFT2_Malzahar,Malzahar,Shadow Swarm,VoidlingDamage,40/70/100,10,40,70,100,130,160,190
-Set 2,2,base,2,10.5,TFT2_Malzahar,Malzahar,Shadow Swarm,VoidlingHP,250/300/400,250,250,300,400,400,400,400
-Set 2,2,base,2,10.5,TFT2_Maokai,Maokai,Sap Magic,BuffDuration,6,6,6,6,6,6,6,6
-Set 2,2,base,2,10.5,TFT2_Maokai,Maokai,Sap Magic,HealAmount,100/150/200,50,100,150,200,250,300,350
-Set 2,2,base,2,10.5,TFT2_MasterYi,Master Yi,Meditate,AttackSpeed,1,1,1,1,1,1,1,1
-Set 2,2,base,2,10.5,TFT2_MasterYi,Master Yi,Meditate,BuffDuration,6,6,6,6,6,6,6,6
-Set 2,2,base,2,10.5,TFT2_MasterYi,Master Yi,Meditate,Damage,40/80/500,40,40,80,500,500,500,500
-Set 2,2,base,2,10.5,TFT2_MasterYi,Master Yi,Meditate,HealAmount,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3
-Set 2,2,base,2,10.5,TFT2_MasterYi,Master Yi,Meditate,MeditateDuration,1,1,1,1,1,1,1,1
-Set 2,2,base,2,10.5,TFT2_Nami,Nami,Tidal Wave,AllyBuffDuration,8,8,8,8,8,8,8,8
-Set 2,2,base,2,10.5,TFT2_Nami,Nami,Tidal Wave,AllyDamageBonus,25/50/300,0,25,50,300,500,500,500
-Set 2,2,base,2,10.5,TFT2_Nami,Nami,Tidal Wave,Damage,100/200/300,0,100,200,300,400,500,600
-Set 2,2,base,2,10.5,TFT2_Nami,Nami,Tidal Wave,StunDuration,1.5/2/2.5,1,1.5,2,2.5,3,3.5,4
-Set 2,2,base,2,10.5,TFT2_Nasus,Nasus,Fury of the Dawn,BonusHealth,250/400/550,100,250,400,550,700,850,1000
-Set 2,2,base,2,10.5,TFT2_Nasus,Nasus,Fury of the Dawn,Damage,50/70/90,30,50,70,90,110,130,150
-Set 2,2,base,2,10.5,TFT2_Nasus,Nasus,Fury of the Dawn,Duration,7,7,7,7,7,7,7,7
-Set 2,2,base,2,10.5,TFT2_Nautilus,Nautilus,Depth Charge,Damage,100/200/400,0,100,200,400,400,500,600
-Set 2,2,base,2,10.5,TFT2_Nautilus,Nautilus,Depth Charge,StunDuration,3/4/6,1,3,4,6,6,7,8
-Set 2,2,base,2,10.5,TFT2_Neeko,Neeko,Blooming Burst,Damage,100/200/350,0,100,200,350,400,500,600
-Set 2,2,base,2,10.5,TFT2_Neeko,Neeko,Blooming Burst,Radius1,,,,,,,,
-Set 2,2,base,2,10.5,TFT2_Neeko,Neeko,Blooming Burst,Radius2,1,1,1,1,1,1,1,1
-Set 2,2,base,2,10.5,TFT2_Neeko,Neeko,Blooming Burst,Radius3,2,2,2,2,2,2,2,2
-Set 2,2,base,2,10.5,TFT2_Nocturne,Nocturne,Steel Blades,HealPercent,0.5/0.6/0.7,0.4,0.5,0.6,0.7,0.8,0.9,1
-Set 2,2,base,2,10.5,TFT2_Olaf,Olaf,Ragnarok,AttackSpeed,1.25/1.5/4.5,0.5,1.25,1.5,4.5,4.5,4.5,3
-Set 2,2,base,2,10.5,TFT2_Olaf,Olaf,Ragnarok,Duration,5,5,5,5,5,5,5,5
-Set 2,2,base,2,10.5,TFT2_Olaf,Olaf,Ragnarok,HealthThreshold,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
-Set 2,2,base,2,10.5,TFT2_Olaf,Olaf,Ragnarok,LifeSteal,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
-Set 2,2,base,2,10.5,TFT2_Ornn,Ornn,Lightning Breath,CritAmpPercent,25,25,25,25,25,25,25,25
-Set 2,2,base,2,10.5,TFT2_Ornn,Ornn,Lightning Breath,Damage,125/250/450,0,125,250,450,500,625,750
-Set 2,2,base,2,10.5,TFT2_Ornn,Ornn,Lightning Breath,Duration,10,10,10,10,10,10,10,10
-Set 2,2,base,2,10.5,TFT2_Qiyana,Qiyana,Elemental Blade,BaseDamage,300/500/900,100,300,500,900,900,1100,1300
-Set 2,2,base,2,10.5,TFT2_QiyanaOcean,Qiyana,Elemental Blade,BaseDamage,300/500/900,100,300,500,900,900,1100,1300
-Set 2,2,base,2,10.5,TFT2_QiyanaInferno,Qiyana,Elemental Blade,BaseDamage,300/500/900,100,300,500,900,900,1100,1300
-Set 2,2,base,2,10.5,TFT2_QiyanaWoodland,Qiyana,Elemental Blade,BaseDamage,300/500/900,100,300,500,900,900,1100,1300
-Set 2,2,base,2,10.5,TFT2_QiyanaWind,Qiyana,Elemental Blade,BaseDamage,300/500/900,100,300,500,900,900,1100,1300
-Set 2,2,base,2,10.5,TFT2_Qiyana,Qiyana,Elemental Blade,CCDuration,2.5/3.5/4.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5
-Set 2,2,base,2,10.5,TFT2_QiyanaOcean,Qiyana,Elemental Blade,CCDuration,2.5/3.5/4.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5
-Set 2,2,base,2,10.5,TFT2_QiyanaInferno,Qiyana,Elemental Blade,CCDuration,2.5/3.5/4.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5
-Set 2,2,base,2,10.5,TFT2_QiyanaWoodland,Qiyana,Elemental Blade,CCDuration,2.5/3.5/4.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5
-Set 2,2,base,2,10.5,TFT2_QiyanaWind,Qiyana,Elemental Blade,CCDuration,2.5/3.5/4.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5
-Set 2,2,base,2,10.5,TFT2_RekSai,Rek'Sai,Furious Bite,ArmorReduction,100,100,100,100,100,100,100,100
-Set 2,2,base,2,10.5,TFT2_RekSai,Rek'Sai,Furious Bite,Damage,250/550/1000,-50,250,550,1000,1150,1450,1750
-Set 2,2,base,2,10.5,TFT2_RekSai,Rek'Sai,Furious Bite,Duration,5,5,5,5,5,5,5,5
-Set 2,2,base,2,10.5,TFT2_Renekton,Renekton,Cull the Meek,BaseDamage,150/275/475,25,150,275,475,525,650,775
-Set 2,2,base,2,10.5,TFT2_Renekton,Renekton,Cull the Meek,HealAmount,150/225/300,75,150,225,300,375,450,525
-Set 2,2,base,2,10.5,TFT2_Renekton,Renekton,Cull the Meek,HexRadius,1,1,1,1,1,1,1,1
-Set 2,2,base,2,10.5,TFT2_Senna,Senna,Piercing Darkness,AllyBuffDuration,5,5,5,5,5,5,5,5
-Set 2,2,base,2,10.5,TFT2_Senna,Senna,Piercing Darkness,AllyDamageBonus,20/45/70,0,20,45,70,120,150,180
-Set 2,2,base,2,10.5,TFT2_Senna,Senna,Piercing Darkness,Damage,50/100/150,0,50,100,150,200,250,300
-Set 2,2,base,2,10.5,TFT2_Singed,Singed,Poison Trail,CloudDuration,3.25,3.25,3.25,3.25,3.25,3.25,3.25,3.25
-Set 2,2,base,2,10.5,TFT2_Singed,Singed,Poison Trail,MSModifier,0.75,0.75,0.75,0.75,0.75,0.75,0.75,0.75
-Set 2,2,base,2,10.5,TFT2_Singed,Singed,Poison Trail,PoisonDuration,6,6,6,6,6,6,6,6
-Set 2,2,base,2,10.5,TFT2_Singed,Singed,Poison Trail,TickRate,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
-Set 2,2,base,2,10.5,TFT2_Singed,Singed,Poison Trail,TotalDamage,225/300/2000,0,225,300,2000,1000,1250,1500
-Set 2,2,base,2,10.5,TFT2_Sion,Sion,Decimating Smash,ChargeUpTime,0.75,0.75,0.75,0.75,0.75,0.75,0.75,0.75
-Set 2,2,base,2,10.5,TFT2_Sion,Sion,Decimating Smash,Damage,200/350/700,0,200,350,700,800,1000,1200
-Set 2,2,base,2,10.5,TFT2_Sion,Sion,Decimating Smash,HexRange,2,2,2,2,2,2,2,2
-Set 2,2,base,2,10.5,TFT2_Sivir,Sivir,Ricochet,BounceRange,2,2,2,2,2,2,2,2
-Set 2,2,base,2,10.5,TFT2_Sivir,Sivir,Ricochet,Duration,5,5,5,5,5,5,5,5
-Set 2,2,base,2,10.5,TFT2_Sivir,Sivir,Ricochet,NumBounces,5/7/9,3,5,7,9,11,13,15
-Set 2,2,base,2,10.5,TFT2_Sivir,Sivir,Ricochet,PercentDamage,1/1.25/1.5,0.75,1,1.25,1.5,1.75,2,2.25
-Set 2,2,base,2,10.5,TFT2_Skarner,Skarner,Crystalline Exoskeleton,AttackSpeed,0.5/0.75/1,0.25,0.5,0.75,1,1.25,1.5,1.75
-Set 2,2,base,2,10.5,TFT2_Skarner,Skarner,Crystalline Exoskeleton,Duration,8,8,8,8,8,8,8,8
-Set 2,2,base,2,10.5,TFT2_Skarner,Skarner,Crystalline Exoskeleton,ShieldAmount,150/450/750,-150,150,450,750,1050,1350,1650
-Set 2,2,base,2,10.5,TFT2_Soraka,Soraka,Equinox,Damage,150/300/450,0,150,300,450,600,750,900
-Set 2,2,base,2,10.5,TFT2_Soraka,Soraka,Equinox,Radius,1,1,1,1,1,1,1,1
-Set 2,2,base,2,10.5,TFT2_Soraka,Soraka,Equinox,ZoneDuration,3/5/7,1,3,5,7,9,11,13
-Set 2,2,base,2,10.5,TFT2_Syndra,Syndra,Hydro Sphere,Damage,225/375/650,0,225,375,650,650,875,1050
-Set 2,2,base,2,10.5,TFT2_Syndra,Syndra,Hydro Sphere,HexRadius,2,2,2,2,2,2,2,2
-Set 2,2,base,2,10.5,TFT2_Taliyah,Taliyah,Seismic Shove,Damage,150/350/550,-50,150,350,550,750,950,1150
-Set 2,2,base,2,10.5,TFT2_Taliyah,Taliyah,Seismic Shove,StunDuration,2,0,2,2,2,2,2,2
-Set 2,2,base,2,10.5,TFT2_Taliyah,Taliyah,Seismic Shove,ThrowDistance,2,2,2,2,2,2,2,2
-Set 2,2,base,2,10.5,TFT2_Taric,Taric,Cosmic Radiance,HexRange,2/3/4,1,2,3,4,5,6,7
-Set 2,2,base,2,10.5,TFT2_Taric,Taric,Cosmic Radiance,InitialDelay,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
-Set 2,2,base,2,10.5,TFT2_Taric,Taric,Cosmic Radiance,InvulnDuration,2.5/2.5/8,3,2.5,2.5,8,3,3,3
-Set 2,2,base,2,10.5,TFT2_Thresh,Thresh,Deep Sea Lantern,Duration,5,5,5,5,5,5,5,5
-Set 2,2,base,2,10.5,TFT2_Thresh,Thresh,Deep Sea Lantern,Radius,1,1,1,1,1,1,1,1
-Set 2,2,base,2,10.5,TFT2_Thresh,Thresh,Deep Sea Lantern,ShieldAmount,250/400/600,100,250,400,600,700,850,1000
-Set 2,2,base,2,10.5,TFT2_Twitch,Twitch,Spray and Pray,ADAmp,1.3/1.6/3,1,1.3,1.6,3,2.25,2.5,2.75
-Set 2,2,base,2,10.5,TFT2_Twitch,Twitch,Spray and Pray,Duration,8,8,8,8,8,8,8,8
-Set 2,2,base,2,10.5,TFT2_Varus,Varus,Piercing Arrow,Damage,225/450/800,0,225,450,800,900,1125,1350
-Set 2,2,base,2,10.5,TFT2_Varus,Varus,Piercing Arrow,HexRange,8,8,8,8,8,8,8,8
-Set 2,2,base,2,10.5,TFT2_Vayne,Vayne,Silver Bolts,PercentDamage,0.1/0.13/0.16,0.07,0.1,0.13,0.16,0.19,0.22,0.25
-Set 2,2,base,2,10.5,TFT2_Veigar,Veigar,Primordial Burst,Damage,325/650/975,0,325,650,975,1300,1625,1950
-Set 2,2,base,2,10.5,TFT2_Vladimir,Vladimir,Drain,Damage,200/325/500,75,200,325,500,575,700,825
-Set 2,2,base,2,10.5,TFT2_Vladimir,Vladimir,Drain,HealingAmp,,,,,,,,
-Set 2,2,base,2,10.5,TFT2_Vladimir,Vladimir,Drain,HealthThreshold,,,,,,,,
-Set 2,2,base,2,10.5,TFT2_Volibear,Volibear,Frenzied Bite,Damage,200/450/850,-50,200,450,850,950,1200,1450
-Set 2,2,base,2,10.5,TFT2_Volibear,Volibear,Frenzied Bite,ExecuteDamage,19999,19999,19999,19999,19999,19999,19999,19999
-Set 2,2,base,2,10.5,TFT2_Volibear,Volibear,Frenzied Bite,ExecuteThreshold,0.35,0.35,0.35,0.35,0.35,0.35,0.35,0.35
-Set 2,2,base,2,10.5,TFT2_Warwick,Warwick,Infinite Duress,BaseDamage,200/500/800,-100,200,500,800,1100,1400,1700
-Set 2,2,base,2,10.5,TFT2_Warwick,Warwick,Infinite Duress,DashHexSpeed,6,6,6,6,6,6,6,6
-Set 2,2,base,2,10.5,TFT2_Warwick,Warwick,Infinite Duress,Duration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
-Set 2,2,base,2,10.5,TFT2_Warwick,Warwick,Infinite Duress,Hits,3,3,3,3,3,3,3,3
-Set 2,2,base,2,10.5,TFT2_Yasuo,Yasuo,Last Breath,Damage,100,100,100,100,100,100,100,100
-Set 2,2,base,2,10.5,TFT2_Yasuo,Yasuo,Last Breath,NumHits,4/5/6,3,4,5,6,7,8,9
-Set 2,2,base,2,10.5,TFT2_Yasuo,Yasuo,Last Breath,StunDuration,1,1,1,1,1,1,1,1
-Set 2,2,base,2,10.5,TFT2_Yorick,Yorick,Shepherd of Souls,GhoulAD,100/175/250,25,100,175,250,325,400,475
-Set 2,2,base,2,10.5,TFT2_Yorick,Yorick,Shepherd of Souls,GhoulHealth,500/700/2000,150,500,700,2000,2000,2200,2600
-Set 2,2,base,2,10.5,TFT2_Yorick,Yorick,Shepherd of Souls,NumAlliesToTarget,2/3/12,1,2,3,12,5,6,7
-Set 2,2,base,2,10.5,TFT2_Zed,Zed,Living Lightning,Clones,1,1,1,1,1,1,1,1
-Set 2,2,base,2,10.5,TFT2_Zed,Zed,Living Lightning,ManaCostIncrease,50/25/-125,75,50,25,-125,-25,-50,-75
-Set 2,2,base,2,10.5,TFT2_Zyra,Zyra,Rampant Growth,NumPlants,2/3/5,1,2,3,5,5,6,7
-Set 2,2,base,2,10.5,TFT2_Zyra,Zyra,Rampant Growth,PlantAD,55/65/75,45,55,65,75,85,95,105
-Set 2,2,base,2,10.5,TFT2_Zyra,Zyra,Rampant Growth,PlantAmmo,4,4,4,4,4,4,4,4
-Set 2,2,base,2,10.5,TFT2_Zyra,Zyra,Rampant Growth,PlantDuration,4,4,4,4,4,4,4,4
-Set 3,3,base,3,10.11,TFT3_Ahri,Ahri,Orb of Deception,Damage,175/250/375,150,175,250,375,500,400,400
-Set 3,3,base,3,10.11,TFT3_Ahri,Ahri,Orb of Deception,HexRange,4,4,4,4,4,4,4,4
-Set 3,3,base,3,10.11,TFT3_Annie,Annie,Galaxy Shield-Blast,Damage,150/200/300,100,150,200,300,450,450,450
-Set 3,3,base,3,10.11,TFT3_Annie,Annie,Galaxy Shield-Blast,ShieldAmount,270/360/540,200,270,360,540,700,450,450
-Set 3,3,base,3,10.11,TFT3_Annie,Annie,Galaxy Shield-Blast,ShieldDuration,4,4,4,4,4,4,4,4
-Set 3,3,base,3,10.11,TFT3_Ashe,Ashe,Enchanted Crystal Arrow,Damage,250/350/700,250,250,350,700,800,800,800
-Set 3,3,base,3,10.11,TFT3_Ashe,Ashe,Enchanted Crystal Arrow,StunDurationPerSquare,2,2,2,2,2,2,2,2
-Set 3,3,base,3,10.11,TFT3_AurelionSol,Aurelion Sol,Mobilize the Fleet,Damage,100/150/750,0,100,150,750,1000,1000,1000
-Set 3,3,base,3,10.11,TFT3_AurelionSol,Aurelion Sol,Mobilize the Fleet,FightersPerCast,3,3,3,3,3,3,3,3
-Set 3,3,base,3,10.11,TFT3_AurelionSol,Aurelion Sol,Mobilize the Fleet,InitialFighters,,,,,,,,
-Set 3,3,base,3,10.11,TFT3_Blitzcrank,Blitzcrank,Rocket Grab,Damage,250/400/900,-50,250,400,900,950,1200,1450
-Set 3,3,base,3,10.11,TFT3_Blitzcrank,Blitzcrank,Rocket Grab,StunDuration,2.5,2.5,2.5,2.5,2.5,2.5,2.5,2.5
-Set 3,3,base,3,10.11,TFT3_Caitlyn,Caitlyn,Ace In The Hole,Damage,750/1500/3000,0,750,1500,3000,2400,3000,3600
-Set 3,3,base,3,10.11,TFT3_ChoGath,Cho'Gath,Rupture,Damage,150/250/2000,0,150,250,2000,800,800,800
-Set 3,3,base,3,10.11,TFT3_ChoGath,Cho'Gath,Rupture,KnockDuration,2/2/4,2,2,2,4,4,4,4
-Set 3,3,base,3,10.11,TFT3_ChoGath,Cho'Gath,Rupture,RuptureDelay,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
-Set 3,3,base,3,10.11,TFT3_Darius,Darius,Dreadnova Guillotine,Damage,400/500/750,50,400,500,750,1100,1300,1550
-Set 3,3,base,3,10.11,TFT3_Darius,Darius,Dreadnova Guillotine,DamageMultiplier,2,2,2,2,2,2,2,2
-Set 3,3,base,3,10.11,TFT3_Darius,Darius,Dreadnova Guillotine,HealthThreshold,50,50,50,50,50,50,50,50
-Set 3,3,base,3,10.11,TFT3_Ekko,Ekko,Chronobreak,BaseDelayBetweenAttacks,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4
-Set 3,3,base,3,10.11,TFT3_Ekko,Ekko,Chronobreak,BonusDamage,225/400/2000,200,225,400,2000,1200,1000,1000
-Set 3,3,base,3,10.11,TFT3_Ezreal,Ezreal,E.M.P.,Damage,200/300/600,0,200,300,600,800,1000,1200
-Set 3,3,base,3,10.11,TFT3_Ezreal,Ezreal,E.M.P.,HexRadius,2,2,2,2,2,2,2,2
-Set 3,3,base,3,10.11,TFT3_Ezreal,Ezreal,E.M.P.,PercentCostIncrease,40,3,40,40,40,40,40,40
-Set 3,3,base,3,10.11,TFT3_Fiora,Fiora,Riposte,BlockDuration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
-Set 3,3,base,3,10.11,TFT3_Fiora,Fiora,Riposte,Damage,200/300/450,0,200,300,450,600,750,900
-Set 3,3,base,3,10.11,TFT3_Fiora,Fiora,Riposte,StunDuration,1.5/1.5/3,1.5,1.5,1.5,3,1.5,1.5,1.5
-Set 3,3,base,3,10.11,TFT3_Fizz,Fizz,Chum the Waters,Damage,350/500/2000,0,350,500,2000,2000,2000,2000
-Set 3,3,base,3,10.11,TFT3_Fizz,Fizz,Chum the Waters,Delay,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
-Set 3,3,base,3,10.11,TFT3_Fizz,Fizz,Chum the Waters,StunDuration,1.5,1,1.5,1.5,1.5,1.5,1.5,1.5
-Set 3,3,base,3,10.11,TFT3_Gangplank,Gangplank,Orbital Strike,Damage,450/600/9001,0,450,600,9001,0,0,0
-Set 3,3,base,3,10.11,TFT3_Gangplank,Gangplank,Orbital Strike,DoubleImpactDamagePercent,50,0,50,50,50,50,50,50
-Set 3,3,base,3,10.11,TFT3_Gangplank,Gangplank,Orbital Strike,ImpactDelayTime,2,2,2,2,2,2,2,2
-Set 3,3,base,3,10.11,TFT3_Gangplank,Gangplank,Orbital Strike,UpgradeDelayTime,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3
-Set 3,3,base,3,10.11,TFT3_Graves,Graves,Smoke Grenade,BlindDuration,3/4/5,2,3,4,5,6,7,8
-Set 3,3,base,3,10.11,TFT3_Graves,Graves,Smoke Grenade,Damage,150/200/400,0,150,200,400,0,0,0
-Set 3,3,base,3,10.11,TFT3_Irelia,Irelia,Bladesurge,PercentADDamage,1.75/2.5/5,0,1.75,2.5,5,0,0,0
-Set 3,3,base,3,10.11,TFT3_JarvanIV,Jarvan IV,Ageless Standard,ASPercent,0.5/0.75/1,0.25,0.5,0.75,1,1.25,1.5,1.75
-Set 3,3,base,3,10.11,TFT3_JarvanIV,Jarvan IV,Ageless Standard,Duration,6,6,6,6,6,6,6,6
-Set 3,3,base,3,10.11,TFT3_JarvanIV,Jarvan IV,Ageless Standard,HexRadius,3,3,3,3,3,3,3,3
-Set 3,3,base,3,10.11,TFT3_Jayce,Jayce,To the Skies!,Damage,450/600/1200,300,450,600,1200,1200,1200,1200
-Set 3,3,base,3,10.11,TFT3_Jayce,Jayce,To the Skies!,Radius,1,1,1,1,1,1,1,1
-Set 3,3,base,3,10.11,TFT3_Jhin,Jhin,Whisper,PercentOfAD,2.44/3.44/44.44,0,2.44,3.44,44.44,0,0,0
-Set 3,3,base,3,10.11,TFT3_Jinx,Jinx,Get Excited!,AttackSpeedBonus,0.6/0.75/1,0.4,0.6,0.75,1,1.2,1.4,1.6
-Set 3,3,base,3,10.11,TFT3_Jinx,Jinx,Get Excited!,BuffDuration,60,60,60,60,60,60,60,60
-Set 3,3,base,3,10.11,TFT3_Jinx,Jinx,Get Excited!,HitWindow,10,10,10,10,10,10,10,10
-Set 3,3,base,3,10.11,TFT3_Jinx,Jinx,Get Excited!,RocketDamage,125/200/750,0,125,200,750,1000,500,600
-Set 3,3,base,3,10.11,TFT3_KaiSa,Kai'Sa,Missile Rain,Damage,50,50,50,50,50,50,50,50
-Set 3,3,base,3,10.11,TFT3_KaiSa,Kai'Sa,Missile Rain,FakeCastTime,1,1,1,1,1,1,1,1
-Set 3,3,base,3,10.11,TFT3_KaiSa,Kai'Sa,Missile Rain,HexRange,2,2,2,2,2,2,2,2
-Set 3,3,base,3,10.11,TFT3_KaiSa,Kai'Sa,Missile Rain,NumMissiles,4/6/9,4,4,6,9,12,12,12
-Set 3,3,base,3,10.11,TFT3_KaiSa,Kai'Sa,Missile Rain,Radius,420,420,420,420,420,420,420,420
-Set 3,3,base,3,10.11,TFT3_Karma,Karma,Inspire,BonusAS,0.5/0.75/1.25,0.2,0.5,0.75,1.25,1,1.2,1.4
-Set 3,3,base,3,10.11,TFT3_Karma,Karma,Inspire,Duration,4,4,4,4,4,4,4,4
-Set 3,3,base,3,10.11,TFT3_Karma,Karma,Inspire,ShieldAmount,250/400/800,100,250,400,800,700,850,1000
-Set 3,3,base,3,10.11,TFT3_Kassadin,Kassadin,Force Pulse,Damage,250/400/800,100,250,400,800,300,300,300
-Set 3,3,base,3,10.11,TFT3_Kassadin,Kassadin,Force Pulse,Duration,2.5/3/3.5,3,2.5,3,3.5,3,3,3
-Set 3,3,base,3,10.11,TFT3_Kayle,Kayle,Ascend,WaveDamage,125/200/600,0,125,200,600,0,0,0
-Set 3,3,base,3,10.11,TFT3_NPC_KaynElite,Kayn,Umbral Trespass,AOEDamage,,,,,,,,
-Set 3,3,base,3,10.11,TFT3_NPC_Kayn,Kayn,Blade's Reach,BoxWidth,160,160,160,160,160,160,160,160
-Set 3,3,base,3,10.11,TFT3_NPC_Kayn,Kayn,Blade's Reach,Damage,200,200,200,200,200,200,200,200
-Set 3,3,base,3,10.11,TFT3_NPC_Kayn,Kayn,Blade's Reach,Range,700,700,700,700,700,700,700,700
-Set 3,3,base,3,10.11,TFT3_NPC_KaynElite,Kayn,Umbral Trespass,TargetDamage,1500,1500,1500,1500,1500,1500,1500,1500
-Set 3,3,base,3,10.11,TFT3_KhaZix,Kha'Zix,Taste their Fear,Damage,200/275/500,50,200,275,500,450,550,650
-Set 3,3,base,3,10.11,TFT3_KhaZix,Kha'Zix,Taste their Fear,IsolationDamage,600/825/1500,200,600,825,1500,1000,1200,1400
-Set 3,3,base,3,10.11,TFT3_Leona,Leona,Cyber Barrier,Duration,4,4,4,4,4,4,4,4
-Set 3,3,base,3,10.11,TFT3_Leona,Leona,Cyber Barrier,FlatDamageReduction,40/80/200,0,40,80,200,160,200,240
-Set 3,3,base,3,10.11,TFT3_Lucian,Lucian,Relentless Pursuit,FirstShotRatio,1,1,1,1,1,1,1,1
-Set 3,3,base,3,10.11,TFT3_Lucian,Lucian,Relentless Pursuit,SecondShotDamage,150/200/325,0,150,200,325,500,625,750
-Set 3,3,base,3,10.11,TFT3_Lulu,Lulu,Mass Polymorph,BonusDamage,0.05/0.1/0.25,0.025,0.05,0.1,0.25,0.4,0.8,1.6
-Set 3,3,base,3,10.11,TFT3_Lulu,Lulu,Mass Polymorph,Duration,3/3/8,0,3,3,8,4,4,4
-Set 3,3,base,3,10.11,TFT3_Lulu,Lulu,Mass Polymorph,NumTargets,2/4/12,0,2,4,12,0,0,0
-Set 3,3,base,3,10.11,TFT3_Lux,Lux,Lurid Binding,Damage,200/300/600,300,200,300,600,800,800,800
-Set 3,3,base,3,10.11,TFT3_Lux,Lux,Lurid Binding,StunDuration,1.5/2/2.5,1,1.5,2,2.5,3,3.5,4
-Set 3,3,base,3,10.11,TFT3_Malphite,Malphite,Energy Shield,PercentHealth,0.4/0.45/0.6,0.35,0.4,0.45,0.6,0.55,0.6,0.65
-Set 3,3,base,3,10.11,TFT3_Malphite,Malphite,Energy Shield,SecondsPerRefresh,9,0,9,9,9,9,9,9
-Set 3,3,base,3,10.11,TFT3_MasterYi,Master Yi,Chosen One,BonusTrueDamage,75/100/200,0,75,100,200,0,0,0
-Set 3,3,base,3,10.11,TFT3_MasterYi,Master Yi,Chosen One,Duration,5,5,5,5,5,5,5,5
-Set 3,3,base,3,10.11,TFT3_MasterYi,Master Yi,Chosen One,HealAmountPercent,0.12,0,0.12,0.12,0.12,0.2,0.2,0.2
-Set 3,3,base,3,10.11,TFT3_MissFortune,Miss Fortune,Bullet Time,ChannelDuration,2.25,2.25,2.25,2.25,2.25,2.25,2.25,2.25
-Set 3,3,base,3,10.11,TFT3_MissFortune,Miss Fortune,Bullet Time,HexRange,6,6,6,6,6,6,6,6
-Set 3,3,base,3,10.11,TFT3_MissFortune,Miss Fortune,Bullet Time,PercentMaxHealth,0.6/0.8/9.99,0.2,0.6,0.8,9.99,5,5,5
-Set 3,3,base,3,10.11,TFT3_MissFortune,Miss Fortune,Bullet Time,ShieldAmount,400/700/1000,100,400,700,1000,1300,1600,1900
-Set 3,3,base,3,10.11,TFT3_MissFortune,Miss Fortune,Bullet Time,TotalDamage,500/900/9001,500,500,900,9001,3400,4100,4800
-Set 3,3,base,3,10.11,TFT3_MissFortune,Miss Fortune,Bullet Time,UpgradeMoreWaves,5,0,5,5,5,5,5,5
-Set 3,3,base,3,10.11,TFT3_MissFortune,Miss Fortune,Bullet Time,Waves,12,12,12,12,12,12,12,12
-Set 3,3,base,3,10.11,TFT3_Mordekaiser,Mordekaiser,Indestructible,DamagePerSecond,50/75/125,20,50,75,125,180,220,260
-Set 3,3,base,3,10.11,TFT3_Mordekaiser,Mordekaiser,Indestructible,Duration,8,8,8,8,8,8,8,8
-Set 3,3,base,3,10.11,TFT3_Mordekaiser,Mordekaiser,Indestructible,ShieldAmount,350/500/800,0,350,500,800,1000,1250,1500
-Set 3,3,base,3,10.11,TFT3_Neeko,Neeko,Pop Blossom,DamageAmount,200/275/550,0,200,275,550,300,375,450
-Set 3,3,base,3,10.11,TFT3_Neeko,Neeko,Pop Blossom,HexRadius,2,2,2,2,2,2,2,2
-Set 3,3,base,3,10.11,TFT3_Neeko,Neeko,Pop Blossom,StunDuration,1.5/2/2.5,1,1.5,2,2.5,3,3.5,4
-Set 3,3,base,3,10.11,TFT3_Poppy,Poppy,Buckler Toss,Damage,100/150/200,50,100,150,200,250,300,350
-Set 3,3,base,3,10.11,TFT3_Poppy,Poppy,Buckler Toss,ShieldAmount,200/300/400,100,200,300,400,500,600,700
-Set 3,3,base,3,10.11,TFT3_Rakan,Rakan,Grand Entrance,Damage,175/275/400,75,175,275,400,475,575,675
-Set 3,3,base,3,10.11,TFT3_Rakan,Rakan,Grand Entrance,KnockupDuration,1,1,1,1,1,1,1,1
-Set 3,3,base,3,10.11,TFT3_Rakan,Rakan,Grand Entrance,Radius,1,1,1,1,1,1,1,1
-Set 3,3,base,3,10.11,TFT3_Rakan,Rakan,Grand Entrance,StunDuration,1.5/2/2.5,0,1.5,2,2.5,3,3,3
-Set 3,3,base,3,10.11,TFT3_Rumble,Rumble,Flamespitter,ConeHexRange,2,2,2,2,2,2,2,2
-Set 3,3,base,3,10.11,TFT3_Rumble,Rumble,Flamespitter,Duration,3,3,3,3,3,3,3,3
-Set 3,3,base,3,10.11,TFT3_Rumble,Rumble,Flamespitter,GrievousWoundsDuration,5,5,5,5,5,5,5,5
-Set 3,3,base,3,10.11,TFT3_Rumble,Rumble,Flamespitter,GrievousWoundsPercent,50,0,50,50,50,50,50,50
-Set 3,3,base,3,10.11,TFT3_Rumble,Rumble,Flamespitter,NumberOfTicks,12,12,12,12,12,12,12,12
-Set 3,3,base,3,10.11,TFT3_Rumble,Rumble,Flamespitter,TickRate,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25
-Set 3,3,base,3,10.11,TFT3_Rumble,Rumble,Flamespitter,TotalDamage,350/500/1000,30,350,500,1000,800,680,810
-Set 3,3,base,3,10.11,TFT3_Shaco,Shaco,Deceive,Duration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
-Set 3,3,base,3,10.11,TFT3_Shaco,Shaco,Deceive,PercentOfAD,2/2.25/2.5,1.75,2,2.25,2.5,2.75,3,3.25
-Set 3,3,base,3,10.11,TFT3_Shen,Shen,Future's Refuge,MagicResist,15/30/45,0,15,30,45,60,75,90
-Set 3,3,base,3,10.11,TFT3_Shen,Shen,Future's Refuge,ZoneDuration,2.5/3/5,2,2.5,3,5,6,7,8
-Set 3,3,base,3,10.11,TFT3_Sona,Sona,Aria of Perseverance,HealAmount,150/200/300,150,150,200,300,300,300,300
-Set 3,3,base,3,10.11,TFT3_Sona,Sona,Aria of Perseverance,NumberOfTargets,2/3/4,2,2,3,4,4,4,4
-Set 3,3,base,3,10.11,TFT3_Soraka,Soraka,Wish,HealAmount,375/550/20000,300,375,550,20000,1500,1500,1500
-Set 3,3,base,3,10.11,TFT3_Soraka,Soraka,Wish,HealTargets,15,15,15,15,15,15,15,15
-Set 3,3,base,3,10.11,TFT3_SuperMech,Super-Mech,Mecha Justice,MainDamage,500/600/700,400,500,600,700,800,1200,5000
-Set 3,3,base,3,10.11,TFT3_SuperMech,Super-Mech,Mecha Justice,SplashDamage,250/300/350,200,250,300,350,400,600,5000
-Set 3,3,base,3,10.11,TFT3_Syndra,Syndra,Unleashed Power,CastTime,0.75,0.75,0.75,0.75,0.75,0.75,0.75,0.75
-Set 3,3,base,3,10.11,TFT3_Syndra,Syndra,Unleashed Power,Damage,100/150/250,0,100,150,250,200,250,300
-Set 3,3,base,3,10.11,TFT3_Syndra,Syndra,Unleashed Power,Spheres,3,3,3,3,3,3,3,3
-Set 3,3,base,3,10.11,TFT3_Thresh,Thresh,Temporal Passage,ManaBonus,25/50/200,10,25,50,200,200,200,200
-Set 3,3,base,3,10.11,TFT3_Thresh,Thresh,Temporal Passage,UnitCount,1/1/9,1,1,1,9,9,9,9
-Set 3,3,base,3,10.11,TFT3_TwistedFate,Twisted Fate,Wild Cards,BaseDamage,200/300/450,0,200,300,450,450,750,900
-Set 3,3,base,3,10.11,TFT3_VelKoz,Vel'Koz,Lifeform Disintegration Ray,BaseDamagePerSec,450/600/2000,0,450,600,2000,0,0,0
-Set 3,3,base,3,10.11,TFT3_VelKoz,Vel'Koz,Lifeform Disintegration Ray,BeamDistance,1400,1400,1400,1400,1400,1400,1400,1400
-Set 3,3,base,3,10.11,TFT3_VelKoz,Vel'Koz,Lifeform Disintegration Ray,BeamWidth,200,200,200,200,200,200,200,200
-Set 3,3,base,3,10.11,TFT3_VelKoz,Vel'Koz,Lifeform Disintegration Ray,ChannelDuration,2,2,2,2,2,2,2,2
-Set 3,3,base,3,10.11,TFT3_VelKoz,Vel'Koz,Lifeform Disintegration Ray,PercentHealthDamagePerSec,,,,,,,,
-Set 3,3,base,3,10.11,TFT3_VelKoz,Vel'Koz,Lifeform Disintegration Ray,SweepAngle,60,60,60,60,60,60,60,60
-Set 3,3,base,3,10.11,TFT3_VelKoz,Vel'Koz,Lifeform Disintegration Ray,TickInterval,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25
-Set 3,3,base,3,10.11,TFT3_Vi,Vi,Assault and Battery,CCDuration,2/2.5/3,1.5,2,2.5,3,3.5,4,4.5
-Set 3,3,base,3,10.11,TFT3_Vi,Vi,Assault and Battery,MoveSpeed,1000,1000,1000,1000,1000,1000,1000,1000
-Set 3,3,base,3,10.11,TFT3_Vi,Vi,Assault and Battery,OthersCCDuration,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25
-Set 3,3,base,3,10.11,TFT3_Vi,Vi,Assault and Battery,PrimaryDamage,400/600/1200,100,400,600,1200,900,1100,1300
-Set 3,3,base,3,10.11,TFT3_Vi,Vi,Assault and Battery,SecondaryDamage,150/200/500,0,150,200,500,0,0,0
-Set 3,3,base,3,10.11,TFT3_WuKong,Wukong,Cyclone,Damage,300/500/4000,200,300,500,4000,5000,5000,5000
-Set 3,3,base,3,10.11,TFT3_WuKong,Wukong,Cyclone,Duration,3,3,3,3,3,3,3,3
-Set 3,3,base,3,10.11,TFT3_WuKong,Wukong,Cyclone,HexRadius,1,1,1,1,1,1,1,1
-Set 3,3,base,3,10.11,TFT3_WuKong,Wukong,Cyclone,StunDuration,2/2/5,1.5,2,2,5,5,5,5
-Set 3,3,base,3,10.11,TFT3_Xayah,Xayah,Deadly Plumage,AttackSpeed,1/1.25/1.5,0.75,1,1.25,1.5,1.75,2,2.25
-Set 3,3,base,3,10.11,TFT3_Xayah,Xayah,Deadly Plumage,DamageReduction,50,50,50,50,50,50,50,50
-Set 3,3,base,3,10.11,TFT3_Xayah,Xayah,Deadly Plumage,Duration,8,8,8,8,8,8,8,8
-Set 3,3,base,3,10.11,TFT3_Xerath,Xerath,Abyssal Bombardment,AoEDamage,75/100/625,175,75,100,625,1500,1500,1500
-Set 3,3,base,3,10.11,TFT3_Xerath,Xerath,Abyssal Bombardment,BaseDamage,300/400/2500,350,300,400,2500,3000,3000,3000
-Set 3,3,base,3,10.11,TFT3_Xerath,Xerath,Abyssal Bombardment,Duration,6/8/45,6,6,8,45,45,45,45
-Set 3,3,base,3,10.11,TFT3_Xerath,Xerath,Abyssal Bombardment,StunDuration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
-Set 3,3,base,3,10.11,TFT3_XinZhao,Xin Zhao,Three Talon Strike,BonusDamage,200/275/375,4,200,275,375,8,8,8
-Set 3,3,base,3,10.11,TFT3_XinZhao,Xin Zhao,Three Talon Strike,StunDuration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
-Set 3,3,base,3,10.11,TFT3_Yasuo,Yasuo,Last Breath,Damage,100,100,100,100,100,100,100,100
-Set 3,3,base,3,10.11,TFT3_Yasuo,Yasuo,Last Breath,NumHits,4/5/6,3,4,5,6,7,8,9
-Set 3,3,base,3,10.11,TFT3_Yasuo,Yasuo,Last Breath,StunDuration,1,1,1,1,1,1,1,1
-Set 3,3,base,3,10.11,TFT3_Ziggs,Ziggs,Bomb!,Damage,300/400/700,70,300,400,700,550,650,750
-Set 3,3,base,3,10.11,TFT3_Zoe,Zoe,Sleepy Trouble Bubble,Damage,200/275/400,75,200,275,400,375,450,525
-Set 3,3,base,3,10.11,TFT3_Zoe,Zoe,Sleepy Trouble Bubble,StunDuration,2/2.5/4,1.5,2,2.5,4,3.5,4,4.5
+Set 1,1,base,Set1,9.21,Aatrox,Aatrox,The Darkin Blade,Damage,300/600/900,0,300,600,900,1200,1500,1800
+Set 1,1,base,Set1,9.21,Ahri,Ahri,Orb of Deception,Damage,100/200/300,50,100,200,300,400,500,475
+Set 1,1,base,Set1,9.21,Ahri,Ahri,Orb of Deception,HexRange,3,3,3,3,3,3,3,3
+Set 1,1,base,Set1,9.21,Akali,Akali,Five Point Strike,ConeDeg,30,30,30,30,30,30,30,30
+Set 1,1,base,Set1,9.21,Akali,Akali,Five Point Strike,Damage,200/350/500,50,200,350,500,650,800,950
+Set 1,1,base,Set1,9.21,Akali,Akali,Five Point Strike,HexRange,1,1,1,1,1,1,1,1
+Set 1,1,base,Set1,9.21,Anivia,Anivia,Glacial Storm,AttackSpeedSlow,50/70/90,30,50,70,90,110,130,150
+Set 1,1,base,Set1,9.21,Anivia,Anivia,Glacial Storm,StormDuration,6,6,6,6,6,6,6,6
+Set 1,1,base,Set1,9.21,Anivia,Anivia,Glacial Storm,TotalDamage,800/1100/1400,500,800,1100,1400,1700,2000,2300
+Set 1,1,base,Set1,9.21,Ashe,Ashe,Enchanted Crystal Arrow,Damage,200/400/600,0,200,400,600,800,1000,1200
+Set 1,1,base,Set1,9.21,Ashe,Ashe,Enchanted Crystal Arrow,StunDurationPerSquare,1/1.5/2,0.5,1,1.5,2,2.5,3,3.5
+Set 1,1,base,Set1,9.21,Aurelion Sol,Aurelion Sol,Voice of Light,Damage,250/500/750,50,250,500,750,1000,1250,1500
+Set 1,1,base,Set1,9.21,Aurelion Sol,Aurelion Sol,Voice of Light,HexRange,8,8,8,8,8,8,8,8
+Set 1,1,base,Set1,9.21,Blitzcrank,Blitzcrank,Rocket Grab,Damage,250/550/850,-50,250,550,850,1150,1450,1750
+Set 1,1,base,Set1,9.21,Blitzcrank,Blitzcrank,Rocket Grab,StunDuration,2.5,2.5,2.5,2.5,2.5,2.5,2.5,2.5
+Set 1,1,base,Set1,9.21,Brand,Brand,Pyroclasm,Damage,250/450/650,50,250,450,650,850,1050,1250
+Set 1,1,base,Set1,9.21,Brand,Brand,Pyroclasm,MaxBounces,4/6/20,4,4,6,20,20,20,20
+Set 1,1,base,Set1,9.21,Braum,Braum,Unbreakable,ShieldDR,70/80/90,60,70,80,90,100,110,120
+Set 1,1,base,Set1,9.21,Braum,Braum,Unbreakable,ShieldDuration,4,4,4,4,4,4,4,4
+Set 1,1,base,Set1,9.21,Camille,Camille,The Hextech Ultimatum,Damage,200/325/450,75,200,325,450,575,700,825
+Set 1,1,base,Set1,9.21,Camille,Camille,The Hextech Ultimatum,Duration,4/5/6,3,4,5,6,7,8,9
+Set 1,1,base,Set1,9.21,Cho'Gath,Cho'Gath,Rupture,Damage,200/400/600,0,200,400,600,800,1000,1200
+Set 1,1,base,Set1,9.21,Cho'Gath,Cho'Gath,Rupture,KnockDuration,1.5/1.75/2,1.25,1.5,1.75,2,2.25,2.5,2.75
+Set 1,1,base,Set1,9.21,Cho'Gath,Cho'Gath,Rupture,RuptureDelay,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
+Set 1,1,base,Set1,9.21,Darius,Darius,Decimate,Damage,150/200/250,100,150,200,250,300,350,400
+Set 1,1,base,Set1,9.21,Darius,Darius,Decimate,Heal,100/150/200,50,100,150,200,250,300,350
+Set 1,1,base,Set1,9.21,Darius,Darius,Decimate,HexRange,1,1,1,1,1,1,1,1
+Set 1,1,base,Set1,9.21,Draven,Draven,Spinning Axes,ADMult,1.5/2/2.5,1,1.5,2,2.5,3,3.5,4
+Set 1,1,base,Set1,9.21,Draven,Draven,Spinning Axes,ASBuff,1,1,1,1,1,1,1,1
+Set 1,1,base,Set1,9.21,Draven,Draven,Spinning Axes,BuffDuration,5.75,5.75,5.75,5.75,5.75,5.75,5.75,5.75
+Set 1,1,base,Set1,9.21,Elise,Elise,Spider Form,Lifesteal,0.6/0.9/1.2,0.3,0.6,0.9,1.2,1.5,1.8,2.1
+Set 1,1,base,Set1,9.21,Elise,Elise,Spider Form,NumSpiderlings,1/2/4,1,1,2,4,5,6,7
+Set 1,1,base,Set1,9.21,Elise,Elise,Spider Form,SpiderFormDuration,60,60,60,60,60,60,60,60
+Set 1,1,base,Set1,9.21,Evelynn,Evelynn,Last Caress,BlinkBackDistance,3,3,3,3,3,3,3,3
+Set 1,1,base,Set1,9.21,Evelynn,Evelynn,Last Caress,CritMultiplier,3/4/5,2,3,4,5,6,7,8
+Set 1,1,base,Set1,9.21,Evelynn,Evelynn,Last Caress,CritThreshold,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
+Set 1,1,base,Set1,9.21,Evelynn,Evelynn,Last Caress,Damage,200/300/400,100,200,300,400,500,600,700
+Set 1,1,base,Set1,9.21,Fiora,Fiora,Riposte,BlockDuration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
+Set 1,1,base,Set1,9.21,Fiora,Fiora,Riposte,Damage,100/250/400,-50,100,250,400,550,700,850
+Set 1,1,base,Set1,9.21,Fiora,Fiora,Riposte,StunDuration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
+Set 1,1,base,Set1,9.21,Gangplank,Gangplank,Powder Kegs,Damage,150/250/350,50,150,250,350,450,550,650
+Set 1,1,base,Set1,9.21,Garen,Garen,Judgement,DamagePerTick,40/65/90,15,40,65,90,115,140,165
+Set 1,1,base,Set1,9.21,Garen,Garen,Judgement,ETotalTicks,9,9,9,9,9,9,9,9
+Set 1,1,base,Set1,9.21,Garen,Garen,Judgement,SpinDuration,4,4,4,4,4,4,4,4
+Set 1,1,base,Set1,9.21,Gnar,Gnar,GNAR!,Damage,200/300/400,100,200,300,400,500,600,700
+Set 1,1,base,Set1,9.21,Gnar,Gnar,GNAR!,RCCDuration,2,2,2,2,2,2,2,2
+Set 1,1,base,Set1,9.21,Gnar,Gnar,GNAR!,RKnockbackDistance,500,500,500,500,500,500,500,500
+Set 1,1,base,Set1,9.21,Gnar,Gnar,GNAR!,TransformAD,50/100/150,0,50,100,150,200,250,300
+Set 1,1,base,Set1,9.21,Gnar,Gnar,GNAR!,TransformDuration,60,60,60,60,60,60,60,60
+Set 1,1,base,Set1,9.21,Gnar,Gnar,GNAR!,TransformHealth,250/450/650,50,250,450,650,850,1050,1250
+Set 1,1,base,Set1,9.21,Graves,Graves,Buckshot,DamageMultiplier,0.05/0.1/0.15,0,0.05,0.1,0.15,0.2,0.25,0.3
+Set 1,1,base,Set1,9.21,Jayce,Jayce,Transform Mercury Cannon,AAMax,3/5/7,1,3,5,7,9,11,13
+Set 1,1,base,Set1,9.21,Jayce,Jayce,Transform Mercury Cannon,CCDuration,2.5/4.25/6,0.75,2.5,4.25,6,7.75,9.5,11.25
+Set 1,1,base,Set1,9.21,Jayce,Jayce,Transform Mercury Cannon,Damage,200/350/500,50,200,350,500,650,800,950
+Set 1,1,base,Set1,9.21,Jayce,Jayce,Transform Mercury Cannon,HexRange,1,1,1,1,1,1,1,1
+Set 1,1,base,Set1,9.21,Jayce,Jayce,Transform Mercury Cannon,KnockbackDistance,3,3,3,3,3,3,3,3
+Set 1,1,base,Set1,9.21,Jayce,Jayce,Transform Mercury Cannon,RangeIncrease,3,3,3,3,3,3,3,3
+Set 1,1,base,Set1,9.21,Jayce,Jayce,Transform Mercury Cannon,TransformDuration,60,60,60,60,60,60,60,60
+Set 1,1,base,Set1,9.21,Jinx,Jinx,Get Excited!,AttackSpeedBonus,0.6/0.8/1,0.4,0.6,0.8,1,1.2,1.4,1.6
+Set 1,1,base,Set1,9.21,Jinx,Jinx,Get Excited!,BuffDuration,60,60,60,60,60,60,60,60
+Set 1,1,base,Set1,9.21,Jinx,Jinx,Get Excited!,HitWindow,4,4,4,4,4,4,4,4
+Set 1,1,base,Set1,9.21,Jinx,Jinx,Get Excited!,RocketDamage,100/200/300,0,100,200,300,400,500,600
+Set 1,1,base,Set1,9.21,Kai'Sa,Kai'Sa,Killer Instinct,ASPercent,0.5/0.75/1,0.25,0.5,0.75,1,1.25,1.5,1.75
+Set 1,1,base,Set1,9.21,Kai'Sa,Kai'Sa,Killer Instinct,Duration,3,3,3,3,3,3,3,3
+Set 1,1,base,Set1,9.21,Kai'Sa,Kai'Sa,Killer Instinct,ShieldAmount,400/700/1000,100,400,700,1000,1300,1600,1900
+Set 1,1,base,Set1,9.21,Karthus,Karthus,Requiem,Damage,350/600/850,100,350,600,850,1100,1350,1600
+Set 1,1,base,Set1,9.21,Karthus,Karthus,Requiem,NumberOfTargets,5/7/9,3,5,7,9,11,13,15
+Set 1,1,base,Set1,9.21,Kassadin,Kassadin,Nether Blade,ManaSteal,25/50/75,0,25,50,75,100,125,150
+Set 1,1,base,Set1,9.21,Kassadin,Kassadin,Nether Blade,ShieldDuration,4,4,4,4,4,4,4,4
+Set 1,1,base,Set1,9.21,Katarina,Katarina,Death Lotus,DamagePerTick,45/70/95,20,45,70,95,120,145,170
+Set 1,1,base,Set1,9.21,Katarina,Katarina,Death Lotus,Duration,2.5,2.5,2.5,2.5,2.5,2.5,2.5,2.5
+Set 1,1,base,Set1,9.21,Katarina,Katarina,Death Lotus,GrievousWoundsDuration,3,3,3,3,3,3,3,3
+Set 1,1,base,Set1,9.21,Katarina,Katarina,Death Lotus,NumberOfTargets,4/6/8,2,4,6,8,10,12,14
+Set 1,1,base,Set1,9.21,Katarina,Katarina,Death Lotus,TicksPerSecond,6,6,6,6,6,6,6,6
+Set 1,1,base,Set1,9.21,Katarina,Katarina,Death Lotus,TotalDamage,750/1125/1500,375,750,1125,1500,1875,2250,2625
+Set 1,1,base,Set1,9.21,Kayle,Kayle,Divine Judgement,ShieldDuration,2/2.5/3,1.5,2,2.5,3,3.5,4,4.5
+Set 1,1,base,Set1,9.21,Kayle,Kayle,Divine Judgement,Targets,1/2/3,0,1,2,3,4,5,6
+Set 1,1,base,Set1,9.21,Kennen,Kennen,Slicing Maelstrom,Damage,225/450/675,0,225,450,675,900,1125,1350
+Set 1,1,base,Set1,9.21,Kennen,Kennen,Slicing Maelstrom,Duration,3,3,3,3,3,3,3,3
+Set 1,1,base,Set1,9.21,Kennen,Kennen,Slicing Maelstrom,StunDuration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
+Set 1,1,base,Set1,9.21,Kennen,Kennen,Slicing Maelstrom,TickRate,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
+Set 1,1,base,Set1,9.21,Kha'Zix,Kha'Zix,Taste their Fear,Damage,150/250/350,50,150,250,350,450,550,650
+Set 1,1,base,Set1,9.21,Kha'Zix,Kha'Zix,Taste their Fear,IsolationDamage,400/600/800,200,400,600,800,1000,1200,1400
+Set 1,1,base,Set1,9.21,Kindred,Kindred,Lamb's Respite,Duration,3/4/5,2,3,4,5,6,7,8
+Set 1,1,base,Set1,9.21,Kindred,Kindred,Lamb's Respite,MinHealth,300/600/900,0,300,600,900,1200,1500,1800
+Set 1,1,base,Set1,9.21,Leona,Leona,Solar Flare,CCDuration,5/7/9,3,5,7,9,11,13,15
+Set 1,1,base,Set1,9.21,Leona,Leona,Solar Flare,Damage,175/250/325,100,175,250,325,400,475,550
+Set 1,1,base,Set1,9.21,Leona,Leona,Solar Flare,DelayTime,0.625,0.625,0.625,0.625,0.625,0.625,0.625,0.625
+Set 1,1,base,Set1,9.21,Lissandra,Lissandra,Frozen Tomb,Damage,175/325/475,25,175,325,475,625,775,925
+Set 1,1,base,Set1,9.21,Lissandra,Lissandra,Frozen Tomb,EnemyStunDuration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
+Set 1,1,base,Set1,9.21,Lissandra,Lissandra,Frozen Tomb,MaxHexRange,3,3,3,3,3,3,3,3
+Set 1,1,base,Set1,9.21,Lissandra,Lissandra,Frozen Tomb,SelfDuration,2,2,2,2,2,2,2,2
+Set 1,1,base,Set1,9.21,Lissandra,Lissandra,Frozen Tomb,SelfUltHealthPercent,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
+Set 1,1,base,Set1,9.21,Lissandra,Lissandra,Frozen Tomb,SlowAmount,2,2,2,2,2,2,2,2
+Set 1,1,base,Set1,9.21,Lissandra,Lissandra,Frozen Tomb,SlowDuration,3,3,3,3,3,3,3,3
+Set 1,1,base,Set1,9.21,Lissandra,Lissandra,Frozen Tomb,SlowFieldDuration,3,0,3,3,3,3,3,3
+Set 1,1,base,Set1,9.21,Lucian,Lucian,Relentless Pursuit,FirstShotRatio,1,1,1,1,1,1,1,1
+Set 1,1,base,Set1,9.21,Lucian,Lucian,Relentless Pursuit,SecondShotDamage,125/250/375,0,125,250,375,500,625,750
+Set 1,1,base,Set1,9.21,Lulu,Lulu,Wild Growth,BonusHealth,300/400/500,200,300,400,500,600,700,800
+Set 1,1,base,Set1,9.21,Lulu,Lulu,Wild Growth,BuffDuration,6,6,6,6,6,6,6,6
+Set 1,1,base,Set1,9.21,Lulu,Lulu,Wild Growth,CCDuration,1.25,1.25,1.25,1.25,1.25,1.25,1.25,1.25
+Set 1,1,base,Set1,9.21,Lulu,Lulu,Wild Growth,Targets,1/2/3,0,1,2,3,4,5,6
+Set 1,1,base,Set1,9.21,Miss Fortune,Miss Fortune,Bullet Time,ChannelDuration,3,3,3,3,3,3,3,3
+Set 1,1,base,Set1,9.21,Miss Fortune,Miss Fortune,Bullet Time,HexRange,6,6,6,6,6,6,6,6
+Set 1,1,base,Set1,9.21,Miss Fortune,Miss Fortune,Bullet Time,TotalDamage,1300/2000/2700,600,1300,2000,2700,3400,4100,4800
+Set 1,1,base,Set1,9.21,Miss Fortune,Miss Fortune,Bullet Time,Waves,14,14,14,14,14,14,14,14
+Set 1,1,base,Set1,9.21,Mordekaiser,Mordekaiser,Obliterate,Damage,250/500/750,0,250,500,750,1000,1250,1500
+Set 1,1,base,Set1,9.21,Mordekaiser,Mordekaiser,Obliterate,MaceLength,625,625,625,625,625,625,625,625
+Set 1,1,base,Set1,9.21,Mordekaiser,Mordekaiser,Obliterate,MaceStartDistance,400,400,400,400,400,400,400,400
+Set 1,1,base,Set1,9.21,Mordekaiser,Mordekaiser,Obliterate,RectangleWidth,160,160,160,160,160,160,160,160
+Set 1,1,base,Set1,9.21,Morgana,Morgana,Soul Shackles,CanCastRange,575,575,575,575,575,575,575,575
+Set 1,1,base,Set1,9.21,Morgana,Morgana,Soul Shackles,ChainDuration,3,3,3,3,3,3,3,3
+Set 1,1,base,Set1,9.21,Morgana,Morgana,Soul Shackles,Damage,175/300/425,50,175,300,425,550,675,800
+Set 1,1,base,Set1,9.21,Morgana,Morgana,Soul Shackles,SlowPercent,20,20,20,20,20,20,20,20
+Set 1,1,base,Set1,9.21,Morgana,Morgana,Soul Shackles,StunDuration,2/4/6,0,2,4,6,8,10,12
+Set 1,1,base,Set1,9.21,Nidalee,Nidalee,Primal Surge,ADInCougar,20/70/120,-30,20,70,120,170,220,270
+Set 1,1,base,Set1,9.21,Nidalee,Nidalee,Primal Surge,AnimTime,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
+Set 1,1,base,Set1,9.21,Nidalee,Nidalee,Primal Surge,HoTDuration,6,6,6,6,6,6,6,6
+Set 1,1,base,Set1,9.21,Nidalee,Nidalee,Primal Surge,HoTTotalHeal,150/375/600,-75,150,375,600,825,1050,1275
+Set 1,1,base,Set1,9.21,Nidalee,Nidalee,Primal Surge,TransformDuration,60,60,60,60,60,60,60,60
+Set 1,1,base,Set1,9.21,Pantheon,Pantheon,Grand Starfall,BurnDuration,10,10,10,10,10,10,10,10
+Set 1,1,base,Set1,9.21,Pantheon,Pantheon,Grand Starfall,BurnPercent,0.2,0.2,0.2,0.2,0.2,0.2,0.2,0.2
+Set 1,1,base,Set1,9.21,Pantheon,Pantheon,Grand Starfall,PercentHealthDamage,0.1/0.2/0.3,0,0.1,0.2,0.3,0.4,0.5,0.6
+Set 1,1,base,Set1,9.21,Pantheon,Pantheon,Grand Starfall,Radius,450,450,450,450,450,450,450,450
+Set 1,1,base,Set1,9.21,Pantheon,Pantheon,Grand Starfall,StunDuration,2,2,2,2,2,2,2,2
+Set 1,1,base,Set1,9.21,Poppy,Poppy,Keeper's Verdict,DamagePart2,300/500/700,100,300,500,700,900,1100,1300
+Set 1,1,base,Set1,9.21,Poppy,Poppy,Keeper's Verdict,KnockbackDurationPart2,1,1,1,1,1,1,1,1
+Set 1,1,base,Set1,9.21,Poppy,Poppy,Keeper's Verdict,NumberOfTargets,1/2/3,0,1,2,3,4,5,6
+Set 1,1,base,Set1,9.21,Poppy,Poppy,Keeper's Verdict,PoppyAnimLockDuration,0.75,0.75,0.75,0.75,0.75,0.75,0.75,0.75
+Set 1,1,base,Set1,9.21,Poppy,Poppy,Keeper's Verdict,StunDuration,2/3/4,1,2,3,4,5,6,7
+Set 1,1,base,Set1,9.21,Pyke,Pyke,Phantom Undertow,Damage,150/200/250,100,150,200,250,300,350,400
+Set 1,1,base,Set1,9.21,Pyke,Pyke,Phantom Undertow,StunDelay,1,1,1,1,1,1,1,1
+Set 1,1,base,Set1,9.21,Pyke,Pyke,Phantom Undertow,StunDuration,1.5/2/2.5,1,1.5,2,2.5,3,3.5,4
+Set 1,1,base,Set1,9.21,Rek'Sai,Rek'Sai,Burrow,BurrowDuration,1,1,1,1,1,1,1,1
+Set 1,1,base,Set1,9.21,Rek'Sai,Rek'Sai,Burrow,HealAmount,150/300/450,75,150,300,450,600,750,900
+Set 1,1,base,Set1,9.21,Rek'Sai,Rek'Sai,Burrow,HealTickRate,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
+Set 1,1,base,Set1,9.21,Rek'Sai,Rek'Sai,Burrow,KnockupDamage,200/350/500,50,200,350,500,650,800,950
+Set 1,1,base,Set1,9.21,Rek'Sai,Rek'Sai,Burrow,KnockupDuration,1.75,1.75,1.75,1.75,1.75,1.75,1.75,1.75
+Set 1,1,base,Set1,9.21,Rengar,Rengar,Savagery,ADMult,2/3/4,1,2,3,4,5,6,7
+Set 1,1,base,Set1,9.21,Rengar,Rengar,Savagery,ASBuff,0.3/0.5/0.7,0.1,0.3,0.5,0.7,0.9,1.1,1.3
+Set 1,1,base,Set1,9.21,Rengar,Rengar,Savagery,BuffDuration,6,6,6,6,6,6,6,6
+Set 1,1,base,Set1,9.21,Rengar,Rengar,Savagery,CritBuff,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25
+Set 1,1,base,Set1,9.21,Sejuani,Sejuani,Glacial Prison,Damage,100/175/250,25,100,175,250,325,400,475
+Set 1,1,base,Set1,9.21,Sejuani,Sejuani,Glacial Prison,ExplosionDelay,2,0,2,2,2,2,2,2
+Set 1,1,base,Set1,9.21,Sejuani,Sejuani,Glacial Prison,StunDuration,2/3.5/5,0.5,2,3.5,5,6.5,8,9.5
+Set 1,1,base,Set1,9.21,Shen,Shen,Spirit's Refuge,ZoneDuration,3/4/5,2,3,4,5,6,7,8
+Set 1,1,base,Set1,9.21,Shyvana,Shyvana,Dragon's Descent,ADWhileDragon,100/150/200,50,100,150,200,250,300,350
+Set 1,1,base,Set1,9.21,Shyvana,Shyvana,Dragon's Descent,BurnDamage,200/300/400,100,200,300,400,500,600,700
+Set 1,1,base,Set1,9.21,Shyvana,Shyvana,Dragon's Descent,BurnDuration,3,3,3,3,3,3,3,3
+Set 1,1,base,Set1,9.21,Shyvana,Shyvana,Dragon's Descent,ExtraAARange,480,480,480,480,480,480,480,480
+Set 1,1,base,Set1,9.21,Shyvana,Shyvana,Dragon's Descent,TransformDuration,60,60,60,60,60,60,60,60
+Set 1,1,base,Set1,9.21,Swain,Swain,Demonflare,DamagePerTick,40/80/120,0,40,80,120,160,200,240
+Set 1,1,base,Set1,9.21,Swain,Swain,Demonflare,HealPerTick,30/60/90,0,30,60,90,120,150,180
+Set 1,1,base,Set1,9.21,Swain,Swain,Demonflare,HealthIncrease,,,,,,,,
+Set 1,1,base,Set1,9.21,Swain,Swain,Demonflare,SoulFlareDamage,300/600/900,0,300,600,900,1200,1500,1800
+Set 1,1,base,Set1,9.21,Swain,Swain,Demonflare,TotalDamage,480/960/1440,0,480,960,1440,1920,2400,2880
+Set 1,1,base,Set1,9.21,Swain,Swain,Demonflare,TotalHeal,360/720/1080,0,360,720,1080,1440,1800,2160
+Set 1,1,base,Set1,9.21,Swain,Swain,Demonflare,TransformDuration,6,6,6,6,6,6,6,6
+Set 1,1,base,Set1,9.21,Tristana,Tristana,Explosive Charge,ChargeBaseDamage,70/110/150,30,70,110,150,190,230,270
+Set 1,1,base,Set1,9.21,Tristana,Tristana,Explosive Charge,ExplosiveChargeDuration,4,4,4,4,4,4,4,4
+Set 1,1,base,Set1,9.21,Tristana,Tristana,Explosive Charge,MaxChargeDamage,175/275/375,75,175,275,375,475,575,675
+Set 1,1,base,Set1,9.21,Tristana,Tristana,Explosive Charge,PercentDamageIncreasePerStack,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
+Set 1,1,base,Set1,9.21,Twisted Fate,Twisted Fate,Pick a Card,BlueCardDamage,150/250/350,50,150,250,350,450,550,650
+Set 1,1,base,Set1,9.21,Twisted Fate,Twisted Fate,Pick a Card,BlueCardManaRestore,30/50/70,10,30,50,70,90,110,130
+Set 1,1,base,Set1,9.21,Twisted Fate,Twisted Fate,Pick a Card,GoldCardDamage,150/250/350,50,150,250,350,450,550,650
+Set 1,1,base,Set1,9.21,Twisted Fate,Twisted Fate,Pick a Card,GoldCardStunDuration,2/3/4,1,2,3,4,5,6,7
+Set 1,1,base,Set1,9.21,Twisted Fate,Twisted Fate,Pick a Card,RedCardDamage,150/250/350,50,150,250,350,450,550,650
+Set 1,1,base,Set1,9.21,Varus,Varus,Piercing Arrow,Damage,300/550/800,50,300,550,800,1050,1300,1550
+Set 1,1,base,Set1,9.21,Varus,Varus,Piercing Arrow,HexRange,8,8,8,8,8,8,8,8
+Set 1,1,base,Set1,9.21,Vayne,Vayne,Silver Bolts,PercentDamage,0.08/0.12/0.16,0.04,0.08,0.12,0.16,0.2,0.24,0.28
+Set 1,1,base,Set1,9.21,Veigar,Veigar,Primordial Burst,Damage,350/650/950,50,350,650,950,1250,1550,1850
+Set 1,1,base,Set1,9.21,Veigar,Veigar,Primordial Burst,LowerStarDamage,19999,19999,19999,19999,19999,19999,19999,19999
+Set 1,1,base,Set1,9.21,Vi,Vi,Assault and Battery,CCDuration,2/2.5/3,1.5,2,2.5,3,3.5,4,4.5
+Set 1,1,base,Set1,9.21,Vi,Vi,Assault and Battery,Damage,300/500/700,100,300,500,700,900,1100,1300
+Set 1,1,base,Set1,9.21,Vi,Vi,Assault and Battery,MoveSpeed,1000,1000,1000,1000,1000,1000,1000,1000
+Set 1,1,base,Set1,9.21,Vi,Vi,Assault and Battery,OthersCCDuration,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25
+Set 1,1,base,Set1,9.21,Volibear,Volibear,Thunder Claws,BuffDuration,20,20,20,20,20,20,20,20
+Set 1,1,base,Set1,9.21,Volibear,Volibear,Thunder Claws,ChainADMult,0.8/0.9/1,0.7,0.8,0.9,1,1.1,1.2,1.3
+Set 1,1,base,Set1,9.21,Volibear,Volibear,Thunder Claws,HexRange,1,1,1,1,1,1,1,1
+Set 1,1,base,Set1,9.21,Volibear,Volibear,Thunder Claws,MaxBounces,2/3/4,1,2,3,4,5,6,7
+Set 1,1,base,Set1,9.21,Volibear,Volibear,Thunder Claws,SizeIncrease,0.08,0.08,0.08,0.08,0.08,0.08,0.08,0.08
+Set 1,1,base,Set1,9.21,Warwick,Warwick,Infinite Duress,BaseDamage,150/225/300,75,150,225,300,375,450,525
+Set 1,1,base,Set1,9.21,Warwick,Warwick,Infinite Duress,DashHexSpeed,6,6,6,6,6,6,6,6
+Set 1,1,base,Set1,9.21,Warwick,Warwick,Infinite Duress,Duration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
+Set 1,1,base,Set1,9.21,Warwick,Warwick,Infinite Duress,Hits,3,3,3,3,3,3,3,3
+Set 1,1,base,Set1,9.21,Yasuo,Yasuo,Steel Tempest,Damage,150/350/550,-50,150,350,550,750,950,1150
+Set 1,1,base,Set1,9.21,Yasuo,Yasuo,Steel Tempest,QCountForEmpower,2,2,2,2,2,2,2,2
+Set 1,1,base,Set1,9.21,Yasuo,Yasuo,Steel Tempest,QEmpowerHexRange,6,6,6,6,6,6,6,6
+Set 1,1,base,Set1,9.21,Yasuo,Yasuo,Steel Tempest,QHexRange,2,2,2,2,2,2,2,2
+Set 1,1,base,Set1,9.21,Yasuo,Yasuo,Steel Tempest,QKnockupDuration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
+Set 1,1,base,Set1,9.21,Yasuo,Yasuo,Steel Tempest,QWidth,75,75,75,75,75,75,75,75
+Set 1,1,base,Set1,9.21,Zed,Zed,Razor Shuriken,Damage,200/350/500,50,200,350,500,650,800,950
+Set 1,1,base,Set1,9.21,Zed,Zed,Razor Shuriken,HexRange,4,4,4,4,4,4,4,4
+Set 2,2,base,Set2,10.5,TFT2_Aatrox,Aatrox,The Arclight Blade,Damage,300/600/1200,0,300,600,1200,1200,1250,1500
+Set 2,2,base,Set2,10.5,TFT2_Amumu,Amumu,Curse of the Sad Mummy,RDamage,100/200/1337,0,100,200,1337,800,1000,1200
+Set 2,2,base,Set2,10.5,TFT2_Amumu,Amumu,Curse of the Sad Mummy,RDuration,1.5/2/10,1,1.5,2,10,10,10,10
+Set 2,2,base,Set2,10.5,TFT2_Amumu,Amumu,Curse of the Sad Mummy,RRange,3,3,3,3,3,3,3,3
+Set 2,2,base,Set2,10.5,TFT2_Annie,Annie,Tibbers!,HexRange,1,1,1,1,1,1,1,1
+Set 2,2,base,Set2,10.5,TFT2_Annie,Annie,Tibbers!,StunDamage,100/200/300,0,100,200,300,400,500,600
+Set 2,2,base,Set2,10.5,TFT2_Annie,Annie,Tibbers!,TibbersDamage,125/350/1500,-50,125,350,1500,750,950,1150
+Set 2,2,base,Set2,10.5,TFT2_Annie,Annie,Tibbers!,TibbersHP,1600/2200/3000,1600,1600,2200,3000,3000,3000,3000
+Set 2,2,base,Set2,10.5,TFT2_Ashe,Ashe,Ranger's Focus,AttackSpeed,0.5/0.75/1,0.25,0.5,0.75,1,1.25,1.5,1.75
+Set 2,2,base,Set2,10.5,TFT2_Ashe,Ashe,Ranger's Focus,Duration,5,5,5,5,5,5,5,5
+Set 2,2,base,Set2,10.5,TFT2_Ashe,Ashe,Ranger's Focus,NumArrows,5,5,5,5,5,5,5,5
+Set 2,2,base,Set2,10.5,TFT2_Ashe,Ashe,Ranger's Focus,PercentADPerArrow,0.3/0.35/0.75,0.25,0.3,0.35,0.75,0.75,0.75,0.75
+Set 2,2,base,Set2,10.5,TFT2_Azir,Azir,Arise!,SoldierDamage,150/275/450,25,150,275,450,525,650,775
+Set 2,2,base,Set2,10.5,TFT2_Azir,Azir,Arise!,SoldierDuration,6,6,6,6,6,6,6,6
+Set 2,2,base,Set2,10.5,TFT2_Brand,Brand,Pyroclasm,Damage,225/300/600,175,225,300,600,600,600,600
+Set 2,2,base,Set2,10.5,TFT2_Brand,Brand,Pyroclasm,MaxBounces,5/7/20,4,5,7,20,20,20,20
+Set 2,2,base,Set2,10.5,TFT2_Braum,Braum,Unbreakable,ShieldDR,80/85/90,75,80,85,90,95,100,105
+Set 2,2,base,Set2,10.5,TFT2_Braum,Braum,Unbreakable,ShieldDuration,4,4,4,4,4,4,4,4
+Set 2,2,base,Set2,10.5,TFT2_Diana,Diana,Flame Cascade,OrbDamage,80/100/120,60,80,100,120,140,160,180
+Set 2,2,base,Set2,10.5,TFT2_Diana,Diana,Flame Cascade,Orbs,3/4/6,2,3,4,6,7,7,8
+Set 2,2,base,Set2,10.5,TFT2_Diana,Diana,Flame Cascade,ShieldDuration,4,4,4,4,4,4,4,4
+Set 2,2,base,Set2,10.5,TFT2_Diana,Diana,Flame Cascade,ShieldValue,150/250/350,50,150,250,350,450,550,650
+Set 2,2,base,Set2,10.5,TFT2_DrMundo,Dr. Mundo,Adrenaline Rush,BaseDamage,50/100/200,0,50,100,200,200,250,300
+Set 2,2,base,Set2,10.5,TFT2_DrMundo,Dr. Mundo,Adrenaline Rush,Duration,8,8,8,8,8,8,8,8
+Set 2,2,base,Set2,10.5,TFT2_DrMundo,Dr. Mundo,Adrenaline Rush,HealRatio,1/1.25/1.5,0.75,1,1.25,1.5,1.75,2,2.25
+Set 2,2,base,Set2,10.5,TFT2_DrMundo,Dr. Mundo,Adrenaline Rush,HealthPercent,1.25,1.25,1.25,1.25,1.25,1.25,1.25,1.25
+Set 2,2,base,Set2,10.5,TFT2_Ezreal,Ezreal,Ice Shot,BaseDamage,250/450/900,0,250,450,900,900,1000,1200
+Set 2,2,base,Set2,10.5,TFT2_Ivern,Ivern,Triggerseed,Duration,5,5,5,5,5,5,5,5
+Set 2,2,base,Set2,10.5,TFT2_Ivern,Ivern,Triggerseed,ShieldAmount,200/300/400,100,200,300,400,500,600,700
+Set 2,2,base,Set2,10.5,TFT2_Janna,Janna,Monsoon,Duration,3,3,3,3,3,3,3,3
+Set 2,2,base,Set2,10.5,TFT2_Janna,Janna,Monsoon,HealAmountPercent,25/35/200,10,25,35,200,200,200,100
+Set 2,2,base,Set2,10.5,TFT2_Janna,Janna,Monsoon,Radius,3,3,3,3,3,3,3,3
+Set 2,2,base,Set2,10.5,TFT2_Janna,Janna,Monsoon,StunDuration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
+Set 2,2,base,Set2,10.5,TFT2_Janna,Janna,Monsoon,TicksPerSecond,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
+Set 2,2,base,Set2,10.5,TFT2_Jax,Jax,Counter Strike,AttackRadius,1,1,1,1,1,1,1,1
+Set 2,2,base,Set2,10.5,TFT2_Jax,Jax,Counter Strike,Damage,150/300/550,50,150,300,550,550,550,650
+Set 2,2,base,Set2,10.5,TFT2_Jax,Jax,Counter Strike,Duration,2,2,2,2,2,2,2,2
+Set 2,2,base,Set2,10.5,TFT2_Jax,Jax,Counter Strike,StunDuration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
+Set 2,2,base,Set2,10.5,TFT2_Karma,Karma,Inspire,Duration,5,5,5,5,5,5,5,5
+Set 2,2,base,Set2,10.5,TFT2_Karma,Karma,Inspire,ShieldAmount,250/400/800,100,250,400,800,700,850,1000
+Set 2,2,base,Set2,10.5,TFT2_Karma,Karma,Inspire,StatsValue,35/50/100,20,35,50,100,100,120,140
+Set 2,2,base,Set2,10.5,TFT2_Khazix,Kha'Zix,Arid Assault,Damage,100/200/500,0,100,200,500,500,500,500
+Set 2,2,base,Set2,10.5,TFT2_Khazix,Kha'Zix,Arid Assault,Duration,2/1.25/0.5,2.75,2,1.25,0.5,-0.25,-1,-1.75
+Set 2,2,base,Set2,10.5,TFT2_Khazix,Kha'Zix,Arid Assault,MSBuff,1000/1500/2000,500,1000,1500,2000,2500,3000,3500
+Set 2,2,base,Set2,10.5,TFT2_Khazix,Kha'Zix,Arid Assault,ManaRefund,5/10/15,0,5,10,15,20,25,30
+Set 2,2,base,Set2,10.5,TFT2_Kindred,Kindred,Dance of Dread,Damage,150/325/650,-25,150,325,650,675,850,1025
+Set 2,2,base,Set2,10.5,TFT2_Kindred,Kindred,Dance of Dread,GrievousWoundsDuration,5,5,5,5,5,5,5,5
+Set 2,2,base,Set2,10.5,TFT2_Kindred,Kindred,Dance of Dread,HexRange,2,2,2,2,2,2,2,2
+Set 2,2,base,Set2,10.5,TFT2_KogMaw,Kog'Maw,Living Artillery,Damage,150/300/500,0,150,300,500,600,750,900
+Set 2,2,base,Set2,10.5,TFT2_KogMaw,Kog'Maw,Living Artillery,DelayTime,0.35,0.35,0.35,0.35,0.35,0.35,0.35,0.35
+Set 2,2,base,Set2,10.5,TFT2_LeBlanc,LeBlanc,Ethereal Chain,Damage,225/475/800,-50,225,475,800,950,1200,1450
+Set 2,2,base,Set2,10.5,TFT2_LeBlanc,LeBlanc,Ethereal Chain,DelayTime,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
+Set 2,2,base,Set2,10.5,TFT2_LeBlanc,LeBlanc,Ethereal Chain,NumTargets,1,1,1,1,1,1,1,1
+Set 2,2,base,Set2,10.5,TFT2_LeBlanc,LeBlanc,Ethereal Chain,StunDuration,1.5,0,1.5,1.5,1.5,1.5,1.5,1.5
+Set 2,2,base,Set2,10.5,TFT2_Leona,Leona,Lunar Barrier,Duration,4,4,4,4,4,4,4,4
+Set 2,2,base,Set2,10.5,TFT2_Leona,Leona,Lunar Barrier,FlatDamageReduction,40/80/120,0,40,80,120,160,200,240
+Set 2,2,base,Set2,10.5,TFT2_Lucian,Lucian,The Culling,AttacksPerSecondCoefficient,1,1,1,1,1,1,1,1
+Set 2,2,base,Set2,10.5,TFT2_Lucian,Lucian,The Culling,BaseDamage,40/50/100,30,40,50,100,100,80,90
+Set 2,2,base,Set2,10.5,TFT2_Lucian,Lucian,The Culling,Duration,4,4,4,4,4,4,4,4
+Set 2,2,base,Set2,10.5,TFT2_Lucian,Lucian,The Culling,NumShots,12,12,12,12,12,12,12,12
+Set 2,2,base,Set2,10.5,TFT2_Lucian,Lucian,The Culling,TADRatio,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
+Set 2,2,base,Set2,10.5,TFT2_LuxCrystal,Lux,Final Spark,Damage,550/900/99999,200,550,900,99999,1400,1700,2000
+Set 2,2,base,Set2,10.5,TFT2_LuxElectric,Lux,Final Spark,Damage,550/900/99999,200,550,900,99999,1400,1700,2000
+Set 2,2,base,Set2,10.5,TFT2_LuxGlacial,Lux,Final Spark,Damage,550/900/99999,200,550,900,99999,1400,1700,2000
+Set 2,2,base,Set2,10.5,TFT2_LuxInferno,Lux,Final Spark,Damage,550/900/99999,200,550,900,99999,1400,1700,2000
+Set 2,2,base,Set2,10.5,TFT2_LuxLight,Lux,Final Spark,Damage,550/900/99999,200,550,900,99999,1400,1700,2000
+Set 2,2,base,Set2,10.5,TFT2_LuxMetal,Lux,Final Spark,Damage,550/900/99999,200,550,900,99999,1400,1700,2000
+Set 2,2,base,Set2,10.5,TFT2_LuxOcean,Lux,Final Spark,Damage,550/900/99999,200,550,900,99999,1400,1700,2000
+Set 2,2,base,Set2,10.5,TFT2_LuxShadow,Lux,Final Spark,Damage,550/900/99999,200,550,900,99999,1400,1700,2000
+Set 2,2,base,Set2,10.5,TFT2_LuxWind,Lux,Final Spark,Damage,550/900/99999,200,550,900,99999,1400,1700,2000
+Set 2,2,base,Set2,10.5,TFT2_LuxWoodland,Lux,Final Spark,Damage,550/900/99999,200,550,900,99999,1400,1700,2000
+Set 2,2,base,Set2,10.5,TFT2_LuxCrystal,Lux,Final Spark,ManaRefund,50,50,50,50,50,50,50,50
+Set 2,2,base,Set2,10.5,TFT2_LuxElectric,Lux,Final Spark,ManaRefund,50,50,50,50,50,50,50,50
+Set 2,2,base,Set2,10.5,TFT2_LuxGlacial,Lux,Final Spark,ManaRefund,50,50,50,50,50,50,50,50
+Set 2,2,base,Set2,10.5,TFT2_LuxInferno,Lux,Final Spark,ManaRefund,50,50,50,50,50,50,50,50
+Set 2,2,base,Set2,10.5,TFT2_LuxLight,Lux,Final Spark,ManaRefund,50,50,50,50,50,50,50,50
+Set 2,2,base,Set2,10.5,TFT2_LuxMetal,Lux,Final Spark,ManaRefund,50,50,50,50,50,50,50,50
+Set 2,2,base,Set2,10.5,TFT2_LuxOcean,Lux,Final Spark,ManaRefund,50,50,50,50,50,50,50,50
+Set 2,2,base,Set2,10.5,TFT2_LuxShadow,Lux,Final Spark,ManaRefund,50,50,50,50,50,50,50,50
+Set 2,2,base,Set2,10.5,TFT2_LuxWind,Lux,Final Spark,ManaRefund,50,50,50,50,50,50,50,50
+Set 2,2,base,Set2,10.5,TFT2_LuxWoodland,Lux,Final Spark,ManaRefund,50,50,50,50,50,50,50,50
+Set 2,2,base,Set2,10.5,TFT2_Malphite,Malphite,Unstoppable Force,Damage,150/300/1000,0,150,300,1000,1000,1000,900
+Set 2,2,base,Set2,10.5,TFT2_Malphite,Malphite,Unstoppable Force,KnockupDuration,1,1,1,1,1,1,1,1
+Set 2,2,base,Set2,10.5,TFT2_Malphite,Malphite,Unstoppable Force,Radius,2,2,2,2,2,2,2,2
+Set 2,2,base,Set2,10.5,TFT2_Malphite,Malphite,Unstoppable Force,StunDuration,2/2.5/5,1.5,2,2.5,5,3.5,4,4.5
+Set 2,2,base,Set2,10.5,TFT2_Malzahar,Malzahar,Shadow Swarm,NumVoidlings,2/3/4,1,2,3,4,5,6,7
+Set 2,2,base,Set2,10.5,TFT2_Malzahar,Malzahar,Shadow Swarm,VoidlingDamage,40/70/100,10,40,70,100,130,160,190
+Set 2,2,base,Set2,10.5,TFT2_Malzahar,Malzahar,Shadow Swarm,VoidlingHP,250/300/400,250,250,300,400,400,400,400
+Set 2,2,base,Set2,10.5,TFT2_Maokai,Maokai,Sap Magic,BuffDuration,6,6,6,6,6,6,6,6
+Set 2,2,base,Set2,10.5,TFT2_Maokai,Maokai,Sap Magic,HealAmount,100/150/200,50,100,150,200,250,300,350
+Set 2,2,base,Set2,10.5,TFT2_MasterYi,Master Yi,Meditate,AttackSpeed,1,1,1,1,1,1,1,1
+Set 2,2,base,Set2,10.5,TFT2_MasterYi,Master Yi,Meditate,BuffDuration,6,6,6,6,6,6,6,6
+Set 2,2,base,Set2,10.5,TFT2_MasterYi,Master Yi,Meditate,Damage,40/80/500,40,40,80,500,500,500,500
+Set 2,2,base,Set2,10.5,TFT2_MasterYi,Master Yi,Meditate,HealAmount,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3
+Set 2,2,base,Set2,10.5,TFT2_MasterYi,Master Yi,Meditate,MeditateDuration,1,1,1,1,1,1,1,1
+Set 2,2,base,Set2,10.5,TFT2_Nami,Nami,Tidal Wave,AllyBuffDuration,8,8,8,8,8,8,8,8
+Set 2,2,base,Set2,10.5,TFT2_Nami,Nami,Tidal Wave,AllyDamageBonus,25/50/300,0,25,50,300,500,500,500
+Set 2,2,base,Set2,10.5,TFT2_Nami,Nami,Tidal Wave,Damage,100/200/300,0,100,200,300,400,500,600
+Set 2,2,base,Set2,10.5,TFT2_Nami,Nami,Tidal Wave,StunDuration,1.5/2/2.5,1,1.5,2,2.5,3,3.5,4
+Set 2,2,base,Set2,10.5,TFT2_Nasus,Nasus,Fury of the Dawn,BonusHealth,250/400/550,100,250,400,550,700,850,1000
+Set 2,2,base,Set2,10.5,TFT2_Nasus,Nasus,Fury of the Dawn,Damage,50/70/90,30,50,70,90,110,130,150
+Set 2,2,base,Set2,10.5,TFT2_Nasus,Nasus,Fury of the Dawn,Duration,7,7,7,7,7,7,7,7
+Set 2,2,base,Set2,10.5,TFT2_Nautilus,Nautilus,Depth Charge,Damage,100/200/400,0,100,200,400,400,500,600
+Set 2,2,base,Set2,10.5,TFT2_Nautilus,Nautilus,Depth Charge,StunDuration,3/4/6,1,3,4,6,6,7,8
+Set 2,2,base,Set2,10.5,TFT2_Neeko,Neeko,Blooming Burst,Damage,100/200/350,0,100,200,350,400,500,600
+Set 2,2,base,Set2,10.5,TFT2_Neeko,Neeko,Blooming Burst,Radius1,,,,,,,,
+Set 2,2,base,Set2,10.5,TFT2_Neeko,Neeko,Blooming Burst,Radius2,1,1,1,1,1,1,1,1
+Set 2,2,base,Set2,10.5,TFT2_Neeko,Neeko,Blooming Burst,Radius3,2,2,2,2,2,2,2,2
+Set 2,2,base,Set2,10.5,TFT2_Nocturne,Nocturne,Steel Blades,HealPercent,0.5/0.6/0.7,0.4,0.5,0.6,0.7,0.8,0.9,1
+Set 2,2,base,Set2,10.5,TFT2_Olaf,Olaf,Ragnarok,AttackSpeed,1.25/1.5/4.5,0.5,1.25,1.5,4.5,4.5,4.5,3
+Set 2,2,base,Set2,10.5,TFT2_Olaf,Olaf,Ragnarok,Duration,5,5,5,5,5,5,5,5
+Set 2,2,base,Set2,10.5,TFT2_Olaf,Olaf,Ragnarok,HealthThreshold,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
+Set 2,2,base,Set2,10.5,TFT2_Olaf,Olaf,Ragnarok,LifeSteal,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
+Set 2,2,base,Set2,10.5,TFT2_Ornn,Ornn,Lightning Breath,CritAmpPercent,25,25,25,25,25,25,25,25
+Set 2,2,base,Set2,10.5,TFT2_Ornn,Ornn,Lightning Breath,Damage,125/250/450,0,125,250,450,500,625,750
+Set 2,2,base,Set2,10.5,TFT2_Ornn,Ornn,Lightning Breath,Duration,10,10,10,10,10,10,10,10
+Set 2,2,base,Set2,10.5,TFT2_Qiyana,Qiyana,Elemental Blade,BaseDamage,300/500/900,100,300,500,900,900,1100,1300
+Set 2,2,base,Set2,10.5,TFT2_QiyanaOcean,Qiyana,Elemental Blade,BaseDamage,300/500/900,100,300,500,900,900,1100,1300
+Set 2,2,base,Set2,10.5,TFT2_QiyanaInferno,Qiyana,Elemental Blade,BaseDamage,300/500/900,100,300,500,900,900,1100,1300
+Set 2,2,base,Set2,10.5,TFT2_QiyanaWoodland,Qiyana,Elemental Blade,BaseDamage,300/500/900,100,300,500,900,900,1100,1300
+Set 2,2,base,Set2,10.5,TFT2_QiyanaWind,Qiyana,Elemental Blade,BaseDamage,300/500/900,100,300,500,900,900,1100,1300
+Set 2,2,base,Set2,10.5,TFT2_Qiyana,Qiyana,Elemental Blade,CCDuration,2.5/3.5/4.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5
+Set 2,2,base,Set2,10.5,TFT2_QiyanaOcean,Qiyana,Elemental Blade,CCDuration,2.5/3.5/4.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5
+Set 2,2,base,Set2,10.5,TFT2_QiyanaInferno,Qiyana,Elemental Blade,CCDuration,2.5/3.5/4.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5
+Set 2,2,base,Set2,10.5,TFT2_QiyanaWoodland,Qiyana,Elemental Blade,CCDuration,2.5/3.5/4.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5
+Set 2,2,base,Set2,10.5,TFT2_QiyanaWind,Qiyana,Elemental Blade,CCDuration,2.5/3.5/4.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5
+Set 2,2,base,Set2,10.5,TFT2_RekSai,Rek'Sai,Furious Bite,ArmorReduction,100,100,100,100,100,100,100,100
+Set 2,2,base,Set2,10.5,TFT2_RekSai,Rek'Sai,Furious Bite,Damage,250/550/1000,-50,250,550,1000,1150,1450,1750
+Set 2,2,base,Set2,10.5,TFT2_RekSai,Rek'Sai,Furious Bite,Duration,5,5,5,5,5,5,5,5
+Set 2,2,base,Set2,10.5,TFT2_Renekton,Renekton,Cull the Meek,BaseDamage,150/275/475,25,150,275,475,525,650,775
+Set 2,2,base,Set2,10.5,TFT2_Renekton,Renekton,Cull the Meek,HealAmount,150/225/300,75,150,225,300,375,450,525
+Set 2,2,base,Set2,10.5,TFT2_Renekton,Renekton,Cull the Meek,HexRadius,1,1,1,1,1,1,1,1
+Set 2,2,base,Set2,10.5,TFT2_Senna,Senna,Piercing Darkness,AllyBuffDuration,5,5,5,5,5,5,5,5
+Set 2,2,base,Set2,10.5,TFT2_Senna,Senna,Piercing Darkness,AllyDamageBonus,20/45/70,0,20,45,70,120,150,180
+Set 2,2,base,Set2,10.5,TFT2_Senna,Senna,Piercing Darkness,Damage,50/100/150,0,50,100,150,200,250,300
+Set 2,2,base,Set2,10.5,TFT2_Singed,Singed,Poison Trail,CloudDuration,3.25,3.25,3.25,3.25,3.25,3.25,3.25,3.25
+Set 2,2,base,Set2,10.5,TFT2_Singed,Singed,Poison Trail,MSModifier,0.75,0.75,0.75,0.75,0.75,0.75,0.75,0.75
+Set 2,2,base,Set2,10.5,TFT2_Singed,Singed,Poison Trail,PoisonDuration,6,6,6,6,6,6,6,6
+Set 2,2,base,Set2,10.5,TFT2_Singed,Singed,Poison Trail,TickRate,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5
+Set 2,2,base,Set2,10.5,TFT2_Singed,Singed,Poison Trail,TotalDamage,225/300/2000,0,225,300,2000,1000,1250,1500
+Set 2,2,base,Set2,10.5,TFT2_Sion,Sion,Decimating Smash,ChargeUpTime,0.75,0.75,0.75,0.75,0.75,0.75,0.75,0.75
+Set 2,2,base,Set2,10.5,TFT2_Sion,Sion,Decimating Smash,Damage,200/350/700,0,200,350,700,800,1000,1200
+Set 2,2,base,Set2,10.5,TFT2_Sion,Sion,Decimating Smash,HexRange,2,2,2,2,2,2,2,2
+Set 2,2,base,Set2,10.5,TFT2_Sivir,Sivir,Ricochet,BounceRange,2,2,2,2,2,2,2,2
+Set 2,2,base,Set2,10.5,TFT2_Sivir,Sivir,Ricochet,Duration,5,5,5,5,5,5,5,5
+Set 2,2,base,Set2,10.5,TFT2_Sivir,Sivir,Ricochet,NumBounces,5/7/9,3,5,7,9,11,13,15
+Set 2,2,base,Set2,10.5,TFT2_Sivir,Sivir,Ricochet,PercentDamage,1/1.25/1.5,0.75,1,1.25,1.5,1.75,2,2.25
+Set 2,2,base,Set2,10.5,TFT2_Skarner,Skarner,Crystalline Exoskeleton,AttackSpeed,0.5/0.75/1,0.25,0.5,0.75,1,1.25,1.5,1.75
+Set 2,2,base,Set2,10.5,TFT2_Skarner,Skarner,Crystalline Exoskeleton,Duration,8,8,8,8,8,8,8,8
+Set 2,2,base,Set2,10.5,TFT2_Skarner,Skarner,Crystalline Exoskeleton,ShieldAmount,150/450/750,-150,150,450,750,1050,1350,1650
+Set 2,2,base,Set2,10.5,TFT2_Soraka,Soraka,Equinox,Damage,150/300/450,0,150,300,450,600,750,900
+Set 2,2,base,Set2,10.5,TFT2_Soraka,Soraka,Equinox,Radius,1,1,1,1,1,1,1,1
+Set 2,2,base,Set2,10.5,TFT2_Soraka,Soraka,Equinox,ZoneDuration,3/5/7,1,3,5,7,9,11,13
+Set 2,2,base,Set2,10.5,TFT2_Syndra,Syndra,Hydro Sphere,Damage,225/375/650,0,225,375,650,650,875,1050
+Set 2,2,base,Set2,10.5,TFT2_Syndra,Syndra,Hydro Sphere,HexRadius,2,2,2,2,2,2,2,2
+Set 2,2,base,Set2,10.5,TFT2_Taliyah,Taliyah,Seismic Shove,Damage,150/350/550,-50,150,350,550,750,950,1150
+Set 2,2,base,Set2,10.5,TFT2_Taliyah,Taliyah,Seismic Shove,StunDuration,2,0,2,2,2,2,2,2
+Set 2,2,base,Set2,10.5,TFT2_Taliyah,Taliyah,Seismic Shove,ThrowDistance,2,2,2,2,2,2,2,2
+Set 2,2,base,Set2,10.5,TFT2_Taric,Taric,Cosmic Radiance,HexRange,2/3/4,1,2,3,4,5,6,7
+Set 2,2,base,Set2,10.5,TFT2_Taric,Taric,Cosmic Radiance,InitialDelay,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
+Set 2,2,base,Set2,10.5,TFT2_Taric,Taric,Cosmic Radiance,InvulnDuration,2.5/2.5/8,3,2.5,2.5,8,3,3,3
+Set 2,2,base,Set2,10.5,TFT2_Thresh,Thresh,Deep Sea Lantern,Duration,5,5,5,5,5,5,5,5
+Set 2,2,base,Set2,10.5,TFT2_Thresh,Thresh,Deep Sea Lantern,Radius,1,1,1,1,1,1,1,1
+Set 2,2,base,Set2,10.5,TFT2_Thresh,Thresh,Deep Sea Lantern,ShieldAmount,250/400/600,100,250,400,600,700,850,1000
+Set 2,2,base,Set2,10.5,TFT2_Twitch,Twitch,Spray and Pray,ADAmp,1.3/1.6/3,1,1.3,1.6,3,2.25,2.5,2.75
+Set 2,2,base,Set2,10.5,TFT2_Twitch,Twitch,Spray and Pray,Duration,8,8,8,8,8,8,8,8
+Set 2,2,base,Set2,10.5,TFT2_Varus,Varus,Piercing Arrow,Damage,225/450/800,0,225,450,800,900,1125,1350
+Set 2,2,base,Set2,10.5,TFT2_Varus,Varus,Piercing Arrow,HexRange,8,8,8,8,8,8,8,8
+Set 2,2,base,Set2,10.5,TFT2_Vayne,Vayne,Silver Bolts,PercentDamage,0.1/0.13/0.16,0.07,0.1,0.13,0.16,0.19,0.22,0.25
+Set 2,2,base,Set2,10.5,TFT2_Veigar,Veigar,Primordial Burst,Damage,325/650/975,0,325,650,975,1300,1625,1950
+Set 2,2,base,Set2,10.5,TFT2_Vladimir,Vladimir,Drain,Damage,200/325/500,75,200,325,500,575,700,825
+Set 2,2,base,Set2,10.5,TFT2_Vladimir,Vladimir,Drain,HealingAmp,,,,,,,,
+Set 2,2,base,Set2,10.5,TFT2_Vladimir,Vladimir,Drain,HealthThreshold,,,,,,,,
+Set 2,2,base,Set2,10.5,TFT2_Volibear,Volibear,Frenzied Bite,Damage,200/450/850,-50,200,450,850,950,1200,1450
+Set 2,2,base,Set2,10.5,TFT2_Volibear,Volibear,Frenzied Bite,ExecuteDamage,19999,19999,19999,19999,19999,19999,19999,19999
+Set 2,2,base,Set2,10.5,TFT2_Volibear,Volibear,Frenzied Bite,ExecuteThreshold,0.35,0.35,0.35,0.35,0.35,0.35,0.35,0.35
+Set 2,2,base,Set2,10.5,TFT2_Warwick,Warwick,Infinite Duress,BaseDamage,200/500/800,-100,200,500,800,1100,1400,1700
+Set 2,2,base,Set2,10.5,TFT2_Warwick,Warwick,Infinite Duress,DashHexSpeed,6,6,6,6,6,6,6,6
+Set 2,2,base,Set2,10.5,TFT2_Warwick,Warwick,Infinite Duress,Duration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
+Set 2,2,base,Set2,10.5,TFT2_Warwick,Warwick,Infinite Duress,Hits,3,3,3,3,3,3,3,3
+Set 2,2,base,Set2,10.5,TFT2_Yasuo,Yasuo,Last Breath,Damage,100,100,100,100,100,100,100,100
+Set 2,2,base,Set2,10.5,TFT2_Yasuo,Yasuo,Last Breath,NumHits,4/5/6,3,4,5,6,7,8,9
+Set 2,2,base,Set2,10.5,TFT2_Yasuo,Yasuo,Last Breath,StunDuration,1,1,1,1,1,1,1,1
+Set 2,2,base,Set2,10.5,TFT2_Yorick,Yorick,Shepherd of Souls,GhoulAD,100/175/250,25,100,175,250,325,400,475
+Set 2,2,base,Set2,10.5,TFT2_Yorick,Yorick,Shepherd of Souls,GhoulHealth,500/700/2000,150,500,700,2000,2000,2200,2600
+Set 2,2,base,Set2,10.5,TFT2_Yorick,Yorick,Shepherd of Souls,NumAlliesToTarget,2/3/12,1,2,3,12,5,6,7
+Set 2,2,base,Set2,10.5,TFT2_Zed,Zed,Living Lightning,Clones,1,1,1,1,1,1,1,1
+Set 2,2,base,Set2,10.5,TFT2_Zed,Zed,Living Lightning,ManaCostIncrease,50/25/-125,75,50,25,-125,-25,-50,-75
+Set 2,2,base,Set2,10.5,TFT2_Zyra,Zyra,Rampant Growth,NumPlants,2/3/5,1,2,3,5,5,6,7
+Set 2,2,base,Set2,10.5,TFT2_Zyra,Zyra,Rampant Growth,PlantAD,55/65/75,45,55,65,75,85,95,105
+Set 2,2,base,Set2,10.5,TFT2_Zyra,Zyra,Rampant Growth,PlantAmmo,4,4,4,4,4,4,4,4
+Set 2,2,base,Set2,10.5,TFT2_Zyra,Zyra,Rampant Growth,PlantDuration,4,4,4,4,4,4,4,4
+Set 3,3,base,Set3,10.11,TFT3_Ahri,Ahri,Orb of Deception,Damage,175/250/375,150,175,250,375,500,400,400
+Set 3,3,base,Set3,10.11,TFT3_Ahri,Ahri,Orb of Deception,HexRange,4,4,4,4,4,4,4,4
+Set 3,3,base,Set3,10.11,TFT3_Annie,Annie,Galaxy Shield-Blast,Damage,150/200/300,100,150,200,300,450,450,450
+Set 3,3,base,Set3,10.11,TFT3_Annie,Annie,Galaxy Shield-Blast,ShieldAmount,270/360/540,200,270,360,540,700,450,450
+Set 3,3,base,Set3,10.11,TFT3_Annie,Annie,Galaxy Shield-Blast,ShieldDuration,4,4,4,4,4,4,4,4
+Set 3,3,base,Set3,10.11,TFT3_Ashe,Ashe,Enchanted Crystal Arrow,Damage,250/350/700,250,250,350,700,800,800,800
+Set 3,3,base,Set3,10.11,TFT3_Ashe,Ashe,Enchanted Crystal Arrow,StunDurationPerSquare,2,2,2,2,2,2,2,2
+Set 3,3,base,Set3,10.11,TFT3_AurelionSol,Aurelion Sol,Mobilize the Fleet,Damage,100/150/750,0,100,150,750,1000,1000,1000
+Set 3,3,base,Set3,10.11,TFT3_AurelionSol,Aurelion Sol,Mobilize the Fleet,FightersPerCast,3,3,3,3,3,3,3,3
+Set 3,3,base,Set3,10.11,TFT3_AurelionSol,Aurelion Sol,Mobilize the Fleet,InitialFighters,,,,,,,,
+Set 3,3,base,Set3,10.11,TFT3_Blitzcrank,Blitzcrank,Rocket Grab,Damage,250/400/900,-50,250,400,900,950,1200,1450
+Set 3,3,base,Set3,10.11,TFT3_Blitzcrank,Blitzcrank,Rocket Grab,StunDuration,2.5,2.5,2.5,2.5,2.5,2.5,2.5,2.5
+Set 3,3,base,Set3,10.11,TFT3_Caitlyn,Caitlyn,Ace In The Hole,Damage,750/1500/3000,0,750,1500,3000,2400,3000,3600
+Set 3,3,base,Set3,10.11,TFT3_ChoGath,Cho'Gath,Rupture,Damage,150/250/2000,0,150,250,2000,800,800,800
+Set 3,3,base,Set3,10.11,TFT3_ChoGath,Cho'Gath,Rupture,KnockDuration,2/2/4,2,2,2,4,4,4,4
+Set 3,3,base,Set3,10.11,TFT3_ChoGath,Cho'Gath,Rupture,RuptureDelay,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
+Set 3,3,base,Set3,10.11,TFT3_Darius,Darius,Dreadnova Guillotine,Damage,400/500/750,50,400,500,750,1100,1300,1550
+Set 3,3,base,Set3,10.11,TFT3_Darius,Darius,Dreadnova Guillotine,DamageMultiplier,2,2,2,2,2,2,2,2
+Set 3,3,base,Set3,10.11,TFT3_Darius,Darius,Dreadnova Guillotine,HealthThreshold,50,50,50,50,50,50,50,50
+Set 3,3,base,Set3,10.11,TFT3_Ekko,Ekko,Chronobreak,BaseDelayBetweenAttacks,0.4,0.4,0.4,0.4,0.4,0.4,0.4,0.4
+Set 3,3,base,Set3,10.11,TFT3_Ekko,Ekko,Chronobreak,BonusDamage,225/400/2000,200,225,400,2000,1200,1000,1000
+Set 3,3,base,Set3,10.11,TFT3_Ezreal,Ezreal,E.M.P.,Damage,200/300/600,0,200,300,600,800,1000,1200
+Set 3,3,base,Set3,10.11,TFT3_Ezreal,Ezreal,E.M.P.,HexRadius,2,2,2,2,2,2,2,2
+Set 3,3,base,Set3,10.11,TFT3_Ezreal,Ezreal,E.M.P.,PercentCostIncrease,40,3,40,40,40,40,40,40
+Set 3,3,base,Set3,10.11,TFT3_Fiora,Fiora,Riposte,BlockDuration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
+Set 3,3,base,Set3,10.11,TFT3_Fiora,Fiora,Riposte,Damage,200/300/450,0,200,300,450,600,750,900
+Set 3,3,base,Set3,10.11,TFT3_Fiora,Fiora,Riposte,StunDuration,1.5/1.5/3,1.5,1.5,1.5,3,1.5,1.5,1.5
+Set 3,3,base,Set3,10.11,TFT3_Fizz,Fizz,Chum the Waters,Damage,350/500/2000,0,350,500,2000,2000,2000,2000
+Set 3,3,base,Set3,10.11,TFT3_Fizz,Fizz,Chum the Waters,Delay,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
+Set 3,3,base,Set3,10.11,TFT3_Fizz,Fizz,Chum the Waters,StunDuration,1.5,1,1.5,1.5,1.5,1.5,1.5,1.5
+Set 3,3,base,Set3,10.11,TFT3_Gangplank,Gangplank,Orbital Strike,Damage,450/600/9001,0,450,600,9001,0,0,0
+Set 3,3,base,Set3,10.11,TFT3_Gangplank,Gangplank,Orbital Strike,DoubleImpactDamagePercent,50,0,50,50,50,50,50,50
+Set 3,3,base,Set3,10.11,TFT3_Gangplank,Gangplank,Orbital Strike,ImpactDelayTime,2,2,2,2,2,2,2,2
+Set 3,3,base,Set3,10.11,TFT3_Gangplank,Gangplank,Orbital Strike,UpgradeDelayTime,0.3,0,0.3,0.3,0.3,0.3,0.3,0.3
+Set 3,3,base,Set3,10.11,TFT3_Graves,Graves,Smoke Grenade,BlindDuration,3/4/5,2,3,4,5,6,7,8
+Set 3,3,base,Set3,10.11,TFT3_Graves,Graves,Smoke Grenade,Damage,150/200/400,0,150,200,400,0,0,0
+Set 3,3,base,Set3,10.11,TFT3_Irelia,Irelia,Bladesurge,PercentADDamage,1.75/2.5/5,0,1.75,2.5,5,0,0,0
+Set 3,3,base,Set3,10.11,TFT3_JarvanIV,Jarvan IV,Ageless Standard,ASPercent,0.5/0.75/1,0.25,0.5,0.75,1,1.25,1.5,1.75
+Set 3,3,base,Set3,10.11,TFT3_JarvanIV,Jarvan IV,Ageless Standard,Duration,6,6,6,6,6,6,6,6
+Set 3,3,base,Set3,10.11,TFT3_JarvanIV,Jarvan IV,Ageless Standard,HexRadius,3,3,3,3,3,3,3,3
+Set 3,3,base,Set3,10.11,TFT3_Jayce,Jayce,To the Skies!,Damage,450/600/1200,300,450,600,1200,1200,1200,1200
+Set 3,3,base,Set3,10.11,TFT3_Jayce,Jayce,To the Skies!,Radius,1,1,1,1,1,1,1,1
+Set 3,3,base,Set3,10.11,TFT3_Jhin,Jhin,Whisper,PercentOfAD,2.44/3.44/44.44,0,2.44,3.44,44.44,0,0,0
+Set 3,3,base,Set3,10.11,TFT3_Jinx,Jinx,Get Excited!,AttackSpeedBonus,0.6/0.75/1,0.4,0.6,0.75,1,1.2,1.4,1.6
+Set 3,3,base,Set3,10.11,TFT3_Jinx,Jinx,Get Excited!,BuffDuration,60,60,60,60,60,60,60,60
+Set 3,3,base,Set3,10.11,TFT3_Jinx,Jinx,Get Excited!,HitWindow,10,10,10,10,10,10,10,10
+Set 3,3,base,Set3,10.11,TFT3_Jinx,Jinx,Get Excited!,RocketDamage,125/200/750,0,125,200,750,1000,500,600
+Set 3,3,base,Set3,10.11,TFT3_KaiSa,Kai'Sa,Missile Rain,Damage,50,50,50,50,50,50,50,50
+Set 3,3,base,Set3,10.11,TFT3_KaiSa,Kai'Sa,Missile Rain,FakeCastTime,1,1,1,1,1,1,1,1
+Set 3,3,base,Set3,10.11,TFT3_KaiSa,Kai'Sa,Missile Rain,HexRange,2,2,2,2,2,2,2,2
+Set 3,3,base,Set3,10.11,TFT3_KaiSa,Kai'Sa,Missile Rain,NumMissiles,4/6/9,4,4,6,9,12,12,12
+Set 3,3,base,Set3,10.11,TFT3_KaiSa,Kai'Sa,Missile Rain,Radius,420,420,420,420,420,420,420,420
+Set 3,3,base,Set3,10.11,TFT3_Karma,Karma,Inspire,BonusAS,0.5/0.75/1.25,0.2,0.5,0.75,1.25,1,1.2,1.4
+Set 3,3,base,Set3,10.11,TFT3_Karma,Karma,Inspire,Duration,4,4,4,4,4,4,4,4
+Set 3,3,base,Set3,10.11,TFT3_Karma,Karma,Inspire,ShieldAmount,250/400/800,100,250,400,800,700,850,1000
+Set 3,3,base,Set3,10.11,TFT3_Kassadin,Kassadin,Force Pulse,Damage,250/400/800,100,250,400,800,300,300,300
+Set 3,3,base,Set3,10.11,TFT3_Kassadin,Kassadin,Force Pulse,Duration,2.5/3/3.5,3,2.5,3,3.5,3,3,3
+Set 3,3,base,Set3,10.11,TFT3_Kayle,Kayle,Ascend,WaveDamage,125/200/600,0,125,200,600,0,0,0
+Set 3,3,base,Set3,10.11,TFT3_NPC_KaynElite,Kayn,Umbral Trespass,AOEDamage,,,,,,,,
+Set 3,3,base,Set3,10.11,TFT3_NPC_Kayn,Kayn,Blade's Reach,BoxWidth,160,160,160,160,160,160,160,160
+Set 3,3,base,Set3,10.11,TFT3_NPC_Kayn,Kayn,Blade's Reach,Damage,200,200,200,200,200,200,200,200
+Set 3,3,base,Set3,10.11,TFT3_NPC_Kayn,Kayn,Blade's Reach,Range,700,700,700,700,700,700,700,700
+Set 3,3,base,Set3,10.11,TFT3_NPC_KaynElite,Kayn,Umbral Trespass,TargetDamage,1500,1500,1500,1500,1500,1500,1500,1500
+Set 3,3,base,Set3,10.11,TFT3_KhaZix,Kha'Zix,Taste their Fear,Damage,200/275/500,50,200,275,500,450,550,650
+Set 3,3,base,Set3,10.11,TFT3_KhaZix,Kha'Zix,Taste their Fear,IsolationDamage,600/825/1500,200,600,825,1500,1000,1200,1400
+Set 3,3,base,Set3,10.11,TFT3_Leona,Leona,Cyber Barrier,Duration,4,4,4,4,4,4,4,4
+Set 3,3,base,Set3,10.11,TFT3_Leona,Leona,Cyber Barrier,FlatDamageReduction,40/80/200,0,40,80,200,160,200,240
+Set 3,3,base,Set3,10.11,TFT3_Lucian,Lucian,Relentless Pursuit,FirstShotRatio,1,1,1,1,1,1,1,1
+Set 3,3,base,Set3,10.11,TFT3_Lucian,Lucian,Relentless Pursuit,SecondShotDamage,150/200/325,0,150,200,325,500,625,750
+Set 3,3,base,Set3,10.11,TFT3_Lulu,Lulu,Mass Polymorph,BonusDamage,0.05/0.1/0.25,0.025,0.05,0.1,0.25,0.4,0.8,1.6
+Set 3,3,base,Set3,10.11,TFT3_Lulu,Lulu,Mass Polymorph,Duration,3/3/8,0,3,3,8,4,4,4
+Set 3,3,base,Set3,10.11,TFT3_Lulu,Lulu,Mass Polymorph,NumTargets,2/4/12,0,2,4,12,0,0,0
+Set 3,3,base,Set3,10.11,TFT3_Lux,Lux,Lurid Binding,Damage,200/300/600,300,200,300,600,800,800,800
+Set 3,3,base,Set3,10.11,TFT3_Lux,Lux,Lurid Binding,StunDuration,1.5/2/2.5,1,1.5,2,2.5,3,3.5,4
+Set 3,3,base,Set3,10.11,TFT3_Malphite,Malphite,Energy Shield,PercentHealth,0.4/0.45/0.6,0.35,0.4,0.45,0.6,0.55,0.6,0.65
+Set 3,3,base,Set3,10.11,TFT3_Malphite,Malphite,Energy Shield,SecondsPerRefresh,9,0,9,9,9,9,9,9
+Set 3,3,base,Set3,10.11,TFT3_MasterYi,Master Yi,Chosen One,BonusTrueDamage,75/100/200,0,75,100,200,0,0,0
+Set 3,3,base,Set3,10.11,TFT3_MasterYi,Master Yi,Chosen One,Duration,5,5,5,5,5,5,5,5
+Set 3,3,base,Set3,10.11,TFT3_MasterYi,Master Yi,Chosen One,HealAmountPercent,0.12,0,0.12,0.12,0.12,0.2,0.2,0.2
+Set 3,3,base,Set3,10.11,TFT3_MissFortune,Miss Fortune,Bullet Time,ChannelDuration,2.25,2.25,2.25,2.25,2.25,2.25,2.25,2.25
+Set 3,3,base,Set3,10.11,TFT3_MissFortune,Miss Fortune,Bullet Time,HexRange,6,6,6,6,6,6,6,6
+Set 3,3,base,Set3,10.11,TFT3_MissFortune,Miss Fortune,Bullet Time,PercentMaxHealth,0.6/0.8/9.99,0.2,0.6,0.8,9.99,5,5,5
+Set 3,3,base,Set3,10.11,TFT3_MissFortune,Miss Fortune,Bullet Time,ShieldAmount,400/700/1000,100,400,700,1000,1300,1600,1900
+Set 3,3,base,Set3,10.11,TFT3_MissFortune,Miss Fortune,Bullet Time,TotalDamage,500/900/9001,500,500,900,9001,3400,4100,4800
+Set 3,3,base,Set3,10.11,TFT3_MissFortune,Miss Fortune,Bullet Time,UpgradeMoreWaves,5,0,5,5,5,5,5,5
+Set 3,3,base,Set3,10.11,TFT3_MissFortune,Miss Fortune,Bullet Time,Waves,12,12,12,12,12,12,12,12
+Set 3,3,base,Set3,10.11,TFT3_Mordekaiser,Mordekaiser,Indestructible,DamagePerSecond,50/75/125,20,50,75,125,180,220,260
+Set 3,3,base,Set3,10.11,TFT3_Mordekaiser,Mordekaiser,Indestructible,Duration,8,8,8,8,8,8,8,8
+Set 3,3,base,Set3,10.11,TFT3_Mordekaiser,Mordekaiser,Indestructible,ShieldAmount,350/500/800,0,350,500,800,1000,1250,1500
+Set 3,3,base,Set3,10.11,TFT3_Neeko,Neeko,Pop Blossom,DamageAmount,200/275/550,0,200,275,550,300,375,450
+Set 3,3,base,Set3,10.11,TFT3_Neeko,Neeko,Pop Blossom,HexRadius,2,2,2,2,2,2,2,2
+Set 3,3,base,Set3,10.11,TFT3_Neeko,Neeko,Pop Blossom,StunDuration,1.5/2/2.5,1,1.5,2,2.5,3,3.5,4
+Set 3,3,base,Set3,10.11,TFT3_Poppy,Poppy,Buckler Toss,Damage,100/150/200,50,100,150,200,250,300,350
+Set 3,3,base,Set3,10.11,TFT3_Poppy,Poppy,Buckler Toss,ShieldAmount,200/300/400,100,200,300,400,500,600,700
+Set 3,3,base,Set3,10.11,TFT3_Rakan,Rakan,Grand Entrance,Damage,175/275/400,75,175,275,400,475,575,675
+Set 3,3,base,Set3,10.11,TFT3_Rakan,Rakan,Grand Entrance,KnockupDuration,1,1,1,1,1,1,1,1
+Set 3,3,base,Set3,10.11,TFT3_Rakan,Rakan,Grand Entrance,Radius,1,1,1,1,1,1,1,1
+Set 3,3,base,Set3,10.11,TFT3_Rakan,Rakan,Grand Entrance,StunDuration,1.5/2/2.5,0,1.5,2,2.5,3,3,3
+Set 3,3,base,Set3,10.11,TFT3_Rumble,Rumble,Flamespitter,ConeHexRange,2,2,2,2,2,2,2,2
+Set 3,3,base,Set3,10.11,TFT3_Rumble,Rumble,Flamespitter,Duration,3,3,3,3,3,3,3,3
+Set 3,3,base,Set3,10.11,TFT3_Rumble,Rumble,Flamespitter,GrievousWoundsDuration,5,5,5,5,5,5,5,5
+Set 3,3,base,Set3,10.11,TFT3_Rumble,Rumble,Flamespitter,GrievousWoundsPercent,50,0,50,50,50,50,50,50
+Set 3,3,base,Set3,10.11,TFT3_Rumble,Rumble,Flamespitter,NumberOfTicks,12,12,12,12,12,12,12,12
+Set 3,3,base,Set3,10.11,TFT3_Rumble,Rumble,Flamespitter,TickRate,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25
+Set 3,3,base,Set3,10.11,TFT3_Rumble,Rumble,Flamespitter,TotalDamage,350/500/1000,30,350,500,1000,800,680,810
+Set 3,3,base,Set3,10.11,TFT3_Shaco,Shaco,Deceive,Duration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
+Set 3,3,base,Set3,10.11,TFT3_Shaco,Shaco,Deceive,PercentOfAD,2/2.25/2.5,1.75,2,2.25,2.5,2.75,3,3.25
+Set 3,3,base,Set3,10.11,TFT3_Shen,Shen,Future's Refuge,MagicResist,15/30/45,0,15,30,45,60,75,90
+Set 3,3,base,Set3,10.11,TFT3_Shen,Shen,Future's Refuge,ZoneDuration,2.5/3/5,2,2.5,3,5,6,7,8
+Set 3,3,base,Set3,10.11,TFT3_Sona,Sona,Aria of Perseverance,HealAmount,150/200/300,150,150,200,300,300,300,300
+Set 3,3,base,Set3,10.11,TFT3_Sona,Sona,Aria of Perseverance,NumberOfTargets,2/3/4,2,2,3,4,4,4,4
+Set 3,3,base,Set3,10.11,TFT3_Soraka,Soraka,Wish,HealAmount,375/550/20000,300,375,550,20000,1500,1500,1500
+Set 3,3,base,Set3,10.11,TFT3_Soraka,Soraka,Wish,HealTargets,15,15,15,15,15,15,15,15
+Set 3,3,base,Set3,10.11,TFT3_SuperMech,Super-Mech,Mecha Justice,MainDamage,500/600/700,400,500,600,700,800,1200,5000
+Set 3,3,base,Set3,10.11,TFT3_SuperMech,Super-Mech,Mecha Justice,SplashDamage,250/300/350,200,250,300,350,400,600,5000
+Set 3,3,base,Set3,10.11,TFT3_Syndra,Syndra,Unleashed Power,CastTime,0.75,0.75,0.75,0.75,0.75,0.75,0.75,0.75
+Set 3,3,base,Set3,10.11,TFT3_Syndra,Syndra,Unleashed Power,Damage,100/150/250,0,100,150,250,200,250,300
+Set 3,3,base,Set3,10.11,TFT3_Syndra,Syndra,Unleashed Power,Spheres,3,3,3,3,3,3,3,3
+Set 3,3,base,Set3,10.11,TFT3_Thresh,Thresh,Temporal Passage,ManaBonus,25/50/200,10,25,50,200,200,200,200
+Set 3,3,base,Set3,10.11,TFT3_Thresh,Thresh,Temporal Passage,UnitCount,1/1/9,1,1,1,9,9,9,9
+Set 3,3,base,Set3,10.11,TFT3_TwistedFate,Twisted Fate,Wild Cards,BaseDamage,200/300/450,0,200,300,450,450,750,900
+Set 3,3,base,Set3,10.11,TFT3_VelKoz,Vel'Koz,Lifeform Disintegration Ray,BaseDamagePerSec,450/600/2000,0,450,600,2000,0,0,0
+Set 3,3,base,Set3,10.11,TFT3_VelKoz,Vel'Koz,Lifeform Disintegration Ray,BeamDistance,1400,1400,1400,1400,1400,1400,1400,1400
+Set 3,3,base,Set3,10.11,TFT3_VelKoz,Vel'Koz,Lifeform Disintegration Ray,BeamWidth,200,200,200,200,200,200,200,200
+Set 3,3,base,Set3,10.11,TFT3_VelKoz,Vel'Koz,Lifeform Disintegration Ray,ChannelDuration,2,2,2,2,2,2,2,2
+Set 3,3,base,Set3,10.11,TFT3_VelKoz,Vel'Koz,Lifeform Disintegration Ray,PercentHealthDamagePerSec,,,,,,,,
+Set 3,3,base,Set3,10.11,TFT3_VelKoz,Vel'Koz,Lifeform Disintegration Ray,SweepAngle,60,60,60,60,60,60,60,60
+Set 3,3,base,Set3,10.11,TFT3_VelKoz,Vel'Koz,Lifeform Disintegration Ray,TickInterval,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25
+Set 3,3,base,Set3,10.11,TFT3_Vi,Vi,Assault and Battery,CCDuration,2/2.5/3,1.5,2,2.5,3,3.5,4,4.5
+Set 3,3,base,Set3,10.11,TFT3_Vi,Vi,Assault and Battery,MoveSpeed,1000,1000,1000,1000,1000,1000,1000,1000
+Set 3,3,base,Set3,10.11,TFT3_Vi,Vi,Assault and Battery,OthersCCDuration,0.25,0.25,0.25,0.25,0.25,0.25,0.25,0.25
+Set 3,3,base,Set3,10.11,TFT3_Vi,Vi,Assault and Battery,PrimaryDamage,400/600/1200,100,400,600,1200,900,1100,1300
+Set 3,3,base,Set3,10.11,TFT3_Vi,Vi,Assault and Battery,SecondaryDamage,150/200/500,0,150,200,500,0,0,0
+Set 3,3,base,Set3,10.11,TFT3_WuKong,Wukong,Cyclone,Damage,300/500/4000,200,300,500,4000,5000,5000,5000
+Set 3,3,base,Set3,10.11,TFT3_WuKong,Wukong,Cyclone,Duration,3,3,3,3,3,3,3,3
+Set 3,3,base,Set3,10.11,TFT3_WuKong,Wukong,Cyclone,HexRadius,1,1,1,1,1,1,1,1
+Set 3,3,base,Set3,10.11,TFT3_WuKong,Wukong,Cyclone,StunDuration,2/2/5,1.5,2,2,5,5,5,5
+Set 3,3,base,Set3,10.11,TFT3_Xayah,Xayah,Deadly Plumage,AttackSpeed,1/1.25/1.5,0.75,1,1.25,1.5,1.75,2,2.25
+Set 3,3,base,Set3,10.11,TFT3_Xayah,Xayah,Deadly Plumage,DamageReduction,50,50,50,50,50,50,50,50
+Set 3,3,base,Set3,10.11,TFT3_Xayah,Xayah,Deadly Plumage,Duration,8,8,8,8,8,8,8,8
+Set 3,3,base,Set3,10.11,TFT3_Xerath,Xerath,Abyssal Bombardment,AoEDamage,75/100/625,175,75,100,625,1500,1500,1500
+Set 3,3,base,Set3,10.11,TFT3_Xerath,Xerath,Abyssal Bombardment,BaseDamage,300/400/2500,350,300,400,2500,3000,3000,3000
+Set 3,3,base,Set3,10.11,TFT3_Xerath,Xerath,Abyssal Bombardment,Duration,6/8/45,6,6,8,45,45,45,45
+Set 3,3,base,Set3,10.11,TFT3_Xerath,Xerath,Abyssal Bombardment,StunDuration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
+Set 3,3,base,Set3,10.11,TFT3_XinZhao,Xin Zhao,Three Talon Strike,BonusDamage,200/275/375,4,200,275,375,8,8,8
+Set 3,3,base,Set3,10.11,TFT3_XinZhao,Xin Zhao,Three Talon Strike,StunDuration,1.5,1.5,1.5,1.5,1.5,1.5,1.5,1.5
+Set 3,3,base,Set3,10.11,TFT3_Yasuo,Yasuo,Last Breath,Damage,100,100,100,100,100,100,100,100
+Set 3,3,base,Set3,10.11,TFT3_Yasuo,Yasuo,Last Breath,NumHits,4/5/6,3,4,5,6,7,8,9
+Set 3,3,base,Set3,10.11,TFT3_Yasuo,Yasuo,Last Breath,StunDuration,1,1,1,1,1,1,1,1
+Set 3,3,base,Set3,10.11,TFT3_Ziggs,Ziggs,Bomb!,Damage,300/400/700,70,300,400,700,550,650,750
+Set 3,3,base,Set3,10.11,TFT3_Zoe,Zoe,Sleepy Trouble Bubble,Damage,200/275/400,75,200,275,400,375,450,525
+Set 3,3,base,Set3,10.11,TFT3_Zoe,Zoe,Sleepy Trouble Bubble,StunDuration,2/2.5/4,1.5,2,2.5,4,3.5,4,4.5
 Set 3.5,3,mid,TFTSet3,10.18,TFT3_Ahri,Ahri,Orb of Deception,Damage,175/250/425,150,175,250,425,500,400,400
 Set 3.5,3,mid,TFTSet3,10.18,TFT3_Ahri,Ahri,Orb of Deception,HexRange,4,4,4,4,4,4,4,4
 Set 3.5,3,mid,TFTSet3,10.18,TFT3_Annie,Annie,Galaxy Shield-Blast,Damage,300/400/700,100,300,400,700,450,450,450

@@ -1,0 +1,1877 @@
+﻿set_label,set_number,set_stage,set_mutator,patch,champion_api_name,champion_name,cost,hp,damage,attack_speed,range,armor,magic_resist,mana,initial_mana,crit_chance,crit_multiplier
+Set 1,1,base,1,9.21,Camille,Camille,1,550,55,0.6,1,30,20,125,75,0.25,1.5
+Set 1,1,base,1,9.21,Darius,Darius,1,600,50,0.5,1,40,20,100,0,0.25,1.5
+Set 1,1,base,1,9.21,Elise,Elise,1,500,45,0.6,2,20,20,100,0,0.25,1.5
+Set 1,1,base,1,9.21,Fiora,Fiora,1,450,40,1,1,25,20,75,0,0.25,1.5
+Set 1,1,base,1,9.21,Garen,Garen,1,600,50,0.6,1,40,20,100,0,0.25,1.5
+Set 1,1,base,1,9.21,Graves,Graves,1,450,55,0.55,1,30,20,0,0,0.25,1.5
+Set 1,1,base,1,9.21,Kassadin,Kassadin,1,550,40,0.55,1,35,20,0,0,0.25,1.5
+Set 1,1,base,1,9.21,Kha'Zix,Kha'Zix,1,500,55,0.6,1,20,20,65,0,0.25,1.5
+Set 1,1,base,1,9.21,Mordekaiser,Mordekaiser,1,550,50,0.5,1,40,20,150,50,0.25,1.5
+Set 1,1,base,1,9.21,Nidalee,Nidalee,1,500,50,0.65,3,20,20,85,0,0.25,1.5
+Set 1,1,base,1,9.21,Tristana,Tristana,1,500,50,0.65,4,20,20,50,0,0.25,1.5
+Set 1,1,base,1,9.21,Vayne,Vayne,1,550,40,0.7,3,25,20,0,0,0.25,1.5
+Set 1,1,base,1,9.21,Warwick,Warwick,1,650,50,0.6,1,30,20,150,50,0.25,1.5
+Set 1,1,base,1,9.21,Ahri,Ahri,2,450,50,0.55,3,20,20,75,0,0.25,1.5
+Set 1,1,base,1,9.21,Blitzcrank,Blitzcrank,2,650,50,0.5,1,35,20,125,0,0.25,1.5
+Set 1,1,base,1,9.21,Braum,Braum,2,650,40,0.6,1,75,20,75,0,0.25,1.5
+Set 1,1,base,1,9.21,Jayce,Jayce,2,600,60,0.65,1,35,20,100,50,0.25,1.5
+Set 1,1,base,1,9.21,Lissandra,Lissandra,2,500,40,0.6,2,20,20,95,0,0.25,1.5
+Set 1,1,base,1,9.21,Lucian,Lucian,2,600,65,0.65,3,25,20,35,0,0.25,1.5
+Set 1,1,base,1,9.21,Lulu,Lulu,2,500,50,0.6,2,20,20,150,50,0.25,1.5
+Set 1,1,base,1,9.21,Pyke,Pyke,2,600,60,0.6,1,25,20,125,50,0.25,1.5
+Set 1,1,base,1,9.21,Rek'Sai,Rek'Sai,2,650,50,0.6,1,20,20,150,50,0.25,1.5
+Set 1,1,base,1,9.21,Shen,Shen,2,700,65,0.7,1,30,20,150,100,0.25,1.5
+Set 1,1,base,1,9.21,Twisted Fate,Twisted Fate,2,500,40,0.7,3,20,20,50,0,0.25,1.5
+Set 1,1,base,1,9.21,Varus,Varus,2,500,60,0.7,4,25,20,75,0,0.25,1.5
+Set 1,1,base,1,9.21,Zed,Zed,2,550,65,0.7,1,25,20,75,0,0.25,1.5
+Set 1,1,base,1,9.21,Aatrox,Aatrox,3,700,65,0.65,1,35,20,75,0,0.25,1.5
+Set 1,1,base,1,9.21,Ashe,Ashe,3,550,65,0.7,4,20,20,125,0,0.25,1.5
+Set 1,1,base,1,9.21,Evelynn,Evelynn,3,550,70,0.6,1,20,20,75,0,0.25,1.5
+Set 1,1,base,1,9.21,Gangplank,Gangplank,3,700,60,0.65,1,20,20,100,0,0.25,1.5
+Set 1,1,base,1,9.21,Katarina,Katarina,3,450,65,0.65,1,20,20,85,0,0.25,1.5
+Set 1,1,base,1,9.21,Kennen,Kennen,3,550,65,0.65,2,20,20,150,50,0.25,1.5
+Set 1,1,base,1,9.21,Morgana,Morgana,3,650,50,0.6,2,30,20,150,50,0.25,1.5
+Set 1,1,base,1,9.21,Poppy,Poppy,3,700,50,0.5,1,40,20,75,0,0.25,1.5
+Set 1,1,base,1,9.21,Rengar,Rengar,3,550,70,0.6,1,20,20,75,0,0.25,1.5
+Set 1,1,base,1,9.21,Shyvana,Shyvana,3,650,50,0.7,1,30,20,85,0,0.25,1.5
+Set 1,1,base,1,9.21,Veigar,Veigar,3,500,50,0.55,3,20,20,75,0,0.25,1.5
+Set 1,1,base,1,9.21,Vi,Vi,3,700,60,0.65,1,25,20,150,75,0.25,1.5
+Set 1,1,base,1,9.21,Volibear,Volibear,3,750,70,0.65,1,30,20,75,0,0.25,1.5
+Set 1,1,base,1,9.21,Akali,Akali,4,650,80,0.8,1,20,20,25,0,0.25,1.5
+Set 1,1,base,1,9.21,Aurelion Sol,Aurelion Sol,4,650,40,0.6,3,20,20,125,0,0.25,1.5
+Set 1,1,base,1,9.21,Brand,Brand,4,700,60,0.6,3,25,20,150,50,0.25,1.5
+Set 1,1,base,1,9.21,Cho'Gath,Cho'Gath,4,1000,70,0.6,1,20,20,150,50,0.25,1.5
+Set 1,1,base,1,9.21,Draven,Draven,4,650,65,0.75,3,25,20,50,0,0.25,1.5
+Set 1,1,base,1,9.21,Gnar,Gnar,4,700,50,0.7,2,30,20,100,0,0.25,1.5
+Set 1,1,base,1,9.21,Jinx,Jinx,4,550,75,0.7,3,20,20,0,0,0.25,1.5
+Set 1,1,base,1,9.21,Kindred,Kindred,4,600,60,0.7,3,20,20,150,50,0.25,1.5
+Set 1,1,base,1,9.21,Leona,Leona,4,800,45,0.55,1,100,20,100,50,0.25,1.5
+Set 1,1,base,1,9.21,Sejuani,Sejuani,4,800,45,0.55,1,40,20,150,50,0.25,1.5
+Set 1,1,base,1,9.21,Anivia,Anivia,5,750,40,0.8,3,20,20,125,50,0.25,1.5
+Set 1,1,base,1,9.21,Kai'Sa,Kai'Sa,5,700,55,1.25,2,20,20,125,50,0.25,1.5
+Set 1,1,base,1,9.21,Karthus,Karthus,5,850,65,0.65,3,25,20,125,40,0.25,1.5
+Set 1,1,base,1,9.21,Kayle,Kayle,5,750,70,1,3,40,20,125,50,0.25,1.5
+Set 1,1,base,1,9.21,Miss Fortune,Miss Fortune,5,750,75,0.95,3,20,20,150,0,0.25,1.5
+Set 1,1,base,1,9.21,Pantheon,Pantheon,5,850,75,0.75,1,70,20,200,150,0.25,1.5
+Set 1,1,base,1,9.21,Swain,Swain,5,850,65,0.65,2,25,20,100,0,0.25,1.5
+Set 1,1,base,1,9.21,Yasuo,Yasuo,5,750,75,1,1,35,20,25,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Diana,Diana,1,550,50,0.7,1,20,20,100,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Ivern,Ivern,1,600,50,0.6,2,25,20,100,50,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_KogMaw,Kog'Maw,1,500,45,0.7,4,20,20,40,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Leona,Leona,1,650,50,0.55,1,40,20,100,50,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Maokai,Maokai,1,650,55,0.5,1,35,20,0,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Nasus,Nasus,1,650,50,0.55,1,40,20,100,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Ornn,Ornn,1,650,50,0.55,1,40,20,75,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Renekton,Renekton,1,600,60,0.6,1,35,20,100,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Taliyah,Taliyah,1,500,40,0.65,3,20,20,80,30,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Vayne,Vayne,1,550,40,0.7,3,25,20,0,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Vladimir,Vladimir,1,550,40,0.65,2,30,20,75,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Warwick,Warwick,1,650,50,0.6,1,30,20,125,50,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Zyra,Zyra,1,500,40,0.65,3,20,20,65,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Braum,Braum,2,750,40,0.6,1,60,20,65,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Jax,Jax,2,700,55,0.8,1,30,20,125,50,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_LeBlanc,LeBlanc,2,550,55,0.7,2,20,20,80,50,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Malzahar,Malzahar,2,550,40,0.65,3,20,20,125,75,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Neeko,Neeko,2,500,45,0.7,3,20,20,60,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_RekSai,Rek'Sai,2,650,60,0.7,1,35,20,75,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Senna,Senna,2,450,45,0.7,4,25,20,75,50,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Skarner,Skarner,2,650,60,0.65,1,35,20,65,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Syndra,Syndra,2,500,40,0.7,3,20,20,65,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Thresh,Thresh,2,700,55,0.55,2,40,20,125,50,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Varus,Varus,2,550,60,0.75,4,25,20,100,50,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Volibear,Volibear,2,650,60,0.7,1,35,20,75,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Yasuo,Yasuo,2,600,60,0.7,1,30,20,90,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Aatrox,Aatrox,3,800,65,0.7,1,35,20,70,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Azir,Azir,3,600,55,0.8,3,20,20,100,50,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_DrMundo,Dr. Mundo,3,800,60,0.6,1,35,20,125,75,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Ezreal,Ezreal,3,650,65,0.7,3,20,20,30,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Karma,Karma,3,600,50,0.7,3,20,20,100,75,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Kindred,Kindred,3,650,55,0.75,3,20,20,35,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Nautilus,Nautilus,3,850,55,0.6,1,40,20,125,50,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Nocturne,Nocturne,3,650,60,0.8,1,25,20,0,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Qiyana,Qiyana,3,650,65,0.7,1,25,20,100,50,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_QiyanaOcean,Qiyana,3,650,65,0.7,1,25,20,100,50,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_QiyanaInferno,Qiyana,3,650,65,0.7,1,25,20,100,50,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_QiyanaWoodland,Qiyana,3,650,65,0.7,1,25,20,100,50,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_QiyanaWind,Qiyana,3,650,65,0.7,1,25,20,100,50,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Sion,Sion,3,850,65,0.65,1,35,20,125,75,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Sivir,Sivir,3,600,55,0.7,3,25,20,65,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Soraka,Soraka,3,600,40,0.7,3,20,20,60,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Veigar,Veigar,3,600,50,0.6,3,20,20,60,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Annie,Annie,4,700,45,0.7,3,20,20,75,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Ashe,Ashe,4,550,60,0.8,4,20,20,35,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Brand,Brand,4,700,55,0.7,3,25,20,80,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Janna,Janna,4,600,45,0.7,3,20,20,125,50,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Khazix,Kha'Zix,4,750,75,0.8,1,25,20,40,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Lucian,Lucian,4,550,65,0.8,3,25,20,50,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Malphite,Malphite,4,850,60,0.55,1,50,20,150,50,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Olaf,Olaf,4,850,70,0.8,1,35,20,90,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Twitch,Twitch,4,650,70,0.75,4,20,20,70,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Yorick,Yorick,4,850,65,0.7,1,35,20,85,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Amumu,Amumu,5,900,55,0.75,1,60,20,150,75,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_MasterYi,Master Yi,5,850,70,1.1,1,30,20,150,100,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Nami,Nami,5,750,50,0.75,4,25,20,125,50,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Singed,Singed,5,950,0,0.001,1,50,20,0,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Taric,Taric,5,900,60,0.65,1,60,20,125,50,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_Zed,Zed,5,850,70,1.1,1,25,20,150,75,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_LuxCrystal,Lux,7,850,55,0.85,4,25,20,80,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_LuxElectric,Lux,7,850,55,0.85,4,25,20,80,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_LuxGlacial,Lux,7,850,55,0.85,4,25,20,80,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_LuxInferno,Lux,7,850,55,0.85,4,25,20,80,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_LuxLight,Lux,7,850,55,0.85,4,25,20,80,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_LuxMetal,Lux,7,850,55,0.85,4,25,20,80,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_LuxOcean,Lux,7,850,55,0.85,4,25,20,80,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_LuxShadow,Lux,7,850,55,0.85,4,25,20,80,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_LuxWind,Lux,7,850,55,0.85,4,25,20,80,0,0.25,1.5
+Set 2,2,base,2,10.5,TFT2_LuxWoodland,Lux,7,850,55,0.85,4,25,20,80,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Caitlyn,Caitlyn,1,500,45,0.75,6,20,20,125,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Fiora,Fiora,1,450,45,1,1,30,20,85,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Graves,Graves,1,650,55,0.55,1,35,20,80,50,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_JarvanIV,Jarvan IV,1,650,50,0.6,1,40,20,100,50,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_NPC_Kayn,Kayn,1,600,80,0.8,1,20,,100,75,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_NPC_KaynElite,Kayn,1,6800,200,1,1,,,200,175,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_KhaZix,Kha'Zix,1,500,50,0.7,1,25,20,65,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Leona,Leona,1,600,50,0.55,1,40,20,100,50,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Malphite,Malphite,1,700,70,0.5,1,30,20,0,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Poppy,Poppy,1,650,50,0.55,1,40,20,100,60,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_TwistedFate,Twisted Fate,1,550,45,0.7,3,20,20,75,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Xayah,Xayah,1,500,50,0.8,3,20,20,50,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Ziggs,Ziggs,1,500,40,0.7,3,20,20,40,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Zoe,Zoe,1,500,40,0.7,3,20,20,100,70,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Ahri,Ahri,2,600,45,0.75,3,20,20,60,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Annie,Annie,2,700,40,0.65,2,40,20,150,75,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Blitzcrank,Blitzcrank,2,650,55,0.5,1,35,20,125,125,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Darius,Darius,2,750,60,0.65,1,35,20,60,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_KaiSa,Kai'Sa,2,550,50,0.75,2,20,20,60,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Lucian,Lucian,2,500,50,0.7,4,25,20,35,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Mordekaiser,Mordekaiser,2,650,55,0.6,1,40,20,90,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Rakan,Rakan,2,600,45,0.7,2,35,20,100,50,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Shen,Shen,2,800,60,0.7,1,35,20,150,100,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Sona,Sona,2,550,40,0.65,3,20,20,40,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_XinZhao,Xin Zhao,2,650,60,0.7,1,35,20,60,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Yasuo,Yasuo,2,700,50,0.75,1,30,20,90,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Ashe,Ashe,3,600,60,0.8,6,20,20,125,50,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Ezreal,Ezreal,3,600,60,0.7,3,20,20,125,50,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Jayce,Jayce,3,750,60,0.7,1,40,20,80,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Karma,Karma,3,600,50,0.65,3,20,20,100,75,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Kassadin,Kassadin,3,800,50,0.65,1,30,20,80,40,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Lux,Lux,3,600,40,0.7,4,20,20,100,50,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_MasterYi,Master Yi,3,750,55,0.8,1,30,20,55,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Neeko,Neeko,3,800,50,0.65,2,35,20,150,75,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Rumble,Rumble,3,800,50,0.7,1,35,20,60,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Shaco,Shaco,3,650,70,0.8,1,25,20,80,30,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Syndra,Syndra,3,600,45,0.7,4,20,20,65,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Vi,Vi,3,750,60,0.65,1,35,20,140,70,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_ChoGath,Cho'Gath,4,1000,70,0.6,1,20,20,150,50,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Fizz,Fizz,4,600,60,0.8,1,25,20,150,80,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Irelia,Irelia,4,800,70,0.85,1,35,20,30,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Jhin,Jhin,4,600,90,0.9,6,20,20,4,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Jinx,Jinx,4,600,70,0.75,3,20,20,0,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Kayle,Kayle,4,700,60,0.8,3,25,20,60,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Soraka,Soraka,4,700,45,0.75,3,30,20,125,50,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_VelKoz,Vel'Koz,4,650,45,0.75,4,20,20,70,0,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_WuKong,Wukong,4,950,50,0.75,1,40,20,150,50,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_AurelionSol,Aurelion Sol,5,1100,,0.8,1,35,20,120,40,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Ekko,Ekko,5,850,60,0.9,1,30,20,150,50,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Gangplank,Gangplank,5,1000,60,1,1,30,20,175,100,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Lulu,Lulu,5,800,45,0.8,3,25,20,150,75,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_MissFortune,Miss Fortune,5,800,60,1,4,20,20,175,75,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Thresh,Thresh,5,950,50,0.95,2,35,20,75,50,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_Xerath,Xerath,5,750,60,0.9,6,20,20,80,30,0.25,1.5
+Set 3,3,base,3,10.11,TFT3_SuperMech,Super-Mech,7,,0,0.75,1,30,20,225,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Caitlyn,Caitlyn,1,500,45,0.75,6,20,20,125,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Fiora,Fiora,1,500,45,1,1,30,20,85,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Graves,Graves,1,650,55,0.55,1,40,30,80,50,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Illaoi,Illaoi,1,700,45,0.7,1,40,30,80,40,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_JarvanIV,Jarvan IV,1,700,55,0.6,1,40,30,100,60,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_NPC_Kayn,Kayn,1,600,80,0.8,1,20,,100,75,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_NPC_KaynElite,Kayn,1,6800,200,1,1,,,200,175,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Leona,Leona,1,600,50,0.55,1,45,30,100,50,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Malphite,Malphite,1,700,70,0.5,1,35,30,0,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Nocturne,Nocturne,1,500,50,0.75,1,20,20,80,40,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Poppy,Poppy,1,650,50,0.55,1,45,35,90,50,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_TwistedFate,Twisted Fate,1,550,45,0.7,3,20,20,75,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Xayah,Xayah,1,500,50,0.9,3,20,20,60,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Ziggs,Ziggs,1,500,40,0.7,3,20,20,40,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Zoe,Zoe,1,500,40,0.7,3,20,20,80,40,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Ahri,Ahri,2,600,45,0.75,3,20,20,60,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Annie,Annie,2,750,40,0.65,2,50,35,150,70,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Blitzcrank,Blitzcrank,2,650,55,0.5,1,60,35,125,125,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Darius,Darius,2,800,60,0.65,1,40,30,50,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_KogMaw,Kog'Maw,2,550,50,0.7,3,25,20,30,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Lucian,Lucian,2,500,50,0.7,4,25,20,30,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Mordekaiser,Mordekaiser,2,700,55,0.6,1,50,40,90,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Nautilus,Nautilus,2,750,60,0.65,1,50,35,120,50,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Rakan,Rakan,2,650,45,0.7,2,45,35,100,50,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Shen,Shen,2,800,60,0.7,1,45,35,150,100,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_XinZhao,Xin Zhao,2,650,60,0.7,1,45,30,60,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Yasuo,Yasuo,2,700,50,0.75,1,30,20,80,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Zed,Zed,2,650,55,0.75,1,25,20,0,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Ashe,Ashe,3,650,60,0.85,6,20,20,100,40,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Bard,Bard,3,700,45,0.7,3,30,20,90,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Cassiopeia,Cassiopeia,3,750,40,0.75,2,30,20,25,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Ezreal,Ezreal,3,600,55,0.75,3,20,20,80,30,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Jayce,Jayce,3,800,60,0.7,1,40,30,80,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Karma,Karma,3,600,50,0.65,3,20,20,100,75,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_MasterYi,Master Yi,3,750,55,0.85,1,50,35,55,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_BardMeep,Meep,3,10,,1,0,10,10,100,0,10,1
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Neeko,Neeko,3,850,50,0.65,2,50,40,110,35,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Rumble,Rumble,3,900,50,0.7,1,45,40,50,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Shaco,Shaco,3,650,75,0.8,1,20,20,70,30,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Syndra,Syndra,3,600,45,0.7,4,20,20,50,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Vayne,Vayne,3,500,55,0.85,6,20,20,50,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Vi,Vi,3,750,60,0.65,1,45,40,140,70,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Fizz,Fizz,4,700,60,0.85,1,25,20,120,50,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Gnar,Gnar,4,750,50,0.8,2,45,40,120,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Irelia,Irelia,4,900,85,0.85,1,50,40,30,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Jhin,Jhin,4,600,85,2,6,20,20,4,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Jinx,Jinx,4,600,75,0.7,3,20,20,0,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Riven,Riven,4,850,70,0.85,1,35,30,25,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Soraka,Soraka,4,700,45,0.75,3,30,20,120,50,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Teemo,Teemo,4,600,45,0.95,6,20,20,70,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Viktor,Viktor,4,650,45,0.75,3,20,20,60,0,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_WuKong,Wukong,4,950,50,0.75,1,55,40,150,50,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_AurelionSol,Aurelion Sol,5,1100,,0.2,1,55,40,120,120,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Ekko,Ekko,5,850,60,0.9,1,30,20,150,80,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Gangplank,Gangplank,5,1000,60,1,1,30,20,160,70,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Janna,Janna,5,750,60,0.8,4,25,20,100,20,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Lulu,Lulu,5,800,45,0.8,3,25,20,150,75,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Thresh,Thresh,5,950,50,0.95,2,55,40,90,50,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Urgot,Urgot,5,950,80,0.7,2,40,40,100,50,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_Xerath,Xerath,5,700,60,0.9,6,20,20,80,20,0.25,1.5
+Set 3.5,3,mid,TFTSet3,10.18,TFT3_SuperMech,Super-Mech,7,,0,0.85,1,70,70,200,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Diana,Diana,1,500,50,0.65,1,30,20,70,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Elise,Elise,1,600,45,0.65,2,30,20,75,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Fiora,Fiora,1,600,45,0.75,1,35,30,75,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Galio,Galio,1,1000,0,0.65,1,40,40,150,75,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Garen,Garen,1,600,50,0.6,1,50,35,100,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Lissandra,Lissandra,1,550,40,0.6,3,20,20,50,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Maokai,Maokai,1,700,55,0.5,1,40,30,75,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Nami,Nami,1,550,40,0.65,3,20,20,100,60,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Nidalee,Nidalee,1,550,45,0.7,4,30,20,80,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_TahmKench,Tahm Kench,1,700,85,0.5,1,40,30,0,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_TwistedFate,Twisted Fate,1,550,45,0.65,3,20,20,70,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Vayne,Vayne,1,500,40,0.9,4,20,20,0,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Wukong,Wukong,1,650,55,0.65,1,40,30,50,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Yasuo,Yasuo,1,550,50,0.7,1,30,20,45,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Annie,Annie,2,750,45,0.6,2,40,40,65,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Aphelios,Aphelios,2,500,45,0.75,4,20,20,80,50,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Hecarim,Hecarim,2,750,55,0.55,1,45,30,110,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Janna,Janna,2,550,40,0.6,4,20,20,60,30,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_JarvanIV,Jarvan IV,2,600,60,0.6,1,45,30,100,50,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Jax,Jax,2,750,60,0.75,1,40,30,110,60,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Lulu,Lulu,2,500,50,0.6,3,20,20,120,60,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_NPC_Nexus,Nexus Minion,2,6000,400,0.6,1,100,100,250,200,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Pyke,Pyke,2,700,50,0.6,1,50,30,125,75,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Sylas,Sylas,2,700,70,0.6,1,40,80,60,30,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Teemo,Teemo,2,500,55,0.7,3,20,20,60,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Thresh,Thresh,2,700,60,0.55,2,80,20,100,50,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Vi,Vi,2,700,65,0.6,1,40,30,50,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Zed,Zed,2,600,55,0.75,1,20,20,0,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Akali,Akali,3,650,55,0.85,1,20,20,20,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Evelynn,Evelynn,3,600,70,0.7,1,20,20,60,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Irelia,Irelia,3,800,55,0.65,1,40,40,100,50,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Jinx,Jinx,3,650,75,0.75,4,20,20,120,70,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Kalista,Kalista,3,550,65,0.9,3,20,20,0,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Katarina,Katarina,3,500,65,0.65,1,20,20,90,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Kennen,Kennen,3,650,60,0.65,2,30,30,125,50,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Kindred,Kindred,3,650,70,0.8,3,20,20,35,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Lux,Lux,3,600,40,0.7,4,20,20,100,40,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Nunu,Nunu & Willump,3,750,65,0.55,1,50,30,85,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Veigar,Veigar,3,600,40,0.6,3,20,20,45,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_XinZhao,Xin Zhao,3,700,65,0.85,1,45,30,60,30,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Yuumi,Yuumi,3,650,40,0.6,3,20,20,40,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Aatrox,Aatrox,4,800,60,0.65,1,40,40,150,75,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Ahri,Ahri,4,600,40,0.75,4,20,20,80,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Ashe,Ashe,4,600,80,0.75,4,20,20,30,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Cassiopeia,Cassiopeia,4,750,55,0.6,2,30,20,150,80,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Jhin,Jhin,4,600,100,2,4,20,20,4,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Morgana,Morgana,4,750,50,0.7,3,30,60,120,60,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Riven,Riven,4,800,70,0.75,1,35,30,20,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Sejuani,Sejuani,4,1000,45,0.55,1,60,40,150,70,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Shen,Shen,4,950,60,0.65,1,60,40,100,50,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Talon,Talon,4,800,90,0.8,1,30,20,40,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Warwick,Warwick,4,950,85,0.8,1,40,40,70,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Azir,Azir,5,950,70,0.85,4,30,20,150,75,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Ezreal,Ezreal,5,750,80,0.9,4,20,20,150,90,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Kayn,Kayn,5,900,80,1,1,40,40,50,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_LeeSin,Lee Sin,5,1000,60,0.85,1,50,50,40,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Lillia,Lillia,5,950,40,0.75,2,50,80,120,80,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_AzirSoldier,Sand Guard,5,950,0,0.2,0,50,50,0,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Sett,Sett,5,1100,60,0.75,1,60,30,175,100,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Yone,Yone,5,950,80,0.95,1,40,40,60,0,0.25,1.5
+Set 4,4,base,TFTSet4,11.1,TFT4_Zilean,Zilean,5,750,45,0.75,3,20,20,150,100,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Brand,Brand,1,500,40,0.65,4,20,40,60,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4b_Diana,Diana,1,550,50,0.7,1,30,20,70,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Elise,Elise,1,600,45,0.65,2,30,20,75,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Fiora,Fiora,1,600,45,0.75,1,35,30,95,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Galio,Galio,1,1000,0,0.65,1,40,40,150,75,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Garen,Garen,1,600,50,0.6,1,50,35,100,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Maokai,Maokai,1,700,55,0.5,1,40,30,75,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Nasus,Nasus,1,650,45,0.65,1,50,40,70,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Nidalee,Nidalee,1,550,45,0.7,4,30,20,60,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_TahmKench,Tahm Kench,1,700,85,0.5,1,40,30,0,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT_TrainingDummy,Target Dummy,1,700,0,0.2,0,40,40,0,0,,0
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Tristana,Tristana,1,500,50,0.7,4,20,40,40,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_TwistedFate,Twisted Fate,1,550,45,0.65,3,20,20,70,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Wukong,Wukong,1,650,55,0.65,1,40,30,50,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Yasuo,Yasuo,1,550,50,0.7,1,30,20,45,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Annie,Annie,2,750,45,0.6,2,40,40,65,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Braum,Braum,2,800,40,0.75,1,60,60,60,30,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Janna,Janna,2,550,40,0.6,4,20,20,70,40,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_JarvanIV,Jarvan IV,2,600,60,0.6,1,45,30,100,50,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Jax,Jax,2,750,60,0.75,1,40,30,110,60,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Lulu,Lulu,2,500,50,0.6,3,20,20,140,75,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Nautilus,Nautilus,2,750,55,0.6,1,55,40,150,85,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_NPC_Nexus,Nexus Minion,2,6000,400,0.6,1,100,100,250,200,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Pyke,Pyke,2,700,50,0.6,1,50,30,120,60,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Rakan,Rakan,2,600,60,0.7,2,40,40,120,60,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Teemo,Teemo,2,500,55,0.7,3,20,20,60,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Vi,Vi,2,700,65,0.6,1,40,30,50,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Vladimir,Vladimir,2,750,40,0.6,2,40,40,60,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4b_Zed,Zed,2,600,55,0.75,1,20,20,0,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Akali,Akali,3,650,55,0.85,1,20,20,20,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Darius,Darius,3,800,70,0.7,1,60,60,50,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Irelia,Irelia,3,800,55,0.65,1,40,40,100,50,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Kalista,Kalista,3,650,65,1,3,20,20,0,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Katarina,Katarina,3,500,65,0.65,1,20,20,90,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Kennen,Kennen,3,650,60,0.65,2,30,30,125,50,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4b_Kindred,Kindred,3,650,70,0.8,3,20,20,35,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Neeko,Neeko,3,700,45,0.75,3,20,20,70,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Nunu,Nunu & Willump,3,750,65,0.55,1,50,30,85,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Shyvana,Shyvana,3,700,70,0.75,1,35,60,75,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Sivir,Sivir,3,650,70,0.85,3,20,20,70,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Veigar,Veigar,3,600,40,0.65,3,20,20,55,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Yuumi,Yuumi,3,650,40,0.6,3,20,20,40,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Aatrox,Aatrox,4,900,60,0.65,1,70,40,150,75,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_AurelionSol,Aurelion Sol,4,650,40,0.75,4,20,80,80,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_ChoGath,Cho'Gath,4,1000,100,0.6,1,70,60,180,100,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Kayle,Kayle,4,650,75,0.9,3,20,20,60,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4b_Morgana,Morgana,4,850,50,0.7,2,60,60,120,60,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Olaf,Olaf,4,900,85,0.8,1,60,60,70,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Sejuani,Sejuani,4,1000,45,0.55,1,60,40,160,80,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Shen,Shen,4,950,60,0.65,1,60,40,100,50,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Talon,Talon,4,800,95,0.8,1,30,20,40,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Tryndamere,Tryndamere,4,850,85,0.85,1,60,60,100,60,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Xayah,Xayah,4,600,80,0.85,3,20,20,130,70,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Azir,Azir,5,950,70,0.85,4,30,20,150,75,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_LeeSin,Lee Sin,5,999,60,0.85,1,60,60,40,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Ornn,Ornn,5,900,100,0.55,1,50,50,160,80,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Samira,Samira,5,900,65,0.85,2,30,30,4,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_AzirSoldier,Sand Guard,5,950,0,0.2,0,50,50,0,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Sett,Sett,5,1100,60,0.75,1,60,30,175,100,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Swain,Swain,5,1000,60,0.65,2,60,80,100,40,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Yone,Yone,5,950,80,0.95,1,40,40,60,0,0.25,1.5
+Set 4.5,4,mid,TFTSet4_Act2,11.8,TFT4_Zilean,Zilean,5,750,45,0.75,3,20,20,150,100,0.25,1.5
+Set 5,5,base,TFT_Set5,11.14,TFT5_Aatrox,Aatrox,1,650,60,0.65,1,30,30,70,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_IvernMinion,Daisy,1,,80,0.8,1,60,60,0,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Gragas,Gragas,1,750,50,0.5,1,40,40,70,40,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Kalista,Kalista,1,500,60,0.75,4,15,15,120,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Khazix,Kha'Zix,1,500,55,0.7,1,25,25,60,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Kled,Kled,1,400,65,0.75,1,30,30,0,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Leona,Leona,1,700,80,0.55,1,40,40,60,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Lissandra,Lissandra,1,550,40,0.65,3,20,20,50,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Poppy,Poppy,1,600,80,0.55,1,40,40,70,50,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT_TrainingDummy,Target Dummy,1,700,0,0.2,0,40,40,0,0,,0
+Set 5,5,base,TFT_Set5,11.14,TFT5_Monstrosity,The Monstrosity,1,,0,0.8,1,0,,100,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Udyr,Udyr,1,700,55,0.75,1,30,30,40,30,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Vayne,Vayne,1,500,30,0.8,4,15,15,0,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Vladimir,Vladimir,1,650,45,0.65,2,35,35,80,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT_VoidSpawn,Voidspawn,1,,0,0.8,1,20,20,0,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Warwick,Warwick,1,700,55,0.6,1,40,40,100,60,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Ziggs,Ziggs,1,450,40,0.75,4,15,15,40,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Brand,Brand,2,600,45,0.65,3,20,20,20,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Hecarim,Hecarim,2,750,55,0.55,1,45,45,90,40,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Kennen,Kennen,2,600,50,0.7,2,30,30,125,60,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_LeBlanc,LeBlanc,2,600,55,0.75,3,20,20,60,20,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Nautilus,Nautilus,2,750,80,0.55,1,45,45,120,50,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Sejuani,Sejuani,2,750,65,0.55,1,45,45,60,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Sett,Sett,2,750,70,0.7,1,35,35,50,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Soraka,Soraka,2,550,40,0.6,3,25,25,70,30,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Syndra,Syndra,2,550,40,0.65,4,20,20,90,50,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Thresh,Thresh,2,800,75,0.6,2,40,40,80,40,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Trundle,Trundle,2,700,65,0.8,1,35,35,80,30,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Varus,Varus,2,550,60,0.75,4,20,20,60,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Viktor,Viktor,2,500,45,0.65,4,20,20,70,30,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Ashe,Ashe,3,550,65,0.75,6,20,20,90,50,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_DraconicEgg,Draconic Egg,3,10,,1,0,10,10,100,0,,0
+Set 5,5,base,TFT_Set5,11.14,TFT5_Katarina,Katarina,3,700,40,0.8,1,30,30,20,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_LeeSin,Lee Sin,3,850,60,0.75,1,35,35,70,30,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Lulu,Lulu,3,650,40,0.6,3,25,25,100,40,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Lux,Lux,3,600,40,0.6,4,20,20,80,40,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Morgana,Morgana,3,850,45,0.6,2,35,35,120,80,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Nidalee,Nidalee,3,800,50,0.9,3,35,35,60,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Nocturne,Nocturne,3,650,80,0.85,1,30,30,0,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Nunu,Nunu & Willump,3,900,65,0.55,1,45,45,75,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Pantheon,Pantheon,3,800,70,0.75,1,45,45,60,30,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Riven,Riven,3,850,85,0.8,1,35,35,40,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Yasuo,Yasuo,3,800,60,1,1,35,35,40,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Zyra,Zyra,3,600,40,0.7,4,20,20,100,40,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Aphelios,Aphelios,4,650,75,0.85,4,25,25,90,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Diana,Diana,4,650,55,0.65,1,40,40,160,80,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Draven,Draven,4,700,90,0.75,3,30,30,40,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Ivern,Ivern,4,950,40,0.75,2,50,50,180,100,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Jax,Jax,4,900,80,0.9,1,50,50,20,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Karma,Karma,4,700,45,0.7,4,25,25,50,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Mordekaiser,Mordekaiser,4,1000,130,0.5,1,60,60,80,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Rell,Rell,4,950,70,0.6,1,60,60,150,80,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Ryze,Ryze,4,800,50,0.8,3,30,30,50,20,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Taric,Taric,4,950,60,0.6,1,60,60,200,120,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Velkoz,Vel'Koz,4,650,45,0.75,4,25,25,80,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_HeimerTurret,Baby Dragon,5,1000,125,0.5,23,30,100,0,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Darius,Darius,5,1050,90,0.75,1,60,60,100,40,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Garen,Garen,5,1050,80,0.75,1,60,60,100,40,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Heimerdinger,Heimerdinger,5,800,45,0.75,4,30,30,140,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Kayle,Kayle,5,650,75,1.1,4,25,25,5,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Kindred,Kindred,5,750,60,0.75,3,30,30,200,100,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Teemo,Teemo,5,800,65,0.8,4,30,30,60,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Viego,Viego,5,1000,70,1,1,40,40,40,0,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_Volibear,Volibear,5,1100,80,0.65,1,60,60,200,110,0.25,1.3
+Set 5,5,base,TFT_Set5,11.14,TFT5_KindredWolfCombat,Wolf,5,850,60,0.75,1,20,20,20,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Aatrox,Aatrox,1,650,60,0.65,1,35,35,100,30,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_IvernMinion,Daisy,1,,90,0.8,1,60,60,0,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Gragas,Gragas,1,750,50,0.5,1,40,40,70,40,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Kalista,Kalista,1,500,60,0.75,4,15,15,120,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Khazix,Kha'Zix,1,500,55,0.7,1,25,25,60,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Kled,Kled,1,400,60,0.75,1,30,30,0,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Leona,Leona,1,700,80,0.55,1,40,40,80,40,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Olaf,Olaf,1,650,65,0.7,1,35,35,0,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Poppy,Poppy,1,600,80,0.55,1,40,40,70,50,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Senna,Senna,1,500,55,0.7,4,15,15,80,40,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT_TrainingDummy,Target Dummy,1,700,0,0.2,0,40,40,0,0,,0
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Monstrosity,The Monstrosity,1,,0,0.8,1,0,,100,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Udyr,Udyr,1,700,55,0.75,1,30,30,40,30,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Vayne,Vayne,1,500,35,0.8,4,15,15,0,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Vladimir,Vladimir,1,700,45,0.65,2,35,35,80,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT_VoidSpawn,Voidspawn,1,,0,0.8,1,20,20,0,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Ziggs,Ziggs,1,450,40,0.75,4,15,15,40,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Brand,Brand,2,600,45,0.65,3,20,20,20,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Hecarim,Hecarim,2,750,55,0.55,1,45,45,125,75,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Irelia,Irelia,2,750,60,0.8,1,40,40,80,40,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Kennen,Kennen,2,600,50,0.65,2,30,30,125,60,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Nautilus,Nautilus,2,750,80,0.55,1,45,45,120,50,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Pyke,Pyke,2,650,50,0.65,1,30,30,120,60,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Sejuani,Sejuani,2,750,65,0.55,1,45,45,80,20,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Sett,Sett,2,800,70,0.7,1,40,40,50,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Soraka,Soraka,2,550,40,0.65,3,25,25,80,40,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Syndra,Syndra,2,600,40,0.65,4,20,20,90,50,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Thresh,Thresh,2,800,75,0.6,2,40,40,120,80,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Tristana,Tristana,2,550,70,0.75,4,20,20,125,60,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Varus,Varus,2,600,65,0.75,4,20,20,60,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Ashe,Ashe,3,600,70,0.75,6,20,20,100,50,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_DraconicEgg,Draconic Egg,3,10,,1,0,10,10,100,0,,0
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_LeeSin,Lee Sin,3,800,60,0.75,1,35,35,80,30,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Lulu,Lulu,3,650,40,0.7,3,25,25,120,60,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Lux,Lux,3,600,40,0.65,4,20,20,80,40,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_MissFortune,Miss Fortune,3,700,55,0.8,4,25,25,70,20,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Nidalee,Nidalee,3,750,50,0.9,3,35,35,60,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Nocturne,Nocturne,3,650,75,0.85,1,30,30,0,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Nunu,Nunu & Willump,3,900,65,0.55,1,45,45,90,30,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Rakan,Rakan,3,800,50,0.6,2,35,35,80,40,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Riven,Riven,3,800,75,0.8,1,35,35,40,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Yasuo,Yasuo,3,800,60,0.9,1,35,35,40,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Zyra,Zyra,3,600,40,0.7,4,20,20,100,40,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Aphelios,Aphelios,4,650,65,0.85,4,25,25,170,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Diana,Diana,4,750,75,0.7,1,40,40,140,70,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Draven,Draven,4,700,85,0.8,3,30,30,40,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Fiddlesticks,Fiddlesticks,4,800,60,0.75,2,40,40,120,60,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Galio,Galio,4,1000,70,0.6,1,60,60,180,120,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Ivern,Ivern,4,950,40,0.75,2,50,50,180,100,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Jax,Jax,4,950,80,0.9,1,50,50,20,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Karma,Karma,4,750,45,0.7,4,25,25,50,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Lucian,Lucian,4,700,75,0.75,4,25,25,50,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Rell,Rell,4,900,70,0.6,1,60,60,150,80,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Velkoz,Vel'Koz,4,700,45,0.75,4,25,25,90,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Akshan,Akshan,5,800,80,1,3,35,35,120,60,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_HeimerTurret,Baby Dragon,5,1000,100,0.5,23,30,100,0,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Garen,Garen,5,1050,80,0.75,1,60,60,160,80,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Gwen,Gwen,5,950,60,0.9,2,50,50,20,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Heimerdinger,Heimerdinger,5,800,45,0.7,4,30,30,140,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Kayle,Kayle,5,800,85,1.15,4,25,25,5,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Teemo,Teemo,5,800,65,0.8,4,30,30,60,30,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_EmblemArmoryKey,Tome of Traits,5,10,,1,0,10,10,100,0,,0
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Viego,Viego,5,1000,70,1,1,40,40,40,0,0.25,1.3
+Set 5.5,5,mid,TFT_Set5_Stage2,11.21,TFT5_Volibear,Volibear,5,1000,80,0.65,1,60,60,200,110,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Caitlyn,Caitlyn,1,500,50,0.75,4,15,15,110,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Camille,Camille,1,700,50,0.6,1,40,40,60,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Darius,Darius,1,650,60,0.5,1,40,40,120,70,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Ezreal,Ezreal,1,500,50,0.65,4,15,15,40,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Garen,Garen,1,650,70,0.55,1,40,40,90,50,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Graves,Graves,1,750,65,0.55,1,40,40,100,50,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Illaoi,Illaoi,1,700,70,0.55,1,40,40,80,40,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Kassadin,Kassadin,1,650,50,0.65,1,35,35,100,60,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Poppy,Poppy,1,650,60,0.55,1,40,40,100,50,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Singed,Singed,1,650,60,0.55,1,40,40,150,100,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT_TrainingDummy,Target Dummy,1,500,0,0.2,0,40,40,0,0,,0
+Set 6,6,base,TFT_Set6,12.2,TFT6_TwistedFate,Twisted Fate,1,500,40,0.65,3,20,20,40,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Twitch,Twitch,1,450,50,0.7,3,15,15,35,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Ziggs,Ziggs,1,500,50,0.6,4,15,15,60,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Blitzcrank,Blitzcrank,2,650,65,0.5,1,45,45,175,175,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Katarina,Katarina,2,700,50,0.7,1,25,25,40,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_KogMaw,Kog'Maw,2,550,35,0.6,3,20,20,30,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Lulu,Lulu,2,600,40,0.65,3,25,25,125,60,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Quinn,Quinn,2,550,60,0.7,4,20,20,140,70,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Swain,Swain,2,800,45,0.6,2,45,45,80,40,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Talon,Talon,2,650,50,0.7,1,25,25,0,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Tristana,Tristana,2,600,55,0.75,4,20,20,60,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Trundle,Trundle,2,700,70,0.75,1,40,40,70,40,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Vi,Vi,2,700,70,0.65,1,40,40,50,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Warwick,Warwick,2,750,50,0.8,1,40,40,0,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Zilean,Zilean,2,600,40,0.6,4,20,20,80,40,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Zyra,Zyra,2,600,50,0.7,4,20,20,120,60,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_ChoGath,Cho'Gath,3,1300,90,0.6,1,55,55,165,100,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Ekko,Ekko,3,650,50,0.8,1,30,30,120,80,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Gangplank,Gangplank,3,750,75,0.75,1,40,40,50,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Heimerdinger,Heimerdinger,3,650,45,0.65,4,35,35,50,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Leona,Leona,3,850,50,0.6,1,50,50,125,75,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Lissandra,Lissandra,3,750,50,0.6,2,30,30,120,70,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Malzahar,Malzahar,3,650,40,0.65,4,30,30,60,30,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_MissFortune,Miss Fortune,3,650,60,0.7,3,25,25,80,40,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Samira,Samira,3,700,75,0.7,3,25,25,35,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Shaco,Shaco,3,700,80,0.75,1,25,25,80,40,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Taric,Taric,3,800,50,0.6,1,50,50,100,50,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Vex,Vex,3,850,50,0.6,2,40,40,100,50,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Zac,Zac,3,800,70,0.6,1,45,45,100,60,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Braum,Braum,4,1100,70,0.6,1,60,60,200,120,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_DrMundo,Dr. Mundo,4,1000,80,0.6,1,50,50,150,75,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Fiora,Fiora,4,850,75,0.9,1,40,40,140,60,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Janna,Janna,4,700,50,0.7,3,30,30,180,80,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Jhin,Jhin,4,700,90,2,4,30,30,70,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Lux,Lux,4,750,45,0.75,4,25,25,60,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Orianna,Orianna,4,750,50,0.75,4,30,30,130,50,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Seraphine,Seraphine,4,750,40,0.7,4,30,30,150,80,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Sion,Sion,4,1800,100,0.6,1,60,60,200,125,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Urgot,Urgot,4,800,70,0.65,3,30,30,50,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Yone,Yone,4,900,90,0.85,1,40,40,100,50,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Akali,Akali,5,800,70,0.9,1,30,30,40,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Galio,Galio,5,1800,110,0.65,1,70,70,300,200,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Jayce,Jayce,5,1000,90,0.75,1,30,30,60,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Jinx,Jinx,5,888,88,1,4,35,35,99,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Kaisa,Kai'Sa,5,850,60,1.1,3,30,30,150,75,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Tibbers,Mechanical Bear,5,850,50,0.6,1,70,70,100,0,0.25,1.5
+Set 6,6,base,TFT_Set6,12.2,TFT6_HexTechDragon,Mechanical Dragon,5,1250,65,0.8,2,100,100,300,200,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_TahmKench,Tahm Kench,5,1000,80,0.55,1,60,60,60,30,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT5_EmblemArmoryKey,Tome of Traits,5,10,,1,0,10,10,100,0,,0
+Set 6,6,base,TFT_Set6,12.2,TFT6_Veigar,Veigar,5,800,45,0.8,4,25,25,75,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Viktor,Viktor,5,850,50,0.8,4,35,35,140,0,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_Yuumi,Yuumi,5,800,50,0.8,4,30,30,200,80,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_MalzaharVoidling,Mechanical Scarab,8,475,40,0.65,1,30,30,80,40,0.25,1.3
+Set 6,6,base,TFT_Set6,12.2,TFT6_MercenaryChest,Mercenary Chest,8,1,0,,0,0,,12,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Brand,Brand,1,500,40,0.65,3,20,20,20,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Caitlyn,Caitlyn,1,500,50,0.8,4,15,15,100,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Camille,Camille,1,700,45,0.6,1,40,40,60,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Darius,Darius,1,650,60,0.5,1,40,40,120,70,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Ezreal,Ezreal,1,500,45,0.65,4,15,15,40,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Illaoi,Illaoi,1,700,60,0.55,1,40,40,80,40,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_JarvanIV,Jarvan IV,1,700,55,0.7,1,40,40,100,50,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Kassadin,Kassadin,1,750,50,0.65,1,40,40,100,60,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Nocturne,Nocturne,1,600,45,0.7,1,25,25,80,40,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Poppy,Poppy,1,650,60,0.55,1,40,40,100,50,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Singed,Singed,1,700,60,0.55,1,40,40,150,100,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Twitch,Twitch,1,450,45,0.7,3,15,15,45,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Ziggs,Ziggs,1,500,55,0.6,4,15,15,60,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Ashe,Ashe,2,600,60,0.7,4,20,20,60,30,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Blitzcrank,Blitzcrank,2,650,65,0.5,1,45,45,175,175,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Corki,Corki,2,650,55,0.7,4,25,25,50,25,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Lulu,Lulu,2,600,40,0.65,3,25,25,125,60,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Quinn,Quinn,2,550,55,0.7,4,20,20,140,70,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_RekSai,Rek'Sai,2,750,55,0.7,1,45,45,70,50,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Sejuani,Sejuani,2,800,55,0.55,1,45,45,80,20,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Swain,Swain,2,800,40,0.6,2,45,45,85,40,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Syndra,Syndra,2,600,40,0.65,4,20,20,100,50,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Talon,Talon,2,650,45,0.7,1,20,20,0,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Warwick,Warwick,2,750,45,0.75,1,40,40,0,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Zilean,Zilean,2,600,40,0.6,4,20,20,70,30,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Zyra,Zyra,2,600,40,0.7,4,20,20,120,60,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_ChoGath,Cho'Gath,3,750,100,0.55,1,50,50,165,100,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Ekko,Ekko,3,700,55,0.7,1,40,40,120,60,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Gangplank,Gangplank,3,750,65,0.75,1,40,40,50,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Gnar,Gnar,3,700,60,0.7,3,40,40,80,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Leona,Leona,3,850,50,0.6,1,50,50,125,75,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Lucian,Lucian,3,700,55,0.75,3,30,30,40,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Malzahar,Malzahar,3,650,40,0.7,4,30,30,80,50,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_MissFortune,Miss Fortune,3,650,55,0.7,3,25,25,80,40,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Morgana,Morgana,3,800,50,0.6,2,50,50,130,70,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Senna,Senna,3,650,60,0.7,4,25,25,70,30,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Tryndamere,Tryndamere,3,800,70,0.75,1,35,35,100,40,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Vex,Vex,3,850,50,0.6,2,50,50,90,50,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Zac,Zac,3,800,60,0.6,1,45,45,90,50,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Ahri,Ahri,4,800,45,0.8,4,30,30,50,30,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Alistar,Alistar,4,1400,90,0.6,1,80,80,160,80,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Braum,Braum,4,1100,70,0.6,1,60,60,200,120,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Draven,Draven,4,800,85,0.8,4,30,30,40,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Irelia,Irelia,4,900,70,0.8,1,50,50,40,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Jhin,Jhin,4,700,85,2,4,30,30,60,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_KhaZix,Kha'Zix,4,800,90,0.9,1,35,35,40,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Orianna,Orianna,4,700,50,0.8,4,30,30,100,40,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Renata,Renata Glasc,4,800,40,0.7,3,30,30,60,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Seraphine,Seraphine,4,750,40,0.7,4,30,30,130,70,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Sivir,Sivir,4,700,60,0.8,4,30,30,60,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6b_Vi,Vi,4,900,70,0.7,1,50,50,40,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Galio,Galio,5,1300,110,0.65,1,70,70,300,200,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Jayce,Jayce,5,999,85,0.75,1,30,30,60,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Jinx,Jinx,5,888,80,1,4,45,45,99,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Kaisa,Kai'Sa,5,850,60,1.2,3,30,30,160,80,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Silco,Silco,5,850,60,0.7,4,40,40,40,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_TahmKench,Tahm Kench,5,1000,70,0.55,1,60,60,60,30,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_DragonEgg,Treasure Dragon Egg,5,10,,1,0,10,10,100,0,,0
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Viktor,Viktor,5,851,50,0.8,4,35,35,145,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Zeri,Zeri,5,850,75,0.9,11,30,30,60,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Tibbers,Mechanical Bear,7,725,50,0.6,1,50,50,100,0,0.25,1.5
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_HexTechDragon,Mechanical Dragon,7,925,65,0.8,2,90,90,300,200,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_TheGoldenEgg,The Golden Egg,7,10,,1,0,10,10,100,0,,0
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Veigar,Veigar,7,800,45,0.8,4,25,25,75,0,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_Annie,Annie,10,750,45,0.6,2,40,40,65,0,0.25,1.5
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_MalzaharVoidling,Mechanical Scarab,10,450,40,0.65,1,30,30,80,40,0.25,1.3
+Set 6.5,6,mid,TFTSet6_Stage2,12.10,TFT6_MercenaryChest,Mercenary Chest,10,1,0,,0,0,,12,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Aatrox,Aatrox,1,650,65,0.65,1,45,45,100,50,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Ezreal,Ezreal,1,500,40,0.6,3,15,15,40,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Heimerdinger,Heimerdinger,1,500,40,0.65,4,15,15,100,50,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Karma,Karma,1,500,40,0.7,4,20,20,50,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Leona,Leona,1,650,75,0.55,1,45,45,80,40,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Nidalee,Nidalee,1,550,55,0.7,4,30,30,50,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Sejuani,Sejuani,1,650,60,0.55,1,40,40,90,50,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Senna,Senna,1,500,50,0.7,4,15,15,90,30,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Sett,Sett,1,650,65,0.7,1,40,40,60,30,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Skarner,Skarner,1,650,55,0.6,1,45,45,90,40,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_TahmKench,Tahm Kench,1,650,80,0.5,1,40,40,120,60,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Taric,Taric,1,700,70,0.6,1,45,45,50,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Vladimir,Vladimir,1,700,40,0.6,2,45,45,70,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Ashe,Ashe,2,600,50,0.7,4,20,20,90,40,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Braum,Braum,2,800,50,0.6,1,60,60,60,30,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Gnar,Gnar,2,700,50,0.65,2,40,40,70,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Jinx,Jinx,2,550,60,0.7,4,20,20,100,50,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Kayn,Kayn,2,750,60,0.75,1,25,25,45,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Lillia,Lillia,2,750,40,0.7,1,40,40,50,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Nami,Nami,2,600,40,0.65,3,20,20,90,50,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Qiyana,Qiyana,2,650,50,0.75,1,30,30,100,40,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Shen,Shen,2,800,60,0.65,1,45,45,105,60,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Thresh,Thresh,2,750,70,0.6,2,45,45,150,150,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Tristana,Tristana,2,600,60,0.7,4,20,20,60,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Twitch,Twitch,2,550,55,0.7,3,20,20,80,40,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Yone,Yone,2,800,55,0.85,1,40,40,0,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Anivia,Anivia,3,650,40,0.7,4,25,25,80,40,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Diana,Diana,3,700,50,0.75,1,35,35,100,50,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Elise,Elise,3,700,50,0.75,2,30,30,40,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Illaoi,Illaoi,3,750,55,0.6,1,50,50,100,50,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_LeeSin,Lee Sin,3,800,55,0.75,1,45,45,100,40,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Lulu,Lulu,3,650,40,0.7,3,25,25,150,75,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Nunu,Nunu & Willump,3,850,65,0.55,1,50,50,100,40,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Olaf,Olaf,3,800,55,0.7,1,50,50,100,50,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Ryze,Ryze,3,600,40,0.65,4,25,25,20,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Swain,Swain,3,600,45,0.7,4,30,30,45,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Sylas,Sylas,3,800,60,0.6,1,50,50,140,70,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Varus,Varus,3,650,55,0.7,3,25,25,150,75,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Volibear,Volibear,3,750,60,0.75,1,45,45,60,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Corki,Corki,4,750,75,0.7,4,30,30,80,20,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_DragonBlue,Daeja,4,900,20,0.6,4,40,40,100,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Hecarim,Hecarim,4,900,60,0.75,1,60,60,105,60,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_DragonGold,Idas,4,1100,100,0.55,1,60,60,160,80,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Neeko,Neeko,4,1000,60,0.7,2,20,20,150,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Ornn,Ornn,4,1000,60,0.6,1,60,60,180,80,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_DragonGreen,Shi Oh Yu,4,900,90,0.75,1,60,60,90,30,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Sona,Sona,4,750,40,0.7,4,30,30,160,100,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_DragonPurple,Sy'fen,4,1100,110,0.7,1,70,70,175,120,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Talon,Talon,4,800,60,0.8,1,40,40,125,75,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Xayah,Xayah,4,750,70,0.75,3,25,25,60,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_AoShin,Ao Shin,5,1000,60,0.8,4,50,50,200,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_AurelionSol,Aurelion Sol,5,1000,60,0.75,4,50,50,60,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Bard,Bard,5,850,60,0.7,4,40,40,240,160,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Pyke,Pyke,5,900,70,1,1,40,40,60,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Shyvana,Shyvana,5,1000,140,0.8,1,70,70,60,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Soraka,Soraka,5,800,40,0.7,4,30,30,200,100,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Yasuo,Yasuo,5,1100,90,1,1,50,50,25,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_Zoe,Zoe,5,800,45,0.75,4,20,20,100,30,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT6_TheGoldenEgg,The Golden Egg,8,10,,1,0,10,10,100,0,,0
+Set 7,7,base,TFTSet7,12.15,TFT7_JadeStatue,Jade Statue,11,1,,0.65,1,15,15,0,0,0.25,1.3
+Set 7,7,base,TFTSet7,12.15,TFT7_TrainerDragon,Nomsy,11,225,0,0.6,2,0,,140,90,0.25,1.5
+Set 7,7,base,TFTSet7,12.15,TFT7_IvernMinion,Zoe's Daisy,11,,120,0.5,1,60,60,0,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Ezreal,Ezreal,1,500,35,0.7,3,15,15,40,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Karma,Karma,1,500,40,0.7,4,20,20,50,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Leona,Leona,1,650,75,0.55,1,45,45,80,40,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Malphite,Malphite,1,700,80,0.6,1,40,40,90,90,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Nasus,Nasus,1,600,60,0.55,1,40,40,90,30,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Nidalee,Nidalee,1,600,60,0.7,4,30,30,50,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Sejuani,Sejuani,1,650,60,0.55,1,40,40,75,25,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Senna,Senna,1,500,50,0.7,4,15,15,75,15,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Sett,Sett,1,650,60,0.7,1,40,40,60,30,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Skarner,Skarner,1,650,60,0.6,1,45,45,90,40,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Taliyah,Taliyah,1,550,30,0.7,4,15,15,60,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT_TrainingDummy,Target Dummy,1,700,0,0.2,0,40,40,0,0,,0
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Vladimir,Vladimir,1,700,40,0.6,2,45,45,70,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT_Voidspawn,Voidspawn,1,,0,0.8,1,20,20,0,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Wukong,Wukong,1,650,65,0.7,1,45,45,60,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Aphelios,Aphelios,2,500,60,0.7,4,20,20,175,80,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Braum,Braum,2,800,85,0.6,1,60,60,60,30,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Gnar,Gnar,2,750,50,0.7,2,40,40,70,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Jax,Jax,2,750,55,0.7,1,45,45,140,70,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Kaisa,Kai'Sa,2,550,35,0.8,4,25,25,45,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Lillia,Lillia,2,750,50,0.75,1,50,50,50,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Lux,Lux,2,600,30,0.7,4,20,20,60,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Qiyana,Qiyana,2,700,55,0.75,1,35,35,90,30,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Rell,Rell,2,700,50,0.6,1,45,45,70,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Twitch,Twitch,2,550,55,0.7,3,20,20,80,40,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Yone,Yone,2,800,55,0.85,1,40,40,0,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Zac,Zac,2,800,60,0.6,1,45,45,60,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Zyra,Zyra,2,600,40,0.65,4,20,20,125,50,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Diana,Diana,3,700,55,0.75,1,35,35,90,30,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7b_Heimerdinger,Heimerdinger,3,600,50,0.65,4,25,25,100,50,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_LeeSin,Lee Sin,3,800,55,0.75,1,50,50,90,30,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7b_Lulu,Lulu,3,600,50,0.65,4,25,25,100,50,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Nomsy,Nomsy,3,650,60,0.75,4,30,30,90,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_NomsyMage,Nomsy,3,650,60,0.75,4,30,30,90,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_NomsyCannoneer,Nomsy,3,650,60,0.75,4,30,30,90,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_NomsyEvoker,Nomsy,3,650,60,0.75,4,30,30,90,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Nunu,Nunu & Willump,3,850,65,0.55,1,50,50,100,40,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Olaf,Olaf,3,800,55,0.7,1,50,50,100,30,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Rakan,Rakan,3,800,55,0.75,2,50,50,75,15,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Rengar,Rengar,3,700,70,0.75,1,30,30,140,70,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Seraphine,Seraphine,3,750,50,0.7,3,30,30,175,100,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Sylas,Sylas,3,800,60,0.6,1,50,50,120,60,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7b_Tristana,Tristana,3,600,60,0.75,4,25,25,100,50,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Varus,Varus,3,650,55,0.7,3,25,25,150,75,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7b_Volibear,Volibear,3,800,50,0.75,1,50,50,40,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Zeri,Zeri,3,600,65,0.75,4,20,20,70,20,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_DragonGuild,Zippy,3,800,85,0.75,1,50,50,100,40,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_DragonBlue,Daeja,4,800,20,0.6,4,30,30,100,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Graves,Graves,4,800,65,0.65,3,30,30,40,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Hecarim,Hecarim,4,1000,60,0.75,1,60,60,90,30,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_DragonGold,Idas,4,950,90,0.55,1,60,60,160,80,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Jayce,Jayce,4,900,60,0.8,3,25,25,80,20,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Nilah,Nilah,4,800,70,0.75,2,45,45,50,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Pantheon,Pantheon,4,1000,60,0.65,1,50,50,60,30,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_DragonGreen,Shi Oh Yu,4,850,75,0.75,1,60,60,100,30,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_AquaticDragon,Sohm,4,800,30,0.75,4,30,30,40,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_DragonPurple,Sy'fen,4,900,90,0.7,1,60,60,170,100,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_DragonSwain,Tyrant Swain,4,900,40,0.6,2,70,70,110,60,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Xayah,Xayah,4,750,70,0.75,3,25,25,60,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_AoShin,Ao Shin,5,800,60,0.8,4,35,35,190,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_AurelionSol,Aurelion Sol,5,800,60,0.75,4,35,35,60,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Bard,Bard,5,850,60,0.7,4,40,40,240,160,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Shyvana,Shyvana,5,900,120,0.8,1,70,70,60,15,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Soraka,Soraka,5,800,40,0.7,4,30,30,200,100,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_DragonEarth,Terra,5,1050,80,0.65,1,100,100,70,30,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Yasuo,Yasuo,5,1000,90,1,1,50,50,25,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_Zoe,Zoe,5,800,45,0.75,4,20,20,110,40,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT6_TheGoldenEgg,The Golden Egg,8,10,,1,0,10,10,100,0,,0
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT5_EmblemArmoryKey,Tome of Traits,8,10,,1,0,10,10,100,0,,0
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_JadeStatue,Jade Statue,11,1,,0.65,1,15,15,0,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_LagoonRelic,Seastone,11,1,,0.8,1,,20,80,0,0.25,1.3
+Set 7.5,7,mid,TFTSet7_Stage2,12.22,TFT7_IvernMinion,Zoe's Daisy,11,,120,0.5,1,60,60,0,0,0.25,1.3
+Set 8,8,base,TFTSet8,13.4,TFT8_Ashe,Ashe,1,500,60,0.7,4,15,15,50,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Blitzcrank,Blitzcrank,1,650,50,0.5,1,45,45,90,45,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Galio,Galio,1,650,50,0.55,1,45,45,140,70,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Gangplank,Gangplank,1,650,45,0.65,1,30,30,50,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Hecarim,Hackerim,1,650,55,0.55,1,40,40,0,40,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Kayle,Kayle,1,500,50,0.65,4,15,15,30,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Lulu,Lulu,1,500,30,0.7,4,15,15,50,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Lux,Lux,1,500,40,0.7,4,15,15,60,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Nasus,Nasus,1,650,65,0.65,1,40,40,60,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Poppy,Poppy,1,650,60,0.55,1,45,45,80,40,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Renekton,Renekton,1,650,50,0.65,1,40,40,50,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Sylas,Sylas,1,700,50,0.55,1,45,45,80,30,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Talon,Talon,1,600,50,0.7,1,25,25,70,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_WuKong,Wukong,1,650,60,0.6,1,40,40,100,50,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Annie,Annie,2,750,40,0.6,2,40,40,90,30,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Camille,Camille,2,750,65,0.75,1,45,45,70,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Draven,Draven,2,600,65,0.75,4,15,15,140,70,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Ezreal,Ezreal,2,550,55,0.7,4,20,20,55,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Fiora,Fiora,2,800,50,0.8,1,50,50,80,30,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Jinx,Jinx,2,550,50,0.7,4,20,20,80,20,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_LeeSin,Lee Sin,2,700,60,0.65,1,50,50,70,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Malphite,Malphite,2,800,60,0.5,1,45,45,80,40,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Rell,Rell,2,800,60,0.5,1,50,50,150,80,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Sivir,Sivir,2,600,65,0.75,4,20,20,70,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Vi,Vi,2,700,50,0.6,1,45,45,80,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Yasuo,Yasuo,2,750,45,0.75,1,40,40,90,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Yuumi,Yuumi,2,550,40,0.7,4,20,20,50,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Alistar,Alistar,3,800,50,0.55,1,50,50,175,75,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Chogath,Cho'Gath,3,950,60,0.65,1,55,55,120,40,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Jax,Jax,3,800,45,0.8,1,45,45,0,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Kaisa,Kai'Sa,3,650,35,0.8,4,25,25,60,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Leblanc,LeBlanc,3,650,45,0.7,4,30,30,60,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Nilah,Nilah,3,800,45,0.7,1,50,50,125,50,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Rammus,Rammus,3,950,60,0.65,1,55,55,120,60,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Riven,Riven,3,700,50,0.65,1,45,45,90,30,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Senna,Senna,3,650,70,0.7,4,25,25,70,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Sona,Sona,3,650,40,0.7,4,25,25,40,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Vayne,Vayne,3,600,60,0.75,4,25,25,40,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Velkoz,Vel'Koz,3,750,50,0.65,4,30,30,70,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Zoe,Zoe,3,600,40,0.7,4,20,20,30,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_AurelionSol,Aurelion Sol,4,850,40,0.7,4,30,30,90,30,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_BelVeth,Bel'Veth,4,1000,75,0.9,2,50,50,30,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Ekko,Ekko,4,1000,60,0.6,1,60,60,140,70,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_MissFortune,Miss Fortune,4,750,60,0.7,4,30,30,120,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Samira,Samira,4,700,70,0.75,4,30,30,75,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Sejuani,Sejuani,4,1000,70,0.55,1,70,70,180,80,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Sett,Sett,4,1000,90,0.65,1,60,60,180,80,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Soraka,Soraka,4,750,50,0.65,4,30,30,40,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Taliyah,Taliyah,4,700,45,0.75,4,30,30,90,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Viego,Viego,4,950,60,0.75,1,50,50,50,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Zac,Zac,4,1050,60,0.75,1,65,65,100,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Zed,Zed,4,1000,80,0.85,1,45,45,40,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Aphelios,Aphelios,5,800,80,0.9,4,30,30,140,40,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Fiddlesticks,Fiddlesticks,5,1300,50,0.75,1,70,70,66,66,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Janna,Janna,5,800,50,0.75,4,35,35,140,70,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Leona,Leona,5,1100,75,0.7,1,60,60,75,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Mordekaiser,Mordekaiser,5,1200,70,0.7,1,70,70,150,60,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Nunu,Nunu & Willump,5,1337,0,0.2,1,60,60,90,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Syndra,Syndra,5,850,40,0.85,4,40,40,125,70,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Urgot,Urgot,5,1000,70,1,3,40,40,175,100,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT6_ArchiveOfAugments,Archive Of Augments,8,10,,1,0,10,10,100,0,,0
+Set 8,8,base,TFTSet8,13.4,TFT6_TheGoldenEgg,The Golden Egg,8,10,,1,0,10,10,100,0,,0
+Set 8,8,base,TFTSet8,13.4,TFT8_Boss_Urgot,Giant Crabgot,11,15000,300,1,7,100,100,300,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT6_MercenaryChest,Mercenary Chest,11,1,0,,0,0,,12,0,0.25,1.3
+Set 8,8,base,TFTSet8,13.4,TFT8_Boss_Zac,Mutant Zac,11,10000,200,0.75,2,75,75,300,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_PranksterDummy,Target Dummy,11,350,0,0.2,0,20,20,150,0,0.25,1.4
+Set 8,8,base,TFTSet8,13.4,TFT8_Boss_AurelionSol,Volcanic Sol,11,10000,100,0.8,7,50,50,300,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Ashe,Ashe,1,500,60,0.7,4,15,15,50,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Blitzcrank,Blitzcrank,1,650,65,0.5,1,45,45,80,40,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Gangplank,Gangplank,1,650,45,0.75,1,35,35,50,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Hecarim,Hackerim,1,650,55,0.55,1,40,40,0,40,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Kayle,Kayle,1,500,55,0.65,4,15,15,30,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Lucian,Lucian,1,500,20,0.7,4,15,15,40,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Lulu,Lulu,1,500,30,0.7,4,15,15,50,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Lux,Lux,1,500,40,0.7,4,15,15,70,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Nasus,Nasus,1,700,65,0.65,1,45,45,60,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Pantheon,Pantheon,1,650,50,0.6,1,40,40,60,30,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Poppy,Poppy,1,650,60,0.55,1,45,45,80,40,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Renekton,Renekton,1,650,50,0.65,1,40,40,50,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Sylas,Sylas,1,700,50,0.55,1,45,45,80,30,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT_TrainingDummy,Target Dummy,1,700,0,0.2,1,40,40,0,0,,0
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT_Voidspawn,Voidspawn,1,,0,0.8,1,20,20,0,0,0.25,1.3
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_WuKong,Wukong,1,650,60,0.6,1,40,40,100,50,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Annie,Annie,2,750,40,0.6,2,40,40,90,30,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Camille,Camille,2,750,65,0.75,1,45,45,70,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Draven,Draven,2,600,65,0.75,4,15,15,130,70,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Ezreal,Ezreal,2,550,55,0.7,4,20,20,55,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Fiora,Fiora,2,800,55,0.8,1,50,50,80,30,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Jinx,Jinx,2,550,55,0.7,4,20,20,65,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_LeeSin,Lee Sin,2,700,60,0.65,1,50,50,70,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Malphite,Malphite,2,800,60,0.5,1,45,45,80,40,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Pyke,Pyke,2,700,50,0.75,1,35,35,120,60,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Rell,Rell,2,800,60,0.5,1,50,50,150,80,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8b_Sivir,Sivir,2,550,60,0.75,4,20,20,50,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Vi,Vi,2,700,50,0.6,1,45,45,80,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Yasuo,Yasuo,2,750,45,0.75,1,40,40,70,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Alistar,Alistar,3,800,50,0.55,1,50,50,175,75,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_CorruptedEgg,Glitched Egg,3,10,,1,0,10,10,100,0,,0
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_GnarBig,Gnar,3,800,60,0.8,1,35,35,80,20,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Jax,Jax,3,800,45,0.8,1,45,45,0,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Kaisa,Kai'Sa,3,600,25,0.8,4,25,25,105,20,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Leblanc,LeBlanc,3,650,45,0.7,4,30,30,60,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Morgana,Morgana,3,900,50,0.75,4,30,30,100,50,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Nilah,Nilah,3,800,45,0.7,1,50,50,125,50,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Rammus,Rammus,3,950,60,0.65,1,55,55,110,50,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Riven,Riven,3,700,50,0.65,1,45,45,90,30,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Shen,Shen,3,750,60,0.55,1,50,50,100,50,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Sona,Sona,3,650,40,0.7,4,25,25,40,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Vayne,Vayne,3,600,60,0.8,4,25,25,40,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Vex,Vex,3,650,40,0.75,4,25,25,40,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Aatrox,Aatrox,4,1100,60,0.8,1,60,60,75,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_AurelionSol,Aurelion Sol,4,850,40,0.75,4,30,30,90,30,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_BelVeth,Bel'Veth,4,1050,80,0.9,2,50,50,40,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Ekko,Ekko,4,1000,60,0.6,1,60,60,140,70,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Garen,Garen,4,1050,80,0.6,1,60,60,200,100,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Jhin,Jhin,4,744,70,0.8,10,44,44,4,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_MissFortune,Miss Fortune,4,750,60,0.7,4,30,30,120,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Neeko,Neeko,4,750,45,0.75,4,30,30,80,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Samira,Samira,4,700,70,0.8,4,30,30,65,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_TwistedFate,Twisted Fate,4,750,45,0.8,4,30,30,30,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Viego,Viego,4,1000,60,0.8,1,50,50,45,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Warwick,Warwick,4,950,70,0.95,1,50,50,90,40,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Fiddlesticks,Fiddlesticks,5,1200,50,0.75,1,66,66,66,66,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Janna,Janna,5,800,50,0.8,4,45,45,120,40,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Leona,Leona,5,1100,75,0.7,1,60,60,50,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Mordekaiser,Mordekaiser,5,1200,70,0.7,1,70,70,150,60,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Nunu,Nunu & Willump,5,1337,0,0.2,1,60,60,90,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Syndra,Syndra,5,850,40,0.85,4,40,40,125,70,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_EzrealFuture,Ultimate Ezreal,5,800,64,0.95,4,40,40,150,50,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Urgot,Urgot,5,1000,65,1,3,40,40,200,100,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT_ArmoryKeyCompleted,Completed Item Anvil,8,10,,1,0,10,10,100,0,,0
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT_ArmoryKeyComponent,Component Anvil,8,10,,1,0,10,10,100,0,,0
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT_ArmoryKeyOrnn,Ornn Item Anvil,8,10,,1,0,10,10,100,0,,0
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT5_EmblemArmoryKey,Tome of Traits,8,10,,1,0,10,10,100,0,,0
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Boss_Urgot,Giant Crabgot,11,15000,300,1,7,100,100,300,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT6_MercenaryChest,Mercenary Chest,11,1,0,,0,0,,12,0,0.25,1.3
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Boss_Morgana,Nemesis Morgana,11,10000,130,0.75,4,75,75,120,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_PranksterDummy,Target Dummy,11,350,0,0.2,0,20,20,150,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Boss_AurelionSol,Volcanic Sol,11,10000,100,0.8,7,50,50,300,0,0.25,1.4
+Set 8.5,8,mid,TFTSet8_Stage2,13.12,TFT8_Zac,Zac,11,450,40,0.75,1,45,45,100,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Cassiopeia,Cassiopeia,1,500,40,0.7,4,20,20,30,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_ChoGath,Cho'Gath,1,700,65,0.5,1,30,30,80,20,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Irelia,Irelia,1,700,50,0.65,1,40,40,80,40,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Jhin,Jhin,1,504,54,0.7,5,14,14,124,44,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Kayle,Kayle,1,500,30,0.75,4,15,15,0,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Malzahar,Malzahar,1,500,40,0.7,4,15,15,50,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Maokai,Maokai,1,700,60,0.5,1,40,40,125,50,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Orianna,Orianna,1,500,40,0.7,4,15,15,90,40,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Poppy,Poppy,1,700,55,0.55,1,40,40,90,30,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Renekton,Renekton,1,650,50,0.6,1,45,45,110,50,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Samira,Samira,1,500,50,0.7,4,15,15,30,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT_TrainingDummy,Target Dummy,1,700,50,0.2,1,40,40,0,0,,0
+Set 9,9,base,TFTSet9,13.18,TFT9_Tristana,Tristana,1,400,45,0.7,4,15,15,40,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Viego,Viego,1,600,45,0.75,1,30,30,50,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT_Voidspawn,Voidspawn,1,,0,0.8,1,20,20,0,0,0.25,1.3
+Set 9,9,base,TFTSet9,13.18,TFT9_Ashe,Ashe,2,600,55,0.75,6,20,20,70,20,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Galio,Galio,2,800,70,0.5,1,45,45,120,60,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Jinx,Jinx,2,600,55,0.75,4,20,20,70,10,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Kassadin,Kassadin,2,800,50,0.7,1,45,45,100,50,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Kled,Kled,2,550,58,0.75,1,40,40,175,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Sett,Sett,2,800,60,0.6,1,50,50,90,40,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Soraka,Soraka,2,700,55,0.65,4,25,25,90,30,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Swain,Swain,2,800,45,0.65,2,45,45,135,60,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Taliyah,Taliyah,2,550,40,0.7,4,20,20,60,20,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Teemo,Teemo,2,500,40,0.7,4,20,20,50,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Vi,Vi,2,800,60,0.6,1,50,50,80,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Warwick,Warwick,2,800,40,0.75,1,50,50,90,40,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Zed,Zed,2,600,55,0.7,1,35,35,70,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Akshan,Akshan,3,700,60,0.75,4,25,25,110,30,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Darius,Darius,3,750,60,0.7,1,50,50,90,30,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Ekko,Ekko,3,800,50,0.8,1,40,40,45,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Garen,Garen,3,850,70,0.75,1,45,45,80,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Jayce,Jayce,3,700,65,0.75,4,25,25,80,30,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Kalista,Kalista,3,650,45,0.85,4,25,25,80,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Karma,Karma,3,700,45,0.7,4,25,25,50,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Katarina,Katarina,3,800,50,0.75,1,40,40,80,20,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Lissandra,Lissandra,3,800,50,0.7,2,40,40,90,30,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_RekSai,Rek'Sai,3,800,60,0.75,1,45,45,75,30,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Sona,Sona,3,700,40,0.65,4,25,25,90,40,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Taric,Taric,3,800,60,0.6,1,50,50,65,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_VelKoz,Vel'Koz,3,700,40,0.7,4,30,30,60,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Aphelios,Aphelios,4,750,60,0.75,4,25,25,100,50,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Azir,Azir,4,750,30,0.75,4,30,30,50,40,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Gwen,Gwen,4,1000,55,0.8,2,50,50,35,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_JarvanIV,Jarvan IV,4,1000,60,0.65,1,60,60,180,100,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_KaiSa,Kai'Sa,4,850,45,0.8,4,35,35,120,40,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Lux,Lux,4,750,45,0.7,4,30,30,40,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Nasus,Nasus,4,1000,60,0.7,1,50,50,150,70,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Sejuani,Sejuani,4,1100,60,0.6,1,60,60,120,60,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Shen,Shen,4,1000,60,0.6,1,60,60,170,90,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Urgot,Urgot,4,1000,75,0.7,1,60,60,100,40,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Yasuo,Yasuo,4,1000,75,0.8,1,50,50,110,50,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Zeri,Zeri,4,750,65,0.8,4,25,25,50,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Aatrox,Aatrox,5,900,80,0.8,1,70,70,50,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Ahri,Ahri,5,850,50,0.85,4,40,40,50,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_BelVeth,Bel'Veth,5,1100,80,0.85,2,50,50,70,20,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Heimerdinger,Heimerdinger,5,750,40,0.75,4,30,30,160,80,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_KSante,K'Sante,5,1000,60,0.7,1,50,50,70,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Ryze,Ryze,5,1111,50,0.85,4,30,30,999,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_RyzeDemacia,Ryze,5,1111,50,0.85,4,30,30,110,50,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_RyzeBandleCity,Ryze,5,1111,30,0.85,4,30,30,75,30,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_RyzeFreljord,Ryze,5,1111,50,0.85,4,30,30,65,30,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_RyzeIonia,Ryze,5,1111,50,0.85,4,30,30,125,50,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_RyzeNoxus,Ryze,5,1111,50,0.85,4,30,30,120,70,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_RyzePiltover,Ryze,5,1111,50,0.85,4,30,30,100,30,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_RyzeShadowIsles,Ryze,5,1111,50,0.85,4,30,30,80,40,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_RyzeShurima,Ryze,5,1111,50,0.85,4,30,30,150,90,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_RyzeTargon,Ryze,5,1111,50,0.85,4,30,30,100,30,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_RyzeZaun,Ryze,5,1111,50,0.85,4,30,30,100,40,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Senna,Senna,5,900,65,0.8,4,30,30,150,75,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_Sion,Sion,5,900,70,0.6,1,65,65,160,70,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT_ArmoryKeyOrnn,Artifact Item Anvil,8,10,,1,0,10,10,100,0,,0
+Set 9,9,base,TFTSet9,13.18,TFT9_BaronNashor,Baron Nashor,8,1250,300,0.7,9,150,150,2,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_VoidEggBaron,Baron Nashor,8,1200,300,0.7,9,200,200,2,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT_ArmoryKeyCompleted,Completed Item Anvil,8,10,,1,0,10,10,100,0,,0
+Set 9,9,base,TFTSet9,13.18,TFT_ArmoryKeyComponent,Component Anvil,8,10,,1,0,10,10,100,0,,0
+Set 9,9,base,TFTSet9,13.18,TFT_ArmoryKeySupport,Support item anvil,8,10,,1,0,10,10,100,0,,0
+Set 9,9,base,TFTSet9,13.18,TFT5_EmblemArmoryKey,Tome of Traits,8,10,,1,0,10,10,100,0,,0
+Set 9,9,base,TFTSet9,13.18,TFT9_AscendedSunDisc,Sun Disc,9,,0,0.5,16,50,50,0,0,,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_HeimerdingerTurret,Apex Turret,11,800,40,0.75,23,60,60,100,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT6_MercenaryChest,Mercenary Chest,11,1,0,,0,0,,12,0,0.25,1.3
+Set 9,9,base,TFTSet9,13.18,TFT9_NoxianFlag,Noxian Banner,11,,,0.8,1,,20,100,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_RiftHerald,Rift Herald,11,1050,250,0.6,1,100,100,120,80,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_VoidEggHerald,Rift Herald,11,900,250,0.6,1,100,100,120,60,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_SLIME_Crab,SLIME_Crab,11,,20,0.8,1,10,10,100,0,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_THex,T-Hex,11,,40,0.7,2,25,25,80,20,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_VoidRemora,Void Remora,11,400,55,0.7,1,40,40,100,50,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_VoidEggRemora,Void Remora,11,400,70,0.7,1,40,40,100,50,0.25,1.4
+Set 9,9,base,TFTSet9,13.18,TFT9_VoidTotem,Void Totem,11,1,0,1,1,0,,0,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Cassiopeia,Cassiopeia,1,500,40,0.7,4,20,20,30,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_ChoGath,Cho'Gath,1,700,65,0.5,1,30,30,100,40,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Graves,Graves,1,700,55,0.65,1,40,40,80,30,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Illaoi,Illaoi,1,700,60,0.55,1,40,40,70,30,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Irelia,Irelia,1,700,50,0.65,1,40,40,80,40,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Jhin,Jhin,1,504,54,0.7,5,14,14,114,44,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Kayle,Kayle,1,500,30,0.75,4,15,15,0,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Malzahar,Malzahar,1,500,40,0.7,4,15,15,50,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Milio,Milio,1,500,40,0.7,4,20,20,60,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Orianna,Orianna,1,500,35,0.75,4,15,15,70,20,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Poppy,Poppy,1,700,55,0.55,1,40,40,90,30,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Renekton,Renekton,1,650,50,0.6,1,45,45,110,50,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Samira,Samira,1,500,45,0.7,4,15,15,30,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT_TrainingDummy,Target Dummy,1,550,50,0.2,1,40,40,0,0,,0
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT_Voidspawn,Voidspawn,1,,0,0.8,1,20,20,0,0,0.25,1.3
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Ashe,Ashe,2,600,55,0.75,6,20,20,70,20,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Galio,Galio,2,800,70,0.5,1,45,45,110,60,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Jinx,Jinx,2,600,50,0.75,4,20,20,70,10,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Kassadin,Kassadin,2,800,50,0.7,1,45,45,100,50,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Naafiri,Naafiri,2,750,60,0.8,1,40,40,50,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Qiyana,Qiyana,2,650,55,0.75,1,35,35,100,40,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Sett,Sett,2,800,60,0.6,1,50,50,110,60,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Soraka,Soraka,2,700,66,0.65,4,25,25,90,30,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Swain,Swain,2,800,45,0.65,2,45,45,135,60,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Taliyah,Taliyah,2,550,40,0.7,4,20,20,60,20,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_TwistedFate,Twisted Fate,2,550,40,0.7,4,20,20,75,25,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Vi,Vi,2,800,60,0.6,1,50,50,70,20,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Warwick,Warwick,2,800,40,0.75,1,50,50,90,40,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Darius,Darius,3,750,70,0.7,1,50,50,80,20,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Ekko,Ekko,3,800,50,0.8,1,40,40,45,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Jayce,Jayce,3,700,60,0.75,4,25,25,80,30,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Karma,Karma,3,700,45,0.7,4,25,25,45,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Katarina,Katarina,3,800,50,0.75,1,40,40,80,20,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_MissFortune,Miss Fortune,3,650,50,0.7,4,25,25,50,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Nautilus,Nautilus,3,950,80,0.5,1,40,40,140,60,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Neeko,Neeko,3,800,50,0.65,2,45,45,120,50,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Quinn,Quinn,3,700,60,0.75,4,25,25,90,30,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_RekSai,Rek'Sai,3,800,60,0.75,1,45,45,75,50,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Sona,Sona,3,700,45,0.65,4,25,25,80,35,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Taric,Taric,3,800,60,0.6,1,50,50,85,15,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_VelKoz,Vel'Koz,3,700,40,0.7,4,30,30,60,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Aphelios,Aphelios,4,750,65,0.75,4,25,25,100,50,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Azir,Azir,4,750,30,0.8,4,30,30,50,40,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Fiora,Fiora,4,950,75,0.9,1,45,45,120,60,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_JarvanIV,Jarvan IV,4,1000,60,0.65,1,60,60,180,100,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_KaiSa,Kai'Sa,4,850,45,0.8,4,35,35,120,60,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Mordekaiser,Mordekaiser,4,1000,70,0.55,1,50,50,80,30,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Nasus,Nasus,4,1000,60,0.7,1,55,55,150,70,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Nilah,Nilah,4,950,75,0.8,2,45,45,60,20,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Sejuani,Sejuani,4,1100,60,0.6,1,60,60,120,60,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Shen,Shen,4,1000,60,0.6,1,60,60,170,90,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Silco,Silco,4,750,45,0.7,4,30,30,30,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Xayah,Xayah,4,750,65,0.75,4,25,25,100,20,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9b_Aatrox,Aatrox,5,900,80,0.8,1,70,70,50,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Ahri,Ahri,5,850,50,0.85,4,40,40,50,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_BelVeth,Bel'Veth,5,1100,80,0.85,2,60,60,70,20,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Gangplank,Gangplank,5,1000,80,0.85,1,30,30,180,90,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Heimerdinger,Heimerdinger,5,750,40,0.75,4,30,30,160,80,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_KSante,K'Sante,5,1000,60,0.7,1,50,50,70,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Ryze,Ryze,5,1111,50,0.85,4,30,30,999,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_RyzeDemacia,Ryze,5,1111,50,0.85,4,30,30,100,50,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_RyzeBandleCity,Ryze,5,1111,30,0.85,4,30,30,65,30,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_RyzeFreljord,Ryze,5,1111,50,0.85,4,30,30,60,15,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_RyzeIonia,Ryze,5,1111,50,0.85,4,30,30,100,30,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_RyzeNoxus,Ryze,5,1111,50,0.85,4,30,30,100,40,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_RyzePiltover,Ryze,5,1111,50,0.85,4,30,30,75,15,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_RyzeShadowIsles,Ryze,5,1111,50,0.85,4,30,30,70,30,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_RyzeShurima,Ryze,5,1111,50,0.85,4,30,30,120,60,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_RyzeTargon,Ryze,5,1111,50,0.85,4,30,30,90,30,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_RyzeZaun,Ryze,5,1111,50,0.85,4,30,30,90,30,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_RyzeBilgewater,Ryze,5,1111,50,0.85,4,30,30,75,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_RyzeIxtal,Ryze,5,1111,50,0.85,2,50,50,100,30,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_Sion,Sion,5,900,70,0.6,1,65,65,160,70,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT_ArmoryKeyOrnn,Artifact Item Anvil,8,10,,1,0,10,10,100,0,,0
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_BaronNashor,Baron Nashor,8,1250,300,0.7,9,150,150,2,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_VoidEggBaron,Baron Nashor,8,1200,300,0.7,9,200,200,2,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT_ArmoryKeyCompleted,Completed Item Anvil,8,10,,1,0,10,10,100,0,,0
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT_ArmoryKeyComponent,Component Anvil,8,10,,1,0,10,10,100,0,,0
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT_ArmoryKeySupport,Support item anvil,8,10,,1,0,10,10,100,0,,0
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT5_EmblemArmoryKey,Tome of Traits,8,10,,1,0,10,10,100,0,,0
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_AscendedSunDisc,Sun Disc,9,,0,0.5,16,50,50,0,0,,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_HeimerdingerTurret,Apex Turret,11,800,40,0.75,23,60,60,100,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT6_MercenaryChest,Mercenary Chest,11,1,0,,0,0,,12,0,0.25,1.3
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_NoxianFlag,Noxian Banner,11,,,0.8,1,,20,100,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_RiftHerald,Rift Herald,11,1050,250,0.6,1,100,100,120,80,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_VoidEggHerald,Rift Herald,11,900,250,0.6,1,100,100,120,60,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_SLIME_Crab,SLIME_Crab,11,,20,0.8,1,10,10,100,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_SLIME_Crab,SLIME_Crab,11,,20,0.8,1,10,10,100,0,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_THex,T-Hex,11,,40,0.7,2,25,25,80,20,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_VoidRemora,Void Remora,11,400,55,0.7,1,40,40,100,50,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_VoidEggRemora,Void Remora,11,400,70,0.7,1,40,40,100,50,0.25,1.4
+Set 9.5,9,mid,TFTSet9_Stage2,13.23,TFT9_VoidTotem,Void Totem,11,1,0,1,1,0,,0,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Annie,Annie,1,450,40,0.65,5,20,20,50,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Corki,Corki,1,450,50,0.75,5,15,15,60,15,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Evelynn,Evelynn,1,650,45,0.7,1,35,35,75,30,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Jinx,Jinx,1,450,50,0.7,4,15,15,50,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_KSante,K'Sante,1,650,50,0.6,1,40,40,40,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Kennen,Kennen,1,700,40,0.6,2,40,40,90,30,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Lillia,Lillia,1,600,50,0.55,1,40,40,110,60,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Nami,Nami,1,450,40,0.75,4,15,15,60,15,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Olaf,Olaf,1,650,55,0.65,1,35,35,0,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_TahmKench,Tahm Kench,1,650,88,0.55,1,40,40,0,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT_TrainingDummy,Target Dummy,1,550,50,0.2,1,30,30,0,0,,0
+Set 10,10,base,TFTSet10,14.5,TFT10_Taric,Taric,1,650,55,0.55,1,40,40,140,50,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Vi,Vi,1,650,55,0.6,1,45,45,70,40,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT_Voidspawn,Voidspawn,1,,0,0.8,1,20,20,0,0,0.25,1.3
+Set 10,10,base,TFTSet10,14.5,TFT10_Yasuo,Yasuo,1,650,50,0.75,1,40,40,50,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Aphelios,Aphelios,2,600,55,0.75,4,20,20,110,40,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Bard,Bard,2,550,40,0.7,4,20,20,60,15,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Garen,Garen,2,800,55,0.7,1,45,45,80,40,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Gnar,Gnar,2,700,55,0.75,2,45,45,70,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Gragas,Gragas,2,750,50,0.6,1,45,45,80,40,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Jax,Jax,2,750,55,0.9,1,35,35,120,50,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Kaisa,Kai'Sa,2,600,55,0.75,6,20,20,30,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Katarina,Katarina,2,650,40,0.75,2,35,35,60,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Kayle,Kayle,2,550,35,0.75,4,20,20,120,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Pantheon,Pantheon,2,750,55,0.6,1,45,45,60,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Senna,Senna,2,600,40,0.7,5,20,20,90,30,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Seraphine,Seraphine,2,550,40,0.7,4,25,25,60,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Twitch,Twitch,2,550,45,0.7,4,25,25,70,20,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Amumu,Amumu,3,900,45,0.65,1,55,55,45,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Ekko,Ekko,3,850,50,0.65,1,40,40,125,50,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Lulu,Lulu,3,650,40,0.7,4,20,20,40,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Lux,Lux,3,700,40,0.7,5,20,20,75,15,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_MissFortune,Miss Fortune,3,650,55,0.75,5,20,20,60,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Mordekaiser,Mordekaiser,3,850,60,0.65,1,55,55,120,70,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Neeko,Neeko,3,850,50,0.6,1,50,50,90,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Riven,Riven,3,800,60,0.75,1,40,40,100,50,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Samira,Samira,3,600,60,0.75,4,20,20,100,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Sett,Sett,3,900,55,0.7,1,45,45,90,30,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Urgot,Urgot,3,750,60,0.75,2,45,45,20,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Vex,Vex,3,700,40,0.75,4,20,20,75,25,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Yone,Yone,3,800,65,0.8,1,40,40,70,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Ahri,Ahri,4,700,40,0.75,5,30,30,30,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Akali_TrueDamage,Akali,4,1000,70,0.9,1,65,65,60,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Akali,Akali,4,950,60,0.85,1,50,50,50,10,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Blitzcrank,Blitzcrank,4,1000,90,0.6,1,60,60,110,50,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Caitlyn,Caitlyn,4,700,70,0.8,5,30,30,75,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Ezreal,Ezreal,4,700,70,0.85,4,30,30,45,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Karthus,Karthus,4,700,40,0.75,4,30,30,105,15,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Poppy,Poppy,4,1000,60,0.7,1,65,65,100,30,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Thresh,Thresh,4,1050,60,0.65,1,60,60,160,70,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_TwistedFate,Twisted Fate,4,700,45,0.75,5,30,30,105,30,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Viego,Viego,4,1000,75,0.85,1,65,65,120,70,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Zac,Zac,4,1100,50,0.65,1,70,70,120,60,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Zed,Zed,4,1000,72,0.95,1,60,60,50,30,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Illaoi,Illaoi,5,1050,70,0.8,1,70,70,150,70,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Jhin,Jhin,5,950,70,0.9,4,40,40,50,30,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Kayn,Kayn,5,1200,75,0.95,1,70,70,40,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Lucian,Lucian,5,850,65,0.9,5,30,30,125,50,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Qiyana,Qiyana,5,1050,75,0.9,1,60,60,40,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Sona,Sona,5,850,5,0.85,16,40,40,170,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Yorick,Yorick,5,1050,88,0.8,1,60,60,110,60,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_Ziggs,Ziggs,5,800,45,0.85,4,40,40,75,30,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT_ArmoryKeyOrnn,Artifact Item Anvil,8,10,,1,0,10,10,100,0,,0
+Set 10,10,base,TFTSet10,14.5,TFT_ArmoryKeyCompleted,Completed Item Anvil,8,10,,1,0,10,10,100,0,,0
+Set 10,10,base,TFTSet10,14.5,TFT_ArmoryKeyComponent,Component Anvil,8,10,,1,0,10,10,100,0,,0
+Set 10,10,base,TFTSet10,14.5,TFT_ArmoryKeySupport,Support item anvil,8,10,,1,0,10,10,100,0,,0
+Set 10,10,base,TFTSet10,14.5,TFT5_EmblemArmoryKey,Tome of Traits,8,10,,1,0,10,10,100,0,,0
+Set 10,10,base,TFTSet10,14.5,TFT10_IllaoiMinion,Tentacle,9,500,0,0.5,3,30,30,0,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_DiscoBall,Disco Ball,11,1,,0.65,1,15,15,0,0,0.25,1.3
+Set 10,10,base,TFTSet10,14.5,TFT10_LuluPolymorph,LuluPolymorphCritter,11,,,0.8,1,,20,100,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT6_MercenaryChest,Mercenary Chest,11,1,0,,0,0,,12,0,0.25,1.3
+Set 10,10,base,TFTSet10,14.5,TFT9_SLIME_Crab,SLIME_Crab,11,,20,0.8,1,10,10,100,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_PBJProp,SightWard,11,,,0.8,1,,20,100,0,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_CountryHecarim,The Dreadsteed,11,425,40,0.7,1,60,60,60,50,0.25,1.4
+Set 10,10,base,TFTSet10,14.5,TFT10_YorickGhoulMelee,Yorick,11,,,0.65,1,50,50,0,0,,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Ahri,Ahri,1,500,30,0.75,4,15,15,60,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Caitlyn,Caitlyn,1,500,50,0.7,4,15,15,105,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_ChoGath,Cho'Gath,1,650,50,0.55,1,40,40,90,40,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT_Razorbeak,Crimson Razorbeak,1,2400,230,0.8,1,25,25,0,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Darius,Darius,1,650,40,0.7,1,40,40,30,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT_ElderDragon,Elder Dragon,1,10000,900,0.8,2,50,50,0,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Garen,Garen,1,600,55,0.6,1,40,40,80,30,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT_BlueGolem,Golem,1,600,65,0.55,1,35,35,100,30,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT_Murkwolf,Greater Murk Wolf,1,1300,230,1,1,15,15,0,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Jax,Jax,1,650,45,0.65,1,40,40,40,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_KhaZix,Kha'Zix,1,600,50,0.75,1,35,35,40,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_FortuneYord,Kobuko,1,600,65,0.6,1,30,30,70,30,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_KogMaw,Kog'Maw,1,500,30,0.7,3,15,15,30,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT_Krug,Krug,1,1200,110,0.8,1,50,25,0,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Malphite,Malphite,1,650,50,0.65,1,40,40,80,40,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT_MurkwolfMini,Murkwolf,1,550,135,1,1,15,15,0,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT_RazorbeakMini,Razorbeak,1,1450,180,0.8,1,25,25,0,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_RekSai,Rek'Sai,1,650,50,0.55,1,45,45,80,40,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT_RiftHerald,Rift Herald,1,10000,600,1,1,100,100,0,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Sivir,Sivir,1,500,55,0.7,4,15,15,50,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT_TrainingDummy,Target Dummy,1,550,50,0.2,1,30,30,0,0,,0
+Set 11,11,base,TFTSet11,14.15,TFT_Voidspawn,Voidspawn,1,,0,0.75,1,30,30,0,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Yasuo,Yasuo,1,600,35,0.75,1,45,45,70,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Aatrox,Aatrox,2,700,55,0.7,1,45,45,60,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Gnar,Gnar,2,700,60,0.7,1,45,45,60,10,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Janna,Janna,2,600,40,0.75,4,20,20,75,25,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Kindred,Kindred,2,550,40,0.7,4,20,20,30,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Lux,Lux,2,550,40,0.7,4,20,20,75,15,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Neeko,Neeko,2,800,45,0.65,1,45,45,80,40,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Qiyana,Qiyana,2,700,50,0.8,1,35,35,20,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Riven,Riven,2,700,55,0.75,1,40,40,20,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Senna,Senna,2,600,55,0.75,4,20,20,75,20,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Shen,Shen,2,800,55,0.65,1,45,45,75,25,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Teemo,Teemo,2,550,40,0.7,4,20,20,30,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Yorick,Yorick,2,800,60,0.6,1,50,50,80,40,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Zyra,Zyra,2,600,40,0.75,4,20,20,75,30,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Alune,Alune,3,650,55,0.75,4,25,25,60,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Amumu,Amumu,3,900,60,0.6,1,50,50,80,40,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Aphelios,Aphelios,3,650,60,0.75,4,25,25,100,40,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Bard,Bard,3,650,54,0.8,4,25,25,50,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Diana,Diana,3,900,50,0.8,1,55,55,100,50,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Illaoi,Illaoi,3,900,50,0.6,1,50,50,90,30,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Soraka,Soraka,3,650,40,0.75,4,25,25,60,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_TahmKench,Tahm Kench,3,850,60,0.6,1,45,45,100,40,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Thresh,Thresh,3,900,75,0.5,2,50,50,90,30,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Tristana,Tristana,3,700,60,0.75,4,25,25,100,40,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Volibear,Volibear,3,900,45,0.8,1,50,50,60,10,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Yone,Yone,3,800,64,0.9,1,50,50,70,10,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Zoe,Zoe,3,650,45,0.75,4,25,25,60,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Annie,Annie,4,1000,55,0.65,1,60,60,120,70,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Ashe,Ashe,4,850,70,0.8,4,30,30,90,30,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Galio,Galio,4,1150,60,0.6,1,60,60,120,70,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Kaisa,Kai'Sa,4,850,75,0.85,4,30,30,75,20,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Kayn,Kayn,4,1150,80,0.9,1,55,55,60,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_LeeSin,Lee Sin,4,1100,75,0.85,1,55,55,100,40,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Lillia,Lillia,4,900,45,0.75,4,30,30,50,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Morgana,Morgana,4,950,40,0.8,4,40,40,60,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Nautilus,Nautilus,4,1100,70,0.6,1,60,60,170,60,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Ornn,Ornn,4,1100,60,0.6,1,60,60,130,80,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Sylas,Sylas,4,1100,50,0.85,1,50,50,40,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Syndra,Syndra,4,900,45,0.75,4,30,30,30,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Azir,Azir,5,900,45,0.85,4,35,35,130,70,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Hwei,Hwei,5,900,50,0.8,4,40,40,105,30,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Irelia,Irelia,5,900,80,0.9,10,40,40,8,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Lissandra,Lissandra,5,1100,50,0.8,2,55,55,105,45,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Rakan,Rakan,5,1200,60,0.85,2,60,60,90,30,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Sett,Sett,5,1200,65,0.85,1,70,70,160,80,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Tibbers,Tibbers,5,850,50,0.6,1,70,70,120,50,0.25,1.5
+Set 11,11,base,TFTSet11,14.15,TFT11_Udyr,Udyr,5,1050,50,0.95,1,50,50,90,30,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_WuKong,Wukong,5,1200,80,0.9,1,65,65,30,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Xayah,Xayah,5,900,80,0.9,4,40,40,100,30,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_XayahRakanDummy,Xayah & Rakan,5,800,,0.8,1,,20,100,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT_ArmoryKeyOrnn,Artifact Item Anvil,8,10,,1,0,10,10,100,0,,0
+Set 11,11,base,TFTSet11,14.15,TFT_ArmoryKeyCompleted,Completed Item Anvil,8,10,,1,0,10,10,100,0,,0
+Set 11,11,base,TFTSet11,14.15,TFT_ArmoryKeyComponent,Component Anvil,8,10,,1,0,10,10,100,0,,0
+Set 11,11,base,TFTSet11,14.15,TFT_ArmoryKeySupport,Support item anvil,8,10,,1,0,10,10,100,0,,0
+Set 11,11,base,TFTSet11,14.15,TFT5_EmblemArmoryKey,Tome of Traits,8,10,,1,0,10,10,100,0,,0
+Set 11,11,base,TFTSet11,14.15,TFT11_AzirSoldier,AzirSoldier,11,900,,0.7,1,40,40,0,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_DragonlordFlames,Dragonlord Flames,11,,,0.8,1,,20,100,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_FortuneProp,Golden Tree,11,88888,0,0.8,138,88,88,100,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_Kayle,Kayle,11,450,30,0.7,6,25,25,100,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT6_MercenaryChest,Mercenary Chest,11,1,0,,0,0,,12,0,0.25,1.3
+Set 11,11,base,TFTSet11,14.15,TFT11_RakanBenchDummy,Rakan,11,,,0.8,1,,20,100,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_ExaltedCore,SightWard,11,,,0.8,1,,20,100,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_XayahBenchDummy,Xayah,11,,,0.8,1,,20,100,0,0.25,1.4
+Set 11,11,base,TFTSet11,14.15,TFT11_ZyraThornPlant,ZyraThornPlant,11,,,0.8,1,,20,100,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Ashe,Ashe,1,450,50,0.7,4,15,15,75,40,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Blitzcrank,Blitzcrank,1,650,65,0.55,1,40,40,90,40,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT_ElderDragon,Elder Dragon,1,10000,900,0.8,2,50,50,0,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Elise,Elise,1,650,50,0.6,1,40,40,90,30,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT_BlueGolem,Golem,1,600,55,0.55,1,40,40,100,30,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Jax,Jax,1,650,40,0.6,1,45,45,60,20,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Jayce,Jayce,1,600,56,0.7,4,30,30,60,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT_Krug,Krug,1,1200,110,0.8,1,50,25,0,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Lillia,Lillia,1,650,45,0.6,1,40,40,100,40,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT_Murkwolf,Murk Wolf,1,1300,230,1,1,15,15,0,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT_MurkwolfMini,Murkwolf,1,550,135,1,1,15,15,0,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Nomsy,Nomsy,1,500,48,0.7,4,15,15,50,10,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Poppy,Poppy,1,650,50,0.6,1,40,40,80,30,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT_Razorbeak,Razorbeak,1,2400,230,0.8,1,25,25,0,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT_RazorbeakMini,Razorbeak,1,1450,180,0.8,1,25,25,0,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT_RiftHerald,Rift Herald,1,10000,600,1,1,100,100,0,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Seraphine,Seraphine,1,500,25,0.7,4,15,15,60,10,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Soraka,Soraka,1,450,30,0.7,4,15,15,50,10,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT_TrainingDummy,Target Dummy,1,550,50,0.2,1,30,30,0,0,,0
+Set 12,12,base,TFTSet12,14.22,TFT12_ZapTower,The Tower,1,550,50,0.2,1,30,30,0,0,,0
+Set 12,12,base,TFTSet12,14.22,TFT12_Twitch,Twitch,1,450,50,0.7,4,15,15,35,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT_Voidspawn,Voidspawn,1,,0,0.75,1,30,30,0,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Warwick,Warwick,1,700,46,0.75,1,40,40,0,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Ziggs,Ziggs,1,450,30,0.7,4,15,15,40,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Zoe,Zoe,1,450,30,0.7,4,15,15,30,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Ahri,Ahri,2,550,35,0.75,4,20,20,35,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Akali,Akali,2,700,65,0.75,1,45,45,60,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Cassiopeia,Cassiopeia,2,600,35,0.75,4,20,20,30,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Galio,Galio,2,750,55,0.65,1,45,45,90,30,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Kassadin,Kassadin,2,700,45,0.75,1,45,45,60,30,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_KogMaw,Kog'Maw,2,550,53,0.75,4,20,20,70,20,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Nilah,Nilah,2,700,55,0.8,2,35,35,60,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Nunu,Nunu,2,800,50,0.6,1,45,45,75,25,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Rumble,Rumble,2,800,50,0.65,1,45,45,70,30,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Shyvana,Shyvana,2,700,55,0.65,1,45,45,70,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Syndra,Syndra,2,550,35,0.75,4,20,20,60,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Tristana,Tristana,2,550,55,0.75,4,20,20,45,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Zilean,Zilean,2,550,35,0.75,4,20,20,60,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Bard,Bard,3,700,40,0.75,4,25,25,80,30,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Ezreal,Ezreal,3,700,55,0.75,4,25,25,75,15,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Hecarim,Hecarim,3,850,55,0.75,1,50,50,40,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Hwei,Hwei,3,650,35,0.75,4,25,25,40,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Jinx,Jinx,3,650,53,0.75,4,25,25,50,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Katarina,Katarina,3,800,50,0.75,1,45,45,70,10,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Mordekaiser,Mordekaiser,3,850,60,0.6,1,50,50,40,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Neeko,Neeko,3,900,50,0.65,1,55,55,110,40,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Shen,Shen,3,850,60,0.7,1,50,50,120,50,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Swain,Swain,3,900,60,0.6,1,50,50,120,60,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Veigar,Veigar,3,650,40,0.75,4,25,25,40,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Vex,Vex,3,850,50,0.65,1,50,50,100,50,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Wukong,Wukong,3,1000,75,0.6,1,50,50,70,20,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Fiora,Fiora,4,1150,80,1,1,55,55,130,70,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Gwen,Gwen,4,1100,50,0.8,2,55,55,30,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Kalista,Kalista,4,850,60,0.75,4,30,30,70,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Karma,Karma,4,850,45,0.75,4,30,30,30,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Nami,Nami,4,850,45,0.8,4,30,30,50,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Nasus,Nasus,4,1100,65,0.65,1,60,60,80,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Olaf,Olaf,4,1150,75,0.85,1,60,60,50,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Rakan,Rakan,4,1050,60,0.7,1,60,60,120,40,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Ryze,Ryze,4,850,45,0.8,4,30,30,90,15,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_TahmKench,Tahm Kench,4,1100,70,0.55,1,60,60,180,80,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Taric,Taric,4,1100,60,0.65,1,60,60,100,50,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Varus,Varus,4,850,52,0.8,4,30,30,100,20,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Briar,Briar,5,1200,65,0.8,1,60,60,80,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Camille,Camille,5,1200,85,0.9,1,60,60,100,30,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Diana,Diana,5,1200,60,0.85,1,60,60,120,40,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Milio,Milio,5,900,50,0.8,4,40,40,90,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Morgana,Morgana,5,1100,50,0.8,2,60,60,110,40,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Norra,Norra & Yuumi,5,900,50,0.8,4,40,40,80,30,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Smolder,Smolder,5,1000,80,0.85,13,65,65,40,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Xerath,Xerath,5,900,50,0.8,4,40,40,120,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT_ArmoryKeyOrnn,Artifact Item Anvil,8,10,70,1,0,10,10,100,0,,0
+Set 12,12,base,TFTSet12,14.22,TFT_ArmoryKeyCompleted,Completed Item Anvil,8,10,70,1,0,10,10,100,0,,0
+Set 12,12,base,TFTSet12,14.22,TFT_ArmoryKeyComponent,Component Anvil,8,10,70,1,0,10,10,100,0,,0
+Set 12,12,base,TFTSet12,14.22,TFT_ArmoryKeySupport,Support item anvil,8,10,70,1,0,10,10,100,0,,0
+Set 12,12,base,TFTSet12,14.22,TFT5_EmblemArmoryKey,Tome of Traits,8,10,,1,0,10,10,100,0,,0
+Set 12,12,base,TFTSet12,14.22,TFT12_EldritchMalphite,Dark Monolith,11,800,100,0.75,1,85,75,60,30,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_WitchFrog,Frog,11,,30,0.8,1,,20,100,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_WinterStatue,Ice Soldier,11,,80,0.75,1,45,45,0,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_EldritchVolibear,Many-Eyed Beast,11,1100,200,0.8,1,90,90,90,50,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT6_MercenaryChest,Mercenary Chest,11,1,0,,0,0,,12,0,0.25,1.3
+Set 12,12,base,TFTSet12,14.22,TFT12_ShyvanaDragon,Shyvana,11,,60,0.8,1,,20,100,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_NeekoCrab,Sru_Crab,11,,75,0.8,1,,20,100,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_EldritchBigVolibear,Stormbringer,11,2000,400,1,1,250,250,70,70,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_SwainDemonForm,Swain,11,,70,0.8,1,,20,100,0,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_EldritchDaisy,Tainted Golem,11,450,65,0.7,1,60,60,80,40,0.25,1.4
+Set 12,12,base,TFTSet12,14.22,TFT12_Yuumi,Yuumi,11,600,15,0.8,1,,20,0,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Amumu,Amumu,1,600,45,0.6,1,35,35,0,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Darius,Darius,1,600,55,0.7,1,40,40,70,30,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Draven,Draven,1,500,55,0.7,4,15,15,60,30,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT_ElderDragon,Elder Dragon,1,10000,900,0.8,2,50,50,0,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT_BlueGolem,Golem,1,600,55,0.55,1,40,40,100,30,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Irelia,Irelia,1,700,45,0.6,1,40,40,70,30,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT_Krug,Krug,1,1200,110,0.8,1,50,25,0,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Lux,Lux,1,500,30,0.7,4,20,20,50,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Shooter,Maddie,1,500,50,0.7,6,15,15,120,20,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Morgana,Morgana,1,500,30,0.7,4,20,20,40,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT_Murkwolf,Murk Wolf,1,1300,230,1,1,15,15,0,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT_MurkwolfMini,Murkwolf,1,550,135,1,1,15,15,0,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Blue,Powder,1,500,30,0.75,4,15,15,90,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT_Razorbeak,Razorbeak,1,2400,230,0.8,1,25,25,0,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT_RazorbeakMini,Razorbeak,1,1450,180,0.8,1,25,25,0,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT_RiftHerald,Rift Herald,1,10000,600,1,1,100,100,0,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT9_SLIME_Crab,Rift Scuttler,1,,20,0.8,1,10,10,100,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Singed,Singed,1,650,55,0.6,1,40,40,50,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Fish,Steb,1,650,55,0.55,1,45,45,75,25,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT_TrainingDummy,Training Dummy,1,550,50,0.4,1,30,30,0,0,,0
+Set 13,13,base,TFTSet13,15.6,TFT13_Trundle,Trundle,1,650,50,0.65,1,40,40,80,30,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Vex,Vex,1,450,30,0.7,4,15,15,60,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Red,Violet,1,650,46,0.8,1,40,40,65,20,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT_Voidspawn,Voidspawn,1,,0,0.75,1,30,30,0,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Zyra,Zyra,1,500,30,0.7,4,20,20,60,10,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Akali,Akali,2,700,45,0.75,1,45,45,55,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Camille,Camille,2,700,55,0.75,1,45,45,25,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Leona,Leona,2,800,55,0.6,1,50,50,65,20,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Nocturne,Nocturne,2,700,63,0.8,1,45,45,40,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Rell,Rell,2,800,60,0.6,1,45,45,90,40,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_RenataGlasc,Renata Glasc,2,600,35,0.7,4,20,20,85,20,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Sett,Sett,2,850,60,0.6,1,50,50,100,50,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Tristana,Tristana,2,550,42,0.75,4,20,20,60,20,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Urgot,Urgot,2,650,55,0.75,2,40,40,90,45,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Prime,Vander,2,800,55,0.7,1,45,45,50,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Vladimir,Vladimir,2,800,45,0.65,1,45,45,65,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Zeri,Zeri,2,600,51,0.75,6,20,20,3,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Ziggs,Ziggs,2,600,35,0.7,4,20,20,60,15,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Blitzcrank,Blitzcrank,3,850,60,0.6,1,50,50,70,20,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Cassiopeia,Cassiopeia,3,700,40,0.75,4,25,25,40,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Ezreal,Ezreal,3,700,60,0.75,4,25,25,60,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Gangplank,Gangplank,3,700,50,0.5,1,0,,10,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_KogMaw,Kog'Maw,3,650,15,0.75,4,25,25,40,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Beardy,Loris,3,850,50,0.65,1,50,50,80,40,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Nami,Nami,3,700,40,0.7,4,25,25,60,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_NunuWillump,Nunu & Willump,3,800,50,0.6,1,50,50,100,50,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Chainsaw,Renni,3,850,55,0.65,1,50,50,90,40,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_FlyGuy,Scar,3,800,50,0.65,1,50,50,170,80,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Gremlin,Smeech,3,777,70,0.8,1,50,50,70,20,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Swain,Swain,3,650,50,0.5,1,0,,10,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_TwistedFate,Twisted Fate,3,700,35,0.7,4,25,25,75,25,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Ambessa,Ambessa,4,1100,70,0.8,1,50,50,70,30,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Corki,Corki,4,850,70,0.75,4,30,30,60,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_DrMundo,Dr. Mundo,4,1100,60,0.65,1,66,66,100,30,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Ekko,Ekko,4,1100,50,0.85,1,60,60,50,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Elise,Elise,4,750,50,0.5,1,0,,10,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Garen,Garen,4,1000,65,0.6,1,60,60,125,60,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Heimerdinger,Heimerdinger,4,800,40,0.75,4,30,30,40,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Illaoi,Illaoi,4,1100,70,0.65,1,60,60,125,65,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Silco,Silco,4,800,40,0.75,4,30,30,80,30,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Twitch,Twitch,4,800,71,0.75,6,30,30,40,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Vi,Vi,4,1100,75,0.85,1,50,50,100,40,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Zoe,Zoe,4,800,40,0.75,4,30,30,80,20,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Caitlyn,Caitlyn,5,900,80,0.55,13,40,40,50,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Jayce,Jayce,5,900,50,0.5,1,0,,10,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Jinx,Jinx,5,900,60,0.8,4,40,40,50,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_LeBlanc,LeBlanc,5,900,50,0.85,4,40,40,90,45,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Malzahar,Malzahar,5,950,45,0.8,4,40,40,90,30,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Mordekaiser,Mordekaiser,5,1200,75,0.55,1,70,70,100,25,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Rumble,Rumble,5,1200,60,0.8,1,65,65,120,40,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Lieutenant,Sevika,5,1277,80,0.9,1,60,60,50,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT_ArmoryKeyOrnn,Artifact Item Anvil,8,10,70,1,0,10,10,100,0,,0
+Set 13,13,base,TFTSet13,15.6,TFT_ArmoryKeyCompleted,Completed Item Anvil,8,10,70,1,0,10,10,100,0,,0
+Set 13,13,base,TFTSet13,15.6,TFT_ArmoryKeyComponent,Component Anvil,8,10,70,1,0,10,10,100,0,,0
+Set 13,13,base,TFTSet13,15.6,TFT_ArmoryKeySupport,Support item anvil,8,10,70,1,0,10,10,100,0,,0
+Set 13,13,base,TFTSet13,15.6,TFT5_EmblemArmoryKey,Tome of Traits,8,10,,1,0,10,10,100,0,,0
+Set 13,13,base,TFTSet13,15.6,TFT13_HoverboardProp,ApheliosTurret,11,,,0.8,1,,20,100,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Blue_Monkey,Blue_Monkey,11,,,0.8,1,,20,100,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_EliseSpider,EliseSpider,11,,,0.8,1,,20,100,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_JayceSummon,Hextech Forge,11,,50,0.5,10,0,,0,0,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT6_MercenaryChest,Mercenary Chest,11,1,0,,0,0,,12,0,0.25,1.3
+Set 13,13,base,TFTSet13,15.6,TFT13_Silco_Monstrosity,SRU_Horde_Mini,11,,,0.8,1,50,50,100,0,,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_Sion,Sion,11,750,50,0.7,1,0,,120,120,0.25,1.4
+Set 13,13,base,TFTSet13,15.6,TFT13_SwainDemonForm,SwainDemonForm,11,,,0.8,1,,20,100,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Amumu,Amumu,1,600,45,0.6,1,35,35,0,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Darius,Darius,1,600,55,0.7,1,40,40,70,30,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Draven,Draven,1,500,55,0.7,4,15,15,60,30,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT_ElderDragon,Elder Dragon,1,10000,900,0.8,2,50,50,0,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT_BlueGolem,Golem,1,600,55,0.55,1,40,40,100,30,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Irelia,Irelia,1,700,45,0.6,1,40,40,70,30,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT_Krug,Krug,1,1200,110,0.8,1,50,25,0,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Lux,Lux,1,500,30,0.7,4,20,20,50,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Shooter,Maddie,1,500,50,0.7,6,15,15,120,20,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Morgana,Morgana,1,500,30,0.7,4,20,20,40,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT_Murkwolf,Murk Wolf,1,1300,230,1,1,15,15,0,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT_MurkwolfMini,Murkwolf,1,550,135,1,1,15,15,0,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Blue,Powder,1,500,30,0.75,4,15,15,90,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT_Razorbeak,Razorbeak,1,2400,230,0.8,1,25,25,0,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT_RazorbeakMini,Razorbeak,1,1450,180,0.8,1,25,25,0,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT_RiftHerald,Rift Herald,1,10000,600,1,1,100,100,0,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT9_SLIME_Crab,Rift Scuttler,1,,20,0.8,1,10,10,100,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Singed,Singed,1,650,55,0.6,1,40,40,50,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Fish,Steb,1,650,55,0.55,1,45,45,75,25,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT_TrainingDummy,Training Dummy,1,550,50,0.4,1,30,30,0,0,,0
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Trundle,Trundle,1,650,50,0.65,1,40,40,80,30,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Vex,Vex,1,450,30,0.7,4,15,15,60,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Red,Violet,1,650,46,0.8,1,40,40,65,20,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT_Voidspawn,Voidspawn,1,,0,0.75,1,30,30,0,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Zyra,Zyra,1,500,30,0.7,4,20,20,60,10,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Akali,Akali,2,700,45,0.75,1,45,45,55,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Camille,Camille,2,700,55,0.75,1,45,45,25,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Leona,Leona,2,800,55,0.6,1,50,50,65,20,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Nocturne,Nocturne,2,700,63,0.8,1,45,45,40,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Rell,Rell,2,800,60,0.6,1,45,45,90,40,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_RenataGlasc,Renata Glasc,2,600,35,0.7,4,20,20,85,20,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Sett,Sett,2,850,60,0.6,1,50,50,100,50,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Tristana,Tristana,2,550,42,0.75,4,20,20,60,20,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Urgot,Urgot,2,650,55,0.75,2,40,40,90,45,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Prime,Vander,2,800,55,0.7,1,45,45,50,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Vladimir,Vladimir,2,800,45,0.65,1,45,45,65,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Zeri,Zeri,2,600,51,0.75,6,20,20,3,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Ziggs,Ziggs,2,600,35,0.7,4,20,20,60,15,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Blitzcrank,Blitzcrank,3,850,60,0.6,1,50,50,70,20,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Cassiopeia,Cassiopeia,3,700,40,0.75,4,25,25,40,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Ezreal,Ezreal,3,700,60,0.75,4,25,25,60,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Gangplank,Gangplank,3,700,50,0.5,1,0,,10,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_KogMaw,Kog'Maw,3,650,15,0.75,4,25,25,40,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Beardy,Loris,3,850,50,0.65,1,50,50,80,40,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Nami,Nami,3,700,40,0.7,4,25,25,60,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_NunuWillump,Nunu & Willump,3,800,50,0.6,1,50,50,100,50,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Chainsaw,Renni,3,850,55,0.65,1,50,50,90,40,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_FlyGuy,Scar,3,800,50,0.65,1,50,50,170,80,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Gremlin,Smeech,3,777,70,0.8,1,50,50,70,20,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Swain,Swain,3,650,50,0.5,1,0,,10,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_TwistedFate,Twisted Fate,3,700,35,0.7,4,25,25,75,25,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Ambessa,Ambessa,4,1100,70,0.8,1,50,50,70,30,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Corki,Corki,4,850,70,0.75,4,30,30,60,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_DrMundo,Dr. Mundo,4,1100,60,0.65,1,66,66,100,30,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Ekko,Ekko,4,1100,50,0.85,1,60,60,50,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Elise,Elise,4,750,50,0.5,1,0,,10,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Garen,Garen,4,1000,65,0.6,1,60,60,125,60,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Heimerdinger,Heimerdinger,4,800,40,0.75,4,30,30,40,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Illaoi,Illaoi,4,1100,70,0.65,1,60,60,125,65,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Silco,Silco,4,800,40,0.75,4,30,30,80,30,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Twitch,Twitch,4,800,71,0.75,6,30,30,40,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Vi,Vi,4,1100,75,0.85,1,50,50,100,40,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Zoe,Zoe,4,800,40,0.75,4,30,30,80,20,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Caitlyn,Caitlyn,5,900,80,0.55,13,40,40,50,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Jayce,Jayce,5,900,50,0.5,1,0,,10,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Jinx,Jinx,5,900,60,0.8,4,40,40,50,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_LeBlanc,LeBlanc,5,900,50,0.85,4,40,40,90,45,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Malzahar,Malzahar,5,950,45,0.8,4,40,40,90,30,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Mordekaiser,Mordekaiser,5,1200,75,0.55,1,70,70,100,25,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Rumble,Rumble,5,1200,60,0.8,1,65,65,120,40,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Lieutenant,Sevika,5,1277,80,0.9,1,60,60,50,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_MissMage,Mel,6,1800,80,0.8,3,60,60,40,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Viktor,Viktor,6,1600,100,0.55,4,40,40,100,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Warwick,Warwick,6,2100,110,0.9,1,70,70,100,60,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT_ArmoryKeyOrnn,Artifact Item Anvil,8,10,70,1,0,10,10,100,0,,0
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT_ArmoryKeyCompleted,Completed Item Anvil,8,10,70,1,0,10,10,100,0,,0
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT_ArmoryKeyComponent,Component Anvil,8,10,70,1,0,10,10,100,0,,0
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT_ArmoryKeySupport,Support item anvil,8,10,70,1,0,10,10,100,0,,0
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT5_EmblemArmoryKey,Tome of Traits,8,10,,1,0,10,10,100,0,,0
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_HoverboardProp,ApheliosTurret,11,,,0.8,1,,20,100,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Blue_Monkey,Blue_Monkey,11,,,0.8,1,,20,100,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_EliseSpider,EliseSpider,11,,,0.8,1,,20,100,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_JayceSummon,Hextech Forge,11,,50,0.5,10,0,,0,0,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT6_MercenaryChest,Mercenary Chest,11,1,0,,0,0,,12,0,0.25,1.3
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Silco_Monstrosity,SRU_Horde_Mini,11,,,0.8,1,50,50,100,0,,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_Sion,Sion,11,750,50,0.7,1,0,,120,120,0.25,1.4
+Set 13.5,13,mid,TFTSet13_Evolved,15.6,TFT13_SwainDemonForm,SwainDemonForm,11,,,0.8,1,,20,100,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Alistar,Alistar,1,650,50,0.55,1,40,40,80,40,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_DrMundo,Dr. Mundo,1,650,50,0.6,1,35,35,75,25,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT_ElderDragon,Elder Dragon,1,10000,900,0.8,2,50,50,0,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT_BlueGolem,Golem,1,600,55,0.55,1,40,40,100,30,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Jax,Jax,1,650,55,0.6,1,40,40,80,20,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Kindred,Kindred,1,500,50,0.7,4,15,15,50,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_KogMaw,Kog'Maw,1,500,53,0.7,4,15,15,40,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT_Krug,Krug,1,1200,110,0.8,1,50,25,0,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_NPC_Cannon,Mechacannon,1,1200,110,0.8,4,50,50,0,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_NPC_Drone,Mechadrone,1,250,18,0.8,3,10,10,60,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_NPC_Azir,Mechazir,1,13000,900,1,4,120,120,30,10,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Morgana,Morgana,1,500,30,0.7,4,15,15,40,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT_Murkwolf,Murk Wolf,1,1300,230,1,1,15,15,0,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT_MurkwolfMini,Murkwolf,1,550,135,1,1,15,15,0,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_NidaleeCougar,Nidalee,1,650,40,0.75,1,40,40,60,20,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Poppy,Poppy,1,650,60,0.55,1,40,40,65,20,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT_Razorbeak,Razorbeak,1,2400,230,0.8,1,25,25,0,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT_RazorbeakMini,Razorbeak,1,1450,180,0.8,1,25,25,0,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT_RiftHerald,Rift Herald,1,10000,600,1,1,100,100,0,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT9_SLIME_Crab,Rift Scuttler,1,,20,0.8,1,10,10,100,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Seraphine,Seraphine,1,500,30,0.7,4,15,15,60,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Shaco,Shaco,1,600,55,0.8,1,40,40,50,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Sylas,Sylas,1,650,45,0.65,1,40,40,75,25,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT_TrainingDummy,Training Dummy,1,550,50,0.5,1,30,30,0,0,,0
+Set 14,14,base,TFTSet14,15.12,TFT14_Vi,Vi,1,650,55,0.6,1,40,40,65,30,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT_Voidspawn,Voidspawn,1,,0,0.75,1,30,30,0,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Zyra,Zyra,1,500,30,0.7,4,15,15,60,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Darius,Darius,2,750,65,0.65,1,45,45,80,30,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Ekko,Ekko,2,800,45,0.7,1,45,45,70,30,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Graves,Graves,2,800,55,0.6,2,55,55,2,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Illaoi,Illaoi,2,800,60,0.6,1,50,50,60,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Jhin,Jhin,2,550,44,0.74,4,20,20,64,14,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_LeBlanc,LeBlanc,2,550,35,0.75,4,20,20,50,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_NPC_Super,Mechaminion,2,1400,130,0.75,1,50,50,0,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Naafiri,Naafiri,2,700,52,0.85,1,50,50,50,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_SummonLevel2,R-080T,2,500,45,0.7,1,40,40,100,50,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Rhaast,Rhaast,2,700,60,0.75,1,40,40,80,40,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Shyvana,Shyvana,2,700,45,0.6,1,45,45,100,50,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Skarner,Skarner,2,800,50,0.6,1,50,50,70,25,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_TwistedFate,Twisted Fate,2,600,35,0.75,4,20,20,70,10,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Vayne,Vayne,2,550,50,0.75,4,20,20,75,25,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Veigar,Veigar,2,550,35,0.7,4,20,20,40,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Braum,Braum,3,850,60,0.6,1,50,50,90,30,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Draven,Draven,3,700,53,0.75,4,25,25,120,30,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Elise,Elise,3,700,40,0.75,4,25,25,50,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Fiddlesticks,Fiddlesticks,3,800,40,0.7,2,50,50,45,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Galio,Galio,3,900,60,0.6,1,50,50,80,20,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Gragas,Gragas,3,850,50,0.65,1,50,50,70,20,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Jarvan,Jarvan IV,3,850,60,0.65,1,50,50,75,25,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Jinx,Jinx,3,650,55,0.7,4,25,25,50,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_NPC_AzirSoldier,Mechasoldier,3,1800,80,1,1,25,25,0,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Mordekaiser,Mordekaiser,3,850,50,0.6,1,50,50,80,30,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Rengar,Rengar,3,750,65,0.8,1,50,50,60,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Senna,Senna,3,700,85,0.6,4,25,25,100,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Varus,Varus,3,700,35,0.75,4,25,25,70,20,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Yuumi,Yuumi,3,650,35,0.75,4,25,25,30,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Annie,Annie,4,850,30,0.75,4,30,30,40,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Aphelios,Aphelios,4,800,63,0.75,4,30,30,50,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Brand,Brand,4,800,35,0.75,4,30,30,70,10,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Chogath,Cho'Gath,4,1000,65,0.6,1,50,50,100,60,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Leona,Leona,4,1100,60,0.6,1,60,60,120,60,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_MissFortune,Miss Fortune,4,800,53,0.75,4,30,30,135,40,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Neeko,Neeko,4,1000,60,0.65,1,60,60,90,30,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Sejuani,Sejuani,4,1000,60,0.6,1,60,60,140,50,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_SummonLevel4,T-43X,4,800,80,0.75,1,50,50,120,50,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Vex,Vex,4,800,30,0.8,4,30,30,30,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Xayah,Xayah,4,800,65,0.8,4,30,30,75,25,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Zed,Zed,4,1050,50,0.95,1,65,65,50,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Zeri,Zeri,4,800,65,0.8,7,30,30,40,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Ziggs,Ziggs,4,850,40,0.75,4,30,30,70,20,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Aurora,Aurora,5,800,50,0.8,4,40,40,80,20,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Garen,Garen,5,1100,80,0.85,1,60,60,80,20,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Kobuko,Kobuko,5,900,20,1,1,50,50,0,120,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_NPC_AurelionSol,Mechaurelion,5,12000,800,1,4,100,100,30,10,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Renekton,Renekton,5,1000,66,0.91,1,60,60,140,70,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Samira,Samira,5,900,70,0.8,4,40,40,100,20,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Urgot,Urgot,5,850,66,0.85,4,40,40,40,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Viego,Viego,5,1100,60,0.9,1,60,60,65,25,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_Zac,Zac,5,900,60,0.75,1,40,40,100,30,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT_ArmoryKeyOrnn,Artifact Item Anvil,8,10,70,1,0,10,10,100,0,,0
+Set 14,14,base,TFTSet14,15.12,TFT_ArmoryKeyCompleted,Completed Item Anvil,8,10,70,1,0,10,10,100,0,,0
+Set 14,14,base,TFTSet14,15.12,TFT_ArmoryKeyComponent,Component Anvil,8,10,70,1,0,10,10,100,0,,0
+Set 14,14,base,TFTSet14,15.12,TFT_ArmoryKeySupport,Support item anvil,8,10,70,1,0,10,10,100,0,,0
+Set 14,14,base,TFTSet14,15.12,TFT14_EmblemArmoryKey,Tome of Traits,8,10,,1,0,10,10,100,0,,0
+Set 14,14,base,TFTSet14,15.12,TFT5_EmblemArmoryKey,Tome of Traits,8,10,,1,0,10,10,100,0,,0
+Set 14,14,base,TFTSet14,15.12,TFT14_GoldenOxProp,,10,88888,0,0.8,138,88,88,100,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_CypherProp,,10,,,0.8,1,,20,100,0,0.25,1.4
+Set 14,14,base,TFTSet14,15.12,TFT14_HackedEgg,Hacked Egg,11,,,1,0,10,10,0,0,,0
+Set 14,14,base,TFTSet14,15.12,TFT6_MercenaryChest,Mercenary Chest,11,1,0,,0,0,,12,0,0.25,1.3
+Set 14,14,base,TFTSet14,15.12,TFT14_AnimaSquadMeep,SightWard,11,10,,1,0,10,10,100,0,10,1
+Set 14,14,base,TFTSet14,15.12,TFT14_AnnieTibbers,Tibbers,11,1200,120,0.7,1,60,60,80,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Aatrox,Aatrox,1,650,60,0.65,1,40,40,80,20,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_ZyraThornPlant,Deadly Spine,1,600,20,1,12,20,20,0,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Ezreal,Ezreal,1,500,50,0.7,4,20,20,50,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Garen,Garen,1,700,55,0.6,1,40,40,80,20,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Gnar,Gnar,1,500,50,0.7,6,20,20,40,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT_BlueGolem,Golem,1,600,55,0.55,1,40,40,100,30,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_ZyraGraspingPlant,Grasping Root,1,800,30,0.6,12,45,45,0,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Kalista,Kalista,1,500,55,0.7,4,20,20,90,10,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Kayle,Kayle,1,500,30,0.7,4,25,25,0,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Kennen,Kennen,1,700,45,0.65,1,40,40,85,30,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Lucian,Lucian,1,500,30,0.7,4,20,20,40,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Malphite,Malphite,1,700,60,0.55,1,55,55,100,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Naafiri,Naafiri,1,650,55,0.8,1,45,45,30,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Rell,Rell,1,750,50,0.6,1,40,40,40,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT9_SLIME_Crab,Rift Scuttler,1,,20,0.8,1,10,10,100,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Sivir,Sivir,1,450,50,0.7,6,20,20,50,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Syndra,Syndra,1,450,40,0.7,4,20,20,30,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_PetCreepyCat,Test Cost,1,,,0.8,1,,20,100,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT_TrainingDummy,Training Dummy,1,550,50,0.5,1,40,40,0,0,,0
+Set 15,15,base,TFTSet15,16.4,TFT15_Zac,Zac,1,650,60,0.55,1,40,40,75,30,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_DrMundo,Dr. Mundo,2,800,50,0.6,1,40,40,90,30,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Gangplank,Gangplank,2,750,50,0.8,1,55,55,50,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Janna,Janna,2,600,35,0.7,4,25,25,60,10,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Jhin,Jhin,2,550,64,0.9,6,25,25,4,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_KaiSa,Kai'Sa,2,550,45,0.7,4,25,25,50,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Katarina,Katarina,2,800,35,0.75,1,55,55,30,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Kobuko,Kobuko,2,800,50,0.65,1,40,40,85,30,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Lux,Lux,2,550,35,0.75,4,20,20,50,10,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Rakan,Rakan,2,800,50,0.6,1,50,50,75,25,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Shen,Shen,2,800,60,0.6,1,45,45,75,25,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Vi,Vi,2,800,50,0.6,1,45,45,75,20,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Xayah,Xayah,2,550,45,0.75,4,25,25,70,20,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_XinZhao,Xin Zhao,2,700,60,0.65,1,45,45,65,10,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Ahri,Ahri,3,650,40,0.75,4,30,30,50,10,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Caitlyn,Caitlyn,3,650,55,0.8,6,30,30,60,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Darius,Darius,3,850,50,0.8,1,60,60,30,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Jayce,Jayce,3,850,90,0.7,1,60,60,40,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_KogMaw,Kog'Maw,3,650,15,0.8,6,30,30,50,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Lulu,Lulu,3,650,45,0.75,4,25,25,100,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Malzahar,Malzahar,3,800,40,0.7,4,30,30,30,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Neeko,Neeko,3,850,45,0.6,1,50,50,70,20,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Rammus,Rammus,3,1100,50,0.65,1,60,60,90,30,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Senna,Senna,3,650,55,0.75,4,30,30,60,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Smolder,Smolder,3,650,50,0.75,4,30,30,50,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Swain,Swain,3,950,60,0.6,1,50,50,80,20,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Udyr,Udyr,3,900,45,0.7,1,50,50,80,40,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Viego,Viego,3,850,30,0.85,1,60,60,40,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Yasuo,Yasuo,3,850,70,0.75,1,60,60,40,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Ziggs,Ziggs,3,650,20,0.8,4,30,30,90,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Akali,Akali,4,1050,30,0.7,1,65,65,40,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Ashe,Ashe,4,850,68,0.8,4,35,35,70,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_JarvanIV,Jarvan IV,4,1100,60,0.65,1,60,60,150,45,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Jinx,Jinx,4,850,70,0.75,6,35,35,80,10,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_KSante,K'Sante,4,950,60,0.7,1,60,60,90,30,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Karma,Karma,4,850,40,0.75,4,35,35,65,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Leona,Leona,4,1200,60,0.6,1,60,60,90,30,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Poppy,Poppy,4,1100,65,0.6,1,60,60,105,45,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Ryze,Ryze,4,850,50,0.8,4,35,35,60,10,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Samira,Samira,4,850,50,0.75,4,45,45,15,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Sett,Sett,4,1100,60,0.7,1,60,60,100,40,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Volibear,Volibear,4,1050,80,0.85,1,65,65,40,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Yuumi,Yuumi,4,850,40,0.8,4,35,35,40,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Braum,Braum,5,1200,80,0.75,1,70,70,60,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Ekko,Ekko,5,950,40,0.85,1,70,70,110,50,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Gwen,Gwen,5,1150,20,0.85,2,60,60,40,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_LeeSin,Lee Sin,5,1200,70,0.9,1,75,75,100,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Seraphine,Seraphine,5,900,50,0.8,4,40,40,140,0,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_TwistedFate,Twisted Fate,5,900,30,0.85,4,40,40,120,40,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Varus,Varus,5,900,60,0.8,6,40,40,85,10,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Yone,Yone,5,1300,40,0.9,1,75,75,180,80,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT15_Zyra,Zyra,5,750,60,0.75,4,30,30,100,40,0.25,1.4
+Set 15,15,base,TFTSet15,16.4,TFT_ArmoryKeyOrnn,Artifact Item Anvil,8,10,70,1,0,10,10,100,0,,0
+Set 15,15,base,TFTSet15,16.4,TFT_ArmoryKeyCompleted,Completed Item Anvil,8,10,70,1,0,10,10,100,0,,0
+Set 15,15,base,TFTSet15,16.4,TFT_ArmoryKeyComponent,Component Anvil,8,10,70,1,0,10,10,100,0,,0
+Set 15,15,base,TFTSet15,16.4,TFT_ArmoryKeySupport,Support item anvil,8,10,70,1,0,10,10,100,0,,0
+Set 15,15,base,TFTSet15,16.4,TFT5_EmblemArmoryKey,Tome of Traits,8,10,,1,0,10,10,100,0,,0
+Set 15,15,base,TFTSet15,16.4,TFT6_MercenaryChest,Mercenary Chest,11,1,0,,0,0,,12,0,0.25,1.3
+Set 15,15,base,TFTSet15,16.4,TFT6_MercenaryChest,Mercenary Chest,11,1,0,,0,0,,12,0,0.25,1.3
+Set 15,15,base,TFTSet15,16.4,TFT15_Galio,The Mighty Mech,11,1,0,0.6,1,0,,70,30,0.25,1.5
+Set 16,16,base,TFTSet16,16.10,TFT16_Anivia,Anivia,1,500,30,0.75,4,20,20,40,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_PVE_RedGolemMini,Baby Brambleback,1,750,135,0.8,2,15,15,0,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_PVE_BlueGolemMini1,Baby Sentinel,1,1000,90,0.8,2,40,40,0,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Blitzcrank,Blitzcrank,1,717,50,0.55,1,40,40,105,60,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_PVE_RedGolem,Brambleback,1,3200,170,0.8,1,45,45,0,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Briar,Briar,1,650,42,0.75,1,35,35,40,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Caitlyn,Caitlyn,1,500,45,0.75,6,15,15,80,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_PVE_Dragon,Dragon,1,8000,750,0.8,2,50,50,0,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT_ElderDragon,Elder Dragon,1,10000,900,0.8,2,50,50,0,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT_BlueGolem,Golem,1,600,55,0.55,1,40,40,100,30,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_PVE_Gromp,Gromp,1,1200,110,0.8,2,50,25,0,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Illaoi,Illaoi,1,700,50,0.6,1,40,40,100,40,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_JarvanIV,Jarvan IV,1,700,55,0.6,1,40,40,100,30,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Jhin,Jhin,1,444,44,0.7,4,24,24,70,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_KogMaw,Kog'Maw,1,500,20,0.7,6,15,15,30,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Lulu,Lulu,1,500,25,0.7,4,15,15,55,10,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_PiltoverInvention,Piltover Invention,1,1,65,0.9,33,65,65,0,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Qiyana,Qiyana,1,650,42,0.75,1,35,35,30,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT9_SLIME_Crab,Rift Scuttler,1,,20,0.8,1,10,10,100,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Rumble,Rumble,1,700,45,0.6,1,40,40,110,40,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_PVE_BlueGolem,Sentinel,1,4000,160,0.8,1,50,50,0,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Shen,Shen,1,717,65,0.65,1,40,40,90,30,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Sona,Sona,1,500,20,0.7,4,15,15,30,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT_TrainingDummy,Training Dummy,1,550,50,0.5,1,40,40,0,0,,0
+Set 16,16,base,TFTSet16,16.10,TFT16_Viego,Viego,1,650,40,0.75,1,35,35,30,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_PVE_VoidGrubLarge,Void Grub,1,250,20,0.8,1,10,10,0,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Aphelios,Aphelios,2,650,20,0.75,4,20,20,40,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Ashe,Ashe,2,550,60,0.75,4,20,20,80,20,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Bard,Bard ,2,750,30,0.75,4,20,20,55,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_ChoGath,Cho'Gath,2,850,50,0.6,1,45,45,100,40,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Ekko,Ekko,2,750,35,0.85,1,45,45,40,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Graves,Graves ,2,700,50,0.7,2,45,45,50,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Neeko,Neeko,2,850,50,0.6,1,45,45,65,15,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Orianna,Orianna ,2,550,30,0.7,4,20,20,50,20,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Poppy,Poppy ,2,850,50,0.7,1,45,45,80,40,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_RekSai,Rek'Sai,2,750,50,0.85,1,45,45,30,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Sion,Sion,2,650,50,0.55,1,40,40,70,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Teemo,Teemo,2,550,35,0.75,6,20,20,30,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Tristana,Tristana,2,550,55,0.75,4,20,20,50,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Tryndamere,Tryndamere ,2,750,60,0.75,1,45,45,50,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_TwistedFate,Twisted Fate,2,550,,0.75,4,20,20,3,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Vi,Vi,2,700,60,0.85,1,40,40,30,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_XinZhao,Xin Zhao,2,850,50,0.65,1,45,45,70,15,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Yasuo,Yasuo,2,750,45,0.8,1,45,45,30,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Yorick,Yorick ,2,850,60,0.6,1,45,45,75,15,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Ahri,Ahri,3,650,30,0.8,4,25,25,30,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Darius,Darius,3,900,50,0.65,1,50,50,65,20,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_DrMundo,Dr. Mundo,3,900,50,0.6,1,50,50,60,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Draven,Draven,3,650,58,0.75,4,25,25,100,60,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Gangplank,Gangplank,3,850,45,0.8,1,55,55,50,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Gwen,Gwen ,3,850,40,0.8,2,55,55,30,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Jinx,Jinx,3,650,50,0.75,4,25,25,18,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Kennen,Kennen ,3,900,50,0.65,1,50,50,125,70,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Kobuko,Kobuko & Yuumi,3,950,20,0.65,1,50,50,90,30,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Leblanc,LeBlanc ,3,650,35,0.75,4,25,25,60,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Leona,Leona,3,1000,50,0.65,1,60,60,120,70,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Loris,Loris,3,950,60,0.6,1,50,50,140,70,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Malzahar,Malzahar,3,649,30,0.8,4,25,25,35,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Milio,Milio,3,650,30,0.75,4,30,30,60,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Nautilus,Nautilus,3,900,50,0.6,1,50,50,120,60,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Sejuani,Sejuani,3,900,60,0.6,1,50,50,80,40,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Vayne,Vayne,3,650,70,0.9,6,25,25,40,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Zoe,Zoe,3,800,35,0.8,4,25,25,60,30,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Ambessa,Ambessa,4,1100,50,0.9,1,60,60,20,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_BelVeth,Bel'Veth,4,1000,65,0.85,2,50,50,100,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Braum,Braum,4,1200,50,0.6,1,60,60,105,60,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Diana,Diana ,4,1300,35,0.8,1,70,70,30,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Fizz,Fizz,4,1000,30,0.9,1,50,50,10,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Garen,Garen,4,1200,65,0.6,1,60,60,130,50,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Kaisa,Kai'Sa ,4,850,50,0.5,6,30,30,10,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Kalista,Kalista ,4,800,50,0.85,4,30,30,65,20,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Lissandra,Lissandra,4,800,30,0.75,4,30,30,65,20,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Lux,Lux,4,800,30,0.75,4,30,30,50,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_MissFortune,Miss Fortune,4,800,55,0.75,4,30,30,30,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Nasus,Nasus ,4,1500,60,0.65,1,70,70,70,10,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Nidalee,Nidalee ,4,1200,45,0.85,1,70,70,40,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Renekton,Renekton ,4,1400,75,0.9,1,70,70,30,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_RiftHerald,Rift Herald ,4,1100,60,0.6,1,60,60,125,60,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Seraphine,Seraphine,4,800,30,0.75,4,30,30,20,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Singed,Singed,4,1100,15,0.7,1,60,60,80,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Skarner,Skarner ,4,1400,65,0.65,1,70,70,120,60,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Swain,Swain,4,1200,40,0.65,1,60,60,155,40,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Taric,Taric,4,1300,70,0.65,1,70,70,80,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Veigar,Veigar,4,800,33,0.8,4,30,30,60,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Warwick,Warwick,4,1200,60,0.9,1,60,60,70,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Wukong,Wukong,4,1050,60,0.65,1,60,60,60,30,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Yone,Yone,4,1100,20,0.85,1,60,60,100,30,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Yunara,Yunara,4,800,60,0.8,4,30,30,50,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Aatrox,Aatrox ,5,1000,65,0.9,1,55,55,20,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Annie,Annie,5,800,30,0.85,4,30,30,160,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_AurelionSol,Aurelion Sol,5,1100,50,0.8,4,40,40,85,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Azir,Azir,5,800,35,0.85,4,30,30,40,20,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_BaronNashor,Baron Nashor,5,3000,120,0.5,2,85,85,50,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Brock,Brock,5,1800,270,0.5,1,60,60,100,40,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Fiddlesticks,Fiddlesticks,5,1200,50,0.9,2,60,60,70,30,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Galio,Galio,5,1100,50,0.9,1,55,55,140,90,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Kindred,Kindred,5,900,73,0.9,4,40,40,200,80,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Lucian,Lucian & Senna,5,900,65,0.8,4,40,40,70,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Mel,Mel ,5,900,50,0.8,4,30,30,200,30,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Ornn,Ornn,5,900,70,0.55,1,55,55,150,50,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Ryze,Ryze ,5,1000,35,0.9,4,40,40,45,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Sett,Sett,5,1000,60,0.9,1,50,50,90,10,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Shyvana,Shyvana,5,1200,80,0.95,1,60,60,30,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Sylas,Sylas ,5,1450,65,0.9,1,80,80,30,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_THex,T-Hex,5,1100,110,0.9,2,80,80,80,10,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_TahmKench,Tahm Kench,5,1000,70,0.55,1,60,60,90,10,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Thresh,Thresh ,5,1200,60,0.85,1,65,65,40,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Volibear,Volibear ,5,1200,55,0.9,1,60,60,20,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Xerath,Xerath ,5,900,40,0.8,4,30,30,135,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Zaahen,Zaahen,5,1100,60,0.9,2,70,70,40,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Ziggs,Ziggs ,5,900,,0.9,6,30,30,140,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_Zilean,Zilean,5,900,40,0.9,4,30,30,35,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT_ArmoryKeyOrnn,Artifact Item Anvil,8,10,70,1,0,10,10,100,0,,0
+Set 16,16,base,TFTSet16,16.10,TFT_ArmoryKeyCompleted,Completed Item Anvil,8,10,70,1,0,10,10,100,0,,0
+Set 16,16,base,TFTSet16,16.10,TFT_ArmoryKeyComponent,Component Anvil,8,10,70,1,0,10,10,100,0,,0
+Set 16,16,base,TFTSet16,16.10,TFT_ArmoryKeySupport,Support item anvil,8,10,70,1,0,10,10,100,0,,0
+Set 16,16,base,TFTSet16,16.10,TFT5_EmblemArmoryKey,Tome of Traits,8,10,,1,0,10,10,100,0,,0
+Set 16,16,base,TFTSet16,16.10,TFT16_Atakhan,Atakhan,11,320,50,0.75,1,0,,85,40,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_FreljordProp,Frozen Tower,11,400,0,0.2,1,30,30,0,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_MalzaharVoidling,MalzaharVoidling,11,,,0.8,1,,20,100,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT6_MercenaryChest,Mercenary Chest,11,1,0,,0,0,,12,0,0.25,1.3
+Set 16,16,base,TFTSet16,16.10,TFT16_AzirSoldier,Sand Soldier,11,750,0,0.8,1,50,50,100,0,0.25,1.4
+Set 16,16,base,TFTSet16,16.10,TFT16_AnnieTibbers,Tibbers,11,1500,90,0.75,1,80,80,100,40,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Aatrox,Aatrox,1,700,50,0.6,1,45,45,90,30,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Briar,Briar,1,650,40,0.75,1,35,35,40,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Caitlyn,Caitlyn,1,500,65,0.55,4,15,15,0,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Chogath,Cho'Gath,1,700,45,0.6,1,40,40,70,30,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Ezreal,Ezreal,1,450,45,0.7,6,15,15,30,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT_BlueGolem,Golem,1,600,55,0.55,1,40,40,100,30,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Leona,Leona,1,700,50,0.6,1,40,40,110,50,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Lissandra,Lissandra,1,450,30,0.7,4,15,15,30,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_DarkStar_FakeUnit,Mini Black Hole,1,1,421,4.95,0,40,40,0,0,,0
+Set 17,17,base,TFTSet17,latest,TFT17_Nasus,Nasus,1,700,40,0.65,1,45,45,120,60,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Poppy,Poppy,1,700,60,0.65,1,45,45,100,30,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_RekSai,Rek'Sai,1,700,50,0.6,1,45,45,100,40,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT9_SLIME_Crab,Rift Scuttler,1,,20,0.8,1,10,10,100,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Talon,Talon,1,650,35,0.75,1,35,35,30,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Teemo,Teemo,1,450,15,0.7,4,15,15,50,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT_TrainingDummy,Training Dummy,1,550,50,0.5,1,40,40,0,0,,0
+Set 17,17,base,TFTSet17,latest,TFT17_TwistedFate,Twisted Fate,1,500,30,0.7,4,15,15,50,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Veigar,Veigar,1,500,30,0.7,4,15,15,50,10,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Akali,Akali,2,750,45,0.8,1,45,45,30,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Belveth,Bel'Veth,2,750,47,0.75,2,45,45,50,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Gnar,Gnar,2,550,48,0.75,6,20,20,5,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Gragas,Gragas,2,950,50,0.6,1,45,45,80,30,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Gwen,Gwen,2,750,50,0.8,2,50,50,30,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Jax,Jax,2,950,50,0.65,1,45,45,80,20,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Jinx,Jinx,2,550,55,0.75,4,20,20,80,20,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_IvernMinion,Meepsie,2,950,65,0.55,1,45,45,100,50,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Milio,Milio,2,550,30,0.7,4,20,20,30,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Mordekaiser,Mordekaiser,2,950,40,0.6,1,45,45,100,40,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Pantheon,Pantheon,2,900,50,0.6,1,45,45,80,20,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Pyke,Pyke,2,700,45,0.8,1,45,45,40,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Zoe,Zoe,2,550,30,0.7,4,20,20,50,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Aurora,Aurora,3,700,30,0.8,4,25,25,80,20,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Diana,Diana,3,850,,0.8,1,50,50,40,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Fizz,Fizz,3,850,30,0.85,1,55,55,20,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Illaoi,Illaoi,3,1100,50,0.65,1,50,50,100,40,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Kaisa,Kai'Sa,3,650,45,0.8,4,25,25,50,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Lulu,Lulu,3,650,30,0.75,4,25,25,55,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Maokai,Maokai,3,1100,60,0.6,1,40,40,100,30,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_MissFortune,Miss Fortune,3,650,50,0.75,6,30,30,100,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Ornn,Ornn,3,950,50,0.65,1,40,40,100,40,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Rhaast,Rhaast,3,1200,60,0.65,1,60,60,90,30,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Samira,Samira,3,650,50,0.75,6,25,25,65,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Urgot,Urgot,3,600,60,0.8,2,45,45,50,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Viktor,Viktor,3,650,30,0.8,4,25,25,80,20,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_AurelionSol,Aurelion Sol,4,850,30,0.75,6,30,30,75,15,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Corki,Corki,4,850,45,0.8,4,30,30,60,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Karma,Karma,4,850,40,0.8,4,30,30,55,10,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Kindred,Kindred,4,850,58,0.8,6,30,30,40,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Leblanc,LeBlanc,4,850,0,0.8,4,30,30,40,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_MasterYi,Master Yi,4,1100,60,0.85,1,65,65,60,20,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Morgana,Morgana,4,1300,60,0.65,1,70,70,95,45,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Nami,Nami,4,850,40,0.8,4,30,30,65,20,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Nunu,Nunu & Willump,4,1300,60,0.65,1,60,60,145,40,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Rammus,Rammus,4,1300,60,0.65,1,60,60,80,20,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Riven,Riven,4,1100,0,0.85,1,60,60,20,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_TahmKench,Tahm Kench,4,1300,75,0.5,1,60,60,110,50,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Galio,The Mighty Mech,4,1300,70,0.65,1,60,60,100,40,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Xayah,Xayah,4,850,49,0.75,6,30,30,50,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Enemy_Aatrox,Apex Primordian,5,8452,90,0.9,1,75,75,70,30,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Bard,Bard,5,900,30,0.85,4,40,40,65,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Blitzcrank,Blitzcrank,5,1000,50,0.9,1,50,50,120,30,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Fiora,Fiora,5,1200,80,0.9,1,65,65,70,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Graves,Graves,5,900,60,0.75,4,40,40,60,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Jhin,Jhin,5,900,80,0.9,6,40,40,44,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Shen,Shen,5,1300,50,0.9,1,65,65,70,20,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Sona,Sona,5,900,35,0.9,4,40,40,25,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Vex,Vex,5,900,15,0.8,6,40,40,60,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_Zed,Zed,5,1300,85,0.85,1,60,60,100,40,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT_ArmoryKeyOrnn,Artifact Item Anvil,8,10,70,1,0,10,10,100,0,,0
+Set 17,17,base,TFTSet17,latest,TFT_ArmoryKeyCompleted,Completed Item Anvil,8,10,70,1,0,10,10,100,0,,0
+Set 17,17,base,TFTSet17,latest,TFT_ArmoryKeyComponent,Component Anvil,8,10,70,1,0,10,10,100,0,,0
+Set 17,17,base,TFTSet17,latest,TFT_ArmoryKeySupport,Support item anvil,8,10,70,1,0,10,10,100,0,,0
+Set 17,17,base,TFTSet17,latest,TFT5_EmblemArmoryKey,Tome of Traits,8,10,,1,0,10,10,100,0,,0
+Set 17,17,base,TFTSet17,latest,TFT14_EmblemArmoryKey,Tome of Traits,8,10,,1,0,10,10,100,0,,0
+Set 17,17,base,TFTSet17,latest,TFT17_Summon,Bia & Bayin,11,320,20,0.6,1,0,,50,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_PVE_Krug,Cosmic Bruiser,11,1200,95,0.8,1,50,25,0,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_PVE_ElderDragon,Cosmic Elder Dragon,11,10000,900,0.8,2,50,50,0,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_PVE_Pix,Cosmic Flutterbye,11,,,0.8,1,20,20,0,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_PVE_Gromp,Cosmic Gromp,11,3000,350,0.7,2,30,30,0,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_PVE_Raptor,Cosmic Scrapper,11,1200,100,1.2,1,25,25,0,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT17_PVE_Minion,Cosmic Squid,11,250,20,0.8,1,10,10,0,0,0.25,1.4
+Set 17,17,base,TFTSet17,latest,TFT6_MercenaryChest,Mercenary Chest,11,1,0,,0,0,,12,0,0.25,1.3
+Set 17,17,base,TFTSet17,latest,TFT17_TimebreakerCore,TimebreakerCore,11,,,0.8,1,,20,100,0,0.25,1.4

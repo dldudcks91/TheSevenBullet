@@ -1,0 +1,26 @@
+﻿set_label,set_number,set_stage,set_mutator,set_name_ingame,patch,champions,with_ability_desc,traits
+Set 1,1,base,1,Base,9.21,57,57,24
+Set 2,2,base,2,War of the Elements,10.5,69,69,27
+Set 3,3,base,3,Galaxies,10.11,55,55,23
+Set 3.5,3,mid,TFTSet3,Galaxies,10.18,61,61,24
+Set 4,4,base,TFTSet4,Journeys,11.1,61,60,26
+Set 4.5,4,mid,TFTSet4_Act2,Journeys,11.8,62,61,27
+Set 5,5,base,TFT_Set5,Set5,11.14,65,65,27
+Set 5.5,5,mid,TFT_Set5_Stage2,Set5,11.21,64,64,26
+Set 6,6,base,TFT_Set6,Set6,12.2,65,64,28
+Set 6.5,6,mid,TFTSet6_Stage2,Set6,12.10,67,66,28
+Set 7,7,base,TFTSet7,Set7,12.15,62,62,28
+Set 7.5,7,mid,TFTSet7_Stage2,Set7,12.22,72,72,29
+Set 8,8,base,TFTSet8,Set8,13.4,67,67,27
+Set 8.5,8,mid,TFTSet8_Stage2,Set8,13.12,73,73,28
+Set 9,9,base,TFTSet9,Set9,13.18,89,87,29
+Set 9.5,9,mid,TFTSet9_Stage2,Set9,13.23,92,89,32
+Set 10,10,base,TFTSet10,Set10,14.5,75,73,29
+Set 11,11,base,TFTSet11,Set11,14.15,86,84,28
+Set 12,12,base,TFTSet12,Set12,14.22,87,85,28
+Set 13,13,base,TFTSet13,Set13,15.6,84,82,33
+Set 13.5,13,mid,TFTSet13_Evolved,Set13,15.6,87,85,38
+Set 14,14,base,TFTSet14,Set14,15.12,91,90,25
+Set 15,15,base,TFTSet15,Set15,16.4,79,79,173
+Set 16,16,base,TFTSet16,Set16,16.10,123,123,53
+Set 17,17,base,TFTSet17,Set17,latest,83,83,44

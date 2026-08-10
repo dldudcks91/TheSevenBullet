@@ -1,0 +1,3 @@
+skill_id,unit_id,target,effect,chance,cast_time,damage,multiplier,name_key,desc_key
+SK_HUM_ARCHER,U_HUM_ARCHER,BOSS,CRIT,50,,,2,SKILL_HUM_ARCHER,SKILL_HUM_ARCHER_DESC
+SK_HUM_MAGE,U_HUM_MAGE,BOSS,NUKE,,,,,SKILL_HUM_MAGE,SKILL_HUM_MAGE_DESC

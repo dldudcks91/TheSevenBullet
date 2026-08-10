@@ -1,1 +1,35 @@
 keys,ko,en
+UNIT_HUM_SWORD,검사,Swordsman
+UNIT_HUM_SPEAR,창병,Spearman
+UNIT_HUM_ARCHER,궁병,Archer
+UNIT_HUM_MAGE,마법사,Mage
+UNIT_HUM_PRINCE,왕자,Prince
+UNIT_DE_ASSASSIN,암살자,Assassin
+UNIT_DE_SWORD,검사,Swordsman
+UNIT_DE_WIZARD,마법사,Wizard
+UNIT_DE_SORCERESS,여마법사,Sorceress
+UNIT_DE_ARCHER,궁수,Archer
+UNIT_UD_DREADKNIGHT,드레드나이트,Dread Knight
+UNIT_UD_LICH,리치,Lich
+UNIT_UD_NECROMANCER,네크로맨서,Necromancer
+UNIT_UD_REAPER,사신,Reaper
+UNIT_UD_SKELARCHER,해골궁수,Skeleton Archer
+UNIT_UD_BUTCHER,좀비도살자,Zombie Butcher
+UNIT_BM_FOX,여우 검사,Fox Swordsman
+UNIT_BM_CAT,고양이 도적,Cat Robber
+UNIT_BM_DEER,사슴 드루이드,Deer Druid
+UNIT_BM_LION,사자 기사,Lion Knight
+UNIT_BM_PANDA,판다 전사,Panda Warrior
+UNIT_BM_RABBIT,토끼 마법사,Rabbit Wizard
+UNIT_VK_BERSERKER,광전사,Berserker
+UNIT_VK_JARL,수장,Jarl
+UNIT_DM_FIREKEEPER,불지기,Fire Keeper
+UNIT_DM_LORD,악마군주,Demon Lord
+UNIT_DM_DEMONESS,여악마,Demoness
+UNIT_DM_FIREIMP,화염 임프,Fire Imp
+UNIT_DM_HIGH,상급 악마,High Demon
+UNIT_DM_SUCCUBUS,서큐버스,Succubus
+SKILL_HUM_ARCHER,정확한 사격,Precise Shot
+SKILL_HUM_ARCHER_DESC,평타마다 @chance@% 확률로 피해 @multiplier@배,Each basic attack has a @chance@% chance to deal @multiplier@x damage
+SKILL_HUM_MAGE,연쇄 낙뢰,Chain Lightning
+SKILL_HUM_MAGE_DESC,@cast_time@초 캐스팅 후 번개로 @damage@ 피해,After @cast_time@s of casting, strike for @damage@ lightning damage

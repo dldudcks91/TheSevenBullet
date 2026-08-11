@@ -1,14 +1,14 @@
 keys,ko,en
 UNIT_HUM_SWORD,검사,Swordsman
-UNIT_HUM_SPEAR,창병,Spearman
 UNIT_HUM_ARCHER,궁병,Archer
 UNIT_HUM_MAGE,마법사,Mage
 UNIT_HUM_PRINCE,왕자,Prince
 UNIT_DE_ASSASSIN,암살자,Assassin
 UNIT_DE_SWORD,검사,Swordsman
 UNIT_DE_WIZARD,마법사,Wizard
-UNIT_DE_SORCERESS,여마법사,Sorceress
+UNIT_DE_WARRIOR,전사,Warrior
 UNIT_DE_ARCHER,궁수,Archer
+UNIT_DE_BALLISTA,발리스타,Ballista
 UNIT_UD_DREADKNIGHT,드레드나이트,Dread Knight
 UNIT_UD_LICH,리치,Lich
 UNIT_UD_NECROMANCER,네크로맨서,Necromancer
@@ -32,4 +32,37 @@ UNIT_DM_SUCCUBUS,서큐버스,Succubus
 SKILL_HUM_ARCHER,정확한 사격,Precise Shot
 SKILL_HUM_ARCHER_DESC,평타마다 @chance@% 확률로 피해 @multiplier@배,Each basic attack has a @chance@% chance to deal @multiplier@x damage
 SKILL_HUM_MAGE,연쇄 낙뢰,Chain Lightning
+SKILL_VK_BERSERKER,광란,Frenzy
+SKILL_VK_BERSERKER_DESC,발동하면 잠시 공격 주기가 빨라진다,Attack period speeds up for a short time
+SKILL_HUM_PRINCE,왕가의 축복,Royal Blessing
+SKILL_HUM_PRINCE_DESC,랜덤 부대 하나에 타격당 붙는 고정 공격력을 잠시 부여한다,Temporarily grants a random squad flat damage per hit
+SKILL_VK_JARL,전투 함성,Battle Cry
+SKILL_VK_JARL_DESC,인접 부대들의 사기를 올린다,Raises the morale of adjacent squads
+SKILL_DE_SWORD,연격,Twin Strike
+SKILL_DE_SWORD_DESC,발동 시 그 박자의 타격 판정을 한 번 더 낸다,Occasionally strikes twice in a single beat
+SKILL_DE_ARCHER,불화살,Fire Arrow
+SKILL_DE_ARCHER_DESC,평타마다 @chance@% 확률로 화상을 건다,Each basic attack has a @chance@% chance to inflict Burn
+SKILL_DE_ASSASSIN,급소 찌르기,Vital Strike
+SKILL_DE_ASSASSIN_DESC,보스에게 취약을 건다 — 받는 피해가 늘어난다,Inflicts Vulnerable — the boss takes increased damage
+SKILL_DE_WIZARD,맹독 구름,Venom Cloud
+SKILL_DE_WIZARD_DESC,캐스팅 후 독 원소 피해를 입힌다,"After casting, deals poison elemental damage"
+SKILL_UD_DREADKNIGHT,망령 검격,Wraith Slash
+SKILL_UD_DREADKNIGHT_DESC,발동하면 다음 타격이 냉기 마법 피해로 나간다,The next strike deals cold magic damage instead of physical
+SKILL_UD_LICH,죽음의 서리,Death Frost
+SKILL_UD_LICH_DESC,캐스팅 후 냉기 피해를 입히고 짧은 빙결을 건다,"After casting, deals cold damage and briefly inflicts Freeze"
+SKILL_UD_NECROMANCER,망자의 손길,Touch of the Dead
+SKILL_UD_NECROMANCER_DESC,아군 부대에 붙은 디버프를 정화한다,Cleanses debuffs from an allied squad
+SKILL_UD_REAPER,영혼 수확,Soul Harvest
+SKILL_UD_REAPER_DESC,강력한 일격을 가한다 — 한 방이 굵어 방어력을 뚫는다,A single heavy blow that punches through armor
+SKILL_UD_SKELARCHER,이중 사격,Double Shot
+SKILL_UD_SKELARCHER_DESC,평타마다 @chance@% 확률로 화살이 한 발 더 나간다,Each basic attack has a @chance@% chance to fire an extra arrow
+SKILL_UD_BUTCHER,도축,Slaughter
+SKILL_UD_BUTCHER_DESC,보스를 잡을 때마다 공격력이 고정값씩 영구 누적된다,Permanently gains flat attack power for every boss kill
+SKILL_BM_CAT,소매치기,Pickpocket
+SKILL_BM_CAT_DESC,발동하면 보스에게서 골드를 훔친다,Steals gold from the boss
+SKILL_BM_RABBIT,원소 룰렛,Element Roulette
+SKILL_BM_RABBIT_DESC,캐스팅 후 화염·냉기·독·번개 중 랜덤 원소로 피해를 입힌다,"After casting, deals damage of a random element — fire, cold, poison, or lightning"
+SKILL_BM_DEER,자연의 축복,Nature's Blessing
+SKILL_BM_DEER_DESC,아군 랜덤 부대에 랜덤 버프를 부여한다,Grants a random buff to a random allied squad
+SKILL_BM_LION,사자후,Lion's Roar
 SKILL_HUM_MAGE_DESC,@cast_time@초 캐스팅 후 번개로 @damage@ 피해,After @cast_time@s of casting, strike for @damage@ lightning damage

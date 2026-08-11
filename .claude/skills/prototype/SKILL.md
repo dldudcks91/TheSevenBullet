@@ -54,6 +54,12 @@ allowed-tools: Read, Glob, Grep, Write, Edit, Bash
 - 가장 단순한 접근법 사용
 - production 코드 복사 허용 (import 금지)
 
+**에셋은 완화 대상이 아니다 — 유닛 스프라이트는 `outline/` 변형을 쓴다.**
+
+- 경로는 `assets/units/minifolks/<컬렉션>/<엔트리>/outline/<애니메이션>/` 이다. **`no_outline/`을 참조하지 않는다.**
+- 프로토타입이라도 여기서 갈리면 안 되는 이유는 [GAME_DESIGN.md](../../../docs/game_design/GAME_DESIGN.md) 「프레젠테이션」에 있다 — 작은 크기에서 실루엣이 뭉개지지 않는 것이 이 게임의 판독 전제다.
+- 보유 스프라이트 목록은 [sprite_catalog.csv](../../../src/data/sprite_catalog.csv)가 단일 출처다.
+
 ---
 
 ## Phase 5: 프로토타입 보고서

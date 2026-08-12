@@ -29,8 +29,8 @@ UNIT_DM_DEMONESS,여악마,Demoness
 UNIT_DM_FIREIMP,화염 임프,Fire Imp
 UNIT_DM_HIGH,상급 악마,High Demon
 UNIT_DM_SUCCUBUS,서큐버스,Succubus
-SKILL_HUM_ARCHER,정확한 사격,Precise Shot
-SKILL_HUM_ARCHER_DESC,평타마다 @chance@% 확률로 피해 @multiplier@배,Each basic attack has a @chance@% chance to deal @multiplier@x damage
+SKILL_HUM_ARCHER,속사,Rapid Volley
+SKILL_HUM_ARCHER_DESC,크리티컬이 터지면 잠시 공격속도가 빨라진다,On critical hit briefly increases attack speed
 SKILL_HUM_MAGE,연쇄 낙뢰,Chain Lightning
 SKILL_VK_BERSERKER,광란,Frenzy
 SKILL_VK_BERSERKER_DESC,발동하면 잠시 공격 주기가 빨라진다,Attack period speeds up for a short time
@@ -40,8 +40,8 @@ SKILL_VK_JARL,전투 함성,Battle Cry
 SKILL_VK_JARL_DESC,인접 부대들의 사기를 올린다,Raises the morale of adjacent squads
 SKILL_DE_SWORD,연격,Twin Strike
 SKILL_DE_SWORD_DESC,발동 시 그 박자의 타격 판정을 한 번 더 낸다,Occasionally strikes twice in a single beat
-SKILL_DE_ARCHER,불화살,Fire Arrow
-SKILL_DE_ARCHER_DESC,평타마다 @chance@% 확률로 화상을 건다,Each basic attack has a @chance@% chance to inflict Burn
+SKILL_DE_ARCHER,깊은 일격,Deep Strike
+SKILL_DE_ARCHER_DESC,크리티컬이 더 깊게 박힌다 — 크리 피해 배율이 추가로 커진다,Critical hits strike deeper — bonus critical damage multiplier
 SKILL_DE_ASSASSIN,급소 찌르기,Vital Strike
 SKILL_DE_ASSASSIN_DESC,보스에게 취약을 건다 — 받는 피해가 늘어난다,Inflicts Vulnerable — the boss takes increased damage
 SKILL_DE_WIZARD,맹독 구름,Venom Cloud
@@ -55,7 +55,7 @@ SKILL_UD_NECROMANCER_DESC,아군 부대에 붙은 디버프를 정화한다,Clea
 SKILL_UD_REAPER,영혼 수확,Soul Harvest
 SKILL_UD_REAPER_DESC,강력한 일격을 가한다 — 한 방이 굵어 방어력을 뚫는다,A single heavy blow that punches through armor
 SKILL_UD_SKELARCHER,이중 사격,Double Shot
-SKILL_UD_SKELARCHER_DESC,평타마다 @chance@% 확률로 화살이 한 발 더 나간다,Each basic attack has a @chance@% chance to fire an extra arrow
+SKILL_UD_SKELARCHER_DESC,크리티컬이 터지면 화살이 한 발 더 나간다,On critical hit fires an extra arrow
 SKILL_UD_BUTCHER,도축,Slaughter
 SKILL_UD_BUTCHER_DESC,보스를 잡을 때마다 공격력이 고정값씩 영구 누적된다,Permanently gains flat attack power for every boss kill
 SKILL_BM_CAT,소매치기,Pickpocket
@@ -65,4 +65,14 @@ SKILL_BM_RABBIT_DESC,캐스팅 후 화염·냉기·독·번개 중 랜덤 원소
 SKILL_BM_DEER,자연의 축복,Nature's Blessing
 SKILL_BM_DEER_DESC,아군 랜덤 부대에 랜덤 버프를 부여한다,Grants a random buff to a random allied squad
 SKILL_BM_LION,사자후,Lion's Roar
+SKILL_DM_HIGH,업화의 일격,Infernal Blow
+SKILL_DM_HIGH_DESC,발동하면 다음 타격에 큰 고정 추가피해가 실린다,The next strike carries heavy flat bonus damage
+SKILL_DM_FIREIMP,한탕 사격,Jackpot Shot
+SKILL_DM_FIREIMP_DESC,크리티컬이 터지면 큰 고정 추가피해가 실린다,On critical hit adds heavy flat bonus damage
+SKILL_DM_FIREKEEPER,지옥불,Hellfire
+SKILL_DM_FIREKEEPER_DESC,캐스팅 후 화염 원소 피해를 입힌다,"After casting, deals fire elemental damage"
+SKILL_DM_DEMONESS,피의 계약,Blood Pact
+SKILL_DM_DEMONESS_DESC,아군 부대 하나에 강한 버프를 주는 대신 그 부대의 사기를 깎는다,Grants a squad a powerful buff at the cost of its morale
+SKILL_DM_LORD,포식,Devour
+SKILL_DM_LORD_DESC,아군을 잡아먹고 자신의 능력치가 영구 상승한다,Devours an ally to permanently grow stronger
 SKILL_HUM_MAGE_DESC,@cast_time@초 캐스팅 후 번개로 @damage@ 피해,After @cast_time@s of casting, strike for @damage@ lightning damage

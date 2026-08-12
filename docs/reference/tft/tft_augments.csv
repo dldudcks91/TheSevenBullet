@@ -1,0 +1,279 @@
+name,tier,effect,mechanism
+AFK,Silver,3라운드간 행동 불가 이후 골드 20 획득,제약형
+Augmented Power,Silver,다음 증강체가 한 등급 위,메타
+Backup Bows,Silver,롱보우 획득 팀 공격 1000회 후 2개 추가,아이템지급
+Band of Thieves,Silver,도적의 장갑 1개 획득,아이템지급
+Best Friends I,Silver,짝지은 아군이 공격속도와 방어력 획득,위치
+Bodyguard Training,Silver,아군이 방어력과 마법저항 획득 레벨당 추가,팀스탯
+Boxing Lessons,Silver,앞열 아군 수만큼 팀 체력 획득,위치
+Branching Out,Silver,랜덤 상징 획득,아이템지급
+Called Shot,Silver,연승 설정 및 골드 획득,골드
+Capital Gains I,Silver,이자 골드를 저장해 스테이지 종료 시 획득,골드
+Caretaker's Ally,Silver,2코스트 챔피언 획득 레벨업마다 같은 챔피언 획득,유닛지급
+Carve a Path,Silver,BF대검 획득 물리피해 65000 후 2개 추가,아이템지급
+Celestial Blessing I,Silver,팀이 옴니뱀프 획득 초과 회복은 보호막으로,팀스탯
+Champ Delivery,Silver,저코스트 챔피언 획득 라운드마다 추가,유닛지급
+Charge Transfer I,Silver,팀 피해증폭 5% 오버킬이 마법피해로,팀스탯
+Cognitive Tax,Silver,골드 8과 경험치 1 획득,골드
+Component Buffet,Silver,조합법 대신 조합법 모루 획득,아이템지급
+Continuous Conjuration,Silver,쓸데없이 큰 지팡이 획득 마법피해 38000 후 2개 추가,아이템지급
+Corrosion,Silver,적 앞열 챔피언이 2초마다 방어력과 마법저항 4 상실,적디버프
+Crafted Crafting,Silver,아이템 조합 완성마다 리롤 2회 획득,상점
+Critical Success,Silver,연습용 장갑 획득 치명타 320회 후 2개 추가,아이템지급
+Electrocharge I,Silver,4회 공격마다 근처 적에게 마법피해,시간발동
+Exiles I,Silver,고립된 챔피언이 최대체력 20% 보호막 획득,위치
+Expedition,Silver,대기석 챔피언을 잃고 보상 획득,자원교환
+Feeling Lucky,Silver,골드 12 획득 동전 던져 4 추가,확률
+Find Your Center,Silver,앞열 중앙 챔피언이 피해증폭과 최대체력 획득,위치
+Firesale,Silver,매 라운드 상점에서 저코스트 챔피언 훔침,상점
+Flame On,Silver,가장 딜한 인페르노 챔피언이 공격속도 획득,조건부스탯
+Flexible,Silver,랜덤 상징 획득 스테이지 시작마다 추가,아이템지급
+Flowing Tears,Silver,여신의 눈물 획득 마나 6500 소모 후 2개 추가,아이템지급
+Focused Fire,Silver,팀 공격력 5% 5초마다 5% 증가,시간발동
+Future Focused,Silver,체력을 잃고 4코스트 챔피언과 골드 획득,자원교환
+Good For Something I,Silver,아이템 없는 챔피언 사망 시 50% 확률로 골드 드랍,골드
+Group Hug I,Silver,아군이 인접 아군에게 방어력과 마법저항 부여,위치
+Healing Orbs I,Silver,적 사망 시 가장 가까운 아군 회복,시간발동
+Iron Assets,Silver,조합법 모루와 골드 3 획득,아이템지급
+Item Grab Bag,Silver,랜덤 완성 아이템 1개 획득,아이템지급
+Kick Start,Silver,랜덤 2성 2코스트 챔피언과 골드 1 획득,유닛지급
+Kingslayer,Silver,승리 후 골드 획득 상대 체력 높을수록 많이,골드
+Late Game Specialist,Silver,레벨 9 도달 시 골드 36 획득,골드
+Latent Forge,Silver,플레이어 전투 8회 후 신물 모루 획득,아이템지급
+Lineup,Silver,앞열 아군 수만큼 팀 방어력과 마법저항,위치
+Loaded Dice,Silver,주사위는 항상 6 동전은 항상 앞면,규칙변경
+Lunch Money,Silver,적 소환사에게 준 피해 7당 골드 2,골드
+Makeshift Armor I,Silver,아이템 없는 챔피언이 방어력과 마법저항 30 획득,조건부스탯
+Missed Connections,Silver,각 1코스트 챔피언의 사본 획득,유닛지급
+On a Roll,Silver,배치된 챔피언 성급 상승 시 리롤 2회,상점
+One Two Three,Silver,1·2·3코스트 챔피언 1기씩 획득,유닛지급
+One Two Five,Silver,조합법 1개 골드 2 5코스트 챔피언 1기 획득,유닛지급
+Pandora's Bench,Silver,오른쪽 대기석 슬롯이 같은 코스트 랜덤 챔피언으로 변환,규칙변경
+Pandora's Items I,Silver,대기 아이템이 라운드 시작마다 무작위화,규칙변경
+Partial Ascension,Silver,12초 후 팀 피해증폭 20%,시간발동
+Patience is a Virtue,Silver,지난 라운드에 챔피언을 사지 않았으면 리롤 2회,상점
+Quick Streaks,Silver,연승·연패 진행이 2배,규칙변경
+Residual Magic,Silver,팀 체력 획득 위습 구매마다 증가,성장
+Risky Moves,Silver,체력 20 상실 전투 7회 후 골드 30,자원교환
+Rolling For Days,Silver,무료 상점 리롤 획득,상점
+Second Wind,Silver,10초 후 팀이 잃은 체력의 40% 회복,시간발동
+Shieldmaiden,Silver,레오나 획득 강화된 공격형 전사가 됨,유닛지급
+Shimmerscale Essence,Silver,거물의 갑옷 획득 5라운드 후 도박꾼의 검,아이템지급
+Silver Spoon,Silver,경험치 10 획득,경험치
+Size Matters,Silver,거인의 허리띠 획득 고체력 도달 시 워모그,아이템지급
+Slice of Life,Silver,스테이지당 2회 랜덤 챔피언 획득 비용 증가,유닛지급
+Slightly Magic Roll,Silver,주사위를 굴려 숫자에 따라 보상,확률
+Small Grab Bag,Silver,랜덤 아이템 조합법 2개 획득,아이템지급
+Stand United,Silver,활성 특성마다 공격력과 주문력 1.5%,조건부스탯
+Stellar Combo,Silver,아트록스 획득 강화된 공격형 전사가 됨,유닛지급
+Team Building,Silver,하급 챔피언 복제기 획득 전투 5회 후 추가,아이템지급
+Teaming Up,Silver,조합법 1개와 랜덤 3코스트 챔피언 2기,유닛지급
+Terminal Velocity,Silver,뽀삐 획득 강화된 원거리 주문형이 됨,유닛지급
+The Tower,Silver,거대 훈련용 봇 획득 4초마다 가까운 적 3명 감전,시간발동
+Tiny Titans,Silver,플레이어 현재·최대 체력 30 증가,성벽
+Twin Guardians,Silver,앞열에 정확히 2명이면 방어력과 마법저항 40,위치
+Verticality I,Silver,특성을 공유하는 아군 수만큼 스탯 획득,조건부스탯
+Vampiric Vitality I,Silver,죽은 아군이 공유자에게 스탯 부여,조건부스탯
+Wisp Rebate,Silver,위습 구매마다 골드 획득,골드
+Young and Wild and Free,Silver,공유 선택 라운드 자유 이동 및 골드,규칙변경
+A Magic Roll,Gold,주사위 3개를 굴려 합에 따라 보상,확률
+Advanced Loan,Gold,골드 20 획득 다음 증강체는 한 등급 아래,자원교환
+Anima Commander,Gold,브라이어 징크스 일라오이 획득 체력 10 증가,유닛지급
+Apotheotic Forge,Gold,신성 신물 4개 중 1개 선택,아이템지급
+Arcane Viktor-y,Gold,8초 후 적 팀 1.5초 기절 20초마다 반복,시간발동
+Ascension,Gold,12초 후 팀 피해증폭 35%,시간발동
+Aura Farming,Gold,2성 5코스트 챔피언 획득 4-3까지 배치 불가,제약형
+Backline Blueprint,Gold,3코스트 비탱커 챔피언과 해당 상징 획득,유닛지급
+Best Friends II,Gold,짝지은 아군이 공격속도 15%와 방어력 18,위치
+Big Grab Bag,Gold,조합법 3개 골드 2 재련기 1개,아이템지급
+Birthday Reunion,Gold,레벨 도달마다 챔피언과 아이템 획득,유닛지급
+Blood Offering,Gold,고통의 서약 획득 체력 잃고 보호막과 공격력,자원교환
+Blossom's Call,Gold,위습마다 랜덤 블로섬 챔피언 획득,유닛지급
+Booster Pack,Gold,골드 10어치 랜덤 챔피언 획득,유닛지급
+Bronze For Life I,Gold,브론즈 등급 특성마다 팀 피해증폭 2.5%,조건부스탯
+Calculated Loss,Gold,패배 시 골드 2와 무료 리롤,골드
+Capital Gains II,Gold,이자 골드를 저장해 스테이지 종료 시 획득,골드
+Care Package,Gold,전리품과 골드 꾸러미를 지금과 다음 2스테이지에,아이템지급
+Caretaker's Favor,Gold,레벨 5·6·7·8에 조합법 모루 획득,아이템지급
+Celestial Blessing II,Gold,팀이 옴니뱀프 획득 초과 회복은 보호막으로,팀스탯
+Charge Transfer II,Gold,팀 피해증폭 8% 오버킬 80%가 마법피해로,팀스탯
+Chosen of the Sun,Gold,레오나 케일 세주아니 획득 레오나가 라운드마다 체력,유닛지급
+Clear Mind,Gold,전투 후 대기석이 비어 있으면 경험치 3,조건부스탯
+Cluttered Mind,Gold,1코스트 4기 획득 전투 후 대기석이 차 있으면 경험치 3,조건부스탯
+Cognitive Overload,Gold,골드 7 챔피언 다수 경험치 1 리롤 1,유닛지급
+Component Quest,Gold,조합법과 골드 획득 승리마다 다른 조합법,골드
+Concentration,Gold,전달 능력 지속시간 증가 조이와 모데카이저 획득,유닛지급
+Consuming Flora,Gold,플로라 상징 획득 보유자가 2배 효과와 마나재생,아이템지급
+Contract Killer,Gold,파이크 획득 골드 생성과 초기화 능력,유닛지급
+Cooking Pot,Gold,프라이팬 보유자가 가까운 챔피언에게 영구 체력 부여,위치
+Coven Acolyte,Gold,코븐 정수 유지 시 회복 카밀 엘리스 케이틀린 획득,유닛지급
+Crash Test Dummies,Gold,훈련용 봇 2개 획득 전투 시작 시 적을 기절,시간발동
+Cybernetic Implants,Gold,아이템 보유 챔피언이 체력과 공격력 획득,조건부스탯
+Cybernetic Uplink,Gold,아이템 보유 챔피언이 체력과 마나재생 획득,조건부스탯
+Dark Ritual,Gold,코븐 정수 변환 시 주문력 부여 챔피언 3기 획득,유닛지급
+Deadlier Blades,Gold,죽음의 검 획득 처치마다 공격력 1% 성장,성장
+Deadlier Caps,Gold,라바돈의 죽음모자 획득 처치마다 주문력 1% 성장,성장
+Double Trouble,Gold,정확히 2사본인 챔피언이 스탯 획득,조건부스탯
+Early Learnings,Gold,팀 공격력·주문력 8% 전투마다 1% 증가,성장
+Electrocharge II,Gold,4회 공격마다 근처 적에게 더 큰 마법피해,시간발동
+Embiggen,Gold,요정 픽시가 커지고 더 많은 스탯 부여,유닛지급
+Epic Rolldown,Gold,레벨 8에서 상점 리롤 20회,상점
+Epoch,Gold,경험치 4와 리롤 3을 지금과 스테이지 시작마다,경험치
+Exclusive Customization,Gold,행운의 상자 자석 제거기 골드 10,아이템지급
+Exiles II,Gold,고립된 챔피언이 최대체력 35% 보호막,위치
+Explosive Growth,Gold,경험치 7을 지금과 다음 3라운드에,경험치
+Feed the Flames,Gold,태양불꽃 망토 획득 화상 적 상대 옴니뱀프,아이템지급
+FOURcing,Gold,4코스트 챔피언 획득 장착 아이템마다 팀 체력,유닛지급
+Frontline Foundation,Gold,2성 1코스트 탱커와 해당 상징 획득,유닛지급
+Gain 21 Gold,Gold,골드 21 획득,골드
+Glass Cannon I,Gold,뒷열 아군이 체력 80%로 시작하고 피해증폭 17%,위치
+Glass Cannon II,Gold,뒷열 아군이 체력 80%로 시작하고 피해증폭 30%,위치
+Going Long,Gold,이자를 잃고 골드 12 라운드 시작마다 경험치 5,자원교환
+Golden Gamble,Gold,골드 획득 동전 던져 광휘 상자나 모루,확률
+Group Hug II,Gold,아군이 인접 아군에게 방어력과 마법저항 부여,위치
+Hard Bargain,Gold,공유 선택 보상을 포기하고 체력과 골드 획득,자원교환
+Hard Commit,Gold,랜덤 상징 획득 스테이지마다 해당 특성 챔피언,아이템지급
+Healing Orbs II,Gold,적 사망 시 가장 가까운 아군 크게 회복,시간발동
+Heart of Steel,Gold,꿋꿋한 심장 획득 10초마다 영구 체력 12,시간발동
+Heart of the Swarm,Gold,3성 챔피언이 군단 힘에 기여 레벨 9에 정점 소환,조건부스탯
+Heat Death,Gold,모데카이저 획득 성장하는 오라를 가진 마법 전사,유닛지급
+Heavy Is the Crown,Gold,데마시아의 왕관 획득 보유자 사망 시 라운드 패배,제약형
+Heroic Grab Bag,Gold,하급 챔피언 복제기 2개와 골드 5,아이템지급
+High Voltage,Gold,이온 충격기 획득 범위 +3칸과 피해 20% 증가,아이템지급
+Hustler,Gold,이자를 못 받고 전투마다 골드 2와 경험치 2,자원교환
+Indiscriminate Killer,Gold,거인 학살자 획득 탱커가 아닌 적에게도 적용,아이템지급
+Infinity Protection,Gold,골드 8 획득 3-7에 무한의 힘 획득,아이템지급
+Invader Zed,Gold,쇼진의 창 획득 4-2에 제드 획득,유닛지급
+Investment Strategy I,Gold,이자 획득마다 챔피언이 영구 최대체력 획득,성장
+Item Extraction,Gold,희생한 챔피언의 조합법 사본 획득,자원교환
+Jeweled Lotus I,Gold,팀 치명타 확률 20% 스킬도 치명타 가능,규칙변경
+Jungle Pathing,Gold,균열 야수 4기 획득 레벨업마다 추가와 골드,유닛지급
+Know Your Enemy,Gold,다음 상대를 보고 팀 피해증폭 10%,정보
+Late Game Scaling,Gold,매 라운드 경험치 2 5코스트가 체력과 공격속도,경험치
+Legion of Threes,Gold,랜덤 상징 획득 3코스트가 체력과 공격속도,조건부스탯
+Little Buddies,Gold,저코스트 챔피언 수만큼 고코스트가 스탯 획득,조건부스탯
+Loot Singularity,Gold,블랙홀이 소비한 것을 전리품으로 변환,생성
+Mace's Will,Gold,연습용 장갑 획득 팀 공격속도와 치명타 확률,아이템지급
+Makeshift Armor II,Gold,아이템 없는 챔피언이 방어력과 마법저항 45,조건부스탯
+Malicious Monetization,Gold,골드 2 획득 3라운드간 적 처치마다 골드 2,골드
+Max Build,Gold,챔피언 복제기와 리롤 7회 6-1에 반복,상점
+May the Fours Be With You,Gold,4코스트 챔피언과 진이 체력과 공격속도 획득,조건부스탯
+Misfits,Gold,고유 활성 특성마다 팀 체력 55,조건부스탯
+Money Hungry,Gold,골드 7을 지금과 스테이지 시작마다,골드
+Nature's Shelter,Gold,인접한 엘더우드 식물 챔피언이 공격속도와 회복,위치
+NO SCOUT NO PIVOT,Gold,배치 챔피언을 옮길 수 없고 전투마다 팀 스탯 증가,제약형
+Omega Riftbeast,Gold,두 번째 알파 균열 야수 선택 균열 야수 3기,유닛지급
+Pandora's Items II,Gold,대기 아이템 무작위화 랜덤 조합법 2개,규칙변경
+Patient Study,Gold,전투 후 승리 시 경험치 2 패배 시 3,경험치
+Pilfer,Gold,매 라운드 처음 처치한 챔피언의 1성 사본 획득,생성
+Plot Armor,Gold,팀 방어력과 마법저항 체력 50% 아래에서 크게 증가,조건부스탯
+Portable Forge,Gold,신물 4개 중 1개 선택,아이템지급
+Precision and Grace,Gold,전투 시작 시 공격속도 획득 처치 시 재획득,시간발동
+Promised Protection,Gold,수호자의 맹세 획득 모든 출처에서 추가 마나,아이템지급
+Radiant Relics,Gold,광휘 아이템 5개 중 1개 선택과 자석 제거기,아이템지급
+Razor's Edge,Gold,2성 2코스트 챔피언과 제거기 승리마다 골드,골드
+Reach for the Stars,Gold,잭스 획득 공격속도가 쌓이는 마법 전사,유닛지급
+ReinFOURcement,Gold,다음 구매하는 4코스트가 즉시 2성 골드 12,유닛지급
+Replication,Gold,조합법 3개 중 1개 선택 다음 2라운드에 사본,아이템지급
+Restart Mission,Gold,모두 제거하고 2성 챔피언 다수 획득,자원교환
+Salvage Bin,Gold,랜덤 아이템 획득 판매 시 아이템 분해,자원교환
+Savings Account,Gold,이자 50 누적 시 골드 30 최대 이자 7,골드
+Second Wind II,Gold,10초 후 팀이 잃은 체력의 60% 회복,시간발동
+Self Destruct,Gold,그라가스 획득 폭발하는 마법 전사,유닛지급
+Seraphim's Staff,Gold,대천사의 지팡이 획득 조건부 마나재생 2,아이템지급
+Side Effects,Gold,회복된 아군이 회복량의 50%를 마법피해로,팀스탯
+Slammin,Gold,조합법 획득 전투 후 대기 아이템이 없으면 경험치 2,조건부스탯
+Small Furry Friend,Gold,스프라이킨 활성 시 두 번째 절친 획득,유닛지급
+Solo Leveling,Gold,다음 5전투 챔피언 1기만 배치하고 스탯 증가,제약형
+Solo Plate,Gold,가고일 돌갑옷 획득 열의 유일 점유 시 체력 10%,위치
+Speedy Double Kill,Gold,구인수의 격노검 획득 2명 탈락 시 골드 40,아이템지급
+Spirit of Redemption,Gold,정령의 형상 획득 5초마다 근처 아군 회복,시간발동
+Spreading Roots,Gold,랜덤 상징 2개와 골드 1,아이템지급
+Staffsmith,Gold,쓸데없이 큰 지팡이 계열 완성 아이템 2개,아이템지급
+Subscription Service,Gold,4코스트 4기 전용 상점 스테이지마다 골드 6,상점
+Sun and Moon,Gold,고유 솔라 챔피언마다 루나 챔피언이 스탯 획득,조건부스탯
+Sunfire Board,Gold,모든 적을 15초간 화상 회복 33% 감소,적디버프
+Swordsmith,Gold,BF대검 계열 완성 아이템 2개,아이템지급
+The Big Bang,Gold,밉시 획득 도약해 피해를 주는 마법 전사,유닛지급
+The Golden Dragon,Gold,거물의 갑옷 획득 슬롯 2개 차지 체력과 강인함,자원교환
+Tons of Stats,Gold,팀이 모든 스탯을 조금씩 획득,팀스탯
+Tour of the Galaxy,Gold,항해자가 체력과 공격력 획득 새 상대마다 증가,성장
+Trade Sector,Gold,매 라운드 무료 리롤과 골드 4,상점
+Treasure Hunt,Gold,스테이지마다 잠긴 상자 리롤 20 소모 시 개봉,상점
+Trifecta I,Gold,3코스트 챔피언 2기와 랜덤 3코스트 강화,유닛지급
+Two Much Value,Gold,고유 2코스트 2기마다 리롤 1회,상점
+Two Tanky,Gold,정확히 2사본이 체력 600 하나 죽으면 보호막,조건부스탯
+Urf's Gambit,Gold,승리 시 신비한 봉 패배 시 프라이팬 모루와 골드,확률
+Verticality II,Gold,특성을 공유하는 아군 수만큼 스탯 획득,조건부스탯
+Vampiric Vitality II,Gold,적 소환사에게 준 피해 12% 회복 팀 옴니뱀프 18%,팀스탯
+Warlord's Honor,Gold,매 라운드 팀 공격력·주문력 5% 최대 4회 누적,성장
+Warpath,Gold,2성 2코스트 획득 피해 80 누적 시 챔피언 상자,성장
+Woven Magic,Gold,조합법 획득 마나 2200 소모마다 조합법,성장
+You Have My Bow,Gold,롱보우 획득 팀 공격속도 12%,아이템지급
+An Exalted Adventure,Prismatic,2코스트 3기 획득 3성 달성 시 전리품 구슬,유닛지급
+At What Cost,Prismatic,즉시 레벨 6과 경험치 12 이후 증강체 선택 불가,제약형
+Band of Thieves II,Prismatic,도적의 장갑 2개 획득 전투 8회 후 추가,아이템지급
+Baron's Lair,Prismatic,랜덤 탱커 아이템 획득 초당 팀 공격력·주문력 5%,시간발동
+Belt Overflow,Prismatic,거인의 허리띠 4개 획득 추가 체력 부여,아이템지급
+Birthday Present,Prismatic,레벨업마다 2성 챔피언과 골드 1,유닛지급
+Bronze For Life II,Prismatic,브론즈 특성마다 팀 피해증폭과 강인함,조건부스탯
+Build a Bud,Prismatic,랜덤 3성 1코스트 챔피언과 골드 8,유닛지급
+Buried Treasures,Prismatic,랜덤 조합법을 지금과 다음 5라운드에,아이템지급
+Call to Chaos,Prismatic,강력한 랜덤 보상 획득,확률
+Commerce Core,Prismatic,무료 리롤 16회 이후 매 라운드 2회,상점
+Component Heist,Prismatic,전투 5회 후 모든 조합법 1개씩 획득,아이템지급
+Comeback Story,Prismatic,잃은 플레이어 체력만큼 팀이 체력과 공격속도,성장
+Construct a Companion,Prismatic,다음 1코스트가 3성 골드 2,유닛지급
+Coronation,Prismatic,전략가의 왕관 획득 관련 아이템이 스탯 부여,아이템지급
+Cosmic Restart,Prismatic,모든 유닛 판매 랜덤 상징 2개와 리롤 11회,자원교환
+Cursed Crown,Prismatic,최대 팀 크기 +2와 강인함 패배 시 피해 2배,제약형
+Duo Queue,Prismatic,랜덤 5코스트 2기와 조합법 사본 2개,유닛지급
+Exclusive Customization II,Prismatic,행운의 상자 2개 자석 제거기 골드 10,아이템지급
+Expected Unexpectedness,Prismatic,주사위 3개를 지금과 다음 2스테이지에,확률
+Forge a Friend,Prismatic,다음 1코스트가 3성 골드 2,유닛지급
+Forged in Strength,Prismatic,랜덤 신물 획득 체력 35 아래에서 3개 추가,아이템지급
+Forward Thinking,Prismatic,모든 골드를 잃고 전투 5회 후 원금과 70 획득,자원교환
+Giant and Mighty,Prismatic,팀이 거대해지고 체력 200과 최대체력 10%,팀스탯
+Gilded Steel,Prismatic,비탱커 5코스트 3기 5코스트 배치 시 강인함,조건부스탯
+Hedge Fund,Prismatic,골드 25 획득 최대 이자 10으로 증가,골드
+Hold the Line,Prismatic,앞열 아군 수만큼 뒷열 2줄이 주문력과 공격력,위치
+Invested,Prismatic,골드 26 획득 50 초과 골드 10당 리롤 1회,골드
+Investment Strategy II,Prismatic,이자마다 영구 최대체력 최대 이자 증가,성장
+Jeweled Lotus II,Prismatic,팀 치명타 확률 35%와 피해 10% 스킬도 치명타,규칙변경
+Just Hit,Prismatic,챔피언 복제기 리롤 18회 골드 3,상점
+Level Up,Prismatic,경험치 구매 시 추가 2 즉시 12 획득,경험치
+Living Forge,Prismatic,신물 모루를 지금과 전투 10회마다,아이템지급
+Lucky Gloves,Prismatic,도적의 장갑이 항상 최적 아이템 제공,규칙변경
+Luxury Subscription,Prismatic,꾸러미를 지금과 다음 2스테이지에,아이템지급
+Min-Max,Prismatic,황금 제거기와 랜덤 조합법 4개,아이템지급
+Money Monsoon,Prismatic,골드 7을 지금과 이후 매 라운드,골드
+Nesting Anvils,Prismatic,신물 모루에서 조합법 모루까지 연쇄 획득,아이템지급
+Nesting Dolls,Prismatic,죽은 챔피언이 한 성급 낮은 사본 생성 무료 리롤,생성
+New Recruit,Prismatic,최대 팀 크기 +1과 챔피언 복제기,규칙변경
+One Buff Two Buff,Prismatic,홍정령 청정령 챔피언 복제기 획득,아이템지급
+Pandora's Items III,Prismatic,아이템이 라운드 시작마다 무작위화 광휘 아이템 1개,규칙변경
+Phreaky Friday,Prismatic,무한의 힘 획득 전투 5회 후 추가,아이템지급
+Prismatic Ticket,Prismatic,리롤마다 50% 확률로 무료 리롤,상점
+Radiant Rascal,Prismatic,악동의 장갑 획득 매 라운드 광휘 아이템 2개 장착,아이템지급
+Retribution,Prismatic,정의의 손길 2개 획득 스킬도 치명타,아이템지급
+Shopping Spree,Prismatic,레벨업 시 레벨만큼 리롤과 골드,상점
+Soul Awakening,Prismatic,초당 팀 공격력·주문력 2% 추가 고정피해,시간발동
+Starring Up,Prismatic,3성 달성 후 레벨 설정 리롤 획득,상점
+Sweet Treats,Prismatic,신물 모루 획득 장착 아이템마다 팀 체력 25,아이템지급
+Sword Overflow,Prismatic,BF대검 4개 획득 공격속도 부여,아이템지급
+Tactician's Kitchen,Prismatic,랜덤 상징 획득 6라운드 후 전략가의 망토,아이템지급
+The Golden Egg,Prismatic,11턴 후 부화하는 황금알 승리 시 1턴 단축,성장
+The Trait Tree,Prismatic,랜덤 상징 3개와 골드 7,아이템지급
+Tiniest Titan,Prismatic,전투마다 체력 2와 골드 2 즉시 골드 15,성벽
+Tiny but Deadly,Prismatic,팀이 작아지고 공격속도와 이동속도 30%,팀스탯
+Trait Ladder,Prismatic,랜덤 상징 획득 비고유 특성 배치 시 보상,조건부스탯
+Trifecta II,Prismatic,3코스트 3기와 팀 공격속도 랜덤 3코스트 강화,유닛지급
+Upward Mobility,Prismatic,경험치 구매 비용 1 감소 레벨업마다 체력과 리롤,경험치
+Urf's Grab Bag,Prismatic,신비한 봉 1개 조합법 3개 골드 5,아이템지급
+Verticality III,Prismatic,특성 공유 아군마다 모든 스탯 획득,조건부스탯
+Wand Overflow,Prismatic,쓸데없이 큰 지팡이 4개 획득 공격속도 부여,아이템지급
+We Stick Together,Prismatic,랜덤 상징과 아이템 모루 특성 일치 아군 공격속도,아이템지급
+Weight The Worth,Prismatic,매 라운드 3성 챔피언 획득 하급 복제기,유닛지급
+Win Out,Prismatic,레벨 9에서 10으로 리롤 8회 경험치 6,경험치
+Wise Spending,Prismatic,경험치 구매 불가 리롤마다 경험치 2,제약형
+Worth the Wait II,Prismatic,2코스트 사본 2개 이후 매 라운드 추가,유닛지급

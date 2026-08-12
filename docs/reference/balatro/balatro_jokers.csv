@@ -1,0 +1,151 @@
+name,rarity,cost,effect,mechanism
+Joker,Common,2,+4 Mult,스탯
+Greedy Joker,Common,5,Played Diamond cards give +3 Mult when scored,조건부스탯
+Lusty Joker,Common,5,Played Heart cards give +3 Mult when scored,조건부스탯
+Wrathful Joker,Common,5,Played Spade cards give +3 Mult when scored,조건부스탯
+Gluttonous Joker,Common,5,Played Club cards give +3 Mult when scored,조건부스탯
+Jolly Joker,Common,3,+8 Mult if played hand contains a Pair,조건부스탯
+Zany Joker,Common,4,+12 Mult if played hand contains Three of a Kind,조건부스탯
+Mad Joker,Common,4,+10 Mult if played hand contains Two Pair,조건부스탯
+Crazy Joker,Common,4,+12 Mult if played hand contains a Straight,조건부스탯
+Droll Joker,Common,4,+10 Mult if played hand contains a Flush,조건부스탯
+Sly Joker,Common,3,+50 Chips if played hand contains a Pair,조건부스탯
+Wily Joker,Common,4,+100 Chips if played hand contains Three of a Kind,조건부스탯
+Clever Joker,Common,4,+80 Chips if played hand contains Two Pair,조건부스탯
+Devious Joker,Common,4,+100 Chips if played hand contains a Straight,조건부스탯
+Crafty Joker,Common,4,+80 Chips if played hand contains a Flush,조건부스탯
+Half Joker,Common,5,+20 Mult if played hand contains 3 or fewer cards,조건부스탯
+Joker Stencil,Uncommon,8,X1 Mult for each empty Joker slot (including itself),슬롯참조
+Four Fingers,Uncommon,7,Flushes and Straights can be made with 4 cards,규칙변경
+Mime,Uncommon,5,Retrigger all cards held in hand abilities,리트리거
+Credit Card,Common,1,Go up to -$20 in debt,골드
+Ceremonial Dagger,Uncommon,6,When Blind selected destroy Joker to right and add double its sell value to this Mult,성장
+Banner,Common,5,+30 Chips for each remaining discard,자원참조
+Mystic Summit,Common,5,+15 Mult when 0 discards remaining,자원참조
+Marble Joker,Uncommon,6,Adds one Stone card to deck when Blind is selected,생성
+Loyalty Card,Uncommon,5,X4 Mult every 6 hands played,주기발동
+8 Ball,Common,5,1 in 4 chance for each played 8 to create a Tarot card when scored,생성
+Misprint,Common,4,+0-23 Mult,확률
+Dusk,Uncommon,5,Retrigger all played cards in final hand of round,리트리거
+Raised Fist,Common,5,Adds double the rank of lowest ranked card held in hand to Mult,조건부스탯
+Chaos the Clown,Common,4,1 free Reroll per shop,상점
+Fibonacci,Uncommon,8,Each played Ace 2 3 5 or 8 gives +8 Mult when scored,조건부스탯
+Steel Joker,Uncommon,7,Gives X0.2 Mult for each Steel Card in full deck,보유참조
+Scary Face,Common,4,Played face cards give +30 Chips when scored,조건부스탯
+Abstract Joker,Common,4,+3 Mult for each Joker card,보유참조
+Delayed Gratification,Common,4,Earn $2 per discard if no discards used by end of round,골드
+Hack,Uncommon,6,Retrigger each played 2 3 4 or 5,리트리거
+Pareidolia,Uncommon,5,All cards are considered face cards,규칙변경
+Gros Michel,Common,5,+15 Mult 1 in 6 chance destroyed at end of round,시한부
+Even Steven,Common,4,Played even-rank cards give +4 Mult when scored,조건부스탯
+Odd Todd,Common,4,Played odd-rank cards give +31 Chips when scored,조건부스탯
+Scholar,Common,4,Played Aces give +20 Chips and +4 Mult when scored,조건부스탯
+Business Card,Common,4,Played face cards have 1 in 2 chance to give $2 when scored,골드
+Supernova,Common,5,Adds number of times poker hand played this run to Mult,성장
+Ride the Bus,Common,6,Gains +1 Mult per consecutive hand without scoring face card,성장
+Space Joker,Uncommon,5,1 in 4 chance to upgrade level of played poker hand,성장
+Egg,Common,4,Gains $3 of sell value at end of round,골드
+Burglar,Uncommon,6,When Blind selected gain +3 Hands and lose all discards,자원교환
+Blackboard,Uncommon,6,X3 Mult if all cards in hand are Spades or Clubs,조건부스탯
+Runner,Common,5,Gains +15 Chips if played hand contains Straight,성장
+Ice Cream,Common,5,+100 Chips -5 Chips for every hand played,시한부
+DNA,Rare,8,If first hand has only 1 card add permanent copy to deck and draw to hand,생성
+Splash,Common,3,Every played card counts in scoring,규칙변경
+Blue Joker,Common,5,+2 Chips for each remaining card in deck,보유참조
+Sixth Sense,Uncommon,6,If first hand is single 6 destroy it and create Spectral card,생성
+Constellation,Uncommon,6,Gains X0.1 Mult every time Planet card used,성장
+Hiker,Uncommon,5,Every played card permanently gains +5 Chips when scored,성장
+Faceless Joker,Common,4,Earn $5 if 3+ face cards discarded simultaneously,골드
+Green Joker,Common,4,+1 Mult per hand played -1 Mult per discard,성장
+Superposition,Common,4,Create Tarot card if hand contains Ace and Straight,생성
+To Do List,Common,4,Earn $4 if poker hand matches rotating hand type,골드
+Cavendish,Common,4,X3 Mult 1 in 1000 chance destroyed at end of round,시한부
+Card Sharp,Uncommon,6,X3 Mult if played hand already played this round,조건부스탯
+Red Card,Common,5,Gains +3 Mult when any Booster Pack is skipped,성장
+Madness,Uncommon,7,When Small/Big Blind selected gain X0.5 Mult and destroy random Joker,성장
+Square Joker,Common,4,Gains +4 Chips if played hand has exactly 4 cards,성장
+Seance,Uncommon,6,If hand is Straight Flush create random Spectral card,생성
+Riff-Raff,Common,6,When Blind selected create 2 Common Jokers,생성
+Vampire,Uncommon,7,Gains X0.1 Mult per scoring Enhanced card removes enhancement,성장
+Shortcut,Uncommon,7,Straights can be made with gaps of 1 rank,규칙변경
+Hologram,Uncommon,7,Gains X0.25 Mult every time playing card added to deck,성장
+Vagabond,Rare,8,Create Tarot card if hand played with $4 or less,생성
+Baron,Rare,8,Each King held in hand gives X1.5 Mult,조건부스탯
+Cloud 9,Uncommon,7,Earn $1 for each 9 in full deck at end of round,골드
+Rocket,Uncommon,6,Earn $1 at end of round increases $2 when Boss Blind defeated,골드
+Obelisk,Rare,8,Gains X0.2 Mult per consecutive hand without most played poker hand,성장
+Midas Mask,Uncommon,7,All played face cards become Gold cards when scored,규칙변경
+Luchador,Uncommon,5,Sell to disable current Boss Blind,보스무효
+Photograph,Common,5,First played face card gives X2 Mult when scored,조건부스탯
+Gift Card,Uncommon,6,Add $1 sell value to every Joker and Consumable at end of round,골드
+Turtle Bean,Uncommon,6,+5 hand size reduces by 1 each round,시한부
+Erosion,Uncommon,6,+4 Mult for each card below deck starting size in full deck,보유참조
+Reserved Parking,Common,6,Each face card held has 1 in 2 chance to give $1,골드
+Mail-In Rebate,Common,4,Earn $5 for each discarded rank rotating each round,골드
+To the Moon,Uncommon,5,Earn extra $1 interest per $5 at end of round,골드
+Hallucination,Common,4,1 in 2 chance to create Tarot card when Booster Pack opened,생성
+Fortune Teller,Common,6,+1 Mult per Tarot card used this run,성장
+Juggler,Common,4,+1 hand size,자원
+Drunkard,Common,4,+1 discard each round,자원
+Stone Joker,Uncommon,6,Gives +25 Chips for each Stone Card in full deck,보유참조
+Golden Joker,Common,6,Earn $4 at end of round,골드
+Lucky Cat,Uncommon,6,Gains X0.25 Mult every time Lucky card triggers,성장
+Baseball Card,Rare,8,Uncommon Jokers each give X1.5 Mult,보유참조
+Bull,Uncommon,6,+2 Chips for each $1 you have,골드참조
+Diet Cola,Uncommon,6,Sell to create free Double Tag,생성
+Trading Card,Uncommon,6,If first discard has only 1 card destroy it and earn $3,골드
+Flash Card,Uncommon,5,Gains +2 Mult per shop reroll,상점
+Popcorn,Common,5,+20 Mult -4 Mult per round played,시한부
+Spare Trousers,Uncommon,6,Gains +2 Mult if played hand contains Two Pair,성장
+Ancient Joker,Rare,8,Each played card of rotating suit gives X1.5 Mult when scored,조건부스탯
+Ramen,Uncommon,6,X2 Mult loses X0.01 Mult per card discarded,시한부
+Walkie Talkie,Common,4,Each played 10 or 4 gives +10 Chips and +4 Mult when scored,조건부스탯
+Seltzer,Uncommon,6,Retrigger all cards for next 10 hands,리트리거
+Castle,Uncommon,6,Gains +3 Chips per discarded rotating-suit card,성장
+Smiley Face,Common,4,Played face cards give +5 Mult when scored,조건부스탯
+Campfire,Rare,9,Gains X0.25 Mult per card sold resets when Boss Blind defeated,성장
+Golden Ticket,Common,5,Played Gold cards earn $4 when scored,골드
+Mr. Bones,Uncommon,5,Prevents death if chips at least 25% of required self-destructs,보험
+Acrobat,Uncommon,6,X3 Mult on final hand of round,조건부스탯
+Sock and Buskin,Uncommon,6,Retrigger all played face cards,리트리거
+Swashbuckler,Common,4,Adds sell value of all other owned Jokers to Mult,보유참조
+Troubadour,Uncommon,6,+2 hand size -1 hand each round,자원교환
+Certificate,Uncommon,6,When round begins add random playing card with random seal to hand,생성
+Smeared Joker,Uncommon,7,Hearts and Diamonds count as same suit Spades and Clubs count as same suit,규칙변경
+Throwback,Uncommon,6,X0.25 Mult for each Blind skipped this run,성장
+Hanging Chad,Common,4,Retrigger first card used in scoring 2 additional times,리트리거
+Rough Gem,Uncommon,7,Played Diamond cards earn $1 when scored,골드
+Bloodstone,Uncommon,7,1 in 2 chance for played Heart cards to give X1.5 Mult when scored,확률
+Arrowhead,Uncommon,7,Played Spade cards give +50 Chips when scored,조건부스탯
+Onyx Agate,Uncommon,7,Played Club cards give +7 Mult when scored,조건부스탯
+Glass Joker,Uncommon,6,Gains X0.75 Mult for every Glass Card destroyed,성장
+Showman,Uncommon,5,Joker Tarot Planet and Spectral cards appear multiple times,상점
+Flower Pot,Uncommon,6,X3 Mult if hand contains Diamond Club Heart and Spade,조건부스탯
+Blueprint,Rare,10,Copies ability of Joker to the right,복사
+Wee Joker,Rare,8,Gains +8 Chips when each played 2 is scored,성장
+Merry Andy,Uncommon,7,+3 discards each round -1 hand size,자원교환
+Oops! All 6s,Uncommon,4,Doubles all listed probabilities,규칙변경
+The Idol,Uncommon,6,Each played rotating rank/suit gives X2 Mult when scored,조건부스탯
+Seeing Double,Uncommon,6,X2 Mult if hand has scoring Club and other suit,조건부스탯
+Matador,Uncommon,7,Earn $8 if played hand triggers Boss Blind ability,골드
+Hit the Road,Rare,8,Gains X0.5 Mult for every Jack discarded this round,성장
+The Duo,Rare,8,X2 Mult if played hand contains Pair,조건부스탯
+The Trio,Rare,8,X3 Mult if played hand contains Three of a Kind,조건부스탯
+The Family,Rare,8,X4 Mult if played hand contains Four of a Kind,조건부스탯
+The Order,Rare,8,X3 Mult if played hand contains Straight,조건부스탯
+The Tribe,Rare,8,X2 Mult if played hand contains Flush,조건부스탯
+Stuntman,Rare,7,+250 Chips -2 hand size,자원교환
+Invisible Joker,Rare,8,After 2 rounds sell to duplicate random Joker,복사
+Brainstorm,Rare,10,Copies ability of leftmost Joker,복사
+Satellite,Uncommon,6,Earn $1 per unique Planet card used this run,골드
+Shoot the Moon,Common,5,Each Queen held in hand gives +13 Mult,조건부스탯
+Driver's License,Rare,7,X3 Mult if 16+ Enhanced cards in full deck,보유참조
+Cartomancer,Uncommon,6,Create Tarot card when Blind selected,생성
+Astronomer,Uncommon,8,All Planet cards and Celestial Packs in shop are free,상점
+Burnt Joker,Rare,8,Upgrade level of first discarded poker hand each round,성장
+Bootstraps,Uncommon,7,+2 Mult for every $5 you have,골드참조
+Canio,Legendary,,Gains X1 Mult when a face card is destroyed,성장
+Triboulet,Legendary,,Played Kings and Queens give X2 Mult when scored,조건부스탯
+Yorick,Legendary,,Gains X1 Mult every 23 cards discarded,성장
+Chicot,Legendary,,Disables effect of every Boss Blind,보스무효
+Perkeo,Legendary,,Creates Negative copy of random consumable at end of shop,생성

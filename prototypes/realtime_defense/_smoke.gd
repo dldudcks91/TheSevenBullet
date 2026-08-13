@@ -1,13 +1,40 @@
 # PROTOTYPE - NOT FOR PRODUCTION (임시 스모크 — 검증 끝나면 지운다)
 # Question: 무입력 헤드리스로는 안 타는 경로(구매 드래그·자리 교체·유물 구매·패널 구매)가 죽지 않는가?
-#           그리고 스폰 스케줄이 두 모드에서 의도대로 도는가?
-# Date: 2026-08-11
+#           그리고 직업 7종의 발동(확률·크리·캐스팅)과 스킬 effect가 실제로 전부 도는가?
+# Date: 2026-08-12
 # 사용: godot --headless --fixed-fps 60 --script prototypes/realtime_defense/_smoke.gd -- adaptive
 extends SceneTree
 
-# 사제를 중앙에 두고 전사·궁수·마법사를 섞는다 — 축복과 감산·비율을 동시에 태우기 위한 편성
-# 인덱스: 0~2 전사 / 3~5 궁수 / 6~8 마법사 / 9~11 사제
-const COMP := [0, 3, 6, 1, 9, 7, 4, 2, 8]
+# 인덱스가 아니라 **unit_id** 로 고른다 — 매대 풀이 CSV에서 오므로 순서에 기대면 안 된다.
+# 여섯 직업이 전부 타도록 골랐고, 사제를 중앙(4)에 두어 축복이 이웃 아닌 랜덤 대상으로
+# 나가는 것까지 본다. 스킬 effect도 서로 다른 것만 모았다:
+#   전사 HASTE / 전사 EMPOWER_STRIKE / 소드마스터 EXTRA_STRIKE / 소드마스터 MAGIC_STRIKE /
+#   궁수 CRIT_AMP / 궁수 EXTRA_SHOT / 암살자 VULNERABLE / 마법사 NUKE_FREEZE / 사제 BUFF_ATK
+const COMP := [
+	"U_VK_BERSERKER",   # 0 전사 — HASTE
+	"U_DE_SWORD",       # 1 소드마스터 — EXTRA_STRIKE
+	"U_DE_ARCHER",      # 2 궁수 — CRIT_AMP
+	"U_UD_SKELARCHER",  # 3 궁수 — EXTRA_SHOT
+	"U_HUM_PRINCE",     # 4 사제 — BUFF_ATK (중앙)
+	"U_UD_LICH",        # 5 마법사 — NUKE_FREEZE
+	"U_DM_HIGH",        # 6 전사 — EMPOWER_STRIKE
+	"U_UD_DREADKNIGHT", # 7 소드마스터 — MAGIC_STRIKE
+	"U_DE_ASSASSIN",    # 8 암살자 — VULNERABLE
+]
+# 한 판에 9칸뿐이라 effect 17종이 한 번에 다 안 돈다. 중반에 판을 통째로 갈아
+# 나머지 8종을 태운다 — 겸사겸사 "재배치는 즉시·무료"도 실제로 밟는다.
+const COMP2 := [
+	"U_HUM_MAGE",       # 마법사 — NUKE
+	"U_BM_RABBIT",      # 마법사 — NUKE_RANDOM (원소를 매번 굴린다)
+	"U_BM_DEER",        # 사제 — BUFF_RANDOM
+	"U_DM_DEMONESS",    # 사제 — PACT_BUFF
+	"U_UD_NECROMANCER", # 사제 — CLEANSE (정화할 것이 없어 빈 캐스팅이어야 한다)
+	"U_DM_FIREIMP",     # 궁수 — CRIT_BONUS_FLAT
+	"U_UD_REAPER",      # 암살자 — HEAVY_STRIKE
+	"U_BM_CAT",         # 암살자 — GOLD_STEAL
+	"U_HUM_ARCHER",     # 궁수 — HASTE (궁수 쪽 발동도 본다)
+]
+const SWAP_AT := 4200                 # ≈70s — 앞판의 리듬을 충분히 본 뒤
 # 네 직업 전부에 유물이 하나씩 걸리도록 고른다 (전사·궁수·마법사·사제).
 # 전사 몫은 파쇄로 잡았다 — "딜 0인 칸을 방깎이 되살리는가"가 지금 제일 궁금한 것이라서다.
 # 넉백을 보려면 1 → 0 으로 바꾼다.
@@ -17,6 +44,11 @@ var _proto: Node2D
 var _f: int = 0
 var _adaptive: bool = false
 var _shot_dir: String = ""
+# 킬이 매대를 갱신하지 않는다가 이번 규칙 변경의 핵심이라, 킬 전후의 매대를 대조한다
+var _prev_kills: int = 0
+var _prev_sig: String = ""
+var _shop_kept: int = 0
+var _shop_broke: int = 0
 # 시점은 "보스가 레인에 살아 있을 때"로 골랐다 — 초반엔 킬이 빨라 빈 레인만 찍힌다
 var _shots := {900: "a_early", 3700: "b_mid", 7300: "c_late"}
 const SHOT_LAST := 7300
@@ -40,6 +72,13 @@ func _boss_point() -> Vector2:
 	return _proto._cell_rect(4).get_center()
 
 
+func _shop_sig() -> String:
+	var s: String = ""
+	for c in _proto._shop:
+		s += ("-" if c == null else str(c["def"]["name"])) + "|"
+	return s
+
+
 func _drag(from: Vector2, to: Vector2) -> void:
 	_proto._press(from)
 	_proto._mouse = to
@@ -53,8 +92,9 @@ func _process(_delta: float) -> bool:
 	if _f == 30:
 		_proto._gold = 100000
 		_proto._spawn_mode = 1 if _adaptive else 0
+		print("매대 풀 %d종" % _proto.UNITS.size())
 		for i in 9:
-			var d: Dictionary = _proto.UNITS[COMP[i]]
+			var d: Dictionary = _proto._unit_by_id(COMP[i])
 			_proto._shop[0] = {"kind": "unit", "def": d, "price": int(d["price"])}
 			_drag(_proto._card_rect(0).get_center(), _proto._cell_rect(i).get_center())
 		print("배치 %d/9" % _proto._placed_count())
@@ -82,10 +122,17 @@ func _process(_delta: float) -> bool:
 		_proto._shop[1] = {"kind": "relic", "def": _proto.RELICS[1], "price": 55}
 		_drag(_proto._card_rect(1).get_center(), _proto._cell_rect(4).get_center())
 		# 병사카드를 유물 줄에 떨구는 것도 무효
-		var d2: Dictionary = _proto.UNITS[0]
+		var d2: Dictionary = _proto.UNITS[0] as Dictionary
 		_proto._shop[2] = {"kind": "unit", "def": d2, "price": int(d2["price"])}
 		_drag(_proto._card_rect(2).get_center(), _proto._relic_rect(3).get_center())
 		print("잘못된 목적지 무과금: %s" % str(before2 == _proto._gold))
+
+	if _f == SWAP_AT:
+		for i in 9:
+			var d3: Dictionary = _proto._unit_by_id(COMP2[i])
+			_proto._shop[0] = {"kind": "unit", "def": d3, "price": int(d3["price"])}
+			_drag(_proto._card_rect(0).get_center(), _proto._cell_rect(i).get_center())
+		print("판 교체 %d/9 (t=%.0fs)" % [_proto._placed_count(), _proto._elapsed])
 
 	if _f % 120 == 0:
 		_proto._mouse = _proto._card_rect(2).get_center()
@@ -109,10 +156,21 @@ func _process(_delta: float) -> bool:
 		if _f == SHOT_LAST:
 			return true
 
+	# 킬 프레임에 매대가 그대로인가 — "강제 갱신은 없다"가 실제로 지켜지는지 본다
+	var sig: String = _shop_sig()
+	if _proto._killed > _prev_kills:
+		_prev_kills = _proto._killed
+		if sig == _prev_sig:
+			_shop_kept += 1
+		else:
+			_shop_broke += 1
+	_prev_sig = sig
+
 	if _f % 1800 == 0:
-		print("  t=%3.0fs  처치 %2d  성벽 %4d  레인 %d  겹침최대 %d  유물발동 %d" % [
+		print("  t=%3.0fs  처치 %2d  성벽 %4d  레인 %d  겹침최대 %d  골드 %d  유물 %d  스킬 %d" % [
 			_proto._elapsed, _proto._killed, int(_proto._wall_hp),
-			_proto._bosses.size(), _proto._log_overlap_peak, _proto._log_relic_fires])
+			_proto._bosses.size(), _proto._log_overlap_peak, _proto._gold,
+			_proto._log_relic_fires, _proto._skill_fire_total()])
 
 	if _proto._phase != 0:
 		print("종료: %s  처치 %d/%d  경과 %.1fs  성벽 %d  평균처치 %.1fs  최대겹침 %d" % [
@@ -129,7 +187,17 @@ func _process(_delta: float) -> bool:
 		for sq in _proto._cells:
 			if sq == null:
 				continue
-			per_cell += "%s %d / " % [str(sq["def"]["name"]), int(sq["dmg"])]
+			per_cell += "%s(%s) %d / " % [str(sq["def"]["name"]),
+				str(_proto.JOBS[sq["def"]["job"]]["name"]), int(sq["dmg"])]
 		print("칸별 기여: %s" % per_cell)
+		# 직업 리듬이 실제로 도는지 — effect 별로 몇 번 터졌는가
+		var fires: String = ""
+		var keys: Array = _proto._log_skill_fires.keys()
+		keys.sort()
+		for k in keys:
+			fires += "%s %d / " % [str(k), int(_proto._log_skill_fires[k])]
+		print("스킬 발동(effect별 %d종): %s" % [keys.size(), fires])
+		print("킬 시 매대 유지 %d회 / 갈림 %d회  · 남은 골드 %d · 리롤가 %d" %
+			[_shop_kept, _shop_broke, _proto._gold, _proto._reroll_price])
 		return true
 	return _f > 36000

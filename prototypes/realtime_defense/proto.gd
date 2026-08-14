@@ -1,21 +1,30 @@
 # PROTOTYPE - NOT FOR PRODUCTION
-# Question: 직업 리듬 7종과 "매대-리롤" 경제가 성립하는가?
+# Question: 체급 3단 + 병사카드 합류제 위에서 "매대-리롤" 판단이 성립하는가?
 #           (부수 측정: 킬 속도가 여유 시간으로 환산되는가 /
 #            감산·비율 두 공식이 "보스마다 답이 갈린다"를 실제로 만드는가)
-# Date: 2026-08-12
+# Date: 2026-08-14
 #
 # 기준 문서: docs/game_design/GAME_DESIGN.md — 실시간 로그라이크 TD.
 # 넣은 것: 3×3(한 칸=한 부대) · 무정지 실시간 · 스폰 스케줄과 겹침 · 최근접 타게팅 ·
-#          물리 감산 / 마법 원소별 비율 · 원소 4종 ·
+#          **체급 3단**(소형·중형·대형 — 타격당 딜을 고정하고 인원 상한을 정한다) ·
+#          **병사카드 합류제**(카드마다 마릿수가 다르고, 같은 유닛 칸에 부어 상한까지 채운다) ·
+#          물리 감산 / 마법 원소별 비율 / **명중 판정은 물리에만** · 원소 4종 ·
 #          **직업 7종 리듬**(확률=전사·소드마스터 / 크리=궁수·암살자 / 캐스팅=마법사·사제) ·
 #          **유닛 고유 스킬**(units.csv·skills.csv에서 읽는다 — 매대 풀 20종, effect 17종) ·
-#          유물(전역 보유 · [직업] 태그 · 자동 발동) · **상태이상 9종** ·
-#          5슬롯 매대 + 드래그 구매 + 유료 리롤 · **킬은 매대를 갱신하지 않는다** ·
-#          **시간 골드** · 병사카드 가격 = 인원 비례 · 성벽 HP 지속 + 수리/업그레이드 ·
+#          유물(전역 보유 · [직업] 태그 · 자동 발동 · **타격 수로 찬다**) · **상태이상 9종** ·
+#          **적 = 베이스 + 접두사 굴림**(정예 8종 접두사 / 막보스는 고정 조합) · 4막 구조 ·
+#          **보스의 병력 디버프**(주박) · 5슬롯 매대 + 드래그 구매 + 유료 리롤 ·
+#          **킬은 매대를 갱신하지 않는다** · 시간 골드 ·
+#          **병사카드 가격 = 마릿수 × 체급 단가** · 성벽 HP 지속 + 수리/업그레이드 ·
 #          예고 슬롯 · 칸별 기여도
 # 뺀 것:   리더(발동 방식 미결 — 풀에서 제외) · 사기(증감 규칙 미결) ·
-#          전술카드 · 종족 시너지 · 보스 디버프 · 구간/거물 연출 · 언락 · 밸런싱 ·
-#          유닛 티어(기획에서 폐기) · 아군 상태이상(저주·저항감소는 부여원이 아직 없다)
+#          전술카드(세 종류만 확정이고 등급·칸 수·효과 풀이 전부 미결) · 언락 · 밸런싱 ·
+#          유닛 티어(기획에서 폐기) · 아군 상태이상 중 저주·저항감소(부여원이 아직 없다)
+#
+# 「미결」을 프로토가 임의로 고른 자리 (기획서에 적지 않는다):
+#   - **빗나감 = 0.** 「빗나감이 0인가 약화된 타격인가」의 한쪽 극단을 태운다
+#   - **빼낸 부대는 환불 없이 사라진다.** 「빼낸 부대의 처리」의 한쪽 극단
+#   - **병사카드 마릿수 분포**는 체급별 고정 범위로 잡았다 (소형 2~4 / 중형 1~2 / 대형 1)
 #
 # 수치는 전부 임시값이다. src/data/ 의 CSV는 **읽기만** 하고, 미확정 수치는
 # 아래 TUNE_UNITS / TUNE_SKILLS 에 모아둔다 — 이 폴더는 버리는 코드다.
@@ -49,16 +58,18 @@ const STATS_RECT := Rect2(1566.0, 706.0, 298.0, 250.0)
 # 아래로 조금 더 뻗어 읽을 줄 수를 번다 (그 아래는 비어 있다).
 const DETAIL_RECT := Rect2(1566.0, 706.0, 298.0, 322.0)
 
-# 유물 슬롯 줄 — 유물은 칸이 아니라 여기에 놓는다 (전역 보유)
+# 유물 슬롯 줄 · 전술 슬롯 줄 — 둘 다 칸이 아니라 여기에 놓는다 (전역 보유)
 const RELICROW_ORIGIN := Vector2(56.0, 966.0)
 const RELIC_SLOT := Vector2(150.0, 56.0)
 const RELIC_GAP := 10.0
 const RELIC_SLOTS := 4
+const TACTICROW_ORIGIN := Vector2(712.0, 966.0)
 
 # 예고 슬롯 — 화면 구석. 다음 보스의 정체를 미리 알린다
 const FORECAST_RECT := Rect2(1584.0, 190.0, 280.0, 112.0)
 
 # ─── 밸런스 (전부 임시값) ──────────────────────────────────────────────────
+# 유한 런이다 — 클리어가 있다. 4막 × (정예 2 + 막보스 1) = 12마리.
 const RUN_BOSSES := 12
 const WALL_HP_START := 500.0
 
@@ -68,9 +79,6 @@ const KILL_GOLD_STEP := 10
 # 골드는 두 곳에서 나온다 — 시간이 바닥을 깔고, 킬이 템포를 보상한다.
 # 시간 유입이 없으면 첫 몇 초에 다 쓰고 남은 시간엔 매대를 볼 이유가 사라진다.
 const GOLD_PER_SEC := 3.0
-# 병사카드 가격 = 인원 비례. 기획의 "1명당 1G"는 골드 스케일이 확정된 뒤의 값이라,
-# 프로토는 같은 비례만 지키고 배율만 여기서 잡는다.
-const PRICE_PER_CREW := 14
 
 const REROLL_BASE := 14
 const REROLL_STEP := 10               # 연속 리롤마다 가산 (킬 시 원가 복귀)
@@ -84,6 +92,16 @@ const UPGRADE_PRICE_MULT := 1.6
 
 # 원소 저항 상한. 어떤 보스도 이 이상은 막지 못한다. 실제 값은 「미결」이라 임시값이다.
 const RES_CAP := 0.75
+
+# 병력 디버프(주박) — 적은 병력을 때리지 못하지만 성능은 떨어뜨린다. **일시적이고
+# 런 전체에 누적되지 않는다.** 인원이 많은 부대일수록 덜 흔들린다(머릿수가 완충재).
+const BIND_INTERVAL := 4.0            # 주박 보스가 디버프를 거는 주기
+const BIND_AMOUNT := 0.45             # 단독 부대 기준 성능 감소율. 인원이 이걸 완충한다
+const BIND_DURATION := 5.0
+
+# 경화가 올릴 수 있는 방어력의 상한. 중형 타격당 딜(12~15) 하나를 닫을 만큼이고,
+# 대형과 마법은 끝까지 살아 있다 — "장기전을 막는다"까지만 하고 판을 지우지는 않는다.
+const HARDEN_CAP := 14.0
 
 const CHILL_MOVE := 0.55              # 빙결 — 이동·공격속도에 곱해진다
 # 화상은 **회복 감소만** 한다. 틱딜을 겸하면 중독과 하는 일이 같아져 원소가 넷인 이유가 흐려진다.
@@ -111,10 +129,31 @@ const ANIMS := {
 	"spell":  {"folder": "Spell",  "fps": 10.0, "loop": true},
 	"death":  {"folder": "Death",  "fps": 8.0,  "loop": false},
 }
-const MAX_MEMBERS := 6
+const MAX_MEMBERS := 9                # 소형의 인원 상한
 const MAX_BOSS_SPRITES := 8
-# 인원이 적을수록 개체가 크다 — 체급이 실루엣으로 읽혀야 한다
-const MEMBER_SCALE := {6: 1.9, 4: 2.3, 3: 2.7, 2: 3.1, 1: 4.0}
+
+# ─── 체급 — 소형 · 중형 · 대형 ────────────────────────────────────────────
+# 체급 배정의 단일 출처는 sprite_catalog.csv 의 size_tier(실측 픽셀 크기)이고,
+# 그 배정에 따른 **인원 상한**이 units.csv 의 crew 다. 둘 다 읽기만 한다.
+#
+#   cap   — 인원 상한. 부대는 병사카드를 부어 여기까지 자란다
+#   hit   — **타격당 딜 배율.** cap 과 반비례한다(1:3:9 ↔ 9:3:1) —
+#           상한까지 채운 부대의 총 화력이 체급이 달라도 같아지도록.
+#           그래서 체급이 정하는 것은 "이 보스에게 통하는가"뿐이고,
+#           "제때 잡는가"는 인원 × 주기가 답한다(기획 「체급과 화력은 직교한다」)
+#   scale — 개체 크기. 정수배만 쓴다(기획 「프레젠테이션」). 상한이 클수록 하나하나가 작다
+#   unit  — 마리당 단가. 대형은 딜 0이 잘 안 나는 안전 자산이라 프리미엄이 붙는다
+const SIZES := {
+	"small": {"name": "소형", "cap": 9, "hit": 1.0, "scale": 2, "unit": 5},
+	"mid":   {"name": "중형", "cap": 3, "hit": 3.0, "scale": 3, "unit": 16},
+	"large": {"name": "대형", "cap": 1, "hit": 9.0, "scale": 4, "unit": 54},
+}
+const SIZE_ORDER := ["small", "mid", "large"]
+const SIZE_KO := {"소형": "small", "중형": "mid", "대형": "large", "초대형": "large"}
+
+# 병사카드에 담기는 마릿수 — 체급별 범위. **분포는 「미결」이라 프로토가 임의로 잡은 값이다.**
+# 소형은 여러 장을 부어야 차는 투자형, 대형은 한 장에 완성되는 즉전력이다.
+const CARD_CREW := {"small": [2, 4], "mid": [1, 2], "large": [1, 1]}
 
 # ─── 원소 ─────────────────────────────────────────────────────────────────
 # 저항 하나가 두 일을 한다 — 그 원소 피해의 감소율이면서, 그 원소 상태이상의 저항이다.
@@ -173,46 +212,52 @@ const JOB_KO := {
 const ELEM_KO := {"냉기": "cold", "화염": "fire", "독": "poison", "번개": "shock", "랜덤": "random"}
 
 # ─── 임시 수치 ────────────────────────────────────────────────────────────
-# CSV의 crew·attack_period·attack_power·스킬 수치 칸은 아직 전부 비어 있다.
-# 확정될 때까지 여기서 잡는다 — CSV를 건드리지 않고 프로토만 굴리기 위한 자리다.
+# CSV의 attack_period·attack_power·스킬 수치 칸은 아직 비어 있다. 확정될 때까지 여기서
+# 잡는다 — CSV를 건드리지 않고 프로토만 굴리기 위한 자리다.
+# **crew(인원 상한)는 여기 없다.** units.csv 의 crew 가 확정 데이터라 그쪽을 읽는다.
 #
-# crew   — MEMBER_SCALE 에 있는 {1,2,3,4,6} 에서만 고른다 (체급이 실루엣으로 읽혀야 한다)
 # period — 평타 주기. 캐스팅 직업은 TUNE_SKILLS 의 cast_time 이 대신한다
-# power  — "칸의 박자당 총 공격력". 인원이 이걸 나눠 타격당 딜을 만든다.
-#          **인원에 곱하지 않는다** — 인원은 타격을 몇 번으로 쪼개는지만 정한다(기획).
-#          그래서 같은 직업 안에서 소수정예가 방어력을 뚫고, 다수는 축복·크리 굴림으로 갚는다.
+# might  — **유닛의 화력 눈금.** 체급 프로필이 걸리기 전의 값이다.
+#          타격당 딜 = might × SIZES[체급].hit  →  체급이 정하는 것은 "이 보스에게 통하는가"뿐.
+#          총 화력 = 인원 × 타격당 딜 ÷ 주기  →  "제때 잡는가"는 인원과 주기가 답한다.
+#          hit 이 cap 과 반비례하므로 **상한까지 채운 부대의 총 화력은 체급이 달라도 같다.**
+#          캐스팅 직업에서는 시전당 딜(마법사)·축복량(사제)이 같은 규칙을 탄다 —
+#          인원수가 곧 시전 횟수다(기획 「인원이 하는 일」).
 const TUNE_UNITS := {
 	# 전사 — 근접 물리. 확률 발동으로 자신을 강화한다
-	"U_VK_BERSERKER":   {"crew": 4, "period": 0.90, "power": 42.0},
-	"U_DM_HIGH":        {"crew": 1, "period": 1.40, "power": 52.0},
+	"U_VK_BERSERKER":   {"period": 0.90, "might": 4.8},   # 중형
+	"U_DM_HIGH":        {"period": 1.40, "might": 5.6},   # 대형 — 풀에 하나뿐인 관통 프로필
 	# 소드마스터 — 근접 물리. 확률 발동으로 적을 벤다
-	"U_DE_SWORD":       {"crew": 4, "period": 0.95, "power": 40.0},
-	"U_UD_DREADKNIGHT": {"crew": 2, "period": 1.10, "power": 44.0},
+	"U_DE_SWORD":       {"period": 0.95, "might": 4.6},   # 중형
+	"U_UD_DREADKNIGHT": {"period": 1.10, "might": 5.0},   # 소형
 	# 궁수 — 크리가 리듬. 인원이 많을수록 한 박자에 여러 번 굴린다
-	"U_HUM_ARCHER":     {"crew": 6, "period": 0.55, "power": 24.0},
-	"U_UD_SKELARCHER":  {"crew": 4, "period": 0.58, "power": 25.0},
-	"U_DE_ARCHER":      {"crew": 3, "period": 0.60, "power": 26.0},
-	"U_DM_FIREIMP":     {"crew": 2, "period": 0.70, "power": 28.0},
-	# 암살자 — 크리가 잭팟. 전부 소수라 타격당 딜이 굵다
-	"U_DE_ASSASSIN":    {"crew": 2, "period": 0.85, "power": 34.0},
-	"U_BM_CAT":         {"crew": 2, "period": 0.80, "power": 30.0},
-	"U_UD_REAPER":      {"crew": 1, "period": 1.20, "power": 46.0},
-	# 마법사 — 평타 없음. 딜은 TUNE_SKILLS.damage, 주기는 cast_time
-	"U_HUM_MAGE":       {"crew": 2, "period": 0.0, "power": 0.0},
-	"U_DE_WIZARD":      {"crew": 3, "period": 0.0, "power": 0.0},
-	"U_UD_LICH":        {"crew": 1, "period": 0.0, "power": 0.0},
-	"U_BM_RABBIT":      {"crew": 3, "period": 0.0, "power": 0.0},
-	"U_DM_FIREKEEPER":  {"crew": 2, "period": 0.0, "power": 0.0},
-	# 사제 — 평타 없음. 축복량은 TUNE_SKILLS.damage
-	"U_HUM_PRINCE":     {"crew": 1, "period": 0.0, "power": 0.0},
-	"U_UD_NECROMANCER": {"crew": 3, "period": 0.0, "power": 0.0},
-	"U_BM_DEER":        {"crew": 2, "period": 0.0, "power": 0.0},
-	"U_DM_DEMONESS":    {"crew": 1, "period": 0.0, "power": 0.0},
+	"U_HUM_ARCHER":     {"period": 0.55, "might": 3.8},   # 소형
+	"U_UD_SKELARCHER":  {"period": 0.58, "might": 3.9},   # 소형
+	"U_DE_ARCHER":      {"period": 0.60, "might": 4.0},   # 중형
+	"U_DM_FIREIMP":     {"period": 0.70, "might": 4.4},   # 소형
+	# 암살자 — 크리가 잭팟
+	"U_DE_ASSASSIN":    {"period": 0.85, "might": 4.2},   # 중형
+	"U_BM_CAT":         {"period": 0.80, "might": 3.9},   # 중형
+	"U_UD_REAPER":      {"period": 1.20, "might": 5.2},   # 중형
+	# 마법사 — 평타 없음. 주기는 cast_time, 시전당 딜은 might × 체급 hit
+	"U_HUM_MAGE":       {"period": 0.0, "might": 11.0},   # 소형
+	"U_DE_WIZARD":      {"period": 0.0, "might": 8.5},   # 중형 — 독은 낮게 잡고 상태이상을 싣는 결
+	"U_UD_LICH":        {"period": 0.0, "might": 8.0},   # 중형 — 냉기. 빙결을 함께 싣는다
+	"U_BM_RABBIT":      {"period": 0.0, "might": 10.0},   # 중형 — 랜덤 원소
+	"U_DM_FIREKEEPER":  {"period": 0.0, "might": 12.5},   # 중형 — 화염은 순수 딜로 높게
+	# 사제 — 평타 없음. 축복량이 might × 체급 hit 이다.
+	# 소형 사제는 얇은 축복을 여러 칸에 흩고, 중형은 굵게 몇 칸에 건다 — 인원 = 시전 횟수의 결과다
+	"U_HUM_PRINCE":     {"period": 0.0, "might": 2.6},    # 소형
+	"U_UD_NECROMANCER": {"period": 0.0, "might": 0.0},    # 소형 — CLEANSE. 축복이 아니다
+	"U_BM_DEER":        {"period": 0.0, "might": 2.2},    # 소형
+	"U_DM_DEMONESS":    {"period": 0.0, "might": 4.4},    # 중형
 }
 
 # chance     — "chance" 직업(전사·소드마스터)의 평타당 발동 확률. 고정값이라 자라지 않는다
 # cast_time  — 캐스팅 직업의 주기. 그대로 부대 period 가 된다
-# damage     — NUKE는 캐스팅 1회 딜, BUFF류는 타격당 붙는 고정값, GOLD_STEAL은 골드
+# damage     — **타격 크기와 무관한 고정 수치만 남긴다** (EMPOWER_STRIKE·CRIT_BONUS_FLAT의
+#              추가피해, GOLD_STEAL의 골드). NUKE 딜과 축복량은 TUNE_UNITS.might 가 정한다 —
+#              둘 다 체급 프로필을 타야 해서 유닛 쪽에 있어야 한다
 # multiplier — 그 타격에 곱해지는 배율 (크리 배율에 다시 곱해진다)
 # dur        — 상태이상·버프 지속. 안 쓰는 칸은 비운다
 #
@@ -226,92 +271,346 @@ const TUNE_SKILLS := {
 	"SK_HUM_ARCHER":     {"multiplier": 1.50, "dur": 2.5},
 	"SK_UD_SKELARCHER":  {},
 	"SK_DE_ARCHER":      {"multiplier": 1.60},
-	"SK_DM_FIREIMP":     {"damage": 22.0},
+	"SK_DM_FIREIMP":     {"damage": 8.0},
 	"SK_DE_ASSASSIN":    {"multiplier": 0.25, "dur": VULN_DURATION},
 	"SK_BM_CAT":         {"damage": 4.0},
 	"SK_UD_REAPER":      {"multiplier": 1.80},
-	"SK_HUM_MAGE":       {"cast_time": 2.60, "damage": 150.0},
-	"SK_DE_WIZARD":      {"cast_time": 2.40, "damage": 95.0},
-	"SK_UD_LICH":        {"cast_time": 3.00, "damage": 90.0, "dur": 2.2},
-	"SK_BM_RABBIT":      {"cast_time": 2.60, "damage": 120.0},
-	"SK_DM_FIREKEEPER":  {"cast_time": 2.80, "damage": 165.0},
-	"SK_HUM_PRINCE":     {"cast_time": 3.20, "damage": 3.6},
+	"SK_HUM_MAGE":       {"cast_time": 2.60},
+	"SK_DE_WIZARD":      {"cast_time": 2.40},
+	"SK_UD_LICH":        {"cast_time": 3.00, "dur": 2.2},
+	"SK_BM_RABBIT":      {"cast_time": 2.60},
+	"SK_DM_FIREKEEPER":  {"cast_time": 2.80},
+	"SK_HUM_PRINCE":     {"cast_time": 3.20},
 	"SK_UD_NECROMANCER": {"cast_time": 3.00},
-	"SK_BM_DEER":        {"cast_time": 3.00, "damage": 3.0, "multiplier": 1.35, "dur": 3.0},
-	"SK_DM_DEMONESS":    {"cast_time": 3.40, "damage": 6.5},
+	"SK_BM_DEER":        {"cast_time": 3.00, "multiplier": 1.35, "dur": 3.0},
+	"SK_DM_DEMONESS":    {"cast_time": 3.40},
 }
 
 # 로더가 채운다. 매대 풀 = 리더 제외 + 스킬 없는 유닛 제외 = 20종.
 # 런타임 키 이름은 UI 60여 곳이 참조하므로 CSV를 이 모양으로 옮겨 담는다.
 var UNITS: Array = []
 
-# ─── 유물 = 동사의 공급원 ─────────────────────────────────────────────────
+# ─── 유물 = 옵션이 붙은 물건 ──────────────────────────────────────────────
 # 전역 보유다. 칸에 장착하지 않고 유물 슬롯 줄에 둔다.
-# [직업] 태그가 수행 주체를 정하고, 효과는 그 직업 부대들의 박자에 실려 자동으로 나간다.
-# 쿨다운이 초가 아니라 "몸의 박자 수"라서, 같은 밀어내기도 다수·빠른 부대에선 잦고 작게,
-# 소수정예에선 드물고 크게 나간다 — 동사의 변형을 체급 시스템이 공짜로 만든다.
-const RELICS := [
-	{"id": "hammer", "verb": "push", "job": "warrior", "name": "충격 망치", "beats": 7, "price": 55,
-	 "elem": "", "color": Color(0.96, 0.76, 0.36), "short": "넉백",
+#
+# **등급이 옵션 줄 수를 정하고, 태그가 옵션을 받을 부대를 정한다.**
+# 태그는 유물 하나에 하나뿐이고 **베이스(형상)가 고정한다** — 굴려지지 않는다.
+# 그래서 카드 얼굴(형상)만 보고 내 판과 맞는지가 걸러지고, 맞는 것만 호버해 읽으면 된다.
+# 태그가 좁을수록 수치가 크다([직업] > [종족] > [전체]) — **몰빵의 보상이 여기서 나온다.**
+const RELIC_TAG_MULT := {"job": 1.60, "race": 1.30, "all": 1.00}
+
+# 베이스 = 형상. 태그 종류와 그 값(어느 직업·어느 종족)까지 여기서 굳는다.
+# 리더는 매대 풀에 없으므로 [직업 리더] 베이스도 두지 않는다.
+const RELIC_BASES := [
+	{"id": "b_war",  "name": "전사의 각인",   "tag": "job",  "val": "warrior"},
+	{"id": "b_swd",  "name": "검사의 숫돌",   "tag": "job",  "val": "swordmaster"},
+	{"id": "b_arc",  "name": "궁수의 시위",   "tag": "job",  "val": "archer"},
+	{"id": "b_asn",  "name": "암살자의 장막", "tag": "job",  "val": "assassin"},
+	{"id": "b_mag",  "name": "마법사의 첨탑", "tag": "job",  "val": "mage"},
+	{"id": "b_clr",  "name": "사제의 성해",   "tag": "job",  "val": "cleric"},
+	{"id": "b_hum",  "name": "인간의 군기",   "tag": "race", "val": "인간"},
+	{"id": "b_de",   "name": "다크엘프의 밀서", "tag": "race", "val": "다크엘프"},
+	{"id": "b_ud",   "name": "언데드의 유해", "tag": "race", "val": "언데드"},
+	{"id": "b_bm",   "name": "수인족의 토템", "tag": "race", "val": "수인족"},
+	{"id": "b_dm",   "name": "악마의 계약서", "tag": "race", "val": "악마"},
+	{"id": "b_all1", "name": "군단 깃발",     "tag": "all",  "val": ""},
+	{"id": "b_all2", "name": "왕가의 인장",   "tag": "all",  "val": ""},
+]
+
+# 등급이 옵션 줄 수를 정한다. 매직·레어는 접두사·접미사로 굴려지고, 유니크만 고정 세트다.
+const RELIC_GRADES := {
+	"normal": {"name": "일반",   "pre": 0, "suf": 1, "price": 30,
+	 "color": Color(0.74, 0.76, 0.82)},
+	"magic":  {"name": "매직",   "pre": 1, "suf": 1, "price": 55,
+	 "color": Color(0.52, 0.66, 0.98)},
+	"rare":   {"name": "레어",   "pre": 2, "suf": 2, "price": 95,
+	 "color": Color(0.96, 0.86, 0.42)},
+	"unique": {"name": "유니크", "pre": 0, "suf": 0, "price": 130,
+	 "color": Color(0.90, 0.60, 0.30)},
+}
+
+# **접두사와 접미사가 각각 무엇을 담는지는 「미결」이다.** 프로토는 디아블로의 관례를 따라
+# 접두사에 공격 계열을, 접미사에 보조·성장 계열을 담았다.
+#   stat — dmg(데미지 %) · spd(공격속도 %) · elem(그 원소 데미지 %) · crit(크리 확률) ·
+#          critmult(크리 배율) · flat(타격당 고정값) · grow(성장형 — 아래)
+# **성장형은 조건이 충족될 때마다 값이 누적된다** — 여기서는 보스를 잡을 때마다다.
+# 조건은 자라는 속도를 정할 뿐이고 자란 결과는 상시 수치라, 전술카드가 아니라 유물의 몫이다.
+const RELIC_PREFIX := [
+	{"id": "sharp", "name": "날카로운", "stat": "dmg",  "min": 0.10, "max": 0.24},
+	{"id": "swift", "name": "신속한",   "stat": "spd",  "min": 0.08, "max": 0.18},
+	{"id": "keen",  "name": "예리한",   "stat": "crit", "min": 0.05, "max": 0.14},
+	{"id": "burn",  "name": "타오르는", "stat": "elem", "elem": "fire",   "min": 0.15, "max": 0.35},
+	{"id": "frost", "name": "서리 낀",  "stat": "elem", "elem": "cold",   "min": 0.15, "max": 0.35},
+	{"id": "toxic", "name": "역병의",   "stat": "elem", "elem": "poison", "min": 0.15, "max": 0.35},
+	{"id": "storm", "name": "뇌운의",   "stat": "elem", "elem": "shock",  "min": 0.15, "max": 0.35},
+]
+const RELIC_SUFFIX := [
+	{"id": "might",   "name": "의 완력", "stat": "flat",     "min": 0.6,  "max": 2.2},
+	{"id": "exec",    "name": "의 처형", "stat": "critmult", "min": 0.20, "max": 0.60},
+	{"id": "vigor",   "name": "의 기세", "stat": "dmg",      "min": 0.08, "max": 0.18},
+	# 성장형 — 값은 "킬 하나당 누적치"다. 런이 길어질수록 값진다
+	{"id": "hoard",   "name": "의 축적", "stat": "grow",     "min": 0.03, "max": 0.07},
+	{"id": "trophy",  "name": "의 전리", "stat": "grow",     "min": 0.04, "max": 0.09},
+]
+
+# 유니크만 고정이다 — 이름도 옵션도 정해져 있어 한 번 배우면 카드 얼굴만 보고 판단할 수 있다.
+#
+# **동사(상태이상·밀어내기)는 유니크에만 붙인다.** 유물이 스킬·동사를 주는지는 「미결」이고
+# 나온 안이 셋인데, 프로토는 (2)번 — "유니크에만 붙는다" — 을 골라 태운다. 셋 중 유일하게
+# [전체] 태그에 동사가 붙어 "태그가 좁을수록 세다"를 뒤집는 일이 없고, 무엇보다
+# **이걸 빼면 상태이상 9종 중 7종의 공급원이 사라져** 프로토가 상태이상 축을 못 묻는다
+# (유닛 스킬이 거는 상태이상은 취약·빙결 둘뿐이다).
+#
+# hits 는 중형(한 박자에 3타) 기준이다 — 소형은 3배 자주, 대형은 3배 드물게 터진다.
+const RELIC_UNIQUES := [
+	{"id": "hammer", "base": "b_war", "verb": "push", "name": "충격 망치", "hits": 21,
+	 "opts": [{"stat": "flat", "val": 1.8}, {"stat": "dmg", "val": 0.15}],
+	 "color": Color(0.96, 0.76, 0.36), "short": "밀어내기",
 	 "desc": "최근접 보스를 밀어낸다. 거리는 타격당 딜에 비례한다."},
-	{"id": "breaker", "verb": "shred", "job": "warrior", "name": "균열 정", "beats": 9, "price": 55,
-	 "elem": "", "color": Color(0.86, 0.62, 0.50), "short": "파쇄 — 방어력 감소",
+	{"id": "breaker", "base": "b_swd", "verb": "shred", "name": "균열 정", "hits": 27,
+	 "opts": [{"stat": "dmg", "val": 0.20}, {"stat": "spd", "val": 0.10}],
+	 "color": Color(0.86, 0.62, 0.50), "short": "파쇄 — 방어력 감소",
 	 "desc": "보스의 방어력을 깎는다. 감산이라 딜 0인 칸을 한 번에 되살리는 폭발형이다."},
-	{"id": "brand", "verb": "burn", "job": "archer", "name": "화염 낙인", "beats": 14, "price": 55,
-	 "elem": "fire", "color": Color(0.98, 0.46, 0.30), "short": "화상 — 화염",
-	 "desc": "화상 스택을 얹는다. 틱당 고정값이라 타격 횟수 많은 부대와 맞는다. 회복도 깎는다."},
-	{"id": "venom", "verb": "poison", "job": "archer", "name": "독 바른 촉", "beats": 12, "price": 55,
-	 "elem": "poison", "color": Color(0.60, 0.86, 0.42), "short": "중독 — 독",
+	{"id": "brand", "base": "b_arc", "verb": "burn", "name": "화염 낙인", "hits": 42,
+	 "opts": [{"stat": "elem", "elem": "fire", "val": 0.30}, {"stat": "crit", "val": 0.08}],
+	 "color": Color(0.98, 0.46, 0.30), "short": "화상 — 화염",
+	 "desc": "화상 스택을 얹는다. 회복을 깎는다 — 재생을 정통으로 친다."},
+	{"id": "venom", "base": "b_asn", "verb": "poison", "name": "독 바른 촉", "hits": 36,
+	 "opts": [{"stat": "elem", "elem": "poison", "val": 0.30}, {"stat": "critmult", "val": 0.40}],
+	 "color": Color(0.60, 0.86, 0.42), "short": "중독 — 독",
 	 "desc": "중독 스택을 얹는다. 지속딜은 방어력을 보지 않는다."},
-	{"id": "fetter", "verb": "chill", "job": "mage", "name": "서리 족쇄", "beats": 3, "price": 55,
-	 "elem": "cold", "color": Color(0.55, 0.82, 0.98), "short": "빙결 — 냉기",
+	{"id": "fetter", "base": "b_mag", "verb": "chill", "name": "서리 족쇄", "hits": 9,
+	 "opts": [{"stat": "elem", "elem": "cold", "val": 0.30}, {"stat": "spd", "val": 0.12}],
+	 "color": Color(0.55, 0.82, 0.98), "short": "빙결 — 냉기",
 	 "desc": "이동·공격속도를 떨어뜨린다. 걸어오는 시간이 곧 공격 가능 시간이다."},
-	{"id": "bolt", "verb": "stun", "job": "mage", "name": "뇌격 인장", "beats": 5, "price": 65,
-	 "elem": "", "color": Color(0.86, 0.74, 0.98), "short": "스턴",
+	{"id": "bolt", "base": "b_mag", "verb": "stun", "name": "뇌격 인장", "hits": 15,
+	 "opts": [{"stat": "elem", "elem": "shock", "val": 0.28}, {"stat": "dmg", "val": 0.12}],
+	 "color": Color(0.86, 0.74, 0.98), "short": "스턴",
 	 "desc": "모든 행동을 멈춘다. 성벽 타격 중이면 그 동안 피해가 멎는다."},
-	{"id": "mark", "verb": "vuln", "job": "cleric", "name": "표적 성흔", "beats": 3, "price": 55,
-	 "elem": "shock", "color": Color(0.98, 0.88, 0.55), "short": "취약 — 번개",
+	{"id": "mark", "base": "b_clr", "verb": "vuln", "name": "표적 성흔", "hits": 9,
+	 "opts": [{"stat": "flat", "val": 1.4}, {"stat": "grow", "val": 0.06}],
+	 "color": Color(0.98, 0.88, 0.55), "short": "취약",
 	 "desc": "받는 피해를 비율로 올린다. 비율이라 한 방이 굵은 소수정예와 맞는다."},
 ]
 
-# ─── 보스 ─────────────────────────────────────────────────────────────────
-# res 는 원소 저항. 값을 그대로 감소율로 쓴다 — 0.60이면 60% 감소. 상한은 RES_CAP.
+# ─── 전술카드 = 전역에 거는 카드 ──────────────────────────────────────────
+# **무엇에 거는지로 세 종류다 — 칸 · 골드 · 규칙.** 앞의 둘은 더해주고, 셋째는 바꾼다.
+# 종류마다 카드 얼굴이 달라서, 호버해 읽기 전에 무엇에 거는 카드인지가 잡힌다.
 #
-# tags 는 디아블로의 유니크 접두사처럼 쓴다 — **가진 것만 적는다.** 이름 아래 한 줄로 붙어서
-# "이 놈이 무엇인가"를 수치 없이 먼저 알린다. 없는 것(저방어·느림 같은 약점)은 적지 않는다.
-const ARCHETYPES := [
-	{"id": "rush", "name": "돌격형", "scale": 4.6, "tint": Color(0.96, 0.58, 0.36),
-	 "hp": 480.0, "armor": 2.0, "speed": 108.0, "tags": ["질주"],
-	 "res": {"cold": 0.10, "fire": 0.10, "poison": 0.10, "shock": 0.10},
-	 "wall_dmg": 24.0, "wall_int": 1.3, "push_res": 0.35, "regen": 0.0,
-	 "hint": "빠르다 — 지연·밀어내기가 값진다",
-	 "sprite": "minifolks/MiniMonsters/MiniMinotaur/outline"},
-	{"id": "armor", "name": "장갑형", "scale": 5.0, "tint": Color(0.76, 0.80, 0.90),
-	 "hp": 700.0, "armor": 13.0, "speed": 62.0, "tags": ["중장갑"],
-	 "res": {"cold": 0.05, "fire": 0.05, "poison": 0.05, "shock": 0.05},
-	 "wall_dmg": 38.0, "wall_int": 1.6, "push_res": 0.55, "regen": 0.0,
-	 "hint": "잘게 쪼갠 물리는 0이 된다",
-	 "sprite": "minifolks/MiniBigMonsters/MiniOrcMutant/outline"},
-	{"id": "hex", "name": "주술형", "scale": 4.8, "tint": Color(0.74, 0.56, 0.96),
-	 "hp": 640.0, "armor": 3.0, "speed": 70.0, "tags": [],
-	 "res": {"cold": 0.12, "fire": 0.12, "poison": 0.12, "shock": 0.12},
-	 "wall_dmg": 32.0, "wall_int": 1.4, "push_res": 0.45, "regen": 0.0,
-	 "hint": "막히면 다른 원소로 갈아탄다",
-	 "sprite": "minifolks/MiniBigMonsters/MiniDarkLord/outline"},
-	{"id": "regen", "name": "재생형", "scale": 5.0, "tint": Color(0.56, 0.86, 0.80),
-	 "hp": 760.0, "armor": 7.0, "speed": 58.0, "tags": ["재생"],
-	 "res": {"cold": 0.25, "fire": 0.25, "poison": 0.25, "shock": 0.25},
-	 "wall_dmg": 28.0, "wall_int": 1.5, "push_res": 0.50, "regen": 13.0,
-	 "hint": "화력이 모자라면 안 죽는다",
-	 "sprite": "minifolks/MiniBigMonsters/MiniYeti/outline"},
-	{"id": "tyrant", "name": "거물", "scale": 5.4, "tint": Color(0.96, 0.38, 0.42),
-	 "hp": 1200.0, "armor": 15.0, "speed": 66.0, "tags": ["거물", "중장갑", "재생", "강인"],
-	 "res": {"cold": 0.40, "fire": 0.40, "poison": 0.40, "shock": 0.40},
-	 "wall_dmg": 50.0, "wall_int": 1.4, "push_res": 0.70, "regen": 9.0,
-	 "hint": "구간의 끝 — 축이 전부 높다",
-	 "sprite": "minifolks/MiniBigMonsters/MiniHydra/outline"},
+# **직업·종족은 종류가 아니라 조건절이다** — 세 종류 어디에나 붙는다.
+# 시너지를 세는 시스템(카운트 비례·문턱 보너스)은 두지 않는다. 조건절이 붙은 카드는
+# 조건에 맞는 부대가 많을수록 저절로 세진다 — **몰빵의 보상이 여기서 난다.**
+#
+# 보유 상한이 있다 — 상한이 없으면 후반에 규칙이 쌓여 아무도 자기 게임의 규칙을 못 읽는다.
+const TACTIC_SLOTS := 3
+
+# 「칸」 종류는 3×3 그림에 칠한 칸으로 나온다. 전열·후열을 따로 정의하지 않는다 —
+# 오른쪽 세로 3칸을 칠하면 그것이 전열이고 왼쪽 3칸이면 후열이다.
+# **등급이 칠하는 칸 수를 정한다.** 「등급이 오를 때 넓어지는지 좁아지는지」는 「미결」이라
+# 프로토는 **넓어지는 쪽**을 골랐다 — 9칸이 덜 찬 초반에 고급 카드가 제값을 못 해
+# 게이팅이 저절로 생기는 쪽이다.
+#
+# cells 는 격자 인덱스(0~8). 격자는 왼쪽이 후열, 오른쪽(2·5·8)이 성벽 쪽 전열이다.
+# cond  — {} 이면 조건 없음. {"job": …} · {"race": …} 가 붙으면 그 부대만 받는다
+# stat  — dmg · spd · crit · critmult · flat (유물 옵션과 같은 눈금을 쓴다)
+#
+# name 은 실제로 벌어졌던 전투·인물의 것이고, lore 한 줄이 그것을 알린다.
+# (본편에서는 표시 텍스트이므로 text.csv 로 간다 — 프로토는 버리는 코드라 여기 박는다)
+const TACTICS := [
+	# ── 「칸」 ────────────────────────────────────────────────────────────
+	{"id": "t_thermo", "kind": "cell", "grade": 1, "name": "테르모필레의 협로",
+	 "cells": [1, 4], "cond": {}, "stat": "dmg", "val": 0.35,
+	 "lore": "기원전 480년, 좁은 길목 하나가 대군을 사흘 붙잡았다.", "price": 60},
+	{"id": "t_hansan", "kind": "cell", "grade": 2, "name": "한산도 학익진",
+	 "cells": [0, 2, 6, 8], "cond": {}, "stat": "spd", "val": 0.26,
+	 "lore": "1592년, 날개를 펴 적을 안으로 끌어들였다.", "price": 85},
+	{"id": "t_agincourt", "kind": "cell", "grade": 2, "name": "아쟁쿠르의 진창",
+	 "cells": [2, 5, 8], "cond": {"job": "archer"}, "stat": "crit", "val": 0.22,
+	 "lore": "1415년, 진창에 갇힌 기병 위로 장궁이 쏟아졌다.", "price": 85},
+	{"id": "t_leuctra", "kind": "cell", "grade": 2, "name": "레우크트라의 사선",
+	 "cells": [0, 4, 8], "cond": {}, "stat": "flat", "val": 2.6,
+	 "lore": "기원전 371년, 한쪽 날개만 두껍게 세워 정면을 깼다.", "price": 85},
+	{"id": "t_cannae", "kind": "cell", "grade": 3, "name": "칸나이의 포위",
+	 "cells": [0, 2, 3, 5, 6, 8], "cond": {}, "stat": "dmg", "val": 0.22,
+	 "lore": "기원전 216년, 가운데를 내주고 양 끝으로 감쌌다.", "price": 120},
+	{"id": "t_gaugamela", "kind": "cell", "grade": 3, "name": "가우가멜라의 쐐기",
+	 "cells": [2, 4, 5, 8], "cond": {"race": "인간"}, "stat": "dmg", "val": 0.34,
+	 "lore": "기원전 331년, 벌어진 틈 하나로 곧장 왕에게 갔다.", "price": 120},
+
+	# ── 「골드」 ──────────────────────────────────────────────────────────
+	{"id": "t_logistics", "kind": "gold", "grade": 2, "name": "마케도니아의 병참",
+	 "cells": [], "cond": {}, "stat": "gold_sec", "val": 2.5,
+	 "lore": "알렉산드로스는 짐수레를 태우고 보급을 몸에 실었다.", "price": 80},
+	{"id": "t_genoa", "kind": "gold", "grade": 2, "name": "제노바의 환전상",
+	 "cells": [], "cond": {}, "stat": "reroll_cut", "val": 0.5,
+	 "lore": "지중해의 전쟁 자금은 은행 장부에서 나왔다.", "price": 80},
+	{"id": "t_letter", "kind": "gold", "grade": 1, "name": "사략 허가장",
+	 "cells": [], "cond": {"job": "assassin"}, "stat": "kill_gold", "val": 0.5,
+	 "lore": "왕은 약탈을 금하는 대신 그것에 서명을 붙였다.", "price": 55},
+
+	# ── 「규칙」 — 뒤집어도 게임이 서 있는 것만 고른다 ────────────────────
+	{"id": "t_phalanx", "kind": "rule", "grade": 3, "name": "테베의 팔랑크스",
+	 "cells": [], "cond": {}, "stat": "rule_unify", "val": 1.0,
+	 "lore": "창을 든 팔들이 한 몸처럼 움직였다.", "price": 130},
+	{"id": "t_pilum", "kind": "rule", "grade": 2, "name": "로마의 필룸",
+	 "cells": [], "cond": {}, "stat": "rule_floor", "val": 1.0,
+	 "lore": "방패를 뚫지 못해도 박혀서 방패를 버리게 했다.", "price": 100},
+	{"id": "t_charge", "kind": "rule", "grade": 2, "name": "비엔나의 돌격",
+	 "cells": [], "cond": {}, "stat": "rule_crit", "val": 0.10,
+	 "lore": "1683년, 언덕을 내려온 기병이 포위를 하루 만에 걷었다.", "price": 100},
+	{"id": "t_signal", "kind": "rule", "grade": 1, "name": "봉수의 사슬",
+	 "cells": [], "cond": {}, "stat": "rule_diag", "val": 1.0,
+	 "lore": "산마루의 불빛이 하루 만에 국경에서 도성까지 닿았다.", "price": 70},
 ]
-const HEX_RES := 0.70                 # 주술형이 정통으로 막는 한 원소
+
+# ─── 적 ───────────────────────────────────────────────────────────────────
+# 적은 **정예 · 막보스** 두 단뿐이다. **잡몹은 두지 않는다** — 9칸 전원이 최근접 하나를
+# 함께 때리므로 플레이어가 "저건 무시하고 이걸 때린다"를 고를 수 없고, 그러면 잡몹은
+# 어떻게 설계해도 순서대로 처리되는 대기열로만 남는다(기획 「적」). 대신 하나하나가 길다.
+#
+# 정예 하나 = **그 막 진영의 베이스 + 접두사 몇 개.** 디아블로의 유니크와 같은 구조다.
+# 막보스는 접두사를 굴리지 않는다 — 조합이 고정이며 손으로 만든다.
+#
+# 베이스는 스프라이트·체급과 맨몸 스탯만 갖는다. **성격은 전부 접두사가 얹는다.**
+# res 는 원소 저항. 값을 그대로 감소율로 쓴다 — 0.60이면 60% 감소. 상한은 RES_CAP.
+# evade 는 회피 — **물리 명중 판정의 대응 축이다. 마법에는 걸리지 않는다**(기획 「변별 축」).
+const BASES := {
+	# 막1 · 침공 — 오크. 저방어라 아무거나 통한다
+	"orc_warrior":   {"name": "오크 전사",   "size": "중형", "hp": 2028.0, "armor": 1.0,
+	 "speed": 64.0, "evade": 0.05, "wall_dmg": 30.0, "wall_int": 1.5, "push_res": 0.30,
+	 "sprite": "minifolks/MinifolksOrcs/MiniOrcWarrior/outline"},
+	"orc_thrower":   {"name": "오크 투척병", "size": "중형", "hp": 1833.0, "armor": 0.0,
+	 "speed": 70.0, "evade": 0.10, "wall_dmg": 26.0, "wall_int": 1.3, "push_res": 0.25,
+	 "sprite": "minifolks/MinifolksOrcs/MiniOrcAxeThrower/outline"},
+	"goblin":        {"name": "고블린",      "size": "소형", "hp": 1482.0, "armor": 0.0,
+	 "speed": 88.0, "evade": 0.16, "wall_dmg": 20.0, "wall_int": 1.1, "push_res": 0.15,
+	 "sprite": "minifolks/MinifolksOrcs/MiniGoblin/outline"},
+	"warg_rider":    {"name": "와르그 기수", "size": "중형", "hp": 1950.0, "armor": 2.0,
+	 "speed": 82.0, "evade": 0.08, "wall_dmg": 28.0, "wall_int": 1.4, "push_res": 0.35,
+	 "sprite": "minifolks/MinifolksOrcs/MiniWargRider/outline"},
+
+	# 막2 · 야생 — 야수·놀. 질주와 중장갑이 한 진영 안에 정반대로 들어 있다
+	"panther":       {"name": "흑표범",      "size": "대형", "hp": 2418.0, "armor": 2.0,
+	 "speed": 104.0, "evade": 0.22, "wall_dmg": 34.0, "wall_int": 1.1, "push_res": 0.30,
+	 "sprite": "minifolks/MiniFolksPlusAnimals/MiniPanther/outline"},
+	"turtle":        {"name": "바위거북",    "size": "중형", "hp": 3510.0, "armor": 9.0,
+	 "speed": 40.0, "evade": 0.0, "wall_dmg": 40.0, "wall_int": 1.8, "push_res": 0.60,
+	 "sprite": "minifolks/MiniFolksPlusAnimals/MiniTurtle/outline"},
+	"gnoll_berserk": {"name": "놀 광전사",   "size": "중형", "hp": 2574.0, "armor": 3.0,
+	 "speed": 76.0, "evade": 0.12, "wall_dmg": 36.0, "wall_int": 1.3, "push_res": 0.35,
+	 "sprite": "minifolks/MiniGnolls/MiniGnollBerserk/outline"},
+	"hyena":         {"name": "하이에나",    "size": "중형", "hp": 2106.0, "armor": 1.0,
+	 "speed": 96.0, "evade": 0.26, "wall_dmg": 26.0, "wall_int": 1.0, "push_res": 0.20,
+	 "sprite": "minifolks/MiniGnolls/MiniHyena/outline"},
+	"rhino":         {"name": "코뿔소",      "size": "대형", "hp": 3354.0, "armor": 7.0,
+	 "speed": 58.0, "evade": 0.0, "wall_dmg": 44.0, "wall_int": 1.6, "push_res": 0.65,
+	 "sprite": "minifolks/MiniFolksPlusAnimals/MiniRhino/outline"},
+
+	# 막3 · 죽음 — 할로윈·언데드 괴수. 유령의 회피가 물리 명중 축을 정면으로 시험한다
+	"werewolf":      {"name": "늑대인간",    "size": "중형", "hp": 3042.0, "armor": 3.0,
+	 "speed": 82.0, "evade": 0.14, "wall_dmg": 38.0, "wall_int": 1.3, "push_res": 0.40,
+	 "sprite": "minifolks/MiniHalloweenMonsters/MiniWerewolf/outline"},
+	"ghost":         {"name": "원귀",        "size": "중형", "hp": 2496.0, "armor": 0.0,
+	 "speed": 66.0, "evade": 0.40, "wall_dmg": 34.0, "wall_int": 1.4, "push_res": 0.45,
+	 "sprite": "minifolks/MiniHalloweenMonsters/MiniGhost/outline"},
+	"scarecrow":     {"name": "허수아비",    "size": "대형", "hp": 3666.0, "armor": 4.0,
+	 "speed": 52.0, "evade": 0.05, "wall_dmg": 42.0, "wall_int": 1.6, "push_res": 0.55,
+	 "sprite": "minifolks/MiniHalloweenMonsters/MiniScarecrow/outline"},
+	"vampire":       {"name": "흡혈귀",      "size": "소형", "hp": 2730.0, "armor": 2.0,
+	 "speed": 74.0, "evade": 0.20, "wall_dmg": 32.0, "wall_int": 1.2, "push_res": 0.35,
+	 "sprite": "minifolks/MiniHalloweenMonsters/MiniVampire/outline"},
+
+	# 막4 · 심연 — 심연군단·거대몬스터. 원소 강화가 몰빵을 처벌한다
+	"abyss_golem":   {"name": "심연 골렘",   "size": "대형", "hp": 4446.0, "armor": 10.0,
+	 "speed": 48.0, "evade": 0.0, "wall_dmg": 50.0, "wall_int": 1.6, "push_res": 0.70,
+	 "sprite": "minifolks/MiniFolksPlusAbyssArmy/MiniAbyssGolem/outline"},
+	"abyss_exec":    {"name": "심연 처형자", "size": "대형", "hp": 3900.0, "armor": 5.0,
+	 "speed": 68.0, "evade": 0.12, "wall_dmg": 54.0, "wall_int": 1.3, "push_res": 0.55,
+	 "sprite": "minifolks/MiniFolksPlusAbyssArmy/MiniAbyssAbyssExecutioner/outline"},
+	"abyss_elem":    {"name": "심연 정령",   "size": "중형", "hp": 3432.0, "armor": 2.0,
+	 "speed": 78.0, "evade": 0.18, "wall_dmg": 44.0, "wall_int": 1.2, "push_res": 0.40,
+	 "sprite": "minifolks/MiniFolksPlusAbyssArmy/MiniAbyssElemental/outline"},
+	"dark_lord":     {"name": "암흑군주",    "size": "대형", "hp": 4212.0, "armor": 6.0,
+	 "speed": 62.0, "evade": 0.08, "wall_dmg": 48.0, "wall_int": 1.4, "push_res": 0.60,
+	 "sprite": "minifolks/MiniBigMonsters/MiniDarkLord/outline"},
+
+	# 막보스 — 초대형·대형. 접두사를 굴리지 않고 조합이 고정이다
+	"orc_warchief":  {"name": "오크 대족장", "size": "대형", "hp": 4600.0, "armor": 4.0,
+	 "speed": 58.0, "evade": 0.05, "wall_dmg": 56.0, "wall_int": 1.4, "push_res": 0.50,
+	 "sprite": "minifolks/MinifolksOrcs/MiniOrcWarChief/outline"},
+	"giant_bear":    {"name": "거대곰",      "size": "대형", "hp": 5900.0, "armor": 6.0,
+	 "speed": 62.0, "evade": 0.0, "wall_dmg": 64.0, "wall_int": 1.3, "push_res": 0.60,
+	 "sprite": "minifolks/MiniBigMonsters/MiniGiantBear/outline"},
+	"skel_dragon":   {"name": "해골룡",      "size": "초대형", "hp": 7200.0, "armor": 7.0,
+	 "speed": 54.0, "evade": 0.10, "wall_dmg": 72.0, "wall_int": 1.4, "push_res": 0.65,
+	 "sprite": "minifolks/MiniBigMonsters/MiniSkeletonDragon/outline"},
+	"black_dragon":  {"name": "흑룡",        "size": "초대형", "hp": 8600.0, "armor": 9.0,
+	 "speed": 56.0, "evade": 0.08, "wall_dmg": 80.0, "wall_int": 1.3, "push_res": 0.70,
+	 "sprite": "minifolks/MiniBigMonsters/MiniBlackDragon/outline"},
+}
+
+# 보스 스프라이트 배율 — 정수배만 쓴다(기획 「프레젠테이션」).
+const BOSS_SCALE := {"소형": 4, "중형": 5, "대형": 6, "초대형": 7}
+
+# 접두사는 「무엇이 막히는가」로 정의한다 — "무엇이 통하는가"가 아니다. 물리가 감산이라
+# *아예 안 통하는* 편성이 실제로 생기고, 그것이 매대를 뒤지게 만드는 유일한 동력이다.
+# 접두사 하나는 **플레이어 빌드 하나를 정확히 죽여야** 값을 한다(기획 「정예는 접두사 조합이다」).
+#
+# 이름이 곧 표식이다 — 적 아래에 붙는 단어가 그대로 접두사 이름이고,
+# 예고 슬롯에서 본 단어가 전투에서 다시 보인다.
+const PREFIXES := {
+	"heavy":    {"name": "중장갑", "armor_add": 12.0, "speed_mul": 0.75,
+	 "blocks": "다수 물리 전원이 딜 0", "answer": "마법 / 소수정예"},
+	"harden":   {"name": "경화", "harden": 0.32,
+	 "blocks": "장기전", "answer": "빠른 킬 / 파쇄"},
+	"hex_cold": {"name": "냉기 강화", "hex": "cold",
+	 "blocks": "냉기 몰빵", "answer": "물리 / 다른 원소 / 냉기 저항 감소"},
+	"hex_fire": {"name": "화염 강화", "hex": "fire",
+	 "blocks": "화염 몰빵", "answer": "물리 / 다른 원소 / 화염 저항 감소"},
+	"hex_pois": {"name": "독 강화", "hex": "poison",
+	 "blocks": "독 몰빵", "answer": "물리 / 다른 원소 / 독 저항 감소"},
+	"hex_shock": {"name": "번개 강화", "hex": "shock",
+	 "blocks": "번개 몰빵", "answer": "물리 / 다른 원소 / 번개 저항 감소"},
+	"rush":     {"name": "질주", "speed_mul": 1.85,
+	 "blocks": "느린 주기 부대 — 쇼핑할 시간을 안 준다", "answer": "빙결 · 밀어내기"},
+	"stubborn": {"name": "완고", "push_add": 0.34,
+	 "blocks": "밀어내기 의존 빌드", "answer": "순수 딜"},
+	"frenzy":   {"name": "광폭", "frenzy": 1.20,
+	 "blocks": "마무리 못 하는 편성", "answer": "한 번에 끝내기"},
+	"regen":    {"name": "재생", "regen_add": 15.0,
+	 "blocks": "찔끔딜", "answer": "순간 화력 / 화상"},
+	"bind":     {"name": "주박", "bind": true,
+	 "blocks": "소수정예 — 완충재가 없다", "answer": "인원 많은 부대 / 정화"},
+}
+const HEX_RES := 0.70                 # 원소 강화가 정통으로 막는 그 한 원소
+
+# 막 — 진영이 곧 얼굴이다. 막마다 적 진영이 통째로 바뀌므로 화면의 실루엣이 갈린다.
+# 컨셉은 분위기가 아니라 **「무엇으로 못 잡게 되는가」**로 잡는다.
+#
+# pool     — 그 막의 정예 베이스. **이단아를 한둘 섞는다** (2막 거북이, 3막 원귀)
+# prefixes — 그 막에서 굴릴 수 있는 접두사. **1막에는 중장갑을 걸지 않는다** —
+#            학습 구간이 살려면 아무 편성이나 통해야 한다
+# npre     — 접두사 개수 [최소, 최대]. 막이 넘어갈수록 늘어난다
+# boss     — 막보스. 접두사 조합이 고정이고, 막이 시작될 때부터 예고에 상시 표시된다
+const ACTS := [
+	{"name": "1 · 침공", "elites": 2, "tint": Color(0.62, 0.80, 0.44),
+	 "pool": ["orc_warrior", "orc_thrower", "goblin", "warg_rider"],
+	 "prefixes": ["rush", "stubborn", "frenzy", "regen"], "npre": [1, 1],
+	 "boss": "orc_warchief", "boss_pre": ["harden", "stubborn"]},
+	{"name": "2 · 야생", "elites": 2, "tint": Color(0.86, 0.68, 0.38),
+	 "pool": ["panther", "turtle", "gnoll_berserk", "hyena", "rhino"],
+	 "prefixes": ["rush", "heavy", "stubborn", "frenzy", "harden"], "npre": [1, 2],
+	 "boss": "giant_bear", "boss_pre": ["heavy", "frenzy"]},
+	{"name": "3 · 죽음", "elites": 2, "tint": Color(0.66, 0.56, 0.86),
+	 "pool": ["werewolf", "ghost", "scarecrow", "vampire"],
+	 "prefixes": ["regen", "bind", "harden", "heavy", "frenzy"], "npre": [2, 2],
+	 "boss": "skel_dragon", "boss_pre": ["regen", "bind", "heavy"]},
+	{"name": "4 · 심연", "elites": 2, "tint": Color(0.90, 0.42, 0.52),
+	 "pool": ["abyss_golem", "abyss_exec", "abyss_elem", "dark_lord"],
+	 "prefixes": ["hex_cold", "hex_fire", "hex_pois", "hex_shock", "heavy", "stubborn"],
+	 "npre": [2, 3],
+	 "boss": "black_dragon", "boss_pre": ["heavy", "harden", "hex_fire", "stubborn"]},
+]
 
 enum Phase { RUNNING, CLEAR, DEFEAT }
 enum SpawnMode { FIXED, ADAPTIVE }
@@ -332,7 +631,8 @@ var _wall_flash: float = 0.0
 var _cells: Array = []                # 9칸 — null 또는 부대 Dictionary
 var _bosses: Array = []               # 등장 순서대로. 죽으면 death 연출 후 제거
 var _shop: Array = []                 # 5슬롯 — null(구매됨) 또는 카드 Dictionary
-var _relics: Array = []               # RELIC_SLOTS — null 또는 유물 정의. 전역 보유다
+var _relics: Array = []               # RELIC_SLOTS — null 또는 굴려진 유물 인스턴스. 전역 보유다
+var _tactics: Array = []              # TACTIC_SLOTS — null 또는 전술카드 정의. 전역 보유다
 var _schedule: Array = []             # 보스 정의 + 스폰 시각
 var _next_spawn: int = 0
 var _killed: int = 0
@@ -355,12 +655,14 @@ var _log_zero_hits: int = 0           # 감산에 먹혀 딜 0이 된 타격
 var _log_total_hits: int = 0
 var _log_phys_raw: float = 0.0        # 방어력 빼기 전 물리 총합
 var _log_phys_out: float = 0.0        # 실제로 들어간 물리 총합
+var _log_missed: int = 0              # 회피에 빗나간 물리 타격 — 명중 판정은 물리에만 있다
 var _log_relic_fires: int = 0
 var _log_skill_fires: Dictionary = {}  # effect → 발동 횟수. 17종이 실제로 도는지 보는 눈금
 
 # 로더가 채우는 읽기 전용 사전 — CSV 원문을 코드가 쓰는 모양으로 옮겨 담은 것뿐이다
 var _text: Dictionary = {}            # 번역 키 → ko
 var _collection: Dictionary = {}      # sprite_entry → 컬렉션 폴더명
+var _size_tier: Dictionary = {}       # sprite_entry → 실측 체급(소형·중형·대형·초대형)
 
 # 드래그
 var _drag_kind: String = ""           # "" | "shop" | "cell"
@@ -393,8 +695,8 @@ func _ready() -> void:
 	_load_data()                      # 스프라이트 경로가 여기서 정해지므로 _frames 빌드보다 먼저다
 	for u in UNITS:
 		_frames[u["sprite"]] = _build_frames(u["sprite"])
-	for a in ARCHETYPES:
-		_frames[a["sprite"]] = _build_frames(a["sprite"])
+	for k in BASES:
+		_frames[BASES[k]["sprite"]] = _build_frames(str(BASES[k]["sprite"]))
 
 	for i in 9:
 		var row: Array = []
@@ -508,8 +810,11 @@ func _load_data() -> void:
 	UNITS.clear()
 	for r in _load_csv("%s/i18n/text.csv" % DATA_ROOT):
 		_text[str(r["keys"])] = str(r["ko"])
+	# 체급 배정의 단일 출처는 size_tier(실측 픽셀 크기)다 — 화면상 크기와 체급이 어긋나면
+	# 실루엣 원칙이 거짓말이 된다(기획 「체급」).
 	for r in _load_csv("%s/sprite_catalog.csv" % DATA_ROOT):
 		_collection[str(r["entry"])] = str(r["collection"])
+		_size_tier[str(r["entry"])] = str(r["size_tier"])
 
 	# effect 가 빈 행은 아직 내용이 정해지지 않은 것이다 (SK_BM_LION) — 통째로 건너뛴다
 	var skills: Dictionary = {}
@@ -553,25 +858,37 @@ func _load_data() -> void:
 			continue
 		var sk: Dictionary = skills[uid]
 		var tu: Dictionary = TUNE_UNITS.get(uid, {})
-		var crew: int = int(tu.get("crew", 3))
 		var casts: bool = bool(JOBS[job]["cast"])
+
+		# 체급은 스프라이트 실측이 정하고, 인원 상한(crew)은 그 배정에 따라 units.csv 가 갖는다.
+		# 둘이 어긋나면 units.csv 쪽이 확정 데이터이므로 그쪽을 믿고 경고만 남긴다.
+		var tier_ko: String = str(_size_tier.get(entry, ""))
+		var size: String = str(SIZE_KO.get(tier_ko, "mid"))
+		var cap: int = int(str(r["crew"])) if str(r["crew"]) != "" else int(SIZES[size]["cap"])
+		if cap != int(SIZES[size]["cap"]):
+			push_warning("체급과 인원 상한이 어긋난다: %s (%s → %d, crew=%d)"
+				% [uid, tier_ko, int(SIZES[size]["cap"]), cap])
+		# 타격당 딜 = 유닛 화력 눈금 × 체급 프로필. **인원으로 나누지 않는다** —
+		# 인원이 정하는 것은 총 화력이지 타격당 딜이 아니다(기획 「체급과 화력은 직교한다」).
+		var hit: float = float(tu.get("might", 0.0)) * float(SIZES[size]["hit"])
+
 		UNITS.append({
 			"id": uid,
 			"job": job,
 			"race": str(r["faction"]),
 			"name": _tr(str(r["name_key"])),
-			"members": crew,
+			"size": size,
+			"cap": cap,
+			# 타격당 딜(평타) · 시전당 딜(마법사) · 축복량(사제) 이 전부 같은 눈금을 쓴다
+			"hit": hit,
 			# 캐스팅 직업은 캐스팅 시간이 곧 박자다
 			"period": float(sk["cast_time"]) if casts else float(tu.get("period", 1.0)),
-			# 마법사의 power 는 "캐스팅 1회의 딜"이다 — UI가 power 로 읽으므로 스킬 딜을 여기 담는다
-			"power": float(sk["damage"]) if job == "mage" else float(tu.get("power", 0.0)),
 			"elem": elem,
-			"bless": float(sk["damage"]) if job == "cleric" else 0.0,
 			"skill": sk,
 			# outline 강제 — no_outline 은 프로토에서도 쓰지 않는다 (기획 「프레젠테이션」)
 			"sprite": "minifolks/%s/%s/outline" % [str(_collection[entry]), entry],
-			# 값도 등급이 아니라 인원이 정한다 (기획 「매물 규칙」)
-			"price": crew * PRICE_PER_CREW,
+			# 마리당 단가는 체급이 정한다 (소형 < 중형 < 대형). 카드값은 마릿수에 비례한다
+			"unit_price": int(SIZES[size]["unit"]),
 		})
 	if UNITS.size() != 20:
 		push_warning("매대 풀이 20종이 아니다 — %d종" % UNITS.size())
@@ -606,6 +923,7 @@ func _start_run() -> void:
 	_log_total_hits = 0
 	_log_phys_raw = 0.0
 	_log_phys_out = 0.0
+	_log_missed = 0
 	_log_relic_fires = 0
 	_log_skill_fires.clear()
 	_gold_frac = 0.0
@@ -618,6 +936,9 @@ func _start_run() -> void:
 	_relics.clear()
 	for _i in RELIC_SLOTS:
 		_relics.append(null)
+	_tactics.clear()
+	for _i in TACTIC_SLOTS:
+		_tactics.append(null)
 	_bosses.clear()
 	_build_schedule()
 	_next_spawn = 0
@@ -626,55 +947,135 @@ func _start_run() -> void:
 	_overlay.queue_redraw()
 
 
+# 런은 네 개의 막이다. 막마다 진영이 통째로 바뀌고, 막 끝에 막보스가 온다.
+# **문법은 고정하고 문장은 굴린다** — 막 진영·순서·막보스는 고정이고,
+# 정예의 접두사 조합과 등장 순서만 굴린다(기획 「무엇이 고정이고 무엇이 랜덤인가」).
 func _build_schedule() -> void:
 	_schedule.clear()
 	var t: float = FIRST_SPAWN
-	for i in RUN_BOSSES:
-		# 구간의 끝(4마리마다)은 거물. 나머지는 네 아키타입을 돌린다.
-		var arch: Dictionary = ARCHETYPES[4] if (i + 1) % 4 == 0 else ARCHETYPES[i % 4]
-		var mult: float = 1.0 + float(i) * 0.28
-		var res: Dictionary = (arch["res"] as Dictionary).duplicate()
-		var hex_elem: String = ""
-		if str(arch["id"]) == "hex":
-			# 어느 원소를 막을지는 개체가 정한다 — 내 빌드를 정통으로 막을 수도, 허공에 뜰 수도 있다
-			hex_elem = ELEM_ORDER[_rng.randi_range(0, ELEM_ORDER.size() - 1)]
-			res[hex_elem] = HEX_RES
-		for e in ELEM_ORDER:
-			res[e] = minf(float(res[e]) + float(i) * 0.012, 0.92)
-		_schedule.append({
-			"arch": arch,
-			"index": i,
-			"at": t,
-			"hp": float(arch["hp"]) * mult,
-			"armor": float(arch["armor"]) * (1.0 + float(i) * 0.06),
-			"res": res,
-			"hex_elem": hex_elem,
-			"wall_dmg": float(arch["wall_dmg"]) * (1.0 + float(i) * 0.05),
-			"regen": float(arch["regen"]) * mult,
-			"gold": (KILL_GOLD_BASE + KILL_GOLD_STEP * i) * (2 if arch["id"] == "tyrant" else 1),
-		})
-		t += lerpf(INTERVAL_EARLY, INTERVAL_LATE, float(i) / float(RUN_BOSSES - 1))
+	var idx: int = 0
+	for ai in ACTS.size():
+		var act: Dictionary = ACTS[ai]
+		var n: int = int(act["elites"])
+		for e in n + 1:
+			var boss: bool = e == n
+			var base_id: String = str(act["boss"]) if boss \
+				else str(act["pool"][_rng.randi_range(0, (act["pool"] as Array).size() - 1)])
+			var pre: Array = _fixed_prefixes(act) if boss else _roll_prefixes(act)
+			_schedule.append(_make_entry(idx, ai, base_id, pre, boss, t))
+			idx += 1
+			# 막이 넘어갈수록 스폰 간격이 좁아진다 — 난이도를 적 스탯이 아니라 **쇼핑 시간**으로
+			# 조인다. 파워 천장(9칸·유물 상한)을 건드리지 않으면서 후반이 조여진다.
+			t += lerpf(INTERVAL_EARLY, INTERVAL_LATE, float(ai) / float(maxi(1, ACTS.size() - 1)))
 
 
+func _fixed_prefixes(act: Dictionary) -> Array:
+	var out: Array = []
+	for p in act["boss_pre"]:
+		out.append(str(p))
+	return out
+
+
+# 접두사가 겹치면 답이 좁아진다 — 「중장갑 · 화염 강화」는 물리도 화염도 막으므로
+# 남은 원소나 저항 감소로만 뚫린다. **조합 수가 곧 정예의 다양성이다.**
+func _roll_prefixes(act: Dictionary) -> Array:
+	var span: Array = act["npre"]
+	var want: int = _rng.randi_range(int(span[0]), int(span[1]))
+	var bag: Array = (act["prefixes"] as Array).duplicate()
+	var out: Array = []
+	while out.size() < want and not bag.is_empty():
+		var i: int = _rng.randi_range(0, bag.size() - 1)
+		var pick: String = str(bag[i])
+		bag.remove_at(i)
+		# 원소 강화 둘이 한 놈에 붙지 않게 한다 — 「접두사 조합 규칙」은 「미결」이라
+		# 프로토가 한쪽을 골랐다. 둘이 겹치면 그 판의 마법이 통째로 죽어 답이 사라진다.
+		if str(pick).begins_with("hex_") and _has_hex(out):
+			continue
+		out.append(pick)
+	return out
+
+
+func _has_hex(pre: Array) -> bool:
+	for p in pre:
+		if str(p).begins_with("hex_"):
+			return true
+	return false
+
+
+func _make_entry(idx: int, act_i: int, base_id: String, pre: Array, boss: bool,
+		at: float) -> Dictionary:
+	var base: Dictionary = BASES[base_id]
+	# **스탯 인플레는 막보스에만 건다.** 정예의 난이도는 스탯이 아니라 진영 교체와
+	# 접두사 개수로 오른다 (기획 「막」).
+	var mult: float = (1.0 + float(act_i) * 0.22) if boss else 1.0
+	# 맨몸 저항은 막을 따라 완만히 오른다. 원소 강화가 붙은 원소만 HEX_RES 로 튄다 —
+	# 낙차가 큰 대신 예고 슬롯이 미리 알린다.
+	var floor_res: float = 0.05 + float(act_i) * 0.05
+	var res: Dictionary = {}
+	for el in ELEM_ORDER:
+		res[el] = floor_res
+
+	var e: Dictionary = {
+		"base": base, "act": act_i, "index": idx, "at": at, "boss": boss, "pre": pre,
+		"name": ("%s ★" % str(base["name"])) if boss else str(base["name"]),
+		"tint": ACTS[act_i]["tint"],       # 막 진영의 색 — 막이 바뀌면 화면이 통째로 갈린다
+		"hp": float(base["hp"]) * mult,
+		"armor": float(base["armor"]) * mult,
+		"speed": float(base["speed"]),
+		"evade": float(base["evade"]),
+		"wall_dmg": float(base["wall_dmg"]) * mult,
+		"push_res": float(base["push_res"]),
+		"res": res,
+		"regen": 0.0,
+		"harden": 0.0,                # 경화 — 초당 방어력 상승분
+		"frenzy": 0.0,                # 광폭 — 체력이 0일 때의 속도 배율 가산
+		"bind": false,                # 주박 — 병력 디버프
+		"gold": int((KILL_GOLD_BASE + KILL_GOLD_STEP * idx) * (2 if boss else 1)),
+	}
+	for p in pre:
+		var d: Dictionary = PREFIXES[str(p)]
+		e["armor"] = float(e["armor"]) + float(d.get("armor_add", 0.0))
+		e["speed"] = float(e["speed"]) * float(d.get("speed_mul", 1.0))
+		e["push_res"] = float(e["push_res"]) + float(d.get("push_add", 0.0))
+		e["regen"] = float(e["regen"]) + float(d.get("regen_add", 0.0)) * mult
+		e["harden"] = maxf(float(e["harden"]), float(d.get("harden", 0.0)))
+		e["frenzy"] = maxf(float(e["frenzy"]), float(d.get("frenzy", 0.0)))
+		e["bind"] = bool(e["bind"]) or bool(d.get("bind", false))
+		if d.has("hex"):
+			(e["res"] as Dictionary)[str(d["hex"])] = HEX_RES
+	return e
+
+
+# 접두사가 곧 표식이다 — 적 아래에 붙는 단어가 그대로 접두사 이름이고,
+# 예고 슬롯에서 본 단어가 전투에서 다시 보인다.
 func _entry_tags(entry: Dictionary) -> Array:
 	var tags: Array = []
-	for tg in entry["arch"]["tags"]:
-		tags.append(str(tg))
-	if str(entry["hex_elem"]) != "":
-		tags.append("%s 저항" % str(ELEMENTS[entry["hex_elem"]]["name"]))
+	for p in entry["pre"]:
+		tags.append(str(PREFIXES[str(p)]["name"]))
 	return tags
 
 
 # ─── 매대 ─────────────────────────────────────────────────────────────────
 func _roll_card(units_only: bool) -> Dictionary:
-	# 풀은 순수 랜덤이다. 단 첫 매대는 병사카드로 채운다 — 빈 격자에 유물은 살 수 없는 매물이다.
-	if not units_only and _rng.randf() < 0.3:
-		var it: Dictionary = RELICS[_rng.randi_range(0, RELICS.size() - 1)]
-		return {"kind": "relic", "def": it, "price": int(it["price"])}
+	# 풀은 순수 랜덤이다. 종류별 가중치는 두지 않고 시작한다. 단 첫 매대는 병사카드로 채운다 —
+	# 빈 격자에 전술·유물은 살 수 없는 매물이다.
+	if not units_only:
+		var k: float = _rng.randf()
+		if k < 0.22:
+			var it: Dictionary = _roll_relic()
+			return {"kind": "relic", "def": it, "price": int(it["price"])}
+		if k < 0.42:
+			var tc: Dictionary = TACTICS[_rng.randi_range(0, TACTICS.size() - 1)]
+			return {"kind": "tactic", "def": tc, "price": int(tc["price"])}
 	# 유닛에 등급 축이 없으므로 가중치도 없다 — 20종 순수 랜덤이다.
 	# 진행도에 따라 고티어를 섞던 장치는 티어와 함께 폐기됐다(기획 「체급」).
 	var d: Dictionary = UNITS[_rng.randi_range(0, UNITS.size() - 1)]
-	return {"kind": "unit", "def": d, "price": int(d["price"])}
+	# 병사카드는 부대가 아니라 **병사 묶음**이다 — 마릿수가 카드마다 다르고,
+	# 같은 유닛의 칸에 부으면 합쳐진다(기획 「배치」).
+	var span: Array = CARD_CREW[str(d["size"])]
+	var cnt: int = _rng.randi_range(int(span[0]), int(span[1]))
+	# 가격은 마릿수에 비례하고, 마리당 단가는 체급이 정한다 (소형 < 중형 < 대형)
+	return {"kind": "unit", "def": d, "count": cnt, "price": cnt * int(d["unit_price"])}
 
 
 func _refresh_shop(units_only: bool) -> void:
@@ -687,18 +1088,194 @@ func _try_reroll() -> void:
 	if _gold < _reroll_price:
 		return
 	_gold -= _reroll_price
-	_reroll_price += REROLL_STEP
+	# 「제노바의 환전상」 — 연속 리롤의 가산을 깎는다. 전투가 길어질수록 급한 답이 싸진다
+	_reroll_price += int(round(REROLL_STEP * maxf(0.0, 1.0 - _gold_val("reroll_cut"))))
 	_refresh_shop(false)
 
 
+# ─── 유물 굴림 ────────────────────────────────────────────────────────────
+# 같은 등급이라도 매물마다 조합이 다르다 — 매직·레어의 옵션은 접두사·접미사로 굴려진다.
+# 유니크만 고정 세트라, 한 번 배우면 카드 얼굴만 보고 즉시 판단할 수 있다.
+func _roll_relic() -> Dictionary:
+	var r: float = _rng.randf()
+	if r < 0.14:
+		return _make_unique(RELIC_UNIQUES[_rng.randi_range(0, RELIC_UNIQUES.size() - 1)])
+	var grade: String = "normal" if r < 0.48 else ("magic" if r < 0.84 else "rare")
+	var base: Dictionary = RELIC_BASES[_rng.randi_range(0, RELIC_BASES.size() - 1)]
+	var g: Dictionary = RELIC_GRADES[grade]
+	var opts: Array = []
+	var name: String = str(base["name"])
+	# 태그가 좁을수록 수치가 크다 — 한 직업·한 종족으로 칸을 몰면 좁은 태그가
+	# [전체]와 같은 범위를 덮으면서 수치는 더 크다
+	var mult: float = float(RELIC_TAG_MULT[str(base["tag"])])
+	for i in int(g["pre"]):
+		var a: Dictionary = RELIC_PREFIX[_rng.randi_range(0, RELIC_PREFIX.size() - 1)]
+		opts.append(_roll_opt(a, mult))
+		if i == 0:
+			name = "%s %s" % [str(a["name"]), name]
+	for i in int(g["suf"]):
+		var b: Dictionary = RELIC_SUFFIX[_rng.randi_range(0, RELIC_SUFFIX.size() - 1)]
+		opts.append(_roll_opt(b, mult))
+		if i == 0:
+			name = "%s%s" % [name, str(b["name"])]
+	return {
+		"uid": "%s_%s_%d" % [grade, str(base["id"]), _rng.randi()],
+		"grade": grade, "base": base, "tag": str(base["tag"]), "val": str(base["val"]),
+		"name": name, "opts": opts, "verb": "", "hits": 0, "grown": 0,
+		"price": int(g["price"]), "color": Color(g["color"]),
+	}
+
+
+func _roll_opt(a: Dictionary, mult: float) -> Dictionary:
+	var v: float = _rng.randf_range(float(a["min"]), float(a["max"])) * mult
+	return {"stat": str(a["stat"]), "elem": str(a.get("elem", "")), "val": v,
+		"label": str(a["name"])}
+
+
+func _make_unique(u: Dictionary) -> Dictionary:
+	var base: Dictionary = {}
+	for b in RELIC_BASES:
+		if str(b["id"]) == str(u["base"]):
+			base = b
+			break
+	var opts: Array = []
+	for o in u["opts"]:
+		opts.append({"stat": str(o["stat"]), "elem": str(o.get("elem", "")),
+			"val": float(o["val"]), "label": "유니크"})
+	return {
+		"uid": str(u["id"]), "grade": "unique", "base": base,
+		"tag": str(base["tag"]), "val": str(base["val"]),
+		"name": str(u["name"]), "opts": opts,
+		"verb": str(u["verb"]), "hits": int(u["hits"]), "grown": 0,
+		"short": str(u["short"]), "desc": str(u["desc"]),
+		"price": int(RELIC_GRADES["unique"]["price"]), "color": Color(u["color"]),
+	}
+
+
+# 이 유물의 옵션이 이 부대에 걸리는가 — **태그가 정한다.**
+func _relic_covers(r: Dictionary, d: Dictionary) -> bool:
+	match str(r["tag"]):
+		"job":
+			return str(d["job"]) == str(r["val"])
+		"race":
+			return str(d["race"]) == str(r["val"])
+	return true                       # [전체] — 아무 판에나 맞는 바닥
+
+
+# ─── 옵션·전술 합산 ───────────────────────────────────────────────────────
+# 유물 옵션과 전술카드가 같은 눈금을 쓴다. idx 는 격자 칸(-1이면 아직 안 놓인 매물) —
+# 「칸」 전술카드는 칠한 칸 위에 선 부대에만 걸리므로 매대 미리보기에는 들어가지 않는다.
+func _mods_for(d: Dictionary, idx: int) -> Dictionary:
+	var m: Dictionary = {"dmg": 0.0, "spd": 0.0, "crit": 0.0, "critmult": 0.0,
+		"flat": 0.0, "elem": {"cold": 0.0, "fire": 0.0, "poison": 0.0, "shock": 0.0}}
+	for r in _relics:
+		if r == null or not _relic_covers(r, d):
+			continue
+		for o in r["opts"]:
+			# 성장형은 조건(킬)이 충족될 때마다 누적된다. 자란 결과는 상시 수치다
+			var v: float = float(o["val"]) * (float(r["grown"]) if str(o["stat"]) == "grow" else 1.0)
+			match str(o["stat"]):
+				"grow", "dmg":
+					m["dmg"] = float(m["dmg"]) + v
+				"spd":
+					m["spd"] = float(m["spd"]) + v
+				"crit":
+					m["crit"] = float(m["crit"]) + v
+				"critmult":
+					m["critmult"] = float(m["critmult"]) + v
+				"flat":
+					m["flat"] = float(m["flat"]) + v
+				"elem":
+					var e: String = str(o["elem"])
+					(m["elem"] as Dictionary)[e] = float(m["elem"][e]) + v
+	# 전술카드 — 조건절이 붙은 카드는 조건에 맞는 부대가 많을수록 저절로 세진다.
+	# 시너지를 따로 세는 시스템이 없는 이유가 이것이다(기획 「시너지는 별도 시스템이 아니다」).
+	for t in _tactics:
+		if t == null or not _tactic_covers(t, d, idx):
+			continue
+		var st: String = str(t["stat"])
+		if st.begins_with("rule_") or st.begins_with("gold_") or st in ["reroll_cut", "kill_gold"]:
+			continue                  # 규칙·골드 종류는 부대 수치가 아니다
+		m[st] = float(m[st]) + float(t["val"])
+	# 「비엔나의 돌격」 — 치명타 기본값을 주는 규칙. 크리는 모든 유닛의 공통 스탯이라
+	# 기본값 0을 올려주는 것만으로 전 직업에 걸린다
+	m["crit"] = float(m["crit"]) + _rule_val("rule_crit")
+	return m
+
+
+# 전술카드가 이 부대에 걸리는가 — 「칸」이면 칠한 칸 위여야 하고, 조건절이 있으면 그것도 맞아야 한다.
+func _tactic_covers(t: Dictionary, d: Dictionary, idx: int) -> bool:
+	if str(t["kind"]) == "cell":
+		if idx < 0 or not (t["cells"] as Array).has(idx):
+			return false
+	var c: Dictionary = t["cond"]
+	if c.has("job") and str(d["job"]) != str(c["job"]):
+		return false
+	if c.has("race") and str(d["race"]) != str(c["race"]):
+		return false
+	return true
+
+
+# 규칙 종류는 게임의 기본 규칙 자체를 바꾼다. 켜져 있는지만 보면 되는 것은 _rule_on,
+# 값이 필요한 것은 _rule_val 로 읽는다.
+func _rule_on(id: String) -> bool:
+	for t in _tactics:
+		if t != null and str(t["stat"]) == id:
+			return true
+	return false
+
+
+func _rule_val(id: String) -> float:
+	var v: float = 0.0
+	for t in _tactics:
+		if t != null and str(t["stat"]) == id:
+			v += float(t["val"])
+	return v
+
+
+func _gold_val(id: String) -> float:
+	return _rule_val(id)
+
+
+func _free_tactic_slot() -> int:
+	for i in TACTIC_SLOTS:
+		if _tactics[i] == null:
+			return i
+	return -1
+
+
+func _has_tactic(id: String) -> bool:
+	for t in _tactics:
+		if t != null and str(t["id"]) == id:
+			return true
+	return false
+
+
+# 조건절에 맞는 부대가 몇 칸인가. **이것이 시너지의 전부다** — 카운트 UI도, 문턱 보너스도 없다.
+func _cells_matching(cond: Dictionary) -> int:
+	var n: int = 0
+	for i in 9:
+		var sq = _cells[i]
+		if sq == null:
+			continue
+		if cond.has("job") and str(sq["def"]["job"]) != str(cond["job"]):
+			continue
+		if cond.has("race") and str(sq["def"]["race"]) != str(cond["race"]):
+			continue
+		n += 1
+	return n
+
+
 # ─── 부대 ─────────────────────────────────────────────────────────────────
-func _make_squad(d: Dictionary) -> Dictionary:
+# 한 칸 = 한 부대이고, 칸에 서는 것은 **같은 유닛의 병사들이 모인 무리**다.
+# 부대는 병사카드를 부어 체급이 정한 인원 상한까지 자란다 — 이것이 유닛 티어를 대신하는
+# 성장 런웨이다. 소형은 오래 걸리지만 계속 자라는 투자형, 대형은 한 장에 완성되는 즉전력이다.
+func _make_squad(d: Dictionary, count: int) -> Dictionary:
 	var job_id: String = str(d["job"])
 	var period: float = maxf(0.05, float(d["period"]))
 	return {
 		"def": d,
-		"members": int(d["members"]),
-		"power": float(d["power"]),
+		"members": clampi(count, 1, int(d["cap"])),
 		"bless": 0.0,                 # 걸린 축복 합계 — 아래 bless_src 에서 매 프레임 다시 센다
 		"bless_src": {},              # 사제 칸 idx → {"amt", "t"}. 사제마다 따로 들고 있어야
 		                              # 캐스팅이 반복돼도 자기 몫을 덮어쓰기만 하고 쌓이지 않는다
@@ -714,6 +1291,10 @@ func _make_squad(d: Dictionary) -> Dictionary:
 		"crit_mult": float(CRIT_MULT_BASE.get(job_id, 2.0)),
 		"haste_t": 0.0,               # 공속 버프 남은 시간
 		"haste_mult": 1.0,
+		# 주박 — 적이 거는 병력 디버프. **일시적이라 시간이 지나면 완전히 회복된다.**
+		# 회복에 자원을 쓰게 하지 않는다 — 유료 회복 자원은 성벽 HP 하나로 충분하다(기획).
+		"bind": 0.0,                  # 성능 감소율 (0~1)
+		"bind_t": 0.0,
 		"empower": 0.0,               # 다음 타격 하나에 실릴 고정 추가피해
 		"skill_fires": 0,
 		"skill_flash": 0.0,
@@ -724,26 +1305,62 @@ func _make_squad(d: Dictionary) -> Dictionary:
 	}
 
 
+# 인접 판정. **「봉수의 사슬」(규칙)이 여기에 대각선을 더한다** — 사제 옆의 정의가 달라져
+# 판을 다시 짜게 된다. 기획이 「규칙 종류가 건드리는 것」 후보로 지목한 항목이다.
 func _neighbors(idx: int) -> Array:
 	var row: int = idx / 3
 	var col: int = idx % 3
 	var out: Array = []
-	if row > 0:
-		out.append(idx - 3)
-	if row < 2:
-		out.append(idx + 3)
-	if col > 0:
-		out.append(idx - 1)
-	if col < 2:
-		out.append(idx + 1)
+	var diag: bool = _rule_on("rule_diag")
+	for dr in [-1, 0, 1]:
+		for dc in [-1, 0, 1]:
+			if dr == 0 and dc == 0:
+				continue
+			if not diag and dr != 0 and dc != 0:
+				continue
+			var r2: int = row + dr
+			var c2: int = col + dc
+			if r2 < 0 or r2 > 2 or c2 < 0 or c2 > 2:
+				continue
+			out.append(r2 * 3 + c2)
 	return out
 
 
-# 물리 타격당 딜. 인원이 총 공격력을 나누고, 축복이 타격마다 고정값으로 붙는다.
+# 타격당 딜. **체급이 고정한다 — 인원으로 나누지 않는다.**
+# 인원이 채워져도 타격당 딜은 변하지 않으므로, 부대가 자라도 관통 프로필이 그대로다 —
+# 실루엣과 통함/막힘 표시가 거짓말하지 않는다(기획 「체급」).
+# 축복은 타격마다 고정값으로 붙어서, 인원 많고 박자 빠른 부대에서 가장 크게 불어난다.
 func _per_hit(sq: Dictionary) -> float:
-	if float(sq["power"]) <= 0.0:
-		return float(sq["bless"])
-	return float(sq["power"]) / float(sq["members"]) + float(sq["bless"])
+	var m: Dictionary = _mods_for(sq["def"], _index_of(sq))
+	# 데미지 %는 체급이 고정한 타격당 딜에 곱해지고, 고정값(유물 flat·축복)은 그 위에 더해진다.
+	# 고정값이라 인원 많고 박자 빠른 부대에서 가장 크게 불어난다.
+	var base: float = float(sq["def"]["hit"]) * (1.0 + float(m["dmg"])) \
+		+ float(m["flat"]) + float(sq["bless"])
+	return maxf(0.0, base * _bind_mult(sq))
+
+
+# 부대가 지금 선 칸. 「칸」 전술카드가 좌표를 보므로 필요하다 — 자리 교체로 바뀌니 캐시하지 않는다.
+func _index_of(sq: Dictionary) -> int:
+	for i in 9:
+		if _cells[i] == sq:
+			return i
+	return -1
+
+
+# 원소 데미지 옵션 — 그 원소로 나가는 것에만 곱해진다
+func _elem_amp(d: Dictionary, idx: int, elem: String) -> float:
+	if elem == "" or not ELEMENTS.has(elem):
+		return 1.0
+	return 1.0 + float((_mods_for(d, idx)["elem"] as Dictionary)[elem])
+
+
+# 병력 디버프의 실효 배율. **인원이 많은 부대일수록 덜 흔들린다** — 머릿수가 완충재다.
+# 단독(대형·리더)은 완충재가 없어 정통으로 맞는다(기획 「적이 병력에게 하는 것」).
+func _bind_mult(sq: Dictionary) -> float:
+	if float(sq["bind"]) <= 0.0:
+		return 1.0
+	var buffer: float = 2.0 / (1.0 + float(sq["members"]))
+	return clampf(1.0 - float(sq["bind"]) * buffer, 0.2, 1.0)
 
 
 # ─── 데미지 계산 ──────────────────────────────────────────────────────────
@@ -769,10 +1386,27 @@ func _vuln_mult(boss) -> float:
 
 
 # 물리 — 감산. 최소 보장은 두지 않는다. 딜이 방어력 이하면 0이다.
+# **다만 「로마의 필룸」(규칙 전술카드)이 최소 보장을 만든다** — 딜 0인 칸이 되살아난다.
+# 기획이 「규칙 종류가 건드리는 것」 후보로 직접 지목한 항목이라 그대로 태운다.
 func _phys_damage(per: float, boss) -> float:
 	if boss == null:
 		return per
-	return maxf(0.0, per - _armor_now(boss)) * _vuln_mult(boss)
+	var out: float = maxf(0.0, per - _armor_now(boss))
+	if out <= 0.0 and _rule_on("rule_floor") and per > 0.0:
+		out = 1.0
+	return out * _vuln_mult(boss)
+
+
+# **명중 판정은 물리에만 있다. 마법은 무조건 적중한다**(기획 「데미지 계산」).
+# 로스터가 물리에 크게 기울어 있어(30유닛 중 마법 딜러 5), 물리에만 붙는 비용이 없으면
+# 마법을 고를 이유가 얇아진다. 적의 대응 축은 회피다.
+#
+# **빗나감 = 0.** 「빗나감이 0인가 약화된 타격인가」는 「미결」이고, 프로토가 한쪽 극단을
+# 골라 태운 것이다 — 단독(대형)이 한 박자를 통째로 날리는 체감이 실제로 어떤지 보기 위해서다.
+func _phys_hits(boss) -> bool:
+	if boss == null:
+		return true
+	return _rng.randf() >= float(boss["evade"])
 
 
 # 마법 — 비율. 타격 횟수와 무관하다.
@@ -805,7 +1439,9 @@ func _spawn(entry: Dictionary) -> void:
 		if not b["dead"]:
 			live += 1
 	_bosses.append({
-		"arch": entry["arch"],
+		"entry": entry,
+		"base": entry["base"],
+		"boss": bool(entry["boss"]),
 		"index": int(entry["index"]),
 		"tags": _entry_tags(entry),
 		"x": BOSS_SPAWN_X,
@@ -813,12 +1449,18 @@ func _spawn(entry: Dictionary) -> void:
 		"hp": float(entry["hp"]),
 		"hp_max": float(entry["hp"]),
 		"armor": float(entry["armor"]),
+		"armor_base": float(entry["armor"]),   # 경화가 여기 위로 쌓인다
+		"evade": float(entry["evade"]),
 		"res": (entry["res"] as Dictionary).duplicate(),
-		"hex_elem": str(entry["hex_elem"]),
 		"wall_dmg": float(entry["wall_dmg"]),
 		"regen": float(entry["regen"]),
+		"harden": float(entry["harden"]),
+		"frenzy": float(entry["frenzy"]),
+		"bind": bool(entry["bind"]),
+		"bind_cd": BIND_INTERVAL,
 		"gold": int(entry["gold"]),
-		"speed": float(entry["arch"]["speed"]),
+		"speed": float(entry["speed"]),
+		"push_res": float(entry["push_res"]),
 		"wall_cd": 0.0,
 		# 상태이상 9종 — 보스도 아군도 걸릴 수 있는 공용 개념이지만, 프로토는 보스 쪽만 태운다
 		"chill": 0.0,                 # 빙결 — 이동·공격속도 저하
@@ -844,7 +1486,7 @@ func _spawn(entry: Dictionary) -> void:
 
 func _push_mult(b: Dictionary) -> float:
 	# 밀어내기 저항은 시간이 갈수록 커진다 — 밀어내기만으로 무한히 버티는 것을 스스로 꺾는다.
-	return clampf(1.0 - float(b["arch"]["push_res"]) - float(b["alive"]) * 0.020, 0.12, 1.0)
+	return clampf(1.0 - float(b["push_res"]) - float(b["alive"]) * 0.020, 0.12, 1.0)
 
 
 func _boss_states(b: Dictionary) -> Array:
@@ -884,7 +1526,7 @@ func _process(delta: float) -> void:
 
 	# 시간 골드 — 킬만으로는 쇼핑이 게임플레이가 되지 못한다. 시간이 바닥을 깔고
 	# 킬이 템포를 보상한다(기획 「골드는 두 곳에서 나온다」).
-	_gold_frac += GOLD_PER_SEC * dt
+	_gold_frac += (GOLD_PER_SEC + _gold_val("gold_sec")) * dt
 	if _gold_frac >= 1.0:
 		var whole: int = int(_gold_frac)
 		_gold += whole
@@ -966,25 +1608,46 @@ func _tick_bosses(dt: float) -> void:
 			var rg: float = float(b["regen"]) * (BURN_REGEN_CUT if int(b["burn"]) > 0 else 1.0)
 			b["hp"] = minf(float(b["hp_max"]), float(b["hp"]) + rg * dt)
 
+		# 경화 — 시간이 갈수록 방어력이 오른다. 장기전을 막으므로 답은 빠른 킬이나 파쇄다.
+		# **상한을 둔다.** 상한이 없으면 긴 싸움에서 방어력이 무한히 올라 어느 순간 전 편성이
+		# 수학적으로 무력화된다 — 기획이 엔드리스를 배제한 이유("감산 방어는 스탯 인플레와
+		# 양립이 안 된다")와 같은 문제다. 상한값은 「미결」이라 프로토가 임의로 골랐다.
+		if float(b["harden"]) > 0.0:
+			b["armor"] = float(b["armor_base"]) \
+				+ minf(HARDEN_CAP, float(b["harden"]) * float(b["alive"]))
+
 		if float(b["stun"]) > 0.0:
 			if float(b["hp"]) <= 0.0:
 				_kill(b)
 			continue                  # 스턴 — 모든 행동 정지
 
+		# 주박 — 적은 병력을 때리지 못하지만 성능은 떨어뜨린다. 반격 없는 전투에
+		# **전투 중 사건**을 공급하는 유일한 통로다. 병력은 사라지지 않으므로
+		# 죽음의 소용돌이는 생기지 않는다.
+		if bool(b["bind"]):
+			b["bind_cd"] = float(b["bind_cd"]) - dt
+			if float(b["bind_cd"]) <= 0.0:
+				b["bind_cd"] = BIND_INTERVAL
+				_cast_bind()
+
 		var spd: float = float(b["speed"])
+		# 광폭 — 체력이 낮아질수록 빨라진다. 마무리 못 하는 편성을 처벌한다.
+		if float(b["frenzy"]) > 0.0:
+			var lost: float = 1.0 - float(b["hp"]) / maxf(1.0, float(b["hp_max"]))
+			spd *= 1.0 + float(b["frenzy"]) * lost
 		if float(b["chill"]) > 0.0:
 			spd *= CHILL_MOVE
 
 		if float(b["x"]) > BOSS_STOP_X:
 			b["x"] = maxf(BOSS_STOP_X, float(b["x"]) - spd * dt)
 			if float(b["x"]) <= BOSS_STOP_X:
-				b["wall_cd"] = float(b["arch"]["wall_int"]) * 0.5
+				b["wall_cd"] = float(b["base"]["wall_int"]) * 0.5
 		else:
 			# 빙결은 공격속도도 떨어뜨린다
 			var atk_dt: float = dt * (CHILL_MOVE if float(b["chill"]) > 0.0 else 1.0)
 			b["wall_cd"] = float(b["wall_cd"]) - atk_dt
 			if float(b["wall_cd"]) <= 0.0:
-				b["wall_cd"] = float(b["wall_cd"]) + float(b["arch"]["wall_int"])
+				b["wall_cd"] = float(b["wall_cd"]) + float(b["base"]["wall_int"])
 				_wall_hp -= float(b["wall_dmg"])
 				_log_wall_lost += float(b["wall_dmg"])
 				_wall_flash = 1.0
@@ -993,12 +1656,42 @@ func _tick_bosses(dt: float) -> void:
 			_kill(b)
 
 
+# 주박이 병력에 거는 디버프. **어디에 걸리는지는 「미결」**(전체인지 칸을 지정하는지)이라
+# 프로토는 배치된 칸 중 랜덤 하나를 골랐다 — 그래야 "이 칸이 지금 흔들린다"가 화면에서 읽힌다.
+func _cast_bind() -> void:
+	var live: Array = []
+	for i in 9:
+		if _cells[i] != null:
+			live.append(i)
+	if live.is_empty():
+		return
+	var sq: Dictionary = _cells[live[_rng.randi_range(0, live.size() - 1)]]
+	sq["bind"] = maxf(float(sq["bind"]), BIND_AMOUNT)
+	sq["bind_t"] = maxf(float(sq["bind_t"]), BIND_DURATION)
+
+
 func _kill(b: Dictionary) -> void:
 	b["hp"] = 0.0
 	b["dead"] = true
 	b["death_t"] = 0.9
 	_killed += 1
-	_gold += int(b["gold"])
+	# 「사략 허가장」 — 조건절이 붙은 골드 카드. 조건에 맞는 부대(암살자)가 많을수록 세진다
+	var bonus: float = 0.0
+	for t in _tactics:
+		if t == null or str(t["stat"]) != "kill_gold":
+			continue
+		var n: int = _cells_matching(t["cond"])
+		bonus += float(t["val"]) * float(n)
+	_gold += int(round(float(b["gold"]) * (1.0 + bonus)))
+	# **성장형 유물 옵션이 여기서 자란다.** 조건은 자라는 속도를 정할 뿐이고,
+	# 자란 결과는 상시 수치라 유물의 영역이다(기획 「유물 — 등급과 태그」).
+	for r in _relics:
+		if r == null:
+			continue
+		for o in r["opts"]:
+			if str(o["stat"]) == "grow":
+				r["grown"] = int(r["grown"]) + 1
+				break
 	_last_kill_at = _elapsed
 	_pull_at = _elapsed + ADAPTIVE_REST
 	_log_kill_times.append(_elapsed - float(b["born_at"]))
@@ -1021,6 +1714,10 @@ func _tick_squads(dt: float) -> void:
 		sq["haste_t"] = maxf(0.0, float(sq["haste_t"]) - dt)
 		if float(sq["haste_t"]) <= 0.0:
 			sq["haste_mult"] = 1.0
+		# 디버프로 잃은 성능은 시간이 지나면 **완전히** 회복된다. 누적되지 않는다.
+		sq["bind_t"] = maxf(0.0, float(sq["bind_t"]) - dt)
+		if float(sq["bind_t"]) <= 0.0:
+			sq["bind"] = 0.0
 		# 축복은 시간이 지나면 걷힌다 — 사제가 자리를 뜨면 자연히 사라진다.
 		# 사제별로 따로 세므로 같은 사제가 다시 걸어도 값이 쌓이지 않고, 사제가 둘이면 합쳐진다.
 		var bless_sum: float = 0.0
@@ -1038,18 +1735,22 @@ func _tick_squads(dt: float) -> void:
 			sq["cd"] = float(sq["cd"]) + _period_now(sq)
 			sq["beats"] = int(sq["beats"]) + 1
 			var job: Dictionary = JOBS[sq["def"]["job"]]
+			var strikes: int = 0
 			if bool(job["cast"]):
-				_do_cast(idx, sq, target)
+				strikes = _do_cast(idx, sq, target)
 			else:
-				_do_basic(idx, sq, target)
-			# 유물은 부대의 박자에 실려 자동으로 나간다
-			_tick_relics(sq, target)
+				strikes = _do_basic(idx, sq, target)
+			# 유물은 **타격 수**로 찬다 — 박자가 아니다. 스택이 타격마다 붙으므로
+			# 인원이 곧 스택 속도가 된다(기획 「상태이상」). 다수 부대는 방어력에 막히는 대신
+			# 상태이상을 빨리 쌓고, 소수정예는 뚫는 대신 느리게 쌓는다.
+			_tick_relics(sq, target, strikes)
 			target = _target_boss()
 
 
-# 지금 이 부대의 실제 박자. 공속 버프(HASTE)는 주기를 나눈다.
+# 지금 이 부대의 실제 박자. 공속 버프(HASTE)와 유물·전술의 공격속도 옵션이 주기를 나눈다.
 func _period_now(sq: Dictionary) -> float:
-	return maxf(0.05, float(sq["period"]) / maxf(0.1, float(sq["haste_mult"])))
+	var spd: float = 1.0 + float(_mods_for(sq["def"], _index_of(sq))["spd"])
+	return maxf(0.05, float(sq["period"]) / maxf(0.1, float(sq["haste_mult"]) * spd))
 
 
 # 스턴을 맞으면 캐스팅 사이클이 통째로 날아간다 — 평타가 없어 그동안 아무것도 못 한다
@@ -1061,21 +1762,35 @@ func _stun_squad(sq: Dictionary) -> void:
 
 
 # 평타 — 한 박자에 인원 수만큼 개별 판정. 부대원이 각자 자기 주기로 때리지 않는다.
+# 타격당 딜은 체급이 고정하므로, 인원이 늘면 **총 화력이 그만큼 는다.**
 # 인원 하나의 판정 순서:
-#   ① 크리 굴림 (스탯이라 궁수·암살자만 기본치를 갖는다)
-#   ② 발동 판정 — 크리 직업은 크리가 곧 발동, 확률 직업은 스킬에 박힌 고정 확률
-#   ③ 스킬이 돌려준 타격 변형(추가타·배율·마법 전환·고정딜)을 그 타격에 반영
-func _do_basic(idx: int, sq: Dictionary, target) -> void:
+#   ① 명중 굴림 — **물리에만 있다.** 빗나가면 그 타격은 통째로 0이다
+#   ② 크리 굴림 (모든 유닛이 갖는 공통 스탯. 기본 0이라 공급원이 있어야 터진다)
+#   ③ 발동 판정 — 크리 직업은 크리가 곧 발동, 확률 직업은 스킬에 박힌 고정 확률
+#   ④ 스킬이 돌려준 타격 변형(추가타·배율·마법 전환·고정딜)을 그 타격에 반영
+# 돌려주는 값은 **실제로 나간 타격 수**다 — 유물이 이것으로 찬다.
+func _do_basic(idx: int, sq: Dictionary, target) -> int:
 	if target == null or target["dead"]:
-		return
+		return 0
+	var idx0: int = _index_of(sq)
+	var mods: Dictionary = _mods_for(sq["def"], idx0)
 	var trigger: String = str(JOBS[sq["def"]["job"]]["trigger"])
 	var chance: float = float(sq["def"]["skill"]["chance"])
 	var per: float = _per_hit(sq)
 	var curse: float = float(target["curse"])
 	var total: float = 0.0
 	var landed: int = 0
-	for _m in int(sq["members"]):
-		var crit: bool = float(sq["crit"]) > 0.0 and _rng.randf() < float(sq["crit"])
+	# **「테베의 팔랑크스」(규칙)가 인원 판정을 하나로 묶는다** — 한 박자에 인원 수만큼
+	# 쪼개 때리던 것을 한 방으로 합친다. 다수 부대가 감산을 뚫게 되는 대신,
+	# 타격 수가 1이 되어 상태이상 스택 속도와 유물 발동이 함께 느려진다.
+	var rolls: int = 1 if _rule_on("rule_unify") else int(sq["members"])
+	if rolls < int(sq["members"]):
+		per *= float(sq["members"])
+	# 크리는 모든 유닛의 공통 스탯이고, 유물·전술이 그 위에 얹는다
+	var crit_p: float = float(sq["crit"]) + float(mods["crit"])
+	var crit_m: float = float(sq["crit_mult"]) + float(mods["critmult"])
+	for _m in rolls:
+		var crit: bool = crit_p > 0.0 and _rng.randf() < crit_p
 		if crit:
 			sq["crits"] = int(sq["crits"]) + 1
 		var fire: bool = crit if trigger == "crit" \
@@ -1086,11 +1801,20 @@ func _do_basic(idx: int, sq: Dictionary, target) -> void:
 		sq["empower"] = 0.0
 		var hit: float = (per + emp + float(fx["bonus"])) * float(fx["amp"])
 		if crit:
-			hit *= float(sq["crit_mult"])
+			hit *= crit_m
 		var one: float = 0.0
+		var shots: int = 1 + int(fx["extra_hits"])
 		if str(fx["convert"]) != "":
-			# MAGIC_STRIKE — 그 타격만 마법으로 나간다. 감산이 아니라 비율을 탄다
-			one = _mag_damage(hit, str(fx["convert"]), target)
+			# MAGIC_STRIKE — 그 타격만 마법으로 나간다. 감산이 아니라 비율을 타고,
+			# **마법이 된 순간 명중 판정도 사라진다** — 마법은 무조건 적중한다
+			one = _mag_damage(hit * _elem_amp(sq["def"], idx0, str(fx["convert"])),
+				str(fx["convert"]), target)
+		elif not _phys_hits(target):
+			# 빗나감 — 그 타격은 통째로 날아간다. 저주도 함께 날아간다(타격이 없었으므로)
+			_log_total_hits += shots
+			_log_missed += shots
+			_log_phys_raw += hit * float(shots)
+			continue
 		else:
 			one = _phys_damage(hit, target)
 			_log_phys_raw += hit
@@ -1101,25 +1825,36 @@ func _do_basic(idx: int, sq: Dictionary, target) -> void:
 		# 저주는 타격마다 붙는 고정 추가피해다. 통함/막힘 미리보기가 _phys_damage 를 그대로
 		# 쓰므로 그 안에 넣지 않고 **여기서** 더한다 — 미리보기가 거짓말을 하면 안 된다.
 		one += curse
-		var shots: int = 1 + int(fx["extra_hits"])
 		total += one * float(shots)
 		landed += shots
+	if landed > 0:
+		sq["hits"] = int(sq["hits"]) + landed
+		sq["flash"] = 1.0
 	if total <= 0.0:
-		return
+		return landed
 	target["hp"] = float(target["hp"]) - total
 	target["flash"] = 1.0
 	sq["dmg"] = float(sq["dmg"]) + total
-	sq["hits"] = int(sq["hits"]) + landed
-	sq["flash"] = 1.0
 	if float(target["hp"]) <= 0.0:
 		_kill(target)
+	return landed
 
 
 # 캐스팅 — 평타를 포기한 둘. 캐스팅 자체가 곧 발동이라 스킬 엔진에 넘기기만 한다.
 # 대상만 다르다: 마법사는 보스에게, 사제는 아군에게 — 그 갈림도 CSV의 target 컬럼이 정한다.
-func _do_cast(idx: int, sq: Dictionary, target) -> void:
+#
+# **캐스터도 인원 축을 탄다 — 인원수가 곧 시전 횟수다**(기획 「인원이 하는 일」).
+# 소형 캐스터는 작은 마법을 여럿이, 체급이 클수록 굵은 마법을 소수가 시전한다.
+# 사제가 ALLY_RANDOM 이면 시전마다 대상을 다시 굴리므로, 소형 사제는 얇은 축복을
+# 여러 칸에 흩고 중형 사제는 굵게 몇 칸에 건다 — 같은 규칙에서 저절로 갈린다.
+func _do_cast(idx: int, sq: Dictionary, target) -> int:
 	sq["cast_flash"] = 1.0
-	_fire_skill(idx, sq, target)
+	var n: int = int(sq["members"])
+	for _m in n:
+		if _cells[idx] == null:
+			break
+		_fire_skill(idx, sq, target)
+	return n
 
 
 # ─── 스킬 엔진 ────────────────────────────────────────────────────────────
@@ -1178,11 +1913,15 @@ func _fire_skill(idx: int, sq: Dictionary, target) -> Dictionary:
 	var amount: float = float(sk["damage"])
 	match eff:
 		"NUKE", "NUKE_RANDOM", "NUKE_FREEZE":
-			# 마법은 인원과 무관하다 — 인원이 몇이든 결과가 같다
+			# 시전당 딜은 체급이 정하고, 인원은 시전 횟수를 정한다. **마법은 무조건 적중한다** —
+			# 명중 판정은 물리에만 있다. 다만 마법은 비율이라 시전이 굵든 잘든 총딜이 같다:
+			# 관통을 두고 다수 vs 소수정예를 고르는 선택이 마법 쪽에는 성립하지 않는다(기획).
 			if target == null or target["dead"]:
 				return fx
 			var elem: String = _elem_of(sq)
-			var one: float = _mag_damage(amount, elem, target) + float(target["curse"])
+			# 원소 데미지 옵션은 그 원소로 나가는 것에만 곱해진다 — 몰빵의 보상이 여기서도 난다
+			var amt: float = _per_hit(sq) * _elem_amp(sq["def"], idx, elem)
+			var one: float = _mag_damage(amt, elem, target) + float(target["curse"])
 			target["hp"] = float(target["hp"]) - one
 			target["flash"] = 1.0
 			sq["dmg"] = float(sq["dmg"]) + one
@@ -1199,11 +1938,11 @@ func _fire_skill(idx: int, sq: Dictionary, target) -> Dictionary:
 		"BUFF_ATK", "PACT_BUFF":
 			# PACT_BUFF 의 "대가"(사기 감소)는 미구현이다 — 사기 시스템 자체가 「미결」이라
 			# 이득만 넣고 그만큼 값을 크게 잡았다
-			_grant_bless(idx, sq, sk, amount)
+			_grant_bless(idx, sq, sk, _bless_amount(sq))
 		"BUFF_RANDOM":
 			# 수인족은 주사위가 정체성이다 — 축복이 나올지 공속이 나올지 매번 굴린다
 			if _rng.randf() < 0.5:
-				_grant_bless(idx, sq, sk, amount)
+				_grant_bless(idx, sq, sk, _bless_amount(sq))
 			else:
 				for j in _skill_targets(idx, sk):
 					_grant_haste(_cells[j], mult, dur)
@@ -1224,10 +1963,20 @@ func _fire_skill(idx: int, sq: Dictionary, target) -> Dictionary:
 		"GOLD_STEAL":
 			_gold += int(amount)
 		"CLEANSE":
-			pass    # 아군에게 붙는 디버프가 프로토에 없다 — 정화할 것이 아직 없어 빈 캐스팅이다
+			# 주박이 들어오면서 정화할 것이 생겼다 — 「주박」 접두사의 답 중 하나다
+			for j in _skill_targets(idx, sk):
+				_cells[j]["bind"] = 0.0
+				_cells[j]["bind_t"] = 0.0
 		_:
 			pass    # 리더 전용(MORALE·KILL_STACK_ATK·DEVOUR_STACK) 등 아직 없는 effect
 	return fx
+
+
+# 축복량도 체급이 정한다 — 대형 사제는 굵게 한 칸, 소형 사제는 얇게 여러 칸.
+# **축복 자체에는 축복이 붙지 않는다** (_per_hit 이 아니라 def.hit 을 쓴다) —
+# 사제끼리 서로 부풀리는 되먹임을 막는다. 주박은 그대로 탄다.
+func _bless_amount(sq: Dictionary) -> float:
+	return float(sq["def"]["hit"]) * _bind_mult(sq)
 
 
 # 축복 — 사제 칸 idx 를 열쇠로 둔다. 같은 사제의 재캐스팅은 자기 몫을 덮어쓸 뿐이고,
@@ -1320,18 +2069,25 @@ func _apply_push(b, dist: float) -> void:
 
 
 # ─── 유물 발동 ────────────────────────────────────────────────────────────
-func _tick_relics(sq: Dictionary, target) -> void:
+# 쿨다운이 초가 아니라 **타격 수**로 찬다. 스택은 타격마다 붙으므로 인원이 곧 스택 속도다 —
+# 같은 밀어내기도 다수 부대에선 잦고 작게, 소수정예에선 드물고 크게 나간다.
+# 동사의 변형을 체급 시스템이 공짜로 만든다(기획 「상태이상」·「구성 요소」).
+func _tick_relics(sq: Dictionary, target, strikes: int) -> void:
+	if strikes <= 0:
+		return
 	for r in _relics:
-		if r == null:
+		# **동사를 가진 것은 유니크뿐이다.** 나머지 등급은 옵션만 얹으므로 발동할 것이 없다
+		if r == null or str(r["verb"]) == "":
 			continue
-		if str(r["job"]) != str(sq["def"]["job"]):
+		if not _relic_covers(r, sq["def"]):
 			continue
-		var id: String = str(r["id"])
-		var n: int = int(sq["relic_beats"].get(id, 0)) + 1
-		if n < int(r["beats"]):
+		var id: String = str(r["uid"])
+		var n: int = int(sq["relic_beats"].get(id, 0)) + strikes
+		var need: int = int(r["hits"])
+		if n < need:
 			sq["relic_beats"][id] = n
 			continue
-		sq["relic_beats"][id] = 0
+		sq["relic_beats"][id] = n % need
 		if target == null or target["dead"]:
 			continue
 		_fire_relic(r, sq, target)
@@ -1340,14 +2096,9 @@ func _tick_relics(sq: Dictionary, target) -> void:
 func _fire_relic(r: Dictionary, sq: Dictionary, target: Dictionary) -> void:
 	sq["relic_flash"] = 1.0
 	_log_relic_fires += 1
-	# 효과량은 그 부대의 타격당 딜에 비례한다 — 다수는 잦고 작게, 소수정예는 드물고 크게
-	# 평타가 없는 둘은 눈금이 다르므로 맞춰준다 — 마법사는 캐스팅 딜, 사제는 축복값이 기준이다
+	# 효과량은 그 부대의 타격당 딜에 비례한다 — 체급이 그 값을 고정하므로,
+	# 대형 하나가 거는 밀어내기는 소형 아홉이 거는 것보다 한 번에 훨씬 크다.
 	var per: float = maxf(1.0, _per_hit(sq))
-	match str(sq["def"]["job"]):
-		"mage":
-			per = float(sq["power"]) / 6.0
-		"cleric":
-			per = float(sq["def"]["bless"]) * 4.0
 	# 부여는 스킬과 같은 문(_apply_*)을 쓴다 — 저항·상한 규칙이 한곳에만 있어야 어긋나지 않는다
 	match str(r["verb"]):
 		"push":
@@ -1366,17 +2117,19 @@ func _fire_relic(r: Dictionary, sq: Dictionary, target: Dictionary) -> void:
 			_apply_stun(target, STUN_DURATION)
 
 
-func _relic_count(job: String) -> int:
+# 이 유물의 옵션을 실제로 받고 있는 칸이 몇 개인가 — 태그가 내 판과 맞는지의 눈금이다
+func _relic_live(r: Dictionary) -> int:
 	var n: int = 0
-	for r in _relics:
-		if r != null and str(r["job"]) == job:
+	for sq in _cells:
+		if sq != null and _relic_covers(r, sq["def"]):
 			n += 1
 	return n
 
 
-func _has_relic(id: String) -> bool:
+# 유니크는 같은 것을 두 번 갖지 않는다. 굴려진 매직·레어는 매물마다 다르므로 중복 개념이 없다.
+func _has_relic(uid: String) -> bool:
 	for r in _relics:
-		if r != null and str(r["id"]) == id:
+		if r != null and str(r["uid"]) == uid:
 			return true
 	return false
 
@@ -1495,6 +2248,10 @@ func _press(mp: Vector2) -> void:
 		if _relic_rect(i).has_point(mp) and _relics[i] != null:
 			_toggle_pin("relic", i)
 			return
+	for i in TACTIC_SLOTS:
+		if _tactic_rect(i).has_point(mp) and _tactics[i] != null:
+			_toggle_pin("tactic", i)
+			return
 	var bi: int = _boss_at(mp)
 	if bi >= 0:
 		_toggle_pin("boss", bi)
@@ -1520,10 +2277,16 @@ func _release(mp: Vector2) -> void:
 
 	if kind == "cell":
 		var to: int = _cell_at(mp)
-		if to >= 0 and to != from:
-			var tmp = _cells[to]                    # 재배치는 즉시·무료 (미결 항목의 한쪽 극단)
-			_cells[to] = _cells[from]
-			_cells[from] = tmp
+		if to >= 0:
+			if to != from:
+				var tmp = _cells[to]                # 재배치는 즉시·무료 (미결 항목의 한쪽 극단)
+				_cells[to] = _cells[from]
+				_cells[from] = tmp
+			return
+		# 격자 밖으로 끌어내면 **부대를 뺀다.** 칸을 다른 유닛으로 바꾸려면 먼저 빼내야 한다.
+		# 「빼낸 부대의 처리」는 「미결」이라 프로토가 한쪽 극단을 골랐다 — **환불 없이 사라진다.**
+		if not _shop_area(mp):                      # 매대 위에 떨군 것은 오조작으로 보고 무시한다
+			_cells[from] = null
 		return
 
 	# 매대에서 끌어온 것 — 결제는 드롭 순간에만 이루어진다
@@ -1538,17 +2301,37 @@ func _release(mp: Vector2) -> void:
 		var to2: int = _cell_at(mp)
 		if to2 < 0:
 			return                                  # 무효한 곳에 놓으면 취소·무과금
-		_cells[to2] = _make_squad(card["def"])      # 칸이 차 있으면 교체 — 벤치가 없으니 이게 성장이다
-	else:
+		# 병사카드는 **빈 칸이나 같은 유닛의 칸에만** 놓인다. 다른 유닛 위에는 못 놓는다 —
+		# 칸을 갈아치우려면 기존 부대를 먼저 빼내야 한다(기획 「배치」).
+		var sq2 = _cells[to2]
+		var cnt: int = int(card["count"])
+		if sq2 == null:
+			_cells[to2] = _make_squad(card["def"], cnt)
+		elif str(sq2["def"]["id"]) == str(card["def"]["id"]):
+			# 카드의 마릿수가 부대에 합쳐지고, 체급이 정한 상한까지 자란다.
+			# **상한을 넘는 마릿수는 사라진다** — 만석에 붓는 것은 플레이어의 손해다.
+			sq2["members"] = mini(int(sq2["def"]["cap"]), int(sq2["members"]) + cnt)
+			sq2["flash"] = 1.0
+		else:
+			return                                  # 다른 유닛의 칸 — 취소·무과금
+	elif card["kind"] == "relic":
 		var slot: int = _relic_at(mp)
 		if slot < 0:
 			return                                  # 유물은 유물 슬롯 줄에만 놓인다
-		if _has_relic(str(card["def"]["id"])):
-			return                                  # 같은 유물을 두 번 갖지 않는다
+		if _has_relic(str(card["def"]["uid"])):
+			return                                  # 같은 유니크를 두 번 갖지 않는다
 		_relics[slot] = card["def"]
 		for sq in _cells:
 			if sq != null:
-				sq["relic_beats"][str(card["def"]["id"])] = 0
+				sq["relic_beats"][str(card["def"]["uid"])] = 0
+	else:
+		# 전술카드는 전술 슬롯 줄에만 놓인다 — 목적지가 문법을 정한다
+		var tslot: int = _tactic_at(mp)
+		if tslot < 0:
+			return
+		if _has_tactic(str(card["def"]["id"])):
+			return                                  # 같은 전술을 두 번 갖지 않는다
+		_tactics[tslot] = card["def"]
 	_gold -= price
 	_shop[from] = null                              # 구매한 슬롯은 다음 갱신까지 빈 채로 둔다
 
@@ -1569,10 +2352,23 @@ func _cell_at(mp: Vector2) -> int:
 	return -1
 
 
+# 매대·유물 줄 위 — 부대를 여기에 떨군 것은 빼내려던 게 아니라 오조작으로 본다.
+# 전투를 곁눈질하며 조작하는 게임에서 오클릭이 부대 상실이 되면 안 된다.
+func _shop_area(mp: Vector2) -> bool:
+	return mp.y >= SHOP_ORIGIN.y
+
+
 func _relic_at(mp: Vector2) -> int:
 	for i in RELIC_SLOTS:
 		if _relic_rect(i).has_point(mp):
 			return i if _relics[i] == null else _free_relic_slot()
+	return -1
+
+
+func _tactic_at(mp: Vector2) -> int:
+	for i in TACTIC_SLOTS:
+		if _tactic_rect(i).has_point(mp):
+			return i if _tactics[i] == null else _free_tactic_slot()
 	return -1
 
 
@@ -1588,6 +2384,11 @@ func _card_rect(idx: int) -> Rect2:
 
 func _relic_rect(idx: int) -> Rect2:
 	return Rect2(RELICROW_ORIGIN + Vector2(float(idx) * (RELIC_SLOT.x + RELIC_GAP), 0.0), RELIC_SLOT)
+
+
+func _tactic_rect(idx: int) -> Rect2:
+	return Rect2(TACTICROW_ORIGIN + Vector2(float(idx) * (RELIC_SLOT.x + RELIC_GAP), 0.0),
+		RELIC_SLOT)
 
 
 # 보스는 배열 인덱스가 아니라 스케줄 번호로 가리킨다 — 앞 보스가 죽으면 배열이 밀리기 때문이다
@@ -1621,14 +2422,26 @@ func _upgrade_rect() -> Rect2:
 
 # ─── 스프라이트 ───────────────────────────────────────────────────────────
 # 한 칸 안의 무리는 줄을 맞추지 않고 어긋나게 세운다. 정렬하면 오히려 빈약해 보인다.
+# 인원 상한이 아니라 **지금 서 있는 인원수**로 세운다 — 보이는 인원수가 곧 타격 분할이라
+# 화면이 거짓말하지 않는다. 부대가 자라면 실루엣이 그대로 두꺼워진다.
+const MEMBER_SPOTS := [
+	Vector2(-38.0, -20.0), Vector2(-6.0, -26.0), Vector2(26.0, -18.0),
+	Vector2(-44.0, 4.0),   Vector2(-12.0, -2.0), Vector2(20.0, 6.0),
+	Vector2(-30.0, 26.0),  Vector2(2.0, 30.0),   Vector2(36.0, 22.0),
+]
+
+
 func _member_offsets(n: int) -> Array:
 	match n:
 		1: return [Vector2(0.0, 8.0)]
 		2: return [Vector2(-24.0, -6.0), Vector2(22.0, 14.0)]
 		3: return [Vector2(-28.0, -10.0), Vector2(6.0, 10.0), Vector2(32.0, -4.0)]
-		4: return [Vector2(-30.0, -14.0), Vector2(4.0, -4.0), Vector2(-16.0, 20.0), Vector2(28.0, 14.0)]
-		_: return [Vector2(-36.0, -16.0), Vector2(-8.0, -22.0), Vector2(20.0, -10.0),
-			Vector2(-26.0, 14.0), Vector2(2.0, 22.0), Vector2(30.0, 12.0)]
+		4: return [Vector2(-30.0, -14.0), Vector2(4.0, -4.0), Vector2(-16.0, 20.0),
+			Vector2(28.0, 14.0)]
+	var out: Array = []
+	for i in mini(n, MEMBER_SPOTS.size()):
+		out.append(MEMBER_SPOTS[i])
+	return out
 
 
 func _sync_sprites() -> void:
@@ -1657,7 +2470,9 @@ func _sync_sprites() -> void:
 			if s.sprite_frames != f:
 				s.sprite_frames = f
 				s.animation = &"idle"
-			s.scale = Vector2.ONE * float(MEMBER_SCALE.get(n, 2.5))
+			# 개체 크기는 **체급**이 정한다 — 인원이 채워져도 하나하나의 크기는 그대로다.
+			# 실루엣이 두꺼워지는 것이 곧 부대가 자란 표식이 된다. 정수배만 쓴다.
+			s.scale = Vector2.ONE * float(SIZES[d["size"]]["scale"])
 			s.position = base + offs[m]
 			# 애니 한 바퀴 ≈ 박자 한 번. 칸마다 리듬이 달라 직업이 박자로 식별된다.
 			if running:
@@ -1682,7 +2497,8 @@ func _sync_sprites() -> void:
 				s2.visible = false
 			continue
 		var ud: Dictionary = card["def"]
-		var n2: int = int(ud["members"])
+		# 카드에 담긴 **마릿수 그대로** 세운다 — 실루엣이 체급과 마릿수를 읽기 전에 전달한다
+		var n2: int = int(card["count"])
 		var offs2: Array = _member_offsets(n2)
 		var c: Vector2 = _card_rect(i).position + Vector2(CARD.x * 0.5, 126.0)
 		for m in MAX_MEMBERS:
@@ -1694,7 +2510,7 @@ func _sync_sprites() -> void:
 			var f2: SpriteFrames = _frames[ud["sprite"]]
 			if s3.sprite_frames != f2:
 				s3.sprite_frames = f2
-			s3.scale = Vector2.ONE * float(MEMBER_SCALE.get(n2, 2.5)) * 0.72
+			s3.scale = Vector2.ONE * float(SIZES[ud["size"]]["scale"]) * 0.75
 			s3.position = c + offs2[m] * 0.78
 			s3.modulate = Color.WHITE
 			_play(s3, &"idle")
@@ -1706,11 +2522,11 @@ func _sync_sprites() -> void:
 			continue
 		var b: Dictionary = _bosses[i]
 		bs.visible = true
-		var bf: SpriteFrames = _frames[b["arch"]["sprite"]]
+		var bf: SpriteFrames = _frames[b["base"]["sprite"]]
 		if bs.sprite_frames != bf:
 			bs.sprite_frames = bf
 			bs.animation = &"idle"
-		bs.scale = Vector2.ONE * float(b["arch"]["scale"])
+		bs.scale = Vector2.ONE * float(BOSS_SCALE.get(str(b["base"]["size"]), 5))
 		bs.position = Vector2(float(b["x"]), float(b["lane_y"]))
 		bs.speed_scale = _speed if running else 1.0
 		if b["dead"]:
@@ -1805,9 +2621,111 @@ func _draw_shop_bg() -> void:
 
 
 func _card_color(card: Dictionary) -> Color:
+	if card["kind"] == "tactic":
+		return _tactic_color(card["def"])
 	if card["kind"] == "relic":
 		return card["def"]["color"]
 	return JOBS[card["def"]["job"]]["color"]
+
+
+# 종류마다 카드 얼굴이 다르다 — 호버해 읽기 전에 무엇에 거는 카드인지가 잡혀야 한다
+func _tactic_color(t: Dictionary) -> Color:
+	match str(t["kind"]):
+		"cell":
+			return Color(0.58, 0.82, 0.72)
+		"gold":
+			return Color(0.96, 0.84, 0.42)
+	return Color(0.82, 0.56, 0.92)      # 규칙 — 유일하게 "바꾸는" 종류라 색이 확실히 갈린다
+
+
+func _tactic_kind_name(t: Dictionary) -> String:
+	match str(t["kind"]):
+		"cell":
+			return "전술 · 칸"
+		"gold":
+			return "전술 · 골드"
+	return "전술 · 규칙"
+
+
+# 조건절을 사람이 읽는 문장으로. **직업·종족은 종류가 아니라 조건절이다.**
+func _tactic_cond_text(t: Dictionary) -> String:
+	var c: Dictionary = t["cond"]
+	if c.has("job"):
+		return "%s 부대만" % str(JOBS[str(c["job"])]["name"])
+	if c.has("race"):
+		return "%s 부대만" % str(c["race"])
+	return ""
+
+
+func _tactic_effect_text(t: Dictionary) -> String:
+	var v: float = float(t["val"])
+	match str(t["stat"]):
+		"dmg":
+			return "데미지 +%d%%" % int(round(v * 100.0))
+		"spd":
+			return "공격속도 +%d%%" % int(round(v * 100.0))
+		"crit":
+			return "치명타 확률 +%d%%" % int(round(v * 100.0))
+		"critmult":
+			return "치명타 배율 +%d%%" % int(round(v * 100.0))
+		"flat":
+			return "타격당 +%.1f" % v
+		"gold_sec":
+			return "시간 골드 +%.1f/s" % v
+		"reroll_cut":
+			return "연속 리롤 가산 -%d%%" % int(round(v * 100.0))
+		"kill_gold":
+			return "킬 골드 +%d%% (해당 칸마다)" % int(round(v * 100.0))
+		"rule_unify":
+			return "부대의 인원 판정을 하나로 묶는다"
+		"rule_floor":
+			return "물리 감산에 최소 보장 1"
+		"rule_crit":
+			return "전 유닛 치명타 기본값 +%d%%" % int(round(v * 100.0))
+		"rule_diag":
+			return "인접 판정에 대각선이 들어온다"
+	return ""
+
+
+# 「칸」 종류의 얼굴이자, 세 종류 공통의 우측 상세 표기다.
+# 이 카드의 효과가 어느 칸에 걸리는지를 미니 격자로 칠해 보여준다 —
+# 칸과 무관한 효과(경제·규칙)면 비워 둔다.
+func _draw_mini_grid(pos: Vector2, cell: float, cells: Array, col: Color) -> void:
+	for i in 9:
+		var r := Rect2(pos + Vector2(float(i % 3) * cell, float(i / 3) * cell),
+			Vector2(cell - 2.0, cell - 2.0))
+		if cells.has(i):
+			_overlay.draw_rect(r, col)
+		else:
+			_overlay.draw_rect(r, Color(0.22, 0.23, 0.28))
+
+
+func _draw_tactic_card(r: Rect2, t: Dictionary, col: Color, afford: bool) -> void:
+	_txtw(_font, r.position + Vector2(10.0, 28.0), str(t["name"]), 20,
+		Color(0.97, 0.97, 1.0) if afford else Color(0.55, 0.55, 0.60), CARD.x - 20.0)
+	_txt(_font_s, r.position + Vector2(10.0, 50.0),
+		"%s · %d등급" % [_tactic_kind_name(t), int(t["grade"])], 17, col)
+	# 카드 얼굴 — 「칸」은 3×3 그림, 나머지 둘은 각자의 표식
+	var face := r.position + Vector2(10.0, 62.0)
+	if str(t["kind"]) == "cell":
+		_draw_mini_grid(face, 22.0, t["cells"], col)
+	else:
+		var mark := Rect2(face, Vector2(64.0, 64.0))
+		_overlay.draw_rect(mark, col.darkened(0.55))
+		_txt(_font_b, face + Vector2(18.0, 44.0),
+			"G" if str(t["kind"]) == "gold" else "R", 34, col)
+	var cond: String = _tactic_cond_text(t)
+	if cond != "":
+		_txtw(_font_s, r.position + Vector2(82.0, 78.0), cond, 17,
+			Color(0.98, 0.90, 0.58), CARD.x - 92.0)
+	_txtw(_font_s, r.position + Vector2(10.0, 148.0), _tactic_effect_text(t), 17,
+		Color(0.86, 0.90, 0.96), CARD.x - 20.0)
+	# 역사 유래 한 줄 — 전술명이 실제로 벌어졌던 전투·인물의 것임을 알린다
+	_txtw(_font_s, r.position + Vector2(10.0, r.size.y - 62.0), str(t["lore"]), 15,
+		Color(0.56, 0.59, 0.66), CARD.x - 20.0)
+	if _has_tactic(str(t["id"])):
+		_txt(_font_s, r.position + Vector2(96.0, r.size.y - 14.0), "이미 보유", 17,
+			Color(0.95, 0.72, 0.55))
 
 
 # ─── 그리기: 오버레이 (스프라이트 위) ─────────────────────────────────────
@@ -1819,6 +2737,7 @@ func _draw_overlay() -> void:
 	_draw_bosses_hud()
 	_draw_shop_text()
 	_draw_relic_row()
+	_draw_tactic_row()
 	_draw_side_panels()
 	if _detail_kind == "":
 		_draw_stats_panel()    # 카드가 없을 때만 측정 패널이 보인다 — 자리를 나눠 쓴다
@@ -1879,11 +2798,10 @@ func _draw_top_hud() -> void:
 	qx += 90.0
 	for i in range(_next_spawn + 1, mini(_schedule.size(), _next_spawn + 6)):
 		var e: Dictionary = _schedule[i]
-		var a: Dictionary = e["arch"]
-		var tint: Color = a["tint"]
+		var tint: Color = e["tint"]
 		_overlay.draw_rect(Rect2(qx, 84.0, 150.0, 26.0), tint.darkened(0.72))
 		_txt(_font_s, Vector2(qx + 8.0, 104.0),
-			"%s %.0fs" % [a["name"], maxf(0.0, float(e["at"]) - _elapsed)], 19, tint)
+			"%s %.0fs" % [e["name"], maxf(0.0, float(e["at"]) - _elapsed)], 19, tint)
 		qx += 160.0
 
 
@@ -1897,14 +2815,17 @@ func _draw_forecast() -> void:
 			Color(0.55, 0.58, 0.66))
 		return
 	var e: Dictionary = _schedule[_next_spawn]
-	var a: Dictionary = e["arch"]
-	var tint: Color = a["tint"]
+	var tint: Color = e["tint"]
 	var left: float = maxf(0.0, _spawn_due() - _elapsed)
 	_overlay.draw_rect(r, tint.darkened(0.35), false, 2.0)
-	_txt(_font_s, r.position + Vector2(12.0, 24.0), "예고", 18, Color(0.60, 0.63, 0.70))
-	_txt(_font_b, r.position + Vector2(12.0, 54.0), "%s #%d" % [str(a["name"]), _next_spawn + 1], 26, tint)
-	_txt(_font_b, r.position + Vector2(r.size.x - 82.0, 54.0), "%.0fs" % left, 26,
+	# **모든 적이 예고된다.** 적이 정예와 막보스뿐이라 예고가 뜸하게 갱신되고,
+	# 그래서 "예고가 떴다 = 생각할 것이 왔다"가 신호로 고정된다(기획 「예고 슬롯」).
+	_txt(_font_s, r.position + Vector2(12.0, 24.0),
+		"예고 · %s" % str(ACTS[int(e["act"])]["name"]), 18, Color(0.60, 0.63, 0.70))
+	_txt(_font_b, r.position + Vector2(r.size.x - 82.0, 26.0), "%.0fs" % left, 24,
 		Color(0.95, 0.82, 0.45) if left > 5.0 else Color(1.0, 0.50, 0.44))
+	# 이름이 길어졌다(진영 베이스 이름) — 남은 시간과 줄을 나눠 겹치지 않게 한다
+	_txtw(_font_b, r.position + Vector2(12.0, 56.0), str(e["name"]), 26, tint, r.size.x - 24.0)
 	# 태그 — 예고·구매·식별에서 같은 단어가 그대로 읽혀야 한다
 	_txtw(_font_s, r.position + Vector2(12.0, 80.0), " · ".join(_entry_tags(e)), 19,
 		Color(0.82, 0.86, 0.94), r.size.x - 24.0)
@@ -1953,10 +2874,10 @@ func _draw_cells_hud() -> void:
 func _draw_cell_relics(r: Rect2, sq: Dictionary) -> void:
 	var x: float = r.size.x - 34.0
 	for rel in _relics:
-		if rel == null or str(rel["job"]) != str(sq["def"]["job"]):
+		if rel == null or str(rel["verb"]) == "" or not _relic_covers(rel, sq["def"]):
 			continue
-		var got: int = int(sq["relic_beats"].get(str(rel["id"]), 0))
-		var prog: float = clampf(float(got) / float(rel["beats"]), 0.0, 1.0)
+		var got: int = int(sq["relic_beats"].get(str(rel["uid"]), 0))
+		var prog: float = clampf(float(got) / float(rel["hits"]), 0.0, 1.0)
 		var ir := Rect2(r.position + Vector2(x, 36.0), Vector2(26.0, 8.0))
 		_overlay.draw_rect(ir, Color(0.15, 0.15, 0.19))
 		_overlay.draw_rect(Rect2(ir.position, Vector2(ir.size.x * prog, ir.size.y)), rel["color"])
@@ -1980,17 +2901,17 @@ func _draw_bosses_hud() -> void:
 	for b in _bosses:
 		if b["dead"]:
 			continue
-		var a: Dictionary = b["arch"]
+		var e: Dictionary = b["entry"]
 		var x: float = float(b["x"])
 		var y: float = float(b["lane_y"])
-		var tint: Color = a["tint"]
+		var tint: Color = e["tint"]
 		var ratio: float = clampf(float(b["hp"]) / float(b["hp_max"]), 0.0, 1.0)
 		var bar := Rect2(x - 110.0, y - 132.0, 220.0, 15.0)
 		_bar(bar, ratio, Color(0.84, 0.28, 0.32), Color(0.16, 0.09, 0.11))
 		_overlay.draw_rect(bar, Color(0.90, 0.85, 0.60) if b == target else Color(0.45, 0.30, 0.34),
 			false, 2.0)
 		_txt(_font, Vector2(bar.position.x, bar.position.y - 30.0),
-			"%s #%d" % [a["name"], int(b["index"]) + 1], 21, tint)
+			"%s #%d" % [e["name"], int(b["index"]) + 1], 21, tint)
 		_txtw(_font_s, Vector2(bar.position.x, bar.position.y - 8.0),
 			" · ".join(b["tags"]), 17, Color(0.88, 0.90, 0.96), 260.0)
 
@@ -2028,7 +2949,9 @@ func _draw_shop_text() -> void:
 		var afford: bool = _gold >= int(card["price"])
 		var col: Color = _card_color(card)
 		if card["kind"] == "unit":
-			_draw_unit_card(r, card["def"], col, afford, target)
+			_draw_unit_card(r, card["def"], int(card["count"]), col, afford, target)
+		elif card["kind"] == "tactic":
+			_draw_tactic_card(r, card["def"], col, afford)
 		else:
 			_draw_relic_card(r, card["def"], col, afford)
 		_txt(_font_b, r.position + Vector2(10.0, r.size.y - 14.0), "%dG" % int(card["price"]), 24,
@@ -2072,29 +2995,38 @@ func _skill_desc(d: Dictionary) -> String:
 		.replace("@dur@", "%.1f" % float(sk["dur"]))
 
 
-func _draw_unit_card(r: Rect2, d: Dictionary, col: Color, afford: bool, target) -> void:
+# 병사카드는 부대가 아니라 **병사 묶음**이다 — 이름·체급·마릿수가 먼저 읽혀야 한다.
+# 통함/딜 0 사전 표시는 여기 남긴다. 구매 판단은 흐르는 시간 속에서 즉시 이뤄져야 해서,
+# 매물만은 호버 없이도 읽히게 뒀다. **타격당 딜은 체급이 고정하므로 마릿수와 무관하다** —
+# 표시가 부대를 채운 뒤에도 거짓말하지 않는다.
+func _draw_unit_card(r: Rect2, d: Dictionary, count: int, col: Color, afford: bool,
+		target) -> void:
 	var job: Dictionary = JOBS[d["job"]]
+	var sz: Dictionary = SIZES[d["size"]]
 	_txt(_font, r.position + Vector2(10.0, 28.0), str(d["name"]), 21,
 		Color(0.97, 0.97, 1.0) if afford else Color(0.55, 0.55, 0.60))
 	_txt(_font_s, r.position + Vector2(10.0, 50.0),
 		"%s · %s" % [str(d["race"]), str(job["name"])], 17, col)
 	var beat_label: String = "캐스팅 %.2fs" % float(d["period"]) if bool(job["cast"]) \
 		else "박자 %.2fs" % float(d["period"])
+	# 체급이 어휘가 된다 — "중장갑은 소형을 막는다"가 접두사 어휘와 같은 문법으로 학습된다
 	_txt(_font_s, r.position + Vector2(10.0, 72.0),
-		"%d명 · %s" % [int(d["members"]), beat_label], 17, Color(0.70, 0.73, 0.80))
+		"%s · %d명 (상한 %d)" % [str(sz["name"]), count, int(d["cap"])], 17,
+		Color(0.86, 0.88, 0.94))
+	_txt(_font_s, r.position + Vector2(10.0, 92.0), beat_label, 17, Color(0.70, 0.73, 0.80))
 	# 유닛은 저마다 고유 스킬을 하나씩 갖는다 — 카드 한 장에 읽을 것이 이름 하나로 끝나야 한다
-	_txtw(_font_s, r.position + Vector2(10.0, 94.0), str(d["skill"]["name"]), 17,
+	_txtw(_font_s, r.position + Vector2(10.0, 112.0), str(d["skill"]["name"]), 17,
 		Color(0.98, 0.90, 0.58), CARD.x - 20.0)
 
+	var per: float = float(d["hit"])
 	if str(d["job"]) == "cleric":
 		_txt(_font_s, r.position + Vector2(10.0, r.size.y - 48.0),
-			("아군 한 칸에 타격당 +%.1f" % float(d["bless"])) if float(d["bless"]) > 0.0
-			else "아군의 디버프를 정화", 17, Color(0.95, 0.88, 0.55))
+			("아군에 타격당 +%.1f" % per) if per > 0.0 else "아군의 디버프를 정화", 17,
+			Color(0.95, 0.88, 0.55))
 		_txt(_font_s, r.position + Vector2(10.0, r.size.y - 30.0),
-			"캐스팅마다 다시 건다", 17, Color(0.70, 0.73, 0.80))
+			"%d명 = 캐스팅마다 %d회" % [count, count], 17, Color(0.70, 0.73, 0.80))
 		return
 	if str(job["atk"]) == "phys":
-		var per: float = float(d["power"]) / float(d["members"])
 		var one: float = _phys_damage(per, target)
 		var ok: bool = one > 0.0
 		var chip := Rect2(r.position + Vector2(10.0, r.size.y - 74.0), Vector2(56.0, 20.0))
@@ -2111,40 +3043,80 @@ func _draw_unit_card(r: Rect2, d: Dictionary, col: Color, afford: bool, target) 
 		_txtw(_font_s, r.position + Vector2(74.0, r.size.y - 58.0), per_txt, 17,
 			Color(0.82, 0.86, 0.92), CARD.x - 84.0)
 		if target != null:
+			# 이 카드만 놓았을 때의 화력. 부대를 채우면 인원에 비례해 는다
 			_txtw(_font_s, r.position + Vector2(10.0, r.size.y - 38.0),
-				"초당 %.0f" % (one * float(d["members"]) / float(d["period"])), 17,
+				"초당 %.0f (%d명)" % [one * float(count) / float(d["period"]), count], 17,
 				Color(0.70, 0.73, 0.80) if ok else Color(1.0, 0.66, 0.62), CARD.x - 20.0)
 		return
 	var elem: String = str(d["elem"])
 	var rs: float = _res_now(target, elem)
-	var out: float = _mag_damage(float(d["power"]), elem, target)
+	var out: float = _mag_damage(per, elem, target)
 	var ecol: Color = _elem_color(elem)
 	var chip2 := Rect2(r.position + Vector2(10.0, r.size.y - 74.0), Vector2(74.0, 20.0))
 	_overlay.draw_rect(chip2, ecol.darkened(0.55))
 	_txt(_font_s, chip2.position + Vector2(6.0, 16.0),
 		"%s %d%%" % [_elem_name(elem), int(round(rs * 100.0))], 16, ecol)
 	_txtw(_font_s, r.position + Vector2(94.0, r.size.y - 58.0),
-		"%.0f → %.0f" % [float(d["power"]), out], 17, Color(0.82, 0.86, 0.92), CARD.x - 104.0)
+		"시전당 %.0f → %.0f" % [per, out], 17, Color(0.82, 0.86, 0.92), CARD.x - 104.0)
 	_txtw(_font_s, r.position + Vector2(10.0, r.size.y - 38.0),
-		"초당 %.0f · 인원 무관" % (out / float(d["period"])), 17,
+		"초당 %.0f (%d회 시전)" % [out * float(count) / float(d["period"]), count], 17,
 		Color(0.70, 0.73, 0.80) if rs < 0.5 else Color(1.0, 0.72, 0.66), CARD.x - 20.0)
 
 
+# 태그를 사람이 읽는 한 단어로. **태그는 유물 하나에 하나뿐**이라 이 한 줄이면 걸러진다.
+func _relic_tag_text(it: Dictionary) -> String:
+	match str(it["tag"]):
+		"job":
+			return "[%s]" % str(JOBS[str(it["val"])]["name"])
+		"race":
+			return "[%s]" % str(it["val"])
+	return "[전체]"
+
+
+func _opt_text(o: Dictionary, grown: int) -> String:
+	var v: float = float(o["val"])
+	match str(o["stat"]):
+		"dmg":
+			return "데미지 +%d%%" % int(round(v * 100.0))
+		"spd":
+			return "공격속도 +%d%%" % int(round(v * 100.0))
+		"crit":
+			return "치명타 확률 +%d%%" % int(round(v * 100.0))
+		"critmult":
+			return "치명타 배율 +%d%%" % int(round(v * 100.0))
+		"flat":
+			return "타격당 +%.1f" % v
+		"elem":
+			return "%s 데미지 +%d%%" % [_elem_name(str(o["elem"])), int(round(v * 100.0))]
+		"grow":
+			# 성장형 — 조건이 충족될 때마다 값이 누적된다. 지금까지 얼마나 자랐는지를 같이 적는다
+			return "킬마다 데미지 +%d%% 누적 (현재 +%d%%)" % [int(round(v * 100.0)),
+				int(round(v * float(grown) * 100.0))]
+	return ""
+
+
 func _draw_relic_card(r: Rect2, it: Dictionary, col: Color, afford: bool) -> void:
-	_txt(_font, r.position + Vector2(10.0, 28.0), str(it["name"]), 21,
-		Color(0.97, 0.97, 1.0) if afford else Color(0.55, 0.55, 0.60))
-	_txt(_font_s, r.position + Vector2(10.0, 50.0), "유물 · %d박자" % int(it["beats"]), 17, col)
-	# [직업] 태그가 수행 주체를 정한다 — 그 직업이 없으면 살 수는 있어도 나가지 않는다
-	var jname: String = str(JOBS[it["job"]]["name"])
-	var have: int = _relic_count(str(it["job"]))
-	_txt(_font_s, r.position + Vector2(10.0, 72.0), "[%s]  보유 %d칸" % [jname, have], 17,
-		Color(0.85, 0.90, 0.98) if have > 0 else Color(1.0, 0.66, 0.60))
-	_txtw(_font, r.position + Vector2(10.0, 116.0), str(it["short"]), 20, col, CARD.x - 20.0)
-	if _has_relic(str(it["id"])):
-		_txt(_font_s, r.position + Vector2(10.0, 156.0), "이미 보유", 18, Color(1.0, 0.70, 0.62))
-	else:
-		_txt(_font_s, r.position + Vector2(10.0, 156.0), "유물 슬롯 줄에", 18, Color(0.66, 0.68, 0.75))
-		_txt(_font_s, r.position + Vector2(10.0, 178.0), "끌어다 놓는다", 18, Color(0.66, 0.68, 0.75))
+	var g: Dictionary = RELIC_GRADES[str(it["grade"])]
+	_txtw(_font, r.position + Vector2(10.0, 28.0), str(it["name"]), 20,
+		Color(0.97, 0.97, 1.0) if afford else Color(0.55, 0.55, 0.60), CARD.x - 20.0)
+	_txt(_font_s, r.position + Vector2(10.0, 50.0),
+		"유물 · %s · %s" % [str(g["name"]), str(it["base"]["name"])], 17, col)
+	# 태그가 옵션을 받을 부대를 정한다 — 내 판에 그 부대가 없으면 살 수는 있어도 아무 일도 없다
+	var live: int = _relic_live(it)
+	_txt(_font_s, r.position + Vector2(10.0, 72.0),
+		"%s  받는 칸 %d" % [_relic_tag_text(it), live], 17,
+		Color(0.85, 0.90, 0.98) if live > 0 else Color(1.0, 0.66, 0.60))
+	var y: float = 100.0
+	for o in it["opts"]:
+		_txtw(_font_s, r.position + Vector2(10.0, y), _opt_text(o, int(it["grown"])), 17,
+			Color(0.86, 0.90, 0.96), CARD.x - 20.0)
+		y += 20.0
+	if str(it["verb"]) != "":
+		_txtw(_font_s, r.position + Vector2(10.0, y + 6.0),
+			"%s — %d타격마다" % [str(it["short"]), int(it["hits"])], 17, col, CARD.x - 20.0)
+	if _has_relic(str(it["uid"])):
+		_txt(_font_s, r.position + Vector2(10.0, r.size.y - 34.0), "이미 보유", 18,
+			Color(1.0, 0.70, 0.62))
 
 
 func _draw_relic_row() -> void:
@@ -2154,19 +3126,40 @@ func _draw_relic_row() -> void:
 		if rel == null:
 			_overlay.draw_rect(r, Color(0.10, 0.105, 0.13))
 			_overlay.draw_rect(r, Color(0.22, 0.23, 0.28), false, 2.0)
-			_txt(_font_s, r.position + Vector2(46.0, 34.0), "빈 슬롯", 18, Color(0.34, 0.36, 0.42))
+			_txt(_font_s, r.position + Vector2(38.0, 34.0), "유물 슬롯", 18, Color(0.34, 0.36, 0.42))
 			continue
 		var col: Color = rel["color"]
-		var jname: String = str(JOBS[rel["job"]]["name"])
-		var live: int = 0
-		for sq in _cells:
-			if sq != null and str(sq["def"]["job"]) == str(rel["job"]):
-				live += 1
+		var live: int = _relic_live(rel)
 		_overlay.draw_rect(r, col.darkened(0.78))
 		_overlay.draw_rect(r, col.darkened(0.15 if live > 0 else 0.65), false, 2.0)
-		_txt(_font, r.position + Vector2(8.0, 24.0), str(rel["name"]), 19, Color(0.96, 0.96, 1.0))
-		_txt(_font_s, r.position + Vector2(8.0, 46.0), "[%s] %d칸" % [jname, live], 17,
+		_txtw(_font, r.position + Vector2(8.0, 24.0), str(rel["name"]), 18,
+			Color(0.96, 0.96, 1.0), r.size.x - 16.0)
+		_txt(_font_s, r.position + Vector2(8.0, 46.0),
+			"%s %s %d칸" % [str(RELIC_GRADES[str(rel["grade"])]["name"]),
+				_relic_tag_text(rel), live], 17,
 			col if live > 0 else Color(1.0, 0.66, 0.60))
+
+
+# 전술 슬롯 줄 — 보유 상한이 있다. 상한이 없으면 후반에 규칙이 쌓여
+# 아무도 자기 게임의 규칙을 못 읽는다(기획 「구성 요소」).
+func _draw_tactic_row() -> void:
+	for i in TACTIC_SLOTS:
+		var r: Rect2 = _tactic_rect(i)
+		var t = _tactics[i]
+		if t == null:
+			_overlay.draw_rect(r, Color(0.10, 0.105, 0.13))
+			_overlay.draw_rect(r, Color(0.22, 0.23, 0.28), false, 2.0)
+			_txt(_font_s, r.position + Vector2(34.0, 34.0), "전술 슬롯", 18, Color(0.34, 0.36, 0.42))
+			continue
+		var col: Color = _tactic_color(t)
+		_overlay.draw_rect(r, col.darkened(0.78))
+		_overlay.draw_rect(r, col.darkened(0.15), false, 2.0)
+		_txtw(_font, r.position + Vector2(8.0, 24.0), str(t["name"]), 18,
+			Color(0.96, 0.96, 1.0), r.size.x - 46.0)
+		_txt(_font_s, r.position + Vector2(8.0, 46.0), _tactic_kind_name(t), 17, col)
+		# 「칸」 카드는 칠한 칸을 슬롯에서도 보여준다 — 판과 겹치는지가 그림 둘로 끝나야 한다
+		if str(t["kind"]) == "cell":
+			_draw_mini_grid(r.position + Vector2(r.size.x - 34.0, 10.0), 10.0, t["cells"], col)
 
 
 func _draw_side_panels() -> void:
@@ -2226,14 +3219,16 @@ func _draw_stats_panel() -> void:
 	_txt(_font_s, p + Vector2(14.0, 134.0), "성벽 총 손실    %d" % int(_log_wall_lost), 18,
 		Color(0.72, 0.76, 0.84))
 	var zero: float = _zero_ratio()
-	_txt(_font_s, p + Vector2(14.0, 158.0), "딜 0 타격 비율  %.0f%%" % zero, 18,
-		Color(0.95, 0.72, 0.68) if zero > 30.0 else Color(0.72, 0.76, 0.84))
+	_txt(_font_s, p + Vector2(14.0, 158.0), "딜 0 %.0f%% · 빗나감 %.0f%%" % [zero, _miss_ratio()],
+		18, Color(0.95, 0.72, 0.68) if zero > 30.0 else Color(0.72, 0.76, 0.84))
 	_txt(_font_s, p + Vector2(14.0, 182.0), "물리 감산 손실  %.0f%%" % _phys_loss(), 18,
 		Color(0.72, 0.76, 0.84))
 	_txt(_font_s, p + Vector2(14.0, 206.0), "유물 %d회 · 스킬 %d회" %
 		[_log_relic_fires, _skill_fire_total()], 18, Color(0.72, 0.76, 0.84))
-	_txt(_font_s, p + Vector2(14.0, 230.0), "배치 %d/9 · 유물 %d/%d" %
-		[_placed_count(), RELIC_SLOTS - _empty_relics(), RELIC_SLOTS], 18, Color(0.72, 0.76, 0.84))
+	# 격자가 얼마나 찼는지 — 9칸을 몇 칸 잡았는지와 **인원을 얼마나 채웠는지**는 다른 축이다
+	_txt(_font_s, p + Vector2(14.0, 230.0), "배치 %d/9 (인원 %d/%d) · 유물 %d/%d" %
+		[_placed_count(), _crew_now(), _crew_cap(), RELIC_SLOTS - _empty_relics(), RELIC_SLOTS],
+		18, Color(0.72, 0.76, 0.84))
 
 
 func _avg_kill() -> float:
@@ -2258,10 +3253,33 @@ func _zero_ratio() -> float:
 	return float(_log_zero_hits) / float(_log_total_hits) * 100.0
 
 
+func _miss_ratio() -> float:
+	if _log_total_hits <= 0:
+		return 0.0
+	return float(_log_missed) / float(_log_total_hits) * 100.0
+
+
 func _phys_loss() -> float:
 	if _log_phys_raw <= 0.0:
 		return 0.0
 	return (1.0 - _log_phys_out / _log_phys_raw) * 100.0
+
+
+# 인원 채움 — 병사카드 합류제가 만든 성장 런웨이가 실제로 얼마나 도는지의 눈금이다
+func _crew_now() -> int:
+	var n: int = 0
+	for sq in _cells:
+		if sq != null:
+			n += int(sq["members"])
+	return n
+
+
+func _crew_cap() -> int:
+	var n: int = 0
+	for sq in _cells:
+		if sq != null:
+			n += int(sq["def"]["cap"])
+	return n
 
 
 func _placed_count() -> int:
@@ -2281,12 +3299,13 @@ func _empty_relics() -> int:
 
 
 func _draw_hint() -> void:
-	_txt(_font_s, Vector2(720.0, 996.0),
-		"병사카드 → 칸 · 유물카드 → 유물 슬롯 줄 · 부대끼리 끌면 자리 교체(즉시·무료)",
-		20, Color(0.48, 0.52, 0.60))
-	_txt(_font_s, Vector2(720.0, 1022.0),
-		"부대 · 보스 · 카드에 마우스를 올리면 오른쪽에 상세가 뜬다. 클릭하면 고정, [Esc] 해제",
-		20, Color(0.44, 0.48, 0.56))
+	# 전술 슬롯 줄이 들어오면서 자리를 내줬다 — 줄을 짧게 끊고 오른쪽으로 밀었다
+	_txt(_font_s, Vector2(1204.0, 990.0),
+		"병사카드 → 빈 칸 / 같은 유닛의 칸(합류)", 18, Color(0.48, 0.52, 0.60))
+	_txt(_font_s, Vector2(1204.0, 1012.0),
+		"유물·전술 → 각자의 슬롯 줄 · 부대를 격자 밖으로 끌면 뺀다", 18, Color(0.48, 0.52, 0.60))
+	_txt(_font_s, Vector2(1204.0, 1034.0),
+		"호버 = 상세, 클릭 = 고정, [Esc] 해제", 18, Color(0.44, 0.48, 0.56))
 
 
 func _draw_drag() -> void:
@@ -2311,30 +3330,93 @@ func _draw_drag() -> void:
 	_overlay.draw_rect(r, col, false, 2.0)
 	_txt(_font, r.position + Vector2(10.0, 32.0), label, 20, Color(1.0, 1.0, 1.0))
 
-	# 유효한 목적지만 밝힌다 — 무효한 곳에 놓으면 취소·무과금이다
+	# 유효한 목적지만 밝힌다 — 무효한 곳에 놓으면 취소·무과금이다.
+	# 만석에 붓는 칸은 노란색 — 놓이긴 하지만 초과분이 사라진다
 	for i in 9:
 		if not _valid_cell_drop(i):
 			continue
+		var waste: bool = _wasteful_cell_drop(i)
 		var cr: Rect2 = _cell_rect(i)
-		_overlay.draw_rect(cr, Color(0.55, 0.85, 0.60, 0.16))
-		_overlay.draw_rect(cr, Color(0.60, 0.95, 0.66, 0.75), false, 3.0)
+		_overlay.draw_rect(cr, Color(0.90, 0.78, 0.35, 0.16) if waste
+			else Color(0.55, 0.85, 0.60, 0.16))
+		_overlay.draw_rect(cr, Color(1.0, 0.86, 0.42, 0.80) if waste
+			else Color(0.60, 0.95, 0.66, 0.75), false, 3.0)
 	for i in RELIC_SLOTS:
 		if not _valid_relic_drop(i):
 			continue
 		var rr2: Rect2 = _relic_rect(i)
 		_overlay.draw_rect(rr2, Color(0.55, 0.85, 0.60, 0.16))
 		_overlay.draw_rect(rr2, Color(0.60, 0.95, 0.66, 0.75), false, 3.0)
+	for i in TACTIC_SLOTS:
+		if not _valid_tactic_drop(i):
+			continue
+		var tr2: Rect2 = _tactic_rect(i)
+		_overlay.draw_rect(tr2, Color(0.55, 0.85, 0.60, 0.16))
+		_overlay.draw_rect(tr2, Color(0.60, 0.95, 0.66, 0.75), false, 3.0)
 
 
+# 병사카드는 **빈 칸이나 같은 유닛의 칸에만** 놓인다. 다른 유닛 위에는 못 놓으므로
+# 그 칸은 아예 밝히지 않는다 — 드롭 전에 결과가 미리 보여야 한다.
 func _valid_cell_drop(cell_idx: int) -> bool:
 	if _drag_kind == "cell":
 		return cell_idx != _drag_from
 	if _drag_kind != "shop":
 		return false
 	var card = _shop[_drag_from]
-	if card == null or _gold < int(card["price"]):
+	if card == null or _gold < int(card["price"]) or card["kind"] != "unit":
 		return false
-	return card["kind"] == "unit"
+	var sq = _cells[cell_idx]
+	return sq == null or str(sq["def"]["id"]) == str(card["def"]["id"])
+
+
+# 만석인 같은 유닛 칸 — 놓을 수는 있지만 초과분이 사라진다. 색을 갈라 미리 알린다.
+func _wasteful_cell_drop(cell_idx: int) -> bool:
+	if _drag_kind != "shop":
+		return false
+	var card = _shop[_drag_from]
+	var sq = _cells[cell_idx]
+	if card == null or sq == null or card["kind"] != "unit":
+		return false
+	return str(sq["def"]["id"]) == str(card["def"]["id"]) \
+		and int(sq["members"]) + int(card["count"]) > int(sq["def"]["cap"])
+
+
+func _valid_tactic_drop(slot: int) -> bool:
+	if _drag_kind != "shop":
+		return false
+	var card = _shop[_drag_from]
+	if card == null or _gold < int(card["price"]) or card["kind"] != "tactic":
+		return false
+	if _has_tactic(str(card["def"]["id"])):
+		return false
+	return _tactics[slot] == null
+
+
+# 전술카드 상세 — 세 종류 공통으로 **영향 칸 3×3 표시**와 **역사 유래 한 줄**이 붙는다.
+# 칸 종류는 얼굴과 같은 그림이 반복되는 셈이고, 골드·규칙도 "누가 받는가"를 그림으로 답한다.
+func _view_tactic(t, equipped: bool) -> Dictionary:
+	if t == null:
+		return {}
+	var l: Array = []
+	l.append(_tactic_kind_name(t) + " · %d등급" % int(t["grade"]))
+	l.append(">%s" % _tactic_effect_text(t))
+	var cond: String = _tactic_cond_text(t)
+	if cond != "":
+		l.append(">조건 — %s" % cond)
+		# 조건절이 붙은 카드는 조건에 맞는 부대가 많을수록 저절로 세진다.
+		# **몰빵의 보상이 여기서 난다** — 카운트 UI도 문턱 보너스도 없다
+		l.append("지금 맞는 칸 %d" % _cells_matching(t["cond"]))
+	if str(t["kind"]) == "cell":
+		var on: int = 0
+		for i in t["cells"]:
+			if _cells[int(i)] != null:
+				on += 1
+		l.append("칠한 칸 %d — 그중 %d칸에 부대가 있다" % [(t["cells"] as Array).size(), on])
+		if on == 0 and equipped:
+			l.append("!칠한 칸이 비어 있다 — 아무도 못 받는다")
+	l.append("")
+	l.append("~%s" % str(t["lore"]))
+	return {"title": str(t["name"]), "color": _tactic_color(t), "lines": l}
 
 
 func _valid_relic_drop(slot: int) -> bool:
@@ -2343,7 +3425,7 @@ func _valid_relic_drop(slot: int) -> bool:
 	var card = _shop[_drag_from]
 	if card == null or _gold < int(card["price"]) or card["kind"] != "relic":
 		return false
-	if _has_relic(str(card["def"]["id"])):
+	if _has_relic(str(card["def"]["uid"])):
 		return false
 	return _relics[slot] == null
 
@@ -2369,6 +3451,11 @@ func _resolve_detail() -> void:
 				_detail_kind = "relic"
 				_detail_idx = i
 				return
+		for i in TACTIC_SLOTS:
+			if _tactic_rect(i).has_point(_mouse) and _tactics[i] != null:
+				_detail_kind = "tactic"
+				_detail_idx = i
+				return
 		if FORECAST_RECT.has_point(_mouse):
 			_detail_kind = "forecast"
 			_detail_idx = 0
@@ -2392,6 +3479,8 @@ func _pin_alive(kind: String, idx: int) -> bool:
 			return idx >= 0 and idx < 9 and _cells[idx] != null
 		"relic":
 			return idx >= 0 and idx < RELIC_SLOTS and _relics[idx] != null
+		"tactic":
+			return idx >= 0 and idx < TACTIC_SLOTS and _tactics[idx] != null
 		"boss":
 			return _boss_by_index(idx) != null
 		"forecast":
@@ -2407,6 +3496,8 @@ func _detail_view() -> Dictionary:
 			return _view_shop(_shop[_detail_idx])
 		"relic":
 			return _view_relic(_relics[_detail_idx], true)
+		"tactic":
+			return _view_tactic(_tactics[_detail_idx], true)
 		"boss":
 			return _view_boss(_boss_by_index(_detail_idx))
 		"forecast":
@@ -2461,23 +3552,29 @@ func _view_cell(idx: int) -> Dictionary:
 	var job: Dictionary = JOBS[d["job"]]
 	var target = _target_boss()
 	var l: Array = []
-	l.append("%s · %s · %d명" % [str(d["race"]), str(job["name"]), int(sq["members"])])
+	# 체급 · 인원 채움 — 부대가 얼마나 자랐는지가 한 줄에 있어야 다음 카드를 살지 판단이 된다
+	l.append("%s · %s · %s %d/%d명" % [str(d["race"]), str(job["name"]),
+		str(SIZES[d["size"]]["name"]), int(sq["members"]), int(d["cap"])])
 	l.append("~%s" % str(job["rhythm"]))
+	if float(sq["bind"]) > 0.0:
+		l.append("!주박 -%d%% (%.1fs) — 머릿수가 완충재다"
+			% [int(round((1.0 - _bind_mult(sq)) * 100.0)), float(sq["bind_t"])])
 	if str(d["job"]) == "cleric":
-		l.append("캐스팅 %.2fs" % _period_now(sq))
-		if float(d["bless"]) > 0.0:
-			l.append(">아군 한 칸에 타격당 +%.1f" % float(d["bless"]))
+		l.append("캐스팅 %.2fs · %d명 = %d회 시전" % [_period_now(sq), int(sq["members"]),
+			int(sq["members"])])
+		if float(d["hit"]) > 0.0:
+			l.append(">아군 한 칸에 타격당 +%.1f" % _bless_amount(sq))
 			l.append("~고정값이라 인원 많고 빠른")
 			l.append("~부대에 걸렸을 때 크게 불어난다")
 		else:
-			l.append("~정화할 아군 디버프가 아직 없다")
+			l.append("~주박 걸린 아군을 정화한다")
 	elif str(job["atk"]) == "phys":
 		l.append("박자 %.2fs · 한 박자에 %d회" % [_period_now(sq), int(sq["members"])])
 		if float(sq["bless"]) > 0.0:
-			l.append(">타격당 %.1f  (기본 %.1f + 축복 %.1f)" %
-				[_per_hit(sq), float(sq["power"]) / float(sq["members"]), float(sq["bless"])])
+			l.append(">타격당 %.1f  (체급 %.1f + 축복 %.1f)" %
+				[_per_hit(sq), float(d["hit"]), float(sq["bless"])])
 		else:
-			l.append(">타격당 %.1f" % _per_hit(sq))
+			l.append(">타격당 %.1f  (체급이 고정한다)" % _per_hit(sq))
 		if target == null:
 			l.append("~레인에 보스가 없다")
 		else:
@@ -2488,23 +3585,29 @@ func _view_cell(idx: int) -> Dictionary:
 				l.append("!이 보스에게 아무것도 못 한다")
 			else:
 				l.append(">" + calc)
-				l.append("초당 %.0f" % (one * float(sq["members"]) / _period_now(sq)))
-		# 크리는 궁수·암살자만 갖는 스탯이다 — 둘 다 크리가 곧 스킬 발동이라 같은 줄로 읽힌다
+				# 명중은 확률이라 미리 판정할 수 없다 — 기대치로 적어 "통함인데 안 들어감"을 설명한다
+				var acc: float = 1.0 - float(target["evade"])
+				l.append("초당 %.0f%s" % [one * float(sq["members"]) * acc / _period_now(sq),
+					"  (명중 %d%%)" % int(round(acc * 100.0)) if acc < 1.0 else ""])
+		# 크리는 모든 유닛의 공통 스탯이다. 기본 0이라 공급원이 있어야 터지고,
+		# 궁수·암살자는 직업 자체가 공급원이라 크리가 곧 스킬 발동이 된다.
 		if float(sq["crit"]) > 0.0:
 			l.append("크리 %d%% ×%.1f — %d회" % [int(round(float(sq["crit"]) * 100.0)),
 				float(sq["crit_mult"]), int(sq["crits"])])
 	else:
 		var e: String = str(d["elem"])
-		l.append("캐스팅 %.2fs · 인원 무관" % _period_now(sq))
-		l.append(">%s %.0f" % [_elem_name(e), float(sq["power"])])
+		l.append("캐스팅 %.2fs · %d명 = %d회 시전" % [_period_now(sq), int(sq["members"]),
+			int(sq["members"])])
+		l.append(">%s 시전당 %.0f" % [_elem_name(e), _per_hit(sq)])
 		if target == null:
 			l.append("~레인에 보스가 없다")
 		else:
 			l.append(">%s 저항 %d%% → %.0f" % [_elem_name(e),
 				int(round(_res_now(target, e) * 100.0)),
-				_mag_damage(float(sq["power"]), e, target)])
-			l.append("초당 %.0f" % (_mag_damage(float(sq["power"]), e, target) /
-				_period_now(sq)))
+				_mag_damage(_per_hit(sq), e, target)])
+			l.append("초당 %.0f" % (_mag_damage(_per_hit(sq), e, target)
+				* float(sq["members"]) / _period_now(sq)))
+			l.append("~마법은 무조건 적중한다 — 회피를 안 탄다")
 	# 스킬 — 무엇이 언제 터지는지. 유닛당 하나뿐이라 두 줄이면 끝난다
 	l.append(">%s — %s" % [str(d["skill"]["name"]), _skill_when(d)])
 	if str(d["skill"]["desc"]) != "":
@@ -2513,10 +3616,10 @@ func _view_cell(idx: int) -> Dictionary:
 		"  (공속 %.1f배)" % float(sq["haste_mult"]) if float(sq["haste_t"]) > 0.0 else ""])
 	l.append("누적 %d · %d타" % [int(sq["dmg"]), int(sq["hits"])])
 	for rel in _relics:
-		if rel == null or str(rel["job"]) != str(d["job"]):
+		if rel == null or str(rel["verb"]) == "" or not _relic_covers(rel, d):
 			continue
-		l.append("%s %d/%d박자" % [str(rel["name"]),
-			int(sq["relic_beats"].get(str(rel["id"]), 0)), int(rel["beats"])])
+		l.append("%s %d/%d타격" % [str(rel["name"]),
+			int(sq["relic_beats"].get(str(rel["uid"]), 0)), int(rel["hits"])])
 	return {"title": str(d["name"]), "color": Color(job["color"]), "lines": l}
 
 
@@ -2527,24 +3630,29 @@ func _view_shop(card) -> Dictionary:
 		var v: Dictionary = _view_relic(card["def"], false)
 		(v["lines"] as Array).append(">%dG" % int(card["price"]))
 		return v
+	if card["kind"] == "tactic":
+		var v2: Dictionary = _view_tactic(card["def"], false)
+		(v2["lines"] as Array).append(">%dG" % int(card["price"]))
+		return v2
 	var d: Dictionary = card["def"]
 	var job: Dictionary = JOBS[d["job"]]
 	var target = _target_boss()
+	var cnt: int = int(card["count"])
+	var per: float = float(d["hit"])
 	var l: Array = []
-	l.append("%s · %s · %d명" % [str(d["race"]), str(job["name"]), int(d["members"])])
+	l.append("%s · %s · %s" % [str(d["race"]), str(job["name"]), str(SIZES[d["size"]]["name"])])
+	l.append(">병사 %d명 — 상한 %d까지 부어 채운다" % [cnt, int(d["cap"])])
 	l.append("~%s" % str(job["rhythm"]))
 	if str(d["job"]) == "cleric":
-		l.append("캐스팅 %.2fs" % float(d["period"]))
-		if float(d["bless"]) > 0.0:
-			l.append(">아군 한 칸에 타격당 +%.1f" % float(d["bless"]))
+		l.append("캐스팅 %.2fs · %d회 시전" % [float(d["period"]), cnt])
+		if per > 0.0:
+			l.append(">아군 한 칸에 타격당 +%.1f" % per)
 			l.append("~인원 많고 빠른 부대에 걸리면 크다")
 		else:
-			l.append("~정화할 아군 디버프가 아직 없다")
+			l.append("~주박 걸린 아군을 정화한다")
 	elif str(job["atk"]) == "phys":
-		var per: float = float(d["power"]) / float(d["members"])
-		l.append("박자 %.2fs · 한 박자에 %d회" % [float(d["period"]), int(d["members"])])
-		l.append(">타격당 %.1f  (공격력 %.0f ÷ %d명)" % [per, float(d["power"]),
-			int(d["members"])])
+		l.append("박자 %.2fs · 한 박자에 %d회" % [float(d["period"]), cnt])
+		l.append(">타격당 %.1f  (체급이 고정 — 인원 무관)" % per)
 		if target == null:
 			l.append("~레인에 보스가 없다")
 		else:
@@ -2553,7 +3661,10 @@ func _view_shop(card) -> Dictionary:
 				l.append("!%.1f - 방 %.0f = 0 — 안 통한다" % [per, _armor_now(target)])
 			else:
 				l.append(">%.1f - 방 %.0f = %.1f · 초당 %.0f" % [per, _armor_now(target), one,
-					one * float(d["members"]) / float(d["period"])])
+					one * float(cnt) * (1.0 - float(target["evade"])) / float(d["period"])])
+			if float(target["evade"]) > 0.0:
+				l.append("!회피 %d%% — 빗나가면 그 타격은 0이다"
+					% int(round(float(target["evade"]) * 100.0)))
 		var cb: float = float(CRIT_BASE.get(str(d["job"]), 0.0))
 		if cb > 0.0:
 			l.append("크리 %d%% ×%.1f" % [int(round(cb * 100.0)),
@@ -2561,60 +3672,69 @@ func _view_shop(card) -> Dictionary:
 			l.append("~크리가 곧 스킬 발동이다")
 	else:
 		var e: String = str(d["elem"])
-		l.append("캐스팅 %.2fs · 인원 무관" % float(d["period"]))
-		l.append(">%s %.0f" % [_elem_name(e), float(d["power"])])
+		l.append("캐스팅 %.2fs · %d회 시전" % [float(d["period"]), cnt])
+		l.append(">%s 시전당 %.0f" % [_elem_name(e), per])
 		if target != null:
 			l.append(">저항 %d%% → %.0f · 초당 %.0f" % [
 				int(round(_res_now(target, e) * 100.0)),
-				_mag_damage(float(d["power"]), e, target),
-				_mag_damage(float(d["power"]), e, target) / float(d["period"])])
+				_mag_damage(per, e, target),
+				_mag_damage(per, e, target) * float(cnt) / float(d["period"])])
 		l.append("~저항 상한 %d%% — 완전 면역은 없다" % int(round(RES_CAP * 100.0)))
+		l.append("~마법은 무조건 적중한다")
 	l.append(">%s — %s" % [str(d["skill"]["name"]), _skill_when(d)])
 	if str(d["skill"]["desc"]) != "":
 		l.append("~%s" % _skill_desc(d))
-	l.append(">%dG · 인원 %d × %dG" % [int(card["price"]), int(d["members"]), PRICE_PER_CREW])
+	l.append(">%dG · %d명 × %dG (%s 단가)" % [int(card["price"]), cnt, int(d["unit_price"]),
+		str(SIZES[d["size"]]["name"])])
 	return {"title": str(d["name"]), "color": Color(job["color"]), "lines": l}
 
 
 func _view_relic(it: Dictionary, equipped: bool) -> Dictionary:
-	var jname: String = str(JOBS[it["job"]]["name"])
 	var l: Array = []
-	l.append("유물 (동사) · [%s]" % jname)
-	l.append(">%s" % str(it["short"]))
-	l.append(str(it["desc"]))
+	l.append("유물 · %s · %s" % [str(RELIC_GRADES[str(it["grade"])]["name"]),
+		str(it["base"]["name"])])
+	l.append(">%s  — 이 태그의 부대만 옵션을 받는다" % _relic_tag_text(it))
+	for o in it["opts"]:
+		l.append(_opt_text(o, int(it["grown"])))
+	if str(it["verb"]) != "":
+		l.append("")
+		l.append(">%s — %d타격마다" % [str(it["short"]), int(it["hits"])])
+		l.append(str(it["desc"]))
+		l.append("~인원이 곧 발동 속도다 — 소형은")
+		l.append("~잦고 작게, 대형은 드물고 크게")
 	l.append("")
-	l.append("%s 부대의 %d박자마다" % [jname, int(it["beats"])])
-	l.append("자동으로 나간다 — 발동 버튼 없음")
-	l.append("~효과량은 그 부대의 타격당 딜에")
-	l.append("~비례한다. 다수는 잦고 작게,")
-	l.append("~소수정예는 드물고 크게")
-	var live: int = 0
-	for sq in _cells:
-		if sq != null and str(sq["def"]["job"]) == str(it["job"]):
-			live += 1
+	l.append("~태그가 좀을수록 수치가 크다")
+	l.append("~[직업] > [종족] > [전체]")
+	var live: int = _relic_live(it)
 	if equipped or live == 0:
-		l.append(("%s 부대 %d칸" % [jname, live]) if live > 0 else
-			("!%s 부대가 없다 — 나가지 않는다" % jname))
+		l.append(("받는 칸 %d" % live) if live > 0 else
+			"!받는 칸이 없다 — 아무 일도 안 한다")
 	return {"title": str(it["name"]), "color": Color(it["color"]), "lines": l}
 
 
 func _view_boss(b) -> Dictionary:
 	if b == null:
 		return {}
-	var a: Dictionary = b["arch"]
+	var e: Dictionary = b["entry"]
 	var l: Array = []
-	l.append(">%s" % " · ".join(b["tags"]))
+	l.append(">%s" % (" · ".join(b["tags"]) if not (b["tags"] as Array).is_empty() else "접두사 없음"))
 	l.append("체력 %d / %d" % [int(b["hp"]), int(b["hp_max"])])
 	if float(b["shred"]) > 0.0:
 		l.append(">방어력 %.0f  (파쇄 -%.0f)" % [_armor_now(b), float(b["shred"])])
+	elif float(b["harden"]) > 0.0:
+		l.append(">방어력 %.0f  (경화 — 계속 오른다)" % _armor_now(b))
 	else:
 		l.append("방어력 %.0f" % _armor_now(b))
 	l.append(_res_line(b))
+	if float(b["evade"]) > 0.0:
+		l.append(">회피 %d%% — 물리만 빗나간다" % int(round(float(b["evade"]) * 100.0)))
 	l.append("전진 %.0f%s" % [float(b["speed"]),
 		"  (빙결)" if float(b["chill"]) > 0.0 else ""])
 	if float(b["regen"]) > 0.0:
 		var rg: float = float(b["regen"]) * (BURN_REGEN_CUT if int(b["burn"]) > 0 else 1.0)
 		l.append(">회복 %.0f/s%s" % [rg, "  (화상이 절반 깎음)" if int(b["burn"]) > 0 else ""])
+	if bool(b["bind"]):
+		l.append(">%.1fs마다 아군 한 칸을 주박한다" % BIND_INTERVAL)
 	var st: Array = _boss_states(b)
 	if st.is_empty():
 		l.append("~걸린 상태이상 없음")
@@ -2625,10 +3745,23 @@ func _view_boss(b) -> Dictionary:
 		l.append("성벽까지 %.1fs" % ((float(b["x"]) - BOSS_STOP_X) / maxf(1.0, spd)))
 	else:
 		l.append("!성벽 타격 중 — %.0f / %.1fs" % [float(b["wall_dmg"]),
-			float(a["wall_int"])])
-	l.append("~%s" % str(a["hint"]))
-	return {"title": "%s #%d" % [str(a["name"]), int(b["index"]) + 1],
-		"color": Color(a["tint"]), "lines": l}
+			float(b["base"]["wall_int"])])
+	for line in _prefix_hints(e):
+		l.append("~%s" % line)
+	return {"title": "%s #%d" % [str(e["name"]), int(b["index"]) + 1],
+		"color": Color(e["tint"]), "lines": l}
+
+
+# 접두사는 「무엇이 막히는가」로 정의되므로, 상세 카드도 막는 것과 답을 그대로 적는다.
+# 예고에서 본 단어가 전투에서 다시 보이고, 같은 문장이 두 곳에서 읽힌다.
+func _prefix_hints(e: Dictionary) -> Array:
+	var out: Array = []
+	for p in e["pre"]:
+		var d: Dictionary = PREFIXES[str(p)]
+		out.append("%s: %s → %s" % [str(d["name"]), str(d["blocks"]), str(d["answer"])])
+	if out.is_empty():
+		out.append("맨몸이다 — 아무거나 통한다")
+	return out
 
 
 func _view_forecast() -> Dictionary:
@@ -2636,22 +3769,26 @@ func _view_forecast() -> Dictionary:
 		return {"title": "예고", "color": Color(0.5, 0.53, 0.6),
 			"lines": ["~남은 보스가 없다"]}
 	var e: Dictionary = _schedule[_next_spawn]
-	var a: Dictionary = e["arch"]
 	var l: Array = []
-	l.append(">%s" % " · ".join(_entry_tags(e)))
+	l.append(">%s" % (" · ".join(_entry_tags(e)) if not (e["pre"] as Array).is_empty()
+		else "접두사 없음"))
+	l.append("%s · %s" % [str(ACTS[int(e["act"])]["name"]),
+		"막보스" if bool(e["boss"]) else "정예"])
 	l.append("%.0fs 뒤 등장" % maxf(0.0, _spawn_due() - _elapsed))
 	l.append("")
-	l.append("체력 %.0f" % float(e["hp"]))
-	l.append("방어력 %.0f · 전진 %.0f" % [float(e["armor"]), float(a["speed"])])
+	l.append("체력 %.0f · %s" % [float(e["hp"]), str(e["base"]["size"])])
+	l.append("방어력 %.0f · 전진 %.0f · 회피 %d%%" % [float(e["armor"]), float(e["speed"]),
+		int(round(float(e["evade"]) * 100.0))])
 	var parts: Array = []
 	for el in ELEM_ORDER:
 		parts.append("%s %d%%" % [str(ELEMENTS[el]["short"]),
 			int(round(float(e["res"][el]) * 100.0))])
 	l.append(" ".join(parts))
 	l.append("")
-	l.append("~%s" % str(a["hint"]))
-	return {"title": "예고 — %s #%d" % [str(a["name"]), _next_spawn + 1],
-		"color": Color(a["tint"]), "lines": l}
+	for line in _prefix_hints(e):
+		l.append("~%s" % line)
+	return {"title": "예고 — %s #%d" % [str(e["name"]), _next_spawn + 1],
+		"color": Color(e["tint"]), "lines": l}
 
 
 func _draw_end_panel() -> void:
@@ -2667,9 +3804,10 @@ func _draw_end_panel() -> void:
 		"처치 %d / %d · 경과 %.1fs" % [_killed, RUN_BOSSES, _elapsed],
 		"성벽 %d / %d (총 손실 %d)" % [int(_wall_hp), int(_wall_max), int(_log_wall_lost)],
 		"평균 처치 소요 %.1fs · 최대 겹침 %d마리" % [_avg_kill(), _log_overlap_peak],
-		"딜 0 타격 %.0f%% · 물리 감산 손실 %.0f%%" % [_zero_ratio(), _phys_loss()],
+		"딜 0 타격 %.0f%% · 빗나감 %.0f%% · 물리 감산 손실 %.0f%%"
+			% [_zero_ratio(), _miss_ratio(), _phys_loss()],
 		"유물 발동 %d회 · 스킬 발동 %d회" % [_log_relic_fires, _skill_fire_total()],
-		"남은 골드 %d" % _gold,
+		"인원 채움 %d / %d · 남은 골드 %d" % [_crew_now(), _crew_cap(), _gold],
 	]
 	var y: float = 140.0
 	for r in rows:

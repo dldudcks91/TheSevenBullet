@@ -76,3 +76,60 @@ SKILL_DM_DEMONESS_DESC,아군 부대 하나에 강한 버프를 주는 대신 �
 SKILL_DM_LORD,포식,Devour
 SKILL_DM_LORD_DESC,아군을 잡아먹고 자신의 능력치가 영구 상승한다,Devours an ally to permanently grow stronger
 SKILL_HUM_MAGE_DESC,@cast_time@초 캐스팅 후 번개로 @damage@ 피해,After @cast_time@s of casting, strike for @damage@ lightning damage
+TACTIC_HAKIK,학익진,Crane Wing Formation
+TACTIC_HAKIK_DESC,칠한 칸의 부대 공격력이 오른다,Squads on painted cells gain attack power
+TACTIC_HAKIK_HIST,"1592 한산도대첩 · 이순신 — 함대를 학의 날개처럼 펼쳐 왜선을 반원으로 감싸고 집중 포격해 왜 수군 주력을 궤멸시켰다","1592 Battle of Hansan Island · Yi Sun-sin — spread his fleet like a crane's wings, encircling the enemy in a half-moon and destroying them with focused fire"
+TACTIC_SANDAN,삼단 철포,Three-Line Volley
+TACTIC_SANDAN_DESC,칠한 칸의 부대 공격속도가 오른다,Squads on painted cells gain attack speed
+TACTIC_SANDAN_HIST,"1575 나가시노 전투 · 오다 노부나가 — 조총병을 3열 교대 사격으로 돌려 재장전 공백 없는 연사로 다케다 기마대의 돌격을 꺾었다","1575 Battle of Nagashino · Oda Nobunaga — rotated musketeers in three firing lines, sustaining fire without reload gaps to break the Takeda cavalry charge"
+TACTIC_CROSSFIRE,십자 포화,Crossfire
+TACTIC_CROSSFIRE_DESC,칠한 칸의 부대 크리티컬 확률이 오른다,Squads on painted cells gain critical chance
+TACTIC_CROSSFIRE_HIST,"두 방향 이상의 화선을 교차시켜 사각 없는 살상 지대를 만드는 교리 — 1차 대전 참호전의 기관총 교차 사격이 대표다","The doctrine of interlocking fields of fire — machine-gun crossfire of WWI trench warfare left no blind spot"
+TACTIC_BAESU,배수진,Last Stand
+TACTIC_BAESU_DESC,칠한 칸의 부대는 보스가 성벽에 가까울수록 공격력이 오른다,Squads on painted cells gain attack power as the boss nears the wall
+TACTIC_BAESU_HIST,"기원전 204 정형 전투 · 한신 — 강을 등져 퇴로를 끊고 결사로 싸우게 해 수적 열세로 조나라 대군을 깨뜨렸다","204 BC Battle of Jingxing · Han Xin — fought with the river at his back, cutting off retreat so his outnumbered men fought to the death and broke the Zhao army"
+TACTIC_JUNGANG,중앙 돌파,Central Breakthrough
+TACTIC_JUNGANG_DESC,칠한 칸의 부대 공격속도가 오른다,Squads on painted cells gain attack speed
+TACTIC_JUNGANG_HIST,"1805 아우스터리츠 전투 · 나폴레옹 — 우익을 미끼로 적 중앙을 비우게 한 뒤 그 중앙에 전력을 집중해 적을 두 동강 냈다","1805 Battle of Austerlitz · Napoleon — baited the enemy into weakening their center, then smashed through it to cut their army in two"
+TACTIC_CANNAE,이중 포위,Double Envelopment
+TACTIC_CANNAE_DESC,가운데 칸이 비어 있으면 나머지 여덟 칸의 능력치가 오른다,"If the center cell is empty, the other eight cells gain stats"
+TACTIC_CANNAE_HIST,"기원전 216 칸나에 전투 · 한니발 — 중앙을 일부러 물러나게 해 로마군을 빨아들이고 양 날개로 에워싸 섬멸했다","216 BC Battle of Cannae · Hannibal — let his center fall back to draw the Romans in, then closed both wings around them for total annihilation"
+TACTIC_SASUN,사선진법,Oblique Order
+TACTIC_SASUN_HIST,"기원전 371 레우크트라 전투 · 에파미논다스 — 좌익 한 곳에 정예를 50열 종심으로 몰아 사선으로 전진해 스파르타 최강 우익을 먼저 부쉈다","371 BC Battle of Leuctra · Epaminondas — stacked his elite fifty ranks deep on one wing and advanced obliquely, crushing Sparta's strongest flank first"
+TACTIC_CHEONGYA,청야유인,Scorched Earth Lure
+TACTIC_CHEONGYA_DESC,모서리 네 칸이 모두 비어 있으면 나머지 다섯 칸의 능력치가 크게 오른다,"If all four corner cells are empty, the remaining five cells gain greatly increased stats"
+TACTIC_CHEONGYA_HIST,"612 살수대첩 · 을지문덕 — 들판을 비우고 거짓 후퇴로 수나라 대군을 살수 깊숙이 끌어들인 뒤 막아둔 강물을 터뜨려 섬멸했다","612 Battle of Salsu · Eulji Mundeok — emptied the land and feigned retreat to lure the Sui host deep, then released the dammed river to annihilate them"
+TACTIC_GOLD_KILL_DESC,적 처치 시 얻는 킬 골드가 늘어난다,Gain bonus gold on every kill
+TACTIC_GOLD_TIME_DESC,일정 시간마다 골드를 얻는다,Gain gold at regular intervals
+TACTIC_GOLD_REROLL_DESC,리롤 비용이 줄어든다,Reroll costs less
+TACTIC_GOLD_WAVE_DESC,파동을 넘길 때마다 골드를 얻는다,Gain gold after each wave
+TACTIC_GOLD_SHIELD_DESC,성벽이 공격받으면 성벽 HP 대신 골드가 먼저 소모된다,"When the wall is hit, gold is spent before wall HP"
+TACTIC_GOLD_HOARD_DESC,보유 골드에 비례해 전 부대의 데미지가 오른다,All squads deal more damage the more gold you hold
+TACTIC_RULE_DIAG_DESC,인접 판정에 대각선이 포함된다,Adjacency includes diagonals
+TACTIC_RULE_CRITDMG_DESC,전 부대의 크리티컬 피해가 오른다,All squads deal increased critical damage
+SIN_WRATH,분노,Wrath
+SIN_ENVY,시기,Envy
+SIN_LUST,색욕,Lust
+SIN_PRIDE,오만,Pride
+SIN_GREED,탐욕,Greed
+SIN_GLUTTONY,폭식,Gluttony
+SIN_SLOTH,나태,Sloth
+BASE_AXE,도끼,Axe
+BASE_SWORD,검,Sword
+BASE_BOW,활,Bow
+BASE_DAGGER,단검,Dagger
+BASE_ORB,오브,Orb
+BASE_CHALICE,성배,Chalice
+BASE_CROWN,왕관,Crown
+BASE_BANNER,깃발,Banner
+BASE_SIGIL,인장,Sigil
+BASE_SKULL,두개골,Skull
+BASE_TOTEM,토템,Totem
+BASE_HORN,뿔,Horn
+BASE_RING,반지,Ring
+BASE_AMULET,목걸이,Amulet
+BASE_GEM,보석,Gem
+GRADE_COMMON,일반,Common
+GRADE_MAGIC,매직,Magic
+GRADE_RARE,레어,Rare
+GRADE_UNIQUE,유니크,Unique

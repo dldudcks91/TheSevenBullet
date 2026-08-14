@@ -1,7 +1,7 @@
 # PROTOTYPE - NOT FOR PRODUCTION (임시 스모크 — 검증 끝나면 지운다)
-# Question: 무입력 헤드리스로는 안 타는 경로(구매 드래그·자리 교체·유물 구매·패널 구매)가 죽지 않는가?
-#           그리고 직업 7종의 발동(확률·크리·캐스팅)과 스킬 effect가 실제로 전부 도는가?
-# Date: 2026-08-12
+# Question: 무입력 헤드리스로는 안 타는 경로(구매 드래그·합류·빼내기·유물 구매·패널 구매)가
+#           죽지 않는가? 직업 7종의 발동과 스킬 effect가 실제로 전부 도는가?
+# Date: 2026-08-14
 # 사용: godot --headless --fixed-fps 60 --script prototypes/realtime_defense/_smoke.gd -- adaptive
 extends SceneTree
 
@@ -28,17 +28,19 @@ const COMP2 := [
 	"U_BM_RABBIT",      # 마법사 — NUKE_RANDOM (원소를 매번 굴린다)
 	"U_BM_DEER",        # 사제 — BUFF_RANDOM
 	"U_DM_DEMONESS",    # 사제 — PACT_BUFF
-	"U_UD_NECROMANCER", # 사제 — CLEANSE (정화할 것이 없어 빈 캐스팅이어야 한다)
+	"U_UD_NECROMANCER", # 사제 — CLEANSE (3막 주박이 걸려야 정화할 것이 생긴다)
 	"U_DM_FIREIMP",     # 궁수 — CRIT_BONUS_FLAT
 	"U_UD_REAPER",      # 암살자 — HEAVY_STRIKE
 	"U_BM_CAT",         # 암살자 — GOLD_STEAL
 	"U_HUM_ARCHER",     # 궁수 — HASTE (궁수 쪽 발동도 본다)
 ]
 const SWAP_AT := 4200                 # ≈70s — 앞판의 리듬을 충분히 본 뒤
-# 네 직업 전부에 유물이 하나씩 걸리도록 고른다 (전사·궁수·마법사·사제).
-# 전사 몫은 파쇄로 잡았다 — "딜 0인 칸을 방깎이 되살리는가"가 지금 제일 궁금한 것이라서다.
-# 넉백을 보려면 1 → 0 으로 바꾼다.
-const RELIC_PICK := [1, 2, 4, 6]
+# 유물은 이제 굴려진다 — 봇은 **유니크 4종을 직접 만들어** 동사 경로를 태운다.
+# 네 직업에 하나씩 걸리게 골랐다 (소드마스터 파쇄 / 궁수 화상 / 마법사 빙결 / 사제 취약).
+# 밀어내기를 보려면 "breaker" 를 "hammer" 로 바꾼다.
+const UNIQUE_PICK := ["breaker", "brand", "fetter", "mark"]
+# 전술카드 세 종류를 하나씩 — 칸·골드·규칙이 전부 도는지 본다
+const TACTIC_PICK := ["t_cannae", "t_logistics", "t_pilum"]
 
 var _proto: Node2D
 var _f: int = 0
@@ -65,6 +67,22 @@ func _initialize() -> void:
 	print("=== 모드: %s ===" % ("킬 연동(ADAPTIVE)" if _adaptive else "고정 스케줄(FIXED)"))
 
 
+func _unique_by_id(id: String) -> Dictionary:
+	for u in _proto.RELIC_UNIQUES:
+		if str(u["id"]) == id:
+			return _proto._make_unique(u)
+	push_error("그런 유니크가 없다: %s" % id)
+	return {}
+
+
+func _tactic_by_id(id: String) -> Dictionary:
+	for t in _proto.TACTICS:
+		if str(t["id"]) == id:
+			return t
+	push_error("그런 전술카드가 없다: %s" % id)
+	return {}
+
+
 func _boss_point() -> Vector2:
 	for b in _proto._bosses:
 		if not b["dead"]:
@@ -86,6 +104,35 @@ func _drag(from: Vector2, to: Vector2) -> void:
 	_proto._release(to)
 
 
+# 병사카드를 슬롯 0에 꽂아 넣고 칸으로 끌어다 놓는다. 매대 풀이 CSV에서 오므로
+# 원하는 유닛이 뜰 때까지 리롤할 수는 없다 — 봇은 카드를 직접 만들어 경로만 태운다.
+func _buy(unit_id: String, cell: int, count: int) -> void:
+	var d: Dictionary = _proto._unit_by_id(unit_id)
+	_proto._shop[0] = {"kind": "unit", "def": d, "count": count,
+		"price": count * int(d["unit_price"])}
+	_drag(_proto._card_rect(0).get_center(), _proto._cell_rect(cell).get_center())
+
+
+# 상한까지 부어 채운다 — 병사카드 합류제가 이번 개조의 핵심이라 실제로 밟아본다.
+func _fill(cell: int) -> void:
+	var sq = _proto._cells[cell]
+	if sq == null:
+		return
+	var uid: String = str(sq["def"]["id"])
+	var cap: int = int(sq["def"]["cap"])
+	var guard: int = 0
+	while int(_proto._cells[cell]["members"]) < cap and guard < 12:
+		_buy(uid, cell, cap)
+		guard += 1
+
+
+# 칸을 비운다 — 다른 유닛으로 바꾸려면 먼저 빼내야 한다. 격자 밖(레인)으로 끌면 해체된다.
+func _pull(cell: int) -> void:
+	if _proto._cells[cell] == null:
+		return
+	_drag(_proto._cell_rect(cell).get_center(), Vector2(1700.0, 300.0))
+
+
 func _process(_delta: float) -> bool:
 	_f += 1
 
@@ -94,18 +141,45 @@ func _process(_delta: float) -> bool:
 		_proto._spawn_mode = 1 if _adaptive else 0
 		print("매대 풀 %d종" % _proto.UNITS.size())
 		for i in 9:
-			var d: Dictionary = _proto._unit_by_id(COMP[i])
-			_proto._shop[0] = {"kind": "unit", "def": d, "price": int(d["price"])}
-			_drag(_proto._card_rect(0).get_center(), _proto._cell_rect(i).get_center())
-		print("배치 %d/9" % _proto._placed_count())
+			_buy(COMP[i], i, 1)
+		print("배치 %d/9 · 인원 %d/%d" %
+			[_proto._placed_count(), _proto._crew_now(), _proto._crew_cap()])
+		# 합류제 — 한 장 놓은 뒤 상한까지 부어 채운다. 밸런스가 아니라 경로 검증이다
+		for i in 9:
+			_fill(i)
+		print("채움 후 인원 %d/%d" % [_proto._crew_now(), _proto._crew_cap()])
+		# 다른 유닛의 칸에는 못 놓는다 — 취소·무과금이어야 한다
+		var g0: int = _proto._gold
+		var m0: int = int(_proto._cells[0]["members"])
+		_buy(COMP[1], 0, 2)
+		print("다른 유닛 칸 거부: %s" % str(g0 == _proto._gold and m0 == int(_proto._cells[0]["members"])))
+		# 만석에 부으면 결제는 되고 초과분은 사라진다
+		var cap0: int = int(_proto._cells[0]["def"]["cap"])
+		_buy(COMP[0], 0, cap0)
+		print("만석 초과분 소멸: %s" % str(int(_proto._cells[0]["members"]) == cap0))
 
 	if _f == 60:
 		# 유물은 칸이 아니라 유물 슬롯 줄에 놓는다. 발동은 자동이라 눌러줄 것이 없다
-		for i in RELIC_PICK.size():
-			var rel: Dictionary = _proto.RELICS[RELIC_PICK[i]]
+		for i in UNIQUE_PICK.size():
+			var rel: Dictionary = _unique_by_id(str(UNIQUE_PICK[i]))
 			_proto._shop[0] = {"kind": "relic", "def": rel, "price": int(rel["price"])}
 			_drag(_proto._card_rect(0).get_center(), _proto._relic_rect(i).get_center())
 		print("유물 %d/%d" % [_proto.RELIC_SLOTS - _proto._empty_relics(), _proto.RELIC_SLOTS])
+		# 전술카드 — 전술 슬롯 줄에만 놓인다
+		for i in TACTIC_PICK.size():
+			var tc: Dictionary = _tactic_by_id(str(TACTIC_PICK[i]))
+			_proto._shop[0] = {"kind": "tactic", "def": tc, "price": int(tc["price"])}
+			_drag(_proto._card_rect(0).get_center(), _proto._tactic_rect(i).get_center())
+		var held: int = 0
+		for t in _proto._tactics:
+			if t != null:
+				held += 1
+		print("전술 %d/%d" % [held, _proto.TACTIC_SLOTS])
+		# 전술카드를 칸에 떨구면 무효여야 한다 — 목적지가 문법을 정한다
+		var g1: int = _proto._gold
+		_proto._shop[0] = {"kind": "tactic", "def": _tactic_by_id("t_hansan"), "price": 85}
+		_drag(_proto._card_rect(0).get_center(), _proto._cell_rect(4).get_center())
+		print("전술카드 칸 드롭 무과금: %s" % str(g1 == _proto._gold))
 
 	if _f == 90:
 		_drag(_proto._cell_rect(0).get_center(), _proto._cell_rect(8).get_center())
@@ -119,20 +193,24 @@ func _process(_delta: float) -> bool:
 	if _f == 120:
 		# 유물카드를 칸에 떨구면 무효여야 한다 — 목적지가 문법을 정한다
 		var before2: int = _proto._gold
-		_proto._shop[1] = {"kind": "relic", "def": _proto.RELICS[1], "price": 55}
+		_proto._shop[1] = {"kind": "relic", "def": _unique_by_id("breaker"), "price": 55}
 		_drag(_proto._card_rect(1).get_center(), _proto._cell_rect(4).get_center())
 		# 병사카드를 유물 줄에 떨구는 것도 무효
 		var d2: Dictionary = _proto.UNITS[0] as Dictionary
-		_proto._shop[2] = {"kind": "unit", "def": d2, "price": int(d2["price"])}
+		_proto._shop[2] = {"kind": "unit", "def": d2, "count": 1, "price": int(d2["unit_price"])}
 		_drag(_proto._card_rect(2).get_center(), _proto._relic_rect(3).get_center())
 		print("잘못된 목적지 무과금: %s" % str(before2 == _proto._gold))
 
 	if _f == SWAP_AT:
+		# 칸을 다른 유닛으로 바꾸려면 **먼저 빼내야 한다.** 빼기 → 새 유닛 → 상한까지 채우기
 		for i in 9:
-			var d3: Dictionary = _proto._unit_by_id(COMP2[i])
-			_proto._shop[0] = {"kind": "unit", "def": d3, "price": int(d3["price"])}
-			_drag(_proto._card_rect(0).get_center(), _proto._cell_rect(i).get_center())
-		print("판 교체 %d/9 (t=%.0fs)" % [_proto._placed_count(), _proto._elapsed])
+			_pull(i)
+		print("빼내기 후 배치 %d/9" % _proto._placed_count())
+		for i in 9:
+			_buy(COMP2[i], i, 1)
+			_fill(i)
+		print("판 교체 %d/9 · 인원 %d/%d (t=%.0fs)" % [_proto._placed_count(),
+			_proto._crew_now(), _proto._crew_cap(), _proto._elapsed])
 
 	if _f % 120 == 0:
 		_proto._mouse = _proto._card_rect(2).get_center()
@@ -177,8 +255,10 @@ func _process(_delta: float) -> bool:
 			"클리어" if _proto._phase == 1 else "패배",
 			_proto._killed, _proto.RUN_BOSSES, _proto._elapsed, int(_proto._wall_hp),
 			_proto._avg_kill(), _proto._log_overlap_peak])
-		print("딜 0 타격 %.0f%%  물리 감산 손실 %.0f%%  유물 발동 %d회" % [
-			_proto._zero_ratio(), _proto._phys_loss(), _proto._log_relic_fires])
+		print("딜 0 타격 %.0f%%  빗나감 %.0f%%  물리 감산 손실 %.0f%%  유물 발동 %d회" % [
+			_proto._zero_ratio(), _proto._miss_ratio(), _proto._phys_loss(),
+			_proto._log_relic_fires])
+		print("인원 채움 %d/%d" % [_proto._crew_now(), _proto._crew_cap()])
 		var times: String = ""
 		for t in _proto._log_kill_times:
 			times += "%.0f " % float(t)

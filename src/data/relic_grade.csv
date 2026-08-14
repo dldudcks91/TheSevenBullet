@@ -1,0 +1,5 @@
+grade,base_option,prefix_count,suffix_count,skill,affix_fixed,weight,name_key
+common,1,0,0,1,FALSE,,GRADE_COMMON
+magic,1,1,0,1,FALSE,,GRADE_MAGIC
+rare,1,1,1,1,FALSE,,GRADE_RARE
+unique,,,,,TRUE,,GRADE_UNIQUE

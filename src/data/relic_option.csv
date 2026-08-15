@@ -1,0 +1,11 @@
+option_id,stat,value_type,element_roll,stacking,min_value,max_value,name_key,desc_key
+OPT_DAMAGE,damage,percent,FALSE,,,,OPT_DAMAGE,
+OPT_ATTACK_SPEED,attack_speed,percent,FALSE,,,,OPT_ATTACK_SPEED,
+OPT_ACCURACY,accuracy,percent,FALSE,,,,OPT_ACCURACY,
+OPT_CRIT_CHANCE,crit_chance,percent,FALSE,,,,OPT_CRIT_CHANCE,
+OPT_DEFENSE_REDUCTION,defense_reduction,percent,FALSE,multiplicative,,,OPT_DEFENSE_REDUCTION,
+OPT_ELEMENT_DAMAGE,element_damage,percent,TRUE,,,,OPT_ELEMENT_DAMAGE,
+OPT_ELEMENT_RESIST_REDUCTION,element_resist_reduction,point,TRUE,additive,,,OPT_ELEMENT_RESIST_REDUCTION,
+OPT_DAMAGE_VS_TARGET,damage_vs_target,percent,FALSE,,,,OPT_DAMAGE_VS_TARGET,
+OPT_DAMAGE_PER_GOLD,damage_per_gold,percent,FALSE,,,,OPT_DAMAGE_PER_GOLD,
+OPT_GOLD_GAIN,gold_gain,percent,FALSE,,,,OPT_GOLD_GAIN,

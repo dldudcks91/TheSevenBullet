@@ -133,3 +133,13 @@ GRADE_COMMON,일반,Common
 GRADE_MAGIC,매직,Magic
 GRADE_RARE,레어,Rare
 GRADE_UNIQUE,유니크,Unique
+OPT_DAMAGE,데미지,Damage
+OPT_ATTACK_SPEED,공격속도,Attack Speed
+OPT_ACCURACY,명중률,Accuracy
+OPT_CRIT_CHANCE,치명타 확률,Critical Chance
+OPT_DEFENSE_REDUCTION,방어력 감소,Defense Reduction
+OPT_ELEMENT_DAMAGE,원소 데미지,Elemental Damage
+OPT_ELEMENT_RESIST_REDUCTION,원소 저항 감소,Elemental Resistance Reduction
+OPT_DAMAGE_VS_TARGET,특정 대상 데미지,Damage vs Target
+OPT_DAMAGE_PER_GOLD,골드당 데미지,Damage per Gold
+OPT_GOLD_GAIN,골드 획득,Gold Gain

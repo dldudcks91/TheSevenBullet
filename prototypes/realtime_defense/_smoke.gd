@@ -39,8 +39,9 @@ const SWAP_AT := 4200                 # ≈70s — 앞판의 리듬을 충분히
 # 네 직업에 하나씩 걸리게 골랐다 (소드마스터 파쇄 / 궁수 화상 / 마법사 빙결 / 사제 취약).
 # 밀어내기를 보려면 "breaker" 를 "hammer" 로 바꾼다.
 const UNIQUE_PICK := ["breaker", "brand", "fetter", "mark"]
-# 전술카드 세 종류를 하나씩 — 칸·골드·규칙이 전부 도는지 본다
-const TACTIC_PICK := ["t_cannae", "t_logistics", "t_pilum"]
+# 전술카드 세 종류를 하나씩 — 칸·골드·규칙이 전부 도는지 본다.
+# 목록이 tactic_cards.csv에서 오므로 카탈로그 id를 쓴다. t_pilum은 카탈로그 밖 실험 카드다.
+const TACTIC_PICK := ["TC_CANNAE", "TC_GOLD_TIME", "t_pilum"]
 
 var _proto: Node2D
 var _f: int = 0
@@ -81,6 +82,20 @@ func _tactic_by_id(id: String) -> Dictionary:
 			return t
 	push_error("그런 전술카드가 없다: %s" % id)
 	return {}
+
+
+# 레이아웃 검증용 매대 채우기 — 레어 유물(옵션 4줄) · 「칸」 비움 조건 · 골드 · 규칙.
+# 봇은 리롤하지 않고 킬은 매대를 갱신하지 않으므로, 여기 심은 카드는 촬영 시점까지 남는다.
+func _stock_shop_for_shot() -> void:
+	var rel: Dictionary = _proto._roll_relic()
+	var guard: int = 0
+	while str(rel["grade"]) != "rare" and guard < 300:
+		rel = _proto._roll_relic()
+		guard += 1
+	_proto._shop[0] = {"kind": "relic", "def": rel, "price": int(rel["price"])}
+	_proto._shop[1] = {"kind": "tactic", "def": _tactic_by_id("TC_CHEONGYA"), "price": 120}
+	_proto._shop[2] = {"kind": "tactic", "def": _tactic_by_id("TC_GOLD_SHIELD"), "price": 85}
+	_proto._shop[3] = {"kind": "tactic", "def": _tactic_by_id("TC_RULE_CRITDMG"), "price": 85}
 
 
 func _boss_point() -> Vector2:
@@ -177,15 +192,15 @@ func _process(_delta: float) -> bool:
 		print("전술 %d/%d" % [held, _proto.TACTIC_SLOTS])
 		# 전술카드를 칸에 떨구면 무효여야 한다 — 목적지가 문법을 정한다
 		var g1: int = _proto._gold
-		_proto._shop[0] = {"kind": "tactic", "def": _tactic_by_id("t_hansan"), "price": 85}
+		_proto._shop[0] = {"kind": "tactic", "def": _tactic_by_id("TC_HAKIK"), "price": 85}
 		_drag(_proto._card_rect(0).get_center(), _proto._cell_rect(4).get_center())
 		print("전술카드 칸 드롭 무과금: %s" % str(g1 == _proto._gold))
 
 	if _f == 90:
 		_drag(_proto._cell_rect(0).get_center(), _proto._cell_rect(8).get_center())
 		_proto._press(_proto.REROLL_RECT.get_center())
-		_proto._press(_proto._repair_rect().get_center())
-		_proto._press(_proto._upgrade_rect().get_center())
+		_proto._press(_proto.WALL_RECT.get_center())   # 수리 = 성벽 클릭 (3차)
+		_proto._try_upgrade()   # 업그레이드 = 성벽 우클릭 (3차) — 봇은 함수를 직접 부른다
 		var before: int = _proto._gold
 		_drag(_proto._card_rect(1).get_center(), Vector2(1700.0, 400.0))
 		print("빈 곳 드롭 무과금: %s / 배치 유지 %d" % [str(before == _proto._gold), _proto._placed_count()])
@@ -218,13 +233,23 @@ func _process(_delta: float) -> bool:
 		_proto._mouse = _proto._cell_rect(4).get_center()
 	elif _f % 120 == 80:
 		_proto._mouse = _proto.FORECAST_RECT.get_center()
-	# 스크린샷은 직전 프레임의 렌더다 — 한 프레임 먼저 상세 카드를 띄울 곳에 마우스를 둔다
-	if _shots.has(_f + 1):
-		# 후반일수록 보스가 오래 살아 있어서, 보스 카드는 마지막 컷으로 잡는다
-		match str(_shots[_f + 1]):
-			"a_early": _proto._mouse = _proto._cell_rect(0).get_center()
-			"b_mid":   _proto._mouse = _proto.FORECAST_RECT.get_center()
-			_:         _proto._mouse = _boss_point()
+	# 스크린샷은 지난 프레임의 렌더인데, 창 렌더가 fixed-fps를 못 따라와 몇십 프레임 늦을 수
+	# 있다 — 그래서 촬영 전 60프레임 내내 같은 곳에 호버를 붙잡아 둔다.
+	# 후반일수록 보스가 오래 살아 있어서, 보스 카드는 마지막 컷으로 잡는다.
+	# 앞의 두 컷은 "제일 길게 그려지는" 카드들을 매대에 심고 찍는다 — 레어 유물(옵션 4줄)과
+	# 전술카드 세 얼굴이 카드 높이 안에 들어가는지가 이 컷의 질문이다
+	if _shots.has(_f + 60) and str(_shots[_f + 60]) == "a_early":
+		_stock_shop_for_shot()
+	for sf in _shots:
+		if _f >= int(sf) - 60 and _f < int(sf):
+			match str(_shots[sf]):
+				"a_early":
+					_proto._mouse = _proto._card_rect(0).get_center()
+				"b_mid":
+					# 슬롯 4는 심지 않은 자연 매물 — 병사카드 상세(정체/능력치/스킬 구조)를 찍는다
+					_proto._mouse = _proto._card_rect(4).get_center()
+				_:
+					_proto._mouse = _boss_point()
 
 	if _shot_dir != "" and _shots.has(_f):
 		var img: Image = root.get_texture().get_image()

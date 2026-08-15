@@ -640,6 +640,10 @@ var _wall_hp: float = WALL_HP_START
 var _wall_max: float = WALL_HP_START
 var _wall_flash: float = 0.0
 
+# 보스 위로 떠오르는 피해 수치. 흐르는 시간 속에서 "어느 칸이 지금 얼마나 넣고 있는지"는
+# 이것 말고 읽을 데가 없다 — 통계 패널은 정지 중에만 열린다.
+var _pops: Array = []
+
 var _cells: Array = []                # 9칸 — null 또는 부대 Dictionary
 var _bosses: Array = []               # 등장 순서대로. 죽으면 death 연출 후 제거
 var _shop: Array = []                 # 5슬롯 — null(구매됨) 또는 카드 Dictionary
@@ -973,6 +977,7 @@ func _start_run() -> void:
 	_log_relic_fires = 0
 	_log_skill_fires.clear()
 	_gold_frac = 0.0
+	_pops.clear()
 	_drag_kind = ""
 	_pin_kind = ""
 
@@ -1577,6 +1582,44 @@ func _boss_states(b: Dictionary) -> Array:
 	return out
 
 
+# ─── 떠오르는 피해 수치 ───────────────────────────────────────────────────
+# **한 부대의 한 박자 = 숫자 하나.** 인원별로 쪼개 띄우면 다수 부대에서 화면이 숫자로 덮여
+# 오히려 아무것도 안 읽힌다 — 부대가 그 박자에 실제로 넣은 총량을 하나로 띄운다.
+# 색이 종류(물리·원소·크리)를, 크기가 크리 여부를 알린다. 글자는 쓰지 않는다.
+const POP_LIFE := 0.85                # 뜬 뒤 사라지기까지
+const POP_RISE := 64.0                # 그동안 올라가는 거리
+const POP_PHYS := Color(0.98, 0.95, 0.88)
+const POP_CRIT := Color(1.00, 0.72, 0.28)
+
+# 칸마다 뜨는 자리를 갈라둔다 — 9칸이 같은 보스를 **함께** 때리므로 자리가 겹치면 겹쳐 찍혀
+# 아홉 개가 한 덩어리가 된다. 열은 가로로, 행은 세로+대각으로 밀어 아홉 자리를 만든다.
+# 늘 같은 자리에 뜨니 "내 3번 칸이 얼마 넣는지"를 눈으로 따라갈 수 있다.
+func _pop(b, amount: float, idx: int, crit: bool, col: Color) -> void:
+	if b == null or amount <= 0.0:
+		return
+	var cx: int = idx % 3
+	var row: int = idx / 3
+	# 스폰 지점이 화면 오른쪽 끝이라 그냥 두면 수치가 화면 밖으로 나간다
+	var px: float = clampf(float(b["x"]) + float(cx - 1) * 78.0 + float(row - 1) * 22.0,
+		BOSS_STOP_X - 120.0, W - 74.0)
+	_pops.append({
+		"x": px,
+		"y": float(b["lane_y"]) - 16.0 + float(row - 1) * 30.0,
+		"t": 0.0,
+		"amount": amount,
+		"crit": crit,
+		"color": col.lerp(POP_CRIT, 0.55) if crit else col,
+	})
+
+
+func _tick_pops(dt: float) -> void:
+	for i in range(_pops.size() - 1, -1, -1):
+		var p: Dictionary = _pops[i]
+		p["t"] = float(p["t"]) + dt
+		if float(p["t"]) >= POP_LIFE:
+			_pops.remove_at(i)
+
+
 # ─── 메인 루프 ────────────────────────────────────────────────────────────
 func _process(delta: float) -> void:
 	_wall_flash = maxf(0.0, _wall_flash - delta * 4.0)
@@ -1600,6 +1643,7 @@ func _process(delta: float) -> void:
 	_tick_spawn()
 	_tick_bosses(dt)
 	_tick_squads(dt)
+	_tick_pops(dt)
 	_cleanup_bosses(dt)
 	_check_end()
 
@@ -1855,6 +1899,10 @@ func _do_basic(idx: int, sq: Dictionary, target) -> int:
 	var curse: float = float(target["curse"])
 	var total: float = 0.0
 	var landed: int = 0
+	# 떠오르는 수치가 무엇으로 들어갔는지 알리려면 이 박자의 성격을 모아둬야 한다.
+	# 마법 전환(MAGIC_STRIKE)이 한 번이라도 섞이면 그 원소 색으로 띄운다.
+	var crit_any: bool = false
+	var pop_elem: String = ""
 	# **「테베의 팔랑크스」(규칙)가 인원 판정을 하나로 묶는다** — 한 박자에 인원 수만큼
 	# 쪼개 때리던 것을 한 방으로 합친다. 다수 부대가 감산을 뚫게 되는 대신,
 	# 타격 수가 1이 되어 상태이상 스택 속도와 유물 발동이 함께 느려진다.
@@ -1902,6 +1950,10 @@ func _do_basic(idx: int, sq: Dictionary, target) -> int:
 		one += curse
 		total += one * float(shots)
 		landed += shots
+		if crit:
+			crit_any = true
+		if str(fx["convert"]) != "":
+			pop_elem = str(fx["convert"])
 	if landed > 0:
 		sq["hits"] = int(sq["hits"]) + landed
 		sq["flash"] = 1.0
@@ -1910,6 +1962,8 @@ func _do_basic(idx: int, sq: Dictionary, target) -> int:
 	target["hp"] = float(target["hp"]) - total
 	target["flash"] = 1.0
 	sq["dmg"] = float(sq["dmg"]) + total
+	_pop(target, total, idx, crit_any,
+		_elem_color(pop_elem) if pop_elem != "" else POP_PHYS)
 	if float(target["hp"]) <= 0.0:
 		_kill(target)
 	return landed
@@ -2002,6 +2056,8 @@ func _fire_skill(idx: int, sq: Dictionary, target) -> Dictionary:
 			sq["dmg"] = float(sq["dmg"]) + one
 			sq["hits"] = int(sq["hits"]) + 1
 			sq["flash"] = 1.0
+			# 캐스터는 시전마다 하나씩 — 인원수가 곧 시전 횟수라 굵기와 개수가 함께 보인다
+			_pop(target, one, idx, false, _elem_color(elem))
 			if eff == "NUKE_FREEZE":
 				# 냉기 계열은 딜을 낮게 잡는 대신 자기 상태이상을 함께 싣는다(설계 지침)
 				_apply_chill(target, dur)
@@ -2807,6 +2863,7 @@ func _draw_tactic_card(r: Rect2, t: Dictionary, col: Color, afford: bool) -> voi
 func _draw_overlay() -> void:
 	_resolve_detail()          # 칸·보스가 "지금 보고 있는 것"에 테두리를 치므로 먼저 정한다
 	_draw_top_hud()
+	_draw_pops()               # 패널보다 먼저 — 수치는 레인의 것이고 예고·상세를 가리면 안 된다
 	_draw_forecast()
 	_draw_cells_hud()
 	_draw_bosses_hud()
@@ -2995,6 +3052,22 @@ func _draw_bosses_hud() -> void:
 		# 상세 카드를 보고 있는 보스는 테두리로 알린다
 		if _detail_kind == "boss" and _detail_idx == int(b["index"]):
 			_overlay.draw_rect(_boss_rect(b), Color(0.92, 0.94, 1.0, 0.32), false, 2.0)
+
+
+# 뜬 자리에 그대로 남아 올라간다 — 보스를 따라다니면 넉백·이동에 숫자가 끌려다녀
+# 어느 순간에 들어간 딜인지가 흐려진다. 뒤 절반 동안만 사라진다.
+# 스프라이트 위에 겹치므로 어두운 그림자를 먼저 깔아 읽히게 한다.
+func _draw_pops() -> void:
+	for p in _pops:
+		var k: float = clampf(float(p["t"]) / POP_LIFE, 0.0, 1.0)
+		var a: float = 1.0 if k < 0.5 else 1.0 - (k - 0.5) / 0.5
+		var crit: bool = bool(p["crit"])
+		var f: Font = _font_b if crit else _font
+		var size: int = 31 if crit else 24
+		var s: String = "%d" % maxi(1, int(round(float(p["amount"]))))
+		var at := Vector2(float(p["x"]), float(p["y"]) - POP_RISE * k)
+		_txt(f, at + Vector2(2.0, 2.0), s, size, Color(0.05, 0.04, 0.06, a * 0.75))
+		_txt(f, at, s, size, Color(p["color"] as Color, a))
 
 
 func _draw_shop_text() -> void:

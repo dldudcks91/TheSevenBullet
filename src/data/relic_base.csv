@@ -11,6 +11,3 @@ BASE_SIGIL,sigil,race,darkelf,,FALSE,BASE_SIGIL
 BASE_SKULL,skull,race,undead,,FALSE,BASE_SKULL
 BASE_TOTEM,totem,race,beastman,,FALSE,BASE_TOTEM
 BASE_HORN,horn,race,demon,,FALSE,BASE_HORN
-BASE_RING,ring,all,all,,FALSE,BASE_RING
-BASE_AMULET,amulet,all,all,,FALSE,BASE_AMULET
-BASE_GEM,gem,all,all,,TRUE,BASE_GEM

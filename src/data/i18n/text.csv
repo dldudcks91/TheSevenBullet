@@ -33,7 +33,7 @@ SKILL_HUM_ARCHER,속사,Rapid Volley
 SKILL_HUM_ARCHER_DESC,크리티컬이 터지면 잠시 공격속도가 빨라진다,On critical hit briefly increases attack speed
 SKILL_HUM_MAGE,연쇄 낙뢰,Chain Lightning
 SKILL_VK_BERSERKER,광란,Frenzy
-SKILL_VK_BERSERKER_DESC,발동하면 잠시 공격 주기가 빨라진다,Attack period speeds up for a short time
+SKILL_VK_BERSERKER_DESC,발동마다 공격 속도가 쌓여 점점 빨라진다,Attack speed stacks with each trigger
 SKILL_HUM_PRINCE,왕가의 축복,Royal Blessing
 SKILL_HUM_PRINCE_DESC,랜덤 부대 하나에 타격당 붙는 고정 공격력을 잠시 부여한다,Temporarily grants a random squad flat damage per hit
 SKILL_VK_JARL,전투 함성,Battle Cry
@@ -59,12 +59,16 @@ SKILL_UD_SKELARCHER_DESC,크리티컬이 터지면 화살이 한 발 더 나간�
 SKILL_UD_BUTCHER,도축,Slaughter
 SKILL_UD_BUTCHER_DESC,보스를 잡을 때마다 공격력이 고정값씩 영구 누적된다,Permanently gains flat attack power for every boss kill
 SKILL_BM_CAT,소매치기,Pickpocket
-SKILL_BM_CAT_DESC,발동하면 보스에게서 골드를 훔친다,Steals gold from the boss
+SKILL_BM_CAT_DESC,발동하면 보스에게서 골드를 훔친다 — 훔치는 양은 매번 굴려진다,Steals gold from the boss — the amount is rolled each time
 SKILL_BM_RABBIT,원소 룰렛,Element Roulette
 SKILL_BM_RABBIT_DESC,캐스팅 후 화염·냉기·독·번개 중 랜덤 원소로 피해를 입힌다,"After casting, deals damage of a random element — fire, cold, poison, or lightning"
 SKILL_BM_DEER,자연의 축복,Nature's Blessing
 SKILL_BM_DEER_DESC,아군 랜덤 부대에 랜덤 버프를 부여한다,Grants a random buff to a random allied squad
 SKILL_BM_LION,사자후,Lion's Roar
+SKILL_BM_PANDA,취권,Drunken Fist
+SKILL_BM_PANDA_DESC,발동하면 랜덤 강화가 하나 쌓인다,Each trigger stacks one random enhancement
+SKILL_BM_FOX,여우불,Foxfire
+SKILL_BM_FOX_DESC,발동하면 다음 베기가 화염·냉기·독·번개 중 랜덤 원소 피해로 나간다,"The next slash deals damage of a random element — fire, cold, poison, or lightning"
 SKILL_DM_HIGH,업화의 일격,Infernal Blow
 SKILL_DM_HIGH_DESC,발동하면 다음 타격에 큰 고정 추가피해가 실린다,The next strike carries heavy flat bonus damage
 SKILL_DM_FIREIMP,한탕 사격,Jackpot Shot

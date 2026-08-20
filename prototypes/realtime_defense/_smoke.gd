@@ -1,10 +1,10 @@
 # PROTOTYPE - NOT FOR PRODUCTION (임시 스모크 — 검증 끝나면 지운다)
-# Question: 4차 개조(정비↔전투 라운드)의 새 경로가 죽지 않는가?
-#           팩 구매→3장 제시→택1 / 병사카드 빈 칸 배치 / **점유 칸 드롭 거부**(합류 없음) /
+# Question: 5차 개편(던전 구조 · 격자 상시 정비 화면)의 새 경로가 죽지 않는가?
+#           팩 구매→개봉→**제시에서 격자로 바로 드래그** / 클릭 택1→트레이 / 빈 칸 배치 / 점유 칸 드롭 거부 /
 #           빼내기 / 스킬카드 발동·사기 소모·**구간 버프 상실** / 「전투 시작」 전환 /
-#           조기 종료 / **타임아웃 정산** / 막보스 상시 표시 /
+#           핵심 전멸 조기 종료 / **타임아웃 정산** / 일반 연속 스폰 / 막보스 상시 표시 /
 #           유닛 고유 스킬 effect 20종이 전부 도는가
-# Date: 2026-08-20
+# Date: 2026-08-21
 # 사용: godot --headless --fixed-fps 60 --script prototypes/realtime_defense/_smoke.gd -- adaptive
 #       godot --fixed-fps 60 --script prototypes/realtime_defense/_smoke.gd -- shots=<폴더>
 extends SceneTree
@@ -41,11 +41,13 @@ const COMP_C := [
 	"U_DE_SWORD", "U_DE_ARCHER", "U_UD_SKELARCHER", "U_HUM_PRINCE",
 	"U_UD_LICH", "U_DM_HIGH", "U_DE_ASSASSIN",
 ]
-# 판 교체가 일어나는 라운드 인덱스 (정비에서)
-const SWAP_B_ROUND := 4
-const SWAP_C_ROUND := 8
-# **정산 경로를 확정적으로 밟는 라운드.** 전투 시작 직후 제한시간을 몇 초로 줄여
+# 판 교체가 일어나는 던전 인덱스 (정비에서). 던전은 4개뿐이다:
+# A = 던전 1 · 던전 2(정산 검증·5s 컷) / B = 던전 3 (3막 주박이 걸려야 CLEANSE가 돈다) / C = 던전 4
+const SWAP_B_ROUND := 2
+const SWAP_C_ROUND := 3
+# **정산 경로를 확정적으로 밟는 던전.** 전투 시작 직후 제한시간을 몇 초로 줄여
 # 반드시 타임아웃이 나게 한다. (격자를 비우는 방식은 성벽이 먼저 깨져 정산까지 못 간다)
+# 던전 1은 안 된다 — 첫 정비는 경로 검증 분기로 처리돼 제한시간 컷이 안 걸린다
 const SETTLE_ROUND := 1
 const SETTLE_LIMIT := 5.0
 
@@ -116,18 +118,23 @@ func _drag(from: Vector2, to: Vector2) -> void:
 	_proto._release(to)
 
 
-# 팩 랜덤을 기다릴 수 없으므로 봇은 **든 카드를 직접 만들어** 배치 경로만 태운다.
+# 팩 랜덤을 기다릴 수 없으므로 봇은 **트레이 카드를 직접 만들어** 배치 경로만 태운다.
 # (팩 구매→제시→택1 경로 자체는 아래 _path_checks 가 진짜로 밟는다)
+func _tray_put(card: Dictionary) -> void:
+	_proto._tray.clear()
+	_proto._tray.append(card)
+
+
 func _hold_unit(unit_id: String, count: int) -> void:
 	var d: Dictionary = _proto._unit_by_id(unit_id)
-	_proto._hold = {"kind": "unit", "def": d,
-		"count": count if count > 0 else int(d["cap"])}
+	_tray_put({"kind": "unit", "def": d,
+		"count": count if count > 0 else int(d["cap"])})
 
 
 func _place(unit_id: String, cell: int) -> void:
 	_hold_unit(unit_id, 0)
-	_drag(_proto.HOLD_RECT.get_center(), _proto._cell_rect(cell).get_center())
-	_proto._hold = null           # 실패해도 다음 카드를 위해 손을 비운다
+	_drag(_proto._tray_rect(0).get_center(), _proto._cell_rect(cell).get_center())
+	_proto._tray.clear()          # 실패해도 다음 카드를 위해 손을 비운다
 
 
 func _pull(cell: int) -> void:
@@ -150,7 +157,7 @@ func _path_checks() -> void:
 	print("유닛팩 풀 %d종 / 스킬카드 %d종" % [_proto.UNITS.size(), _proto.SKILL_CARDS.size()])
 	_ck("유닛팩 풀 22종", _proto.UNITS.size() == 22)
 
-	# 1) 팩 구매 → 3장 제시 → 택1 (나머지 소멸)
+	# 1) 팩 구매 → 3장 제시 → 클릭 택1 (나머지 소멸 → 트레이로)
 	var g0: int = _proto._gold
 	var bought: bool = _proto._try_buy_pack("unit")
 	_ck("팩 구매 — 3장 제시", bought and _proto._offer.size() == 3
@@ -160,10 +167,18 @@ func _path_checks() -> void:
 	_proto._try_buy_pack("tactic")
 	_ck("제시 중 추가 구매 차단", _proto._gold == g1 and _proto._offer.size() == 3)
 	var picked: bool = _proto._pick_offer(1)
-	_ck("택1 — 나머지 소멸", picked and _proto._hold != null and _proto._offer.is_empty())
+	_ck("택1 — 트레이로", picked and _proto._tray.size() == 1 and _proto._offer.is_empty())
+	_proto._tray.clear()
+
+	# 1b) **제시에서 격자로 바로 드래그** — "팩에서 바로 전투에 넣는다"(사용자 확정 2차).
+	# 유닛팩을 다시 열어 제시 0번을 빈 칸 4로 끌어다 놓는다 — 배치되고 나머지는 소멸한다
+	_proto._try_buy_pack("unit")
+	_drag(_proto._offer_rect(0).get_center(), _proto._cell_rect(4).get_center())
+	_ck("제시 → 격자 바로 배치 (나머지 소멸)",
+		_proto._cells[4] != null and _proto._offer.is_empty() and _proto._tray.is_empty())
+	_drag(_proto._cell_rect(4).get_center(), Vector2(1700.0, 300.0))   # 빼서 판을 비운다
 
 	# 2) 병사카드는 **빈 칸에만** 놓인다
-	_proto._hold = null
 	_place(str(COMP_A[0]), 0)
 	_ck("빈 칸 배치", _proto._cells[0] != null)
 
@@ -171,68 +186,70 @@ func _path_checks() -> void:
 	var before_id: String = str(_proto._cells[0]["def"]["id"])
 	var before_n: int = int(_proto._cells[0]["members"])
 	_hold_unit(str(COMP_A[0]), 2)                 # 같은 유닛 — 3차라면 합쳐졌다
-	_drag(_proto.HOLD_RECT.get_center(), _proto._cell_rect(0).get_center())
-	var same_kept: bool = _proto._hold != null and int(_proto._cells[0]["members"]) == before_n
+	_drag(_proto._tray_rect(0).get_center(), _proto._cell_rect(0).get_center())
+	var same_kept: bool = not _proto._tray.is_empty() \
+		and int(_proto._cells[0]["members"]) == before_n
 	_hold_unit(str(COMP_A[1]), 2)                 # 다른 유닛
-	_drag(_proto.HOLD_RECT.get_center(), _proto._cell_rect(0).get_center())
-	var other_kept: bool = _proto._hold != null and str(_proto._cells[0]["def"]["id"]) == before_id
+	_drag(_proto._tray_rect(0).get_center(), _proto._cell_rect(0).get_center())
+	var other_kept: bool = not _proto._tray.is_empty() \
+		and str(_proto._cells[0]["def"]["id"]) == before_id
 	_ck("점유 칸 드롭 거부 (같은 유닛 — 합류 없음)", same_kept)
 	_ck("점유 칸 드롭 거부 (다른 유닛)", other_kept)
-	_proto._hold = null
+	_proto._tray.clear()
 
 	# 4) 빼내기 — 격자 밖으로. 환불은 없다
 	_pull(0)
 	_ck("빼내기", _proto._cells[0] == null and _proto._placed_count() == 0)
 
-	# 5) 잘못된 목적지 — 카드가 손에 남아야 한다(결제는 이미 끝났으므로 잃으면 안 된다)
+	# 5) 잘못된 목적지 — 카드가 트레이에 남아야 한다(결제는 이미 끝났으므로 잃으면 안 된다)
 	_hold_unit(str(COMP_A[0]), 0)
-	_drag(_proto.HOLD_RECT.get_center(), Vector2(1700.0, 400.0))
-	_ck("무효 목적지 — 든 카드 유지", _proto._hold != null)
-	_proto._hold = null
+	_drag(_proto._tray_rect(0).get_center(), Vector2(1700.0, 400.0))
+	_ck("무효 목적지 — 트레이 카드 유지", not _proto._tray.is_empty())
+	_proto._tray.clear()
 
 	# 6) 유물·전술 — 3차 그대로 각자의 줄에만
 	for i in UNIQUE_PICK.size():
-		_proto._hold = {"kind": "relic", "def": _unique_by_id(str(UNIQUE_PICK[i]))}
-		_drag(_proto.HOLD_RECT.get_center(), _proto._relic_rect(i).get_center())
-	_proto._hold = null
+		_tray_put({"kind": "relic", "def": _unique_by_id(str(UNIQUE_PICK[i]))})
+		_drag(_proto._tray_rect(0).get_center(), _proto._relic_rect(i).get_center())
+	_proto._tray.clear()
 	_ck("유물 4칸", _proto.RELIC_SLOTS - _proto._empty_relics() == 4)
 	for i in TACTIC_PICK.size():
-		_proto._hold = {"kind": "tactic", "def": _tactic_by_id(str(TACTIC_PICK[i]))}
-		_drag(_proto.HOLD_RECT.get_center(), _proto._tactic_rect(i).get_center())
-	_proto._hold = null
+		_tray_put({"kind": "tactic", "def": _tactic_by_id(str(TACTIC_PICK[i]))})
+		_drag(_proto._tray_rect(0).get_center(), _proto._tactic_rect(i).get_center())
+	_proto._tray.clear()
 	var held: int = 0
 	for t in _proto._tactics:
 		if t != null:
 			held += 1
 	_ck("전술 3칸", held == 3)
 	# 전술카드를 격자에 떨구면 무효 — 목적지가 문법을 정한다
-	_proto._hold = {"kind": "tactic", "def": _tactic_by_id("TC_SANDAN")}
-	_drag(_proto.HOLD_RECT.get_center(), _proto._cell_rect(4).get_center())
-	_ck("전술카드 칸 드롭 무효", _proto._hold != null and _proto._cells[4] == null)
-	_proto._hold = null
+	_tray_put({"kind": "tactic", "def": _tactic_by_id("TC_SANDAN")})
+	_drag(_proto._tray_rect(0).get_center(), _proto._cell_rect(4).get_center())
+	_ck("전술카드 칸 드롭 무효", not _proto._tray.is_empty() and _proto._cells[4] == null)
+	_proto._tray.clear()
 
 	# 7) 스킬 슬롯 5칸 + **교환**(꽉 차면 바꾼다, 버린 카드는 소멸)
 	for i in SKILL_PICK.size():
-		_proto._hold = {"kind": "skill", "def": _proto._skill_card_by_id(str(SKILL_PICK[i]))}
-		_drag(_proto.HOLD_RECT.get_center(), _proto._skill_rect(i).get_center())
-	_proto._hold = null
+		_tray_put({"kind": "skill", "def": _proto._skill_card_by_id(str(SKILL_PICK[i]))})
+		_drag(_proto._tray_rect(0).get_center(), _proto._skill_rect(i).get_center())
+	_proto._tray.clear()
 	var sk_held: int = 0
 	for c in _proto._skills:
 		if c != null:
 			sk_held += 1
 	_ck("스킬 슬롯 5칸", sk_held == 5)
 	# 이미 가진 카드는 다시 못 넣는다
-	_proto._hold = {"kind": "skill", "def": _proto._skill_card_by_id("sc_push")}
-	_drag(_proto.HOLD_RECT.get_center(), _proto._skill_rect(2).get_center())
-	_ck("중복 스킬카드 거부", _proto._hold != null)
-	_proto._hold = null
+	_tray_put({"kind": "skill", "def": _proto._skill_card_by_id("sc_push")})
+	_drag(_proto._tray_rect(0).get_center(), _proto._skill_rect(2).get_center())
+	_ck("중복 스킬카드 거부", not _proto._tray.is_empty())
+	_proto._tray.clear()
 	# 교환 — 슬롯 0의 카드를 슬롯 4로 밀어넣으면 슬롯 4가 갈린다
 	var slot0_id: String = str(_proto._skills[0]["id"])
 	_proto._skills[0] = null
-	_proto._hold = {"kind": "skill", "def": _proto._skill_card_by_id(slot0_id)}
-	_drag(_proto.HOLD_RECT.get_center(), _proto._skill_rect(4).get_center())
+	_tray_put({"kind": "skill", "def": _proto._skill_card_by_id(slot0_id)})
+	_drag(_proto._tray_rect(0).get_center(), _proto._skill_rect(4).get_center())
 	_ck("슬롯 교환 — 기존 카드 소멸",
-		_proto._hold == null and str(_proto._skills[4]["id"]) == slot0_id)
+		_proto._tray.is_empty() and str(_proto._skills[4]["id"]) == slot0_id)
 	_proto._skills[0] = _proto._skill_card_by_id("sc_fire")   # 5장을 다시 채운다
 
 	# 8) 막보스 상시 표시 — 막이 시작될 때부터 그 막의 막보스가 뜬다
@@ -240,18 +257,18 @@ func _path_checks() -> void:
 	_ck("막보스 상시 표시", not e.is_empty() and bool(e["boss"])
 		and not (e["pre"] as Array).is_empty())
 
-	# 9) 라운드 구성 — 5~6마리, 일반+정예 혼합
-	var norm: int = 0
+	# 9) 던전 핵심 스케줄 — 정예 3 + 보스 1 (일반은 스케줄 밖 무한 스폰)
 	var elite: int = 0
+	var boss_n: int = 0
 	for en in _proto._round_sched:
-		if str(en["tier"]) == "normal":
-			norm += 1
-		elif str(en["tier"]) == "elite":
+		if str(en["tier"]) == "elite":
 			elite += 1
-	print("R1 구성: 일반 %d · 정예 %d · 제한시간 %.0fs"
-		% [norm, elite, _proto._round_limit])
-	_ck("라운드당 5~6마리", _proto._round_sched.size() >= 5 and _proto._round_sched.size() <= 6)
-	_ck("일반+정예 혼합", norm >= 4 and elite >= 1)
+		elif str(en["tier"]) == "boss":
+			boss_n += 1
+	print("던전1 핵심: 정예 %d · 보스 %d · 제한시간 %.0fs"
+		% [elite, boss_n, _proto._round_limit])
+	_ck("핵심 스케줄 = 정예 3 + 보스 1",
+		elite == 3 and boss_n == 1 and _proto._round_sched.size() == 4)
 
 	# 10) 전투 중에는 판을 못 바꾼다 — 나중에 COMBAT에서 확인한다
 	_set_comp(COMP_A)
@@ -259,7 +276,7 @@ func _path_checks() -> void:
 		% [_proto._placed_count(), _proto._crew_now(), _proto._crew_cap()])
 
 
-# ─── 정비 처리 — 라운드마다 ──────────────────────────────────────────────
+# ─── 정비 처리 — 던전마다 ────────────────────────────────────────────────
 func _do_prep() -> void:
 	_proto._gold = 100000
 	if _proto._round_idx == SWAP_B_ROUND:
@@ -284,10 +301,13 @@ func _do_prep() -> void:
 
 
 # ─── 전투 중 — 스킬카드를 실제로 쓴다 ────────────────────────────────────
-# 사람 손이 아니다. "쓸 수 있으면 쓴다"라서 구간 유지 판단을 하지 않는다 —
-# 오히려 그래서 **구간 버프 상실**이 실제로 몇 번 물리는지가 그대로 찍힌다.
+# 사람 손이 아니다. 라운드 절반은 "쓸 수 있으면 쓴다"(구간 버프 상실이 몇 번 물리는지),
+# 절반은 아예 안 쓴다(아꼈을 때 상위 구간이 실제로 열리는지) — 트레이드오프의 양끝을
+# 한 런에서 다 밟는다. 홀수 라운드(R2·R4·…)가 아끼는 쪽이다.
 func _do_combat() -> void:
 	if _f % 24 != 0:
+		return
+	if _proto._round_idx % 2 == 1:
 		return
 	for i in _proto.SKILL_SLOTS:
 		if not _proto._can_fire_card(i):
@@ -297,22 +317,23 @@ func _do_combat() -> void:
 		return
 
 
-# ─── 스크린샷 3컷 — PREP · 팩 개봉 택1 · COMBAT ─────────────────────────
+# ─── 스크린샷 3컷 — 정비(격자+팩 진열) · 팩 개봉 택1 · COMBAT ───────────
 # 렌더가 fixed-fps 를 못 따라와 몇십 프레임 늦으므로, 찍기 전 60프레임 내내
 # 같은 상태·같은 호버를 붙잡아 둔다.
 func _shots_step() -> void:
 	match _shot_stage:
 		0:
+			# 보유·배치를 채워두고 찍는다 — 빈 화면은 정보가 없다
 			if _proto._placed_count() < 9:
 				_proto._gold = 100000
-				_set_comp(COMP_A)
 				for i in SKILL_PICK.size():
 					_proto._skills[i] = _proto._skill_card_by_id(str(SKILL_PICK[i]))
 				for i in UNIQUE_PICK.size():
 					_proto._relics[i] = _unique_by_id(str(UNIQUE_PICK[i]))
 				for i in TACTIC_PICK.size():
 					_proto._tactics[i] = _tactic_by_id(str(TACTIC_PICK[i]))
-			_proto._mouse = _proto._prep_row_rect(1).get_center()
+				_set_comp(COMP_A)
+			_proto._mouse = _proto._pack_rect(0).get_center()
 			_shot_hold += 1
 			if _shot_hold > 70:
 				_save("a_prep")
@@ -325,8 +346,7 @@ func _shots_step() -> void:
 			_shot_hold += 1
 			if _shot_hold > 70:
 				_save("b_offer")
-				_proto._pick_offer(0)
-				_proto._hold = null
+				_proto._pick_offer(0)          # 트레이로 — 전투 컷의 하단 밴드에 보인다
 				_shot_stage = 2
 				_shot_hold = 0
 		2:
@@ -365,18 +385,22 @@ func _process(_delta: float) -> bool:
 	if _prep_done < 0 and _proto._phase == 0:
 		print("--- 경로 검증 ---")
 		_path_checks()
+		# R1 정비는 _do_prep 을 안 거치므로 여기서 센다 — 검증 자체는 8)에서 했다.
+		# 안 세면 클리어 시 카운트가 11인데 기준이 12라 항상 1 모자란다 (4차 FAIL의 정체)
+		_bossbar_ok += 1
 		_prep_done = 0
 		_proto._press(_proto.START_BUTTON.get_center())
 		# 전투 중에는 판을 못 바꾼다
 		var n0: int = _proto._placed_count()
 		_drag(_proto._cell_rect(0).get_center(), Vector2(1700.0, 300.0))
 		_hold_unit(str(COMP_A[0]), 0)
-		_drag(_proto.HOLD_RECT.get_center(), _proto._cell_rect(0).get_center())
-		_proto._hold = null
+		_drag(_proto._tray_rect(0).get_center(), _proto._cell_rect(0).get_center())
+		_proto._tray.clear()
 		_ck("전투 중 배치 차단", _proto._phase == 1 and _proto._placed_count() == n0)
 		var g2: int = _proto._gold
-		_proto._press(_proto._pack_rect(0).get_center())
-		_ck("전투 중 팩 구매 차단", _proto._gold == g2 and _proto._offer.is_empty())
+		var combat_buy: bool = _proto._try_buy_pack("unit")
+		_ck("전투 중 팩 구매 차단", not combat_buy and _proto._gold == g2
+			and _proto._offer.is_empty())
 		_proto._press(_proto.WALL_RECT.get_center())
 		_ck("전투 중 수리 차단", _proto._gold == g2)
 		print("--- 런 ---")
@@ -409,7 +433,7 @@ func _process(_delta: float) -> bool:
 
 func _report() -> void:
 	print("=== 종료: %s ===" % ("클리어" if _proto._phase == 2 else "패배"))
-	print("라운드 %d/%d · 처치 %d · 전투 경과 %.0fs · 성벽 %d/%d" % [
+	print("던전 %d/%d · 처치 %d · 전투 경과 %.0fs · 성벽 %d/%d" % [
 		mini(_proto._round_idx, _proto.RUN_ROUNDS), _proto.RUN_ROUNDS, _proto._killed,
 		_proto._elapsed, int(_proto._wall_hp), int(_proto._wall_max)])
 	print("조기 종료 %d라운드 / 정산 %d라운드 (정산 피해 %d · 성벽 총 손실 %d)" % [
@@ -417,6 +441,17 @@ func _report() -> void:
 		int(_proto._log_wall_lost)])
 	print("평균 처치 소요 %.1fs · 최대 겹침 %d마리" % [_proto._avg_kill(),
 		_proto._log_overlap_peak])
+	# 단별 분리 — 일반은 짧아야 하고 정예·막보스는 초읽기가 서야 한다
+	var tl: String = ""
+	for tier in ["normal", "elite", "boss"]:
+		var arr: Array = _proto._log_kill_tier.get(tier, [])
+		var mx: float = 0.0
+		for t in arr:
+			mx = maxf(mx, float(t))
+		tl += "%s %.1fs(최대 %.1f · %d마리) / " % [
+			{"normal": "일반", "elite": "정예", "boss": "막보스"}[tier],
+			_proto._avg_kill_tier(tier), mx, arr.size()]
+	print("단별 처치 소요: %s" % tl)
 	print("딜 0 타격 %.0f%% · 빗나감 %.0f%% · 물리 감산 손실 %.0f%%" % [
 		_proto._zero_ratio(), _proto._miss_ratio(), _proto._phys_loss()])
 	print("스킬카드 발동 %d회 (사기 %d 소모) · **구간 버프 상실 %d회** · 사기 최고 %d" % [
@@ -440,7 +475,11 @@ func _report() -> void:
 	_ck("타임아웃 정산 경로", _rounds_settled > 0)
 	_ck("스킬카드 발동", _proto._log_card_fires > 0)
 	_ck("구간 버프 상실 발생", _proto._log_band_drops > 0)
-	_ck("막보스 상시 표시 — 라운드마다", _bossbar_ok >= mini(_proto._round_idx, 12))
+	# 아끼는 던전에서 상위 구간(75)이 실제로 열리는가 — 4차 재튜닝의 목표 그 자체
+	_ck("사기 상위 구간 도달(75+)", _proto._log_morale_peak >= 75.0)
+	# 일반 무한 스폰이 실제로 돈다 — 던전당 핵심 4를 빼고도 일반 킬이 두 자릿수는 나와야 한다
+	_ck("일반 연속 스폰", (_proto._log_kill_tier.get("normal", []) as Array).size() >= 10)
+	_ck("막보스 상시 표시 — 던전마다", _bossbar_ok >= mini(_proto._round_idx, 4))
 	_ck("effect 20종 전부 발동", keys.size() >= 20)
 	print("경로 검증: 통과 %d / 실패 %d" % [_pass.size(), _fail.size()])
 	if not _fail.is_empty():

@@ -3,7 +3,8 @@
 #           (1) 정비의 「적을 읽고 팩으로 답을 갖추는」 판단이 성립하는가
 #           (2) 전투가 관전이 되지 않는가 (스킬카드·사기 트레이드오프가 실제로 쓰이는가)
 #           (3) 합류 없이 카드 갈아끼우기가 성장으로 느껴지는가
-# Date: 2026-08-20 (4차 개조) · 3차 2026-08-15 · 2차 2026-08-14 · 1차 2026-08-11 · 최초 2026-08-05
+# Date: 2026-08-21 (5차 개편 — 던전 구조·개봉 별도 화면·5마리 상한) · 4차 2026-08-20 ·
+#       3차 2026-08-15 · 2차 2026-08-14 · 1차 2026-08-11 · 최초 2026-08-05
 #
 # 기준 문서: docs/game_design/GAME_DESIGN.md — 로그라이크 타워디펜스.
 #            **오토배틀러가 아니다.** 정비 단계와 전투 라운드를 오간다.
@@ -14,7 +15,9 @@
 #     「전투 시작」 버튼을 눌러야 COMBAT으로 간다. 전투 중 허용 입력은 **스킬카드와 열람뿐**
 #   - **라운드 제한시간 + 정산.** 전멸 시 조기 종료. 타임아웃이면 남은 적이
 #     **남은 체력 비례**로 성벽에 피해를 물리고 사라진다. 패배는 성벽 파괴 하나뿐
-#   - **4막 × 3라운드 = 12라운드.** R1·R2 = 일반+정예 혼합, R3 = 막보스 전용 라운드
+#   - **던전 구조 (5차 · 사용자 확정 2026-08-21).** 막 하나 = 던전 하나, 총 4던전.
+#     던전 = **일반 무한 스폰 + 정예 3 + 보스 1.** 정예·보스를 다 잡으면 던전 클리어 —
+#     일반은 무한이라 카운트에서 빠지고, 물량 압박과 골드·사기 수입을 담당한다
 #   - **적 3단.** 일반(접두사 없음·짧고 가볍다·골드 바닥) / 정예(접두사 굴림) /
 #     막보스(고정 조합 · **막 시작부터 상시 표시**). 스탯 인플레는 막보스에만
 #   - **팩 상점.** 매대·리롤·시간 골드 폐지. 유닛팩·전술팩·스킬팩·유물팩을 사서 연다 →
@@ -41,12 +44,13 @@
 #   - **막보스는 전용 라운드를 갖는다** (막의 R3). 일반 소수가 선행한다
 #   - **팩 개봉 = 3장 제시 → 택1, 나머지 소멸**
 #   - **유물은 유물팩으로 얻는다** (막보스 보상 안이 아니라 — 획득 문법을 팩으로 통일)
-#   - **사기 구간 = 30마다**, 구간당 전 부대 데미지 +8%. 충전은 킬마다(일반 10/정예 26/막보스 55)
-#     — 봇 기준 상위 구간(60/90)이 안 열려 올린 값인데도 최고 55에 그친다. **재튜닝 미완**
+#   - **사기 구간 = 25마다(최대 3구간)**, 구간당 전 부대 데미지 +8%. 충전은 킬마다
+#     (일반 12/정예 32/막보스 70). 폭 30·충전 10/26/55에서는 상위 구간이 수학적으로
+#     안 열렸다(혼합 라운드 통상 수입 66) — 아끼면 구간 3(75)에 닿게 재튜닝(2차)
 #   - **스킬카드는 자동 대상 — 최근접 적.** 교환으로 버린 카드는 소멸
 #   - **라운드 경계에서 병력 디버프·버프는 리셋된다** (정비에서 회복된다고 읽었다)
 #   - **빗나감 = 0** · **빼낸 부대는 환불 없이 사라진다** (3차와 같음)
-#   - **병사카드 마릿수 분포**를 체급 상한까지 넓혔다 (소형 2~9 / 중형 1~3 / 대형 1)
+#   - **병사카드 마릿수 분포**를 체급 상한까지 넓혔다 (소형 2~5 / 중형 1~3 / 대형 1)
 #
 # 수치는 전부 임시값이다. src/data/ 의 CSV는 **읽기만** 하고, 미확정 수치는
 # 아래 TUNE_UNITS / TUNE_SKILLS 에 모아둔다 — 이 폴더는 버리는 코드다.
@@ -68,23 +72,29 @@ const BOSS_STOP_X := 652.0            # 보스 중심이 멈추는 곳 — 성�
 const BOSS_SPAWN_X := 1880.0          # 1228px 전진 = 접근 구간
 const BOSS_BASE_Y := 480.0
 
-# 하단 밴드 (4차 재구성) — 왼쪽부터 **팩 4종 · 든 카드 · 사기/스킬 · 보유 슬롯 블록**.
-# 매대 5슬롯과 리롤 버튼이 사라진 자리를 팩 진열이 받는다. 팩을 열면 **택1 제시**가
-# 화면 중앙에 모달로 뜨고(하단 밴드를 먹지 않는다), 고른 한 장이 「든 카드」 자리로 온다.
-const PACK_ORIGIN := Vector2(56.0, 706.0)
-const PACK := Vector2(132.0, 250.0)
-const PACK_GAP := 10.0
+# ─── 정비 화면 — 격자 상시 + 팩 진열 (사용자 확정 2026-08-21 2차 수정) ────
+# 상점을 별도 씬으로 뺐더니(발라트로 안) 배치까지 두 화면을 오가야 했다 — 걷어냈다.
+# **격자 9칸은 정비 내내 왼쪽에 떠 있고**, 팩은 레인 자리(적 목록 아래)에 진열된다.
+# 팩을 열면 3장이 레인에 뜨고, **제시 카드를 격자·줄로 바로 끌어다 놓으면 배치까지
+# 한 번에 끝난다**(나머지 두 장 소멸). 클릭하면 트레이에 쌓아뒀다 나중에 놓는다.
 const PACK_KINDS := 4
+const PACKROW_ORIGIN := Vector2(700.0, 462.0)
+const PACK := Vector2(150.0, 216.0)
+const PACK_GAP := 12.0
 
-# 든 카드 — 팩에서 택1한 카드가 여기 놓인다. 여기서 목적지로 드래그한다(결제는 이미 끝났다)
-const HOLD_RECT := Rect2(634.0, 706.0, 196.0, 250.0)
+# 하단 밴드 — 왼쪽부터 **트레이 5칸 · 사기/스킬 · 보유 슬롯 블록**
+const TRAY_SLOTS := 5
+const TRAY_ORIGIN := Vector2(56.0, 706.0)
+const TRAY_SLOT := Vector2(104.0, 250.0)
+const TRAY_GAP := 8.0
 
 const CARD := Vector2(196.0, 250.0)
 const CARD_GAP := 14.0
-# 팩 개봉 택1 — 화면 중앙 모달. 3장을 나란히 놓고 비교한다(정비는 시간 압박이 없다)
+# 팩 개봉 택1 — **레인 자리에 뜬다. 격자를 가리지 않는다** (사용자 확정 2026-08-21 2차).
+# 제시 카드에서 격자로 바로 드래그해야 하므로, 개봉이 보드를 덮으면 문법이 죽는다.
 const OFFER_SLOTS := 3
-const OFFER_PANEL := Rect2(600.0, 250.0, 720.0, 360.0)
-const OFFER_ORIGIN := Vector2(624.0, 300.0)
+const OFFER_PANEL := Rect2(690.0, 214.0, 700.0, 400.0)
+const OFFER_ORIGIN := Vector2(724.0, 268.0)
 
 # 사기 게이지 + 스킬 슬롯 — 전투 중의 유일한 입력이 여기 산다
 const MORALE_BAR := Rect2(850.0, 712.0, 422.0, 36.0)
@@ -116,29 +126,34 @@ const TACTICROW_ORIGIN := Vector2(1290.0, 834.0)
 # 그 막의 막보스를 계속 띄운다** — 무엇이 기다리는지 보면서 쇼핑하게 된다(기획 「적 공개」).
 const BOSSBAR_RECT := Rect2(1584.0, 190.0, 280.0, 112.0)
 
-# 정비 화면 — 다음 라운드 적 목록. 전투 중엔 비어 있는 레인 위를 통째로 쓴다
-const PREP_PANEL := Rect2(700.0, 196.0, 856.0, 420.0)
+# 정비 화면 — 다음 던전 적 목록. 핵심 4줄(정예 3 + 보스)만 담으면 되므로 납작하고,
+# 아래 남는 레인 자리에 팩 진열이 온다
+const PREP_PANEL := Rect2(700.0, 196.0, 856.0, 254.0)
 const START_BUTTON := Rect2(1584.0, 330.0, 280.0, 78.0)
 
 # ─── 밸런스 (전부 임시값) ──────────────────────────────────────────────────
-# 유한 런이다 — 클리어가 있다. **4막 × 3라운드 = 12라운드.**
-# R1·R2 = 일반+정예 혼합, R3 = 막보스 전용 라운드(일반 소수 선행 + 막보스).
-# 「막보스가 전용 라운드를 갖는지」는 「미결」이라 프로토가 전용 라운드 쪽을 태운다.
-const ROUNDS_PER_ACT := 3
-const RUN_ROUNDS := 12                # ACTS.size() * ROUNDS_PER_ACT
+# 유한 런이다 — 클리어가 있다. **던전 4개 = 막 4개** (사용자 확정 2026-08-21).
+# 던전 하나 = **일반 무한 스폰 + 정예 3 + 보스 1.** 정예·보스를 다 잡으면 던전이 끝난다 —
+# 일반은 무한이라 클리어 카운트에 안 들어가고, 물량 압박과 골드·사기 수입을 담당한다.
+const ROUNDS_PER_ACT := 1
+const RUN_ROUNDS := 4                 # ACTS.size() * ROUNDS_PER_ACT
 
-# 라운드당 적 5~6마리. 일반이 물량을, 정예가 판단거리를 담당한다(기획 「적」)
-const NORMALS_PER_ROUND := [4, 5]     # 혼합 라운드
-const ELITES_PER_ROUND := [1, 2]
-const NORMALS_BOSS_ROUND := 4         # 막보스 라운드의 선행 일반몹
+# 던전 하나의 핵심 스케줄 — 정예 3 + 보스 1 (사용자 확정)
+const ELITES_PER_DUNGEON := 3
+const ELITE_FIRST := 14.0             # 첫 정예 스폰 시각 — 그전까지는 일반 램프
+const ELITE_SPACING_EARLY := 15.0     # 1막 정예 간격
+const ELITE_SPACING_LATE := 10.0      # 4막
+const BOSS_AFTER_ELITE := 12.0        # 마지막 정예 뒤 보스까지의 숨
 
-# 라운드 안 스폰 — 막이 넘어갈수록 간격이 좁아진다(난이도를 겹침 압박으로 조인다)
+# 일반 연속 스폰 — 스케줄이 아니라 타이머다. 던전이 끝날 때까지 계속 붓는다.
+# 레인 동시 상한을 물린다 — 잡는 속도보다 빨리 부으면 답 없는 벽이 되므로,
+# "계속 나온다"는 유지하되 폭주만 막는다(프로토가 고른 안전장치)
 const ROUND_FIRST_SPAWN := 1.2
-const GAP_EARLY := 5.2                # 1막 일반몹 간격
-const GAP_LATE := 3.0                 # 4막
-const GAP_ELITE_MULT := 1.55          # 정예는 길어서 간격도 넓다
-const ROUND_TAIL := 16.0              # 마지막 스폰 뒤에 남는 제한시간
-const ROUND_TAIL_BOSS := 34.0         # 막보스 라운드는 교전 자체가 길다
+const NORMAL_GAP_EARLY := 6.5         # 1막 일반 간격
+const NORMAL_GAP_LATE := 4.0          # 4막
+const NORMAL_LANE_CAP := 5
+
+const ROUND_TAIL_BOSS := 34.0         # 보스 스폰 뒤에 남는 제한시간 — 교전이 길다
 const ADAPTIVE_REST := 2.4            # ADAPTIVE 모드에서 킬 후 다음 스폰까지의 숨돌릴 틈
 
 # 적 3단 — 하는 일이 다르므로 체급(HP)과 보상이 함께 갈린다.
@@ -185,12 +200,16 @@ const PACKS := [
 # 스킬카드가 그것을 소모해 발동한다 — 상시 파워를 즉시 개입으로 환전하는 트레이드오프다.
 # **라운드마다 0으로 초기화된다**(기획 「사기」). 범위·구간·보너스·충전 소스는 전부 임시값이다.
 const MORALE_MAX := 100.0
-const MORALE_BAND := 30.0             # 구간 폭 — 30/60/90에서 구간이 하나씩 열린다
+# 구간 폭 30 → 25 (재튜닝 2차). 30에서는 상위 구간이 **수학적으로 안 열렸다** —
+# 혼합 라운드의 통상 수입이 66(일반4+정예1), 막보스 라운드는 보스를 잡기 전까지 40이라
+# 90은커녕 60도 아슬했다. 25면 통상 수입으로 구간 3(75)까지 닿는다. 구간 수는 3 고정.
+const MORALE_BAND := 25.0             # 구간 폭 — 25/50/75에서 구간이 하나씩 열린다 (상한 3구간)
 const MORALE_BAND_DMG := 0.08         # 구간당 전 부대 데미지 배율 가산
 # **충전량은 라운드 구성이 정한다.** 처음 잡았던 6/15/30 은 라운드 하나의 총 충전이
 # 45~54밖에 안 돼 구간 2·3이 아예 열리지 않았다(봇 1차 실행에서 사기 최고 34).
-# 게이지가 상한까지 닿아야 "태울지 말지"가 판단이 되므로, 라운드 하나가 90을 넘길 수 있게 올렸다
-const MORALE_GAIN := {"normal": 10.0, "elite": 26.0, "boss": 55.0}
+# 10/26/55 로 올려도 통상 수입 66이라 부족 — 아끼면 혼합 라운드에서 75를 넘도록 한 번 더 올렸다.
+# (통상 4×12+32=80 · 최대 5×12+2×32=124→상한 · 막보스 라운드 선행 4×12=48)
+const MORALE_GAIN := {"normal": 12.0, "elite": 32.0, "boss": 70.0}
 
 const REPAIR_HEAL := 110.0
 const REPAIR_PRICE_BASE := 40
@@ -266,22 +285,27 @@ const ANIMS := {
 	"spell":  {"folder": "Spell",  "fps": 10.0, "loop": true},
 	"death":  {"folder": "Death",  "fps": 8.0,  "loop": false},
 }
-const MAX_MEMBERS := 9                # 소형의 인원 상한
-const MAX_BOSS_SPRITES := 8
+const MAX_MEMBERS := 5                # 소형의 인원 상한 — **한 칸 최대 5마리** (사용자 확정 2026-08-21)
+# 일반이 연속 스폰이라 레인 동시 개체가 늘었다 — 일반 상한 5 + 정예 3 + 보스 1 + 시체 여유
+const MAX_BOSS_SPRITES := 14
 
 # ─── 체급 — 소형 · 중형 · 대형 ────────────────────────────────────────────
 # 체급 배정의 단일 출처는 sprite_catalog.csv 의 size_tier(실측 픽셀 크기)이고,
 # 그 배정에 따른 **인원 상한**이 units.csv 의 crew 다. 둘 다 읽기만 한다.
 #
 #   cap   — 인원 상한. 부대는 병사카드를 부어 여기까지 자란다
-#   hit   — **타격당 딜 배율.** cap 과 반비례한다(1:3:9 ↔ 9:3:1) —
+#   hit   — **타격당 딜 배율.** cap 과 반비례한다(1.8:3:9 ↔ 5:3:1) —
 #           상한까지 채운 부대의 총 화력이 체급이 달라도 같아지도록.
 #           그래서 체급이 정하는 것은 "이 보스에게 통하는가"뿐이고,
 #           "제때 잡는가"는 인원 × 주기가 답한다(기획 「체급과 화력은 직교한다」)
 #   scale — 개체 크기. 정수배만 쓴다(기획 「프레젠테이션」). 상한이 클수록 하나하나가 작다
 #   unit  — 마리당 단가. 대형은 딜 0이 잘 안 나는 안전 자산이라 프리미엄이 붙는다
+# 소형 cap 9→5 (한 칸 최대 5마리 — 사용자 확정 2026-08-21). hit 는 "상한까지 채운 부대의
+# 총 화력이 체급 무관 같다"를 지키도록 따라 움직인다: 5×1.8 = 3×3 = 1×9.
+# scale 2→3 — 소형이 너무 작다는 지적(사용자)로 한 단계 키웠다. 정수배 규칙은 유지.
+# unit 도 풀숙련 가격이 체급끼리 비슷하게(5×9=45 ≈ 3×16=48 ≈ 54) 따라 올렸다.
 const SIZES := {
-	"small": {"name": "소형", "cap": 9, "hit": 1.0, "scale": 2, "unit": 5},
+	"small": {"name": "소형", "cap": 5, "hit": 1.8, "scale": 3, "unit": 9},
 	"mid":   {"name": "중형", "cap": 3, "hit": 3.0, "scale": 3, "unit": 16},
 	"large": {"name": "대형", "cap": 1, "hit": 9.0, "scale": 4, "unit": 54},
 }
@@ -292,7 +316,7 @@ const SIZE_KO := {"소형": "small", "중형": "mid", "대형": "large", "초대
 # **4차에서 상한까지 넓혔다.** 합류제가 폐지되어 카드 한 장의 마릿수가 곧 그 부대의 영구
 # 인원이므로, 이 분포가 그대로 **매물 품질 분포**다. 낙차를 살려야 "마릿수 좋은 카드로
 # 갈아끼우는" 것이 성장으로 느껴진다(기획 「체급」 — 합류제 폐지가 성장을 여기로 넘겼다).
-const CARD_CREW := {"small": [2, 9], "mid": [1, 3], "large": [1, 1]}
+const CARD_CREW := {"small": [2, 5], "mid": [1, 3], "large": [1, 1]}
 
 # ─── 원소 ─────────────────────────────────────────────────────────────────
 # 저항 하나가 두 일을 한다 — 그 원소 피해의 감소율이면서, 그 원소 상태이상의 저항이다.
@@ -816,13 +840,19 @@ var _morale_flash: float = 0.0
 # 팩 — 사서 열면 3장이 제시되고, 하나를 고르면 「든 카드」로 온다
 var _offer: Array = []                # OFFER_SLOTS 장 (열려 있을 때만) — 택1 대기
 var _offer_pack: String = ""
-var _hold = null                      # 택1한 카드. 목적지로 드래그해야 판에 들어간다
+# 트레이 — 개봉에서 클릭으로 택1한 카드들이 쌓인다. 목적지로 드래그해야 판에 들어간다.
+# (제시에서 바로 드래그하면 트레이를 거치지 않는다)
+var _tray: Array = []
 
 var _killed: int = 0
 var _last_kill_at: float = -999.0
 # ADAPTIVE 모드에서 "킬이 당긴 스폰 시각". 킬 하나가 당기는 것은 다음 한 마리뿐이라
 # 스폰될 때 소모한다 — 안 그러면 킬 한 번에 남은 적이 전부 쏟아진다.
 var _pull_at: float = -999.0
+
+# 일반 연속 스폰 — 스케줄 밖 타이머. 던전이 끝날 때까지 계속 붓는다
+var _next_normal_at: float = 0.0
+var _normal_no: int = 0               # 일반 개체 번호 — 핵심 스케줄의 index 와 안 겹치게
 
 var _repair_price: int = REPAIR_PRICE_BASE
 var _upgrade_price: int = UPGRADE_PRICE_BASE
@@ -1059,9 +1089,9 @@ func _load_data() -> void:
 		var tier_ko: String = str(_size_tier.get(entry, ""))
 		var size: String = str(SIZE_KO.get(tier_ko, "mid"))
 		var cap: int = int(str(r["crew"])) if str(r["crew"]) != "" else int(SIZES[size]["cap"])
-		if cap != int(SIZES[size]["cap"]):
-			push_warning("체급과 인원 상한이 어긋난다: %s (%s → %d, crew=%d)"
-				% [uid, tier_ko, int(SIZES[size]["cap"]), cap])
+		# 한 칸 최대 5마리(사용자 확정 2026-08-21). units.csv 의 crew(소형 9)는 확정 데이터라
+		# 건드리지 않고 **프로토가 읽으면서 자른다** — 이 폴더는 CSV를 읽기만 한다.
+		cap = mini(cap, int(SIZES[size]["cap"]))
 		# 타격당 딜 = 유닛 화력 눈금 × 체급 프로필. **인원으로 나누지 않는다** —
 		# 인원이 정하는 것은 총 화력이지 타격당 딜이 아니다(기획 「체급과 화력은 직교한다」).
 		var hit: float = float(tu.get("might", 0.0)) * float(SIZES[size]["hit"])
@@ -1143,6 +1173,8 @@ func _start_run() -> void:
 	_repair_price = REPAIR_PRICE_BASE
 	_upgrade_price = UPGRADE_PRICE_BASE
 	_log_kill_times.clear()
+	for k in _log_kill_tier:
+		(_log_kill_tier[k] as Array).clear()
 	_log_overlap_peak = 1
 	_log_wall_lost = 0.0
 	_log_settle_rounds = 0
@@ -1163,7 +1195,7 @@ func _start_run() -> void:
 	_pin_kind = ""
 	_offer.clear()
 	_offer_pack = ""
-	_hold = null
+	_tray.clear()
 	_morale = 0.0
 	_round_banner = 0.0
 
@@ -1188,15 +1220,6 @@ func _start_run() -> void:
 
 func _act_of_round(r: int) -> int:
 	return clampi(r / ROUNDS_PER_ACT, 0, ACTS.size() - 1)
-
-
-func _slot_of_round(r: int) -> int:
-	return r % ROUNDS_PER_ACT
-
-
-# 막의 마지막 라운드가 막보스 전용 라운드다. **「미결」이라 프로토가 전용 라운드를 골랐다.**
-func _is_boss_round(r: int) -> bool:
-	return _slot_of_round(r) == ROUNDS_PER_ACT - 1
 
 
 # ─── 정비 단계 ────────────────────────────────────────────────────────────
@@ -1235,52 +1258,30 @@ func _enter_prep() -> void:
 #
 # 라운드당 5~6마리. R1·R2 = 일반 4~5 + 정예 1~2 혼합, R3 = 일반 4 선행 + 막보스 1.
 # **적은 한 마리씩 이어 온다 — 앞 놈이 살아 있어도 그냥 온다**(기획 「라운드」).
+# 던전 하나의 **핵심 스케줄**만 짠다 — 정예 3 + 보스 1 (사용자 확정 2026-08-21).
+# 일반은 스케줄에 없다: _tick_spawn_normals 가 던전 내내 타이머로 계속 붓는다.
 func _build_round(r: int) -> void:
 	_round_sched.clear()
 	var ai: int = _act_of_round(r)
 	var act: Dictionary = ACTS[ai]
-	var boss_round: bool = _is_boss_round(r)
-	# 막이 넘어갈수록 라운드 안 스폰 간격이 좁아진다 — 난이도를 적 스탯이 아니라
+	# 막이 넘어갈수록 정예 간격이 좁아진다 — 난이도를 적 스탯이 아니라
 	# **겹침 압박**으로 조인다(기획 「막」).
-	var gap: float = lerpf(GAP_EARLY, GAP_LATE, float(ai) / float(maxi(1, ACTS.size() - 1)))
-
-	var plan: Array = []               # ["normal"...] 순서 그대로가 스폰 순서다
-	if boss_round:
-		for _i in NORMALS_BOSS_ROUND:
-			plan.append("normal")
-		plan.append("boss")
-	else:
-		var nn: int = _rng.randi_range(NORMALS_PER_ROUND[0], NORMALS_PER_ROUND[1])
-		var ne: int = _rng.randi_range(ELITES_PER_ROUND[0], ELITES_PER_ROUND[1])
-		for _i in nn:
-			plan.append("normal")
-		# 정예는 라운드 안에 흩어 섞는다 — 앞이든 뒤든 한곳에 몰리면 리듬이 죽는다
-		for _i in ne:
-			plan.insert(_rng.randi_range(1, plan.size()), "elite")
-
-	var t: float = ROUND_FIRST_SPAWN
+	var spacing: float = lerpf(ELITE_SPACING_EARLY, ELITE_SPACING_LATE,
+		float(ai) / float(maxi(1, ACTS.size() - 1)))
+	var t: float = ELITE_FIRST
 	var idx: int = 0
-	for tier in plan:
-		var base_id: String = ""
-		var pre: Array = []
-		match str(tier):
-			"normal":
-				var tp: Array = act["trash"]
-				base_id = str(tp[_rng.randi_range(0, tp.size() - 1)])
-			"elite":
-				var ep: Array = act["pool"]
-				base_id = str(ep[_rng.randi_range(0, ep.size() - 1)])
-				pre = _roll_prefixes(act)
-			_:
-				base_id = str(act["boss"])
-				pre = _fixed_prefixes(act)
-		_round_sched.append(_make_entry(idx, ai, base_id, pre, str(tier), t))
+	for _i in ELITES_PER_DUNGEON:
+		var ep: Array = act["pool"]
+		_round_sched.append(_make_entry(idx, ai,
+			str(ep[_rng.randi_range(0, ep.size() - 1)]), _roll_prefixes(act), "elite", t))
 		idx += 1
-		t += gap * (GAP_ELITE_MULT if str(tier) != "normal" else 1.0)
-	# 제한시간은 마지막 스폰 뒤에 꼬리를 붙여 잡는다 — 스케줄과 어긋나지 않게 파생값으로 둔다.
-	# 전멸시키면 조기 종료되고, 시간이 끝나면 남은 적이 정산되고 사라진다.
-	var last_at: float = float(_round_sched[-1]["at"]) if not _round_sched.is_empty() else 0.0
-	_round_limit = last_at + (ROUND_TAIL_BOSS if boss_round else ROUND_TAIL)
+		t += spacing
+	# 보스는 마지막 정예 뒤 한 숨 쉬고 온다
+	t += BOSS_AFTER_ELITE - spacing
+	_round_sched.append(_make_entry(idx, ai, str(act["boss"]), _fixed_prefixes(act), "boss", t))
+	# 제한시간은 보스 스폰 뒤에 꼬리를 붙여 잡는다 — 스케줄과 어긋나지 않게 파생값으로 둔다.
+	# 정예·보스를 전멸시키면 조기 종료되고, 시간이 끝나면 남은 적이 정산되고 사라진다.
+	_round_limit = t + ROUND_TAIL_BOSS
 
 
 # ─── 전투 라운드 ──────────────────────────────────────────────────────────
@@ -1293,6 +1294,8 @@ func _start_combat() -> void:
 	_round_killed = 0
 	_round_settled = 0
 	_pull_at = -999.0
+	_next_normal_at = ROUND_FIRST_SPAWN
+	_normal_no = 0
 	# **사기는 라운드마다 초기화된다** — 라운드를 넘는 저축이 없어 페이싱이 균일하다(기획 「사기」)
 	_morale = 0.0
 	# 팩 개봉이 열려 있는 채로 전투에 들어가지 않는다 — 전투 중 입력은 스킬카드뿐이다
@@ -1501,9 +1504,9 @@ func _roll_pack_card(pack: String) -> Dictionary:
 	return {"kind": "unit", "def": d, "count": cnt}
 
 
-# 팩을 산다 — **정비 전용이다.** 열려 있는 제시가 있거나 든 카드가 있으면 먼저 처리해야 한다.
+# 팩을 산다 — **정비 전용이다.** 열려 있는 제시가 있거나 트레이가 가득이면 먼저 처리해야 한다.
 func _try_buy_pack(id: String) -> bool:
-	if _phase != Phase.PREP or not _offer.is_empty() or _hold != null:
+	if _phase != Phase.PREP or not _offer.is_empty() or _tray.size() >= TRAY_SLOTS:
 		return false
 	var pack: Dictionary = _pack_by_id(id)
 	if pack.is_empty() or _gold < int(pack["price"]):
@@ -1519,9 +1522,9 @@ func _try_buy_pack(id: String) -> bool:
 # **3장 중 1장 택1, 나머지는 소멸한다.** 「팩의 장수·개봉 방식」은 「미결」이라
 # 프로토가 택1 쪽을 골라 태운다 — 전부 획득이면 고를 것이 없어 정비가 무판단이 된다.
 func _pick_offer(i: int) -> bool:
-	if i < 0 or i >= _offer.size() or _hold != null:
+	if i < 0 or i >= _offer.size() or _tray.size() >= TRAY_SLOTS:
 		return false
-	_hold = _offer[i]
+	_tray.append(_offer[i])          # 고른 카드는 트레이에 쌓인다 — 배치는 배치 화면에서
 	_offer.clear()
 	_offer_pack = ""
 	_pin_kind = ""
@@ -1532,7 +1535,9 @@ func _pick_offer(i: int) -> bool:
 # **부대별 사기는 폐기됐다** — 게이지 아홉 개는 읽히지 않는다(기획 「사기」).
 # 하는 일이 둘이다: 구간을 넘을 때마다 전 부대가 버프를 얻고, 스킬카드가 그것을 태운다.
 func _morale_band() -> int:
-	return int(floorf(_morale / MORALE_BAND))
+	# 3 고정 — 폭 25에서 게이지 상한(100)이 4번째 문턱과 겹치므로 잘라둔다.
+	# 최대 버프는 폭 30 시절과 같은 +24%다
+	return mini(int(floorf(_morale / MORALE_BAND)), 3)
 
 
 func _add_morale(amount: float) -> void:
@@ -2137,6 +2142,7 @@ func _process(delta: float) -> void:
 	_round_t += dt
 
 	_tick_spawn()
+	_tick_spawn_normals()
 	_tick_bosses(dt)
 	_tick_squads(dt)
 	_tick_pops(dt)
@@ -2157,6 +2163,31 @@ func _tick_spawn() -> void:
 		_spawn(entry)
 		_next_spawn += 1
 		_pull_at = -999.0        # 이 킬이 당길 수 있는 몫은 여기서 소모된다
+
+
+# **일반은 계속 나온다** (사용자 확정 2026-08-21) — 스케줄이 아니라 타이머다.
+# 던전이 끝날 때까지 붓되, 레인 동시 상한(NORMAL_LANE_CAP)으로 폭주만 막는다.
+# 일반의 일: 물량 압박 + 킬 골드·사기의 바닥 수입. 클리어 카운트에는 안 들어간다.
+func _tick_spawn_normals() -> void:
+	if _round_t < _next_normal_at:
+		return
+	var live_norm: int = 0
+	for b in _bosses:
+		if not b["dead"] and str(b["entry"]["tier"]) == "normal":
+			live_norm += 1
+	if live_norm >= NORMAL_LANE_CAP:
+		_next_normal_at = _round_t + 1.0   # 자리가 빌 때까지 짧게 재시도
+		return
+	var ai: int = _act_of_round(mini(_round_idx, RUN_ROUNDS - 1))
+	var act: Dictionary = ACTS[ai]
+	var tp: Array = act["trash"]
+	# index 는 핵심 스케줄(0~3)과 안 겹치게 뒤 번호를 쓴다 — 상세 카드 핀이 이걸 본다
+	var e: Dictionary = _make_entry(ELITES_PER_DUNGEON + 1 + _normal_no, ai,
+		str(tp[_rng.randi_range(0, tp.size() - 1)]), [], "normal", _round_t)
+	_normal_no += 1
+	_spawn(e)
+	_next_normal_at = _round_t + lerpf(NORMAL_GAP_EARLY, NORMAL_GAP_LATE,
+		float(ai) / float(maxi(1, ACTS.size() - 1)))
 
 
 # 스폰 시각은 **라운드 기준**이다. 「라운드 안 스폰 스케줄」은 「미결」이고,
@@ -2326,6 +2357,10 @@ func _kill(b: Dictionary) -> void:
 	# ADAPTIVE — 킬이 다음 한 마리를 당긴다. **라운드 기준 시각이다**
 	_pull_at = _round_t + ADAPTIVE_REST
 	_log_kill_times.append(_round_t - float(b["born_at"]))
+	# 단별 분리 — 합산 평균은 「일반은 짧고 정예·막보스는 초읽기가 선다」를 못 보여준다
+	var tier: String = str(b["entry"]["tier"])
+	if _log_kill_tier.has(tier):
+		(_log_kill_tier[tier] as Array).append(_round_t - float(b["born_at"]))
 
 
 func _tick_squads(dt: float) -> void:
@@ -2861,19 +2896,29 @@ func _cleanup_bosses(dt: float) -> void:
 
 # 라운드가 끝나는 세 길.
 #   1) 성벽 파괴 — **패배는 이것 하나뿐이다**
-#   2) 전멸 — 조기 종료. 남은 시간은 그냥 사라진다(정비에 시간 제한이 없으므로 이월이 없다)
+#   2) 핵심 전멸 — 정예·보스를 다 잡으면 조기 종료. **일반은 무한이라 카운트에서 뺀다** —
+#      남아 있던 일반은 정산 없이 사라진다(던전을 깬 보상)
 #   3) 제한시간 종료 — 남은 적이 성벽에 정산하고 사라진다
 func _check_end() -> void:
 	if _wall_hp <= 0.0:
 		_wall_hp = 0.0
 		_phase = Phase.DEFEAT
 		return
-	# 시체가 걷힐 때까지 기다린다 — death 연출이 잘려나가면 "잡았다"가 안 읽힌다
-	if _next_spawn >= _round_sched.size() and _bosses.is_empty():
+	# 핵심(정예·보스)의 시체까지 걷힐 때를 기다린다 — death 연출이 잘려나가면 "잡았다"가 안 읽힌다
+	if _next_spawn >= _round_sched.size() and _core_left() == 0:
 		_end_round(false)
 		return
 	if _round_t >= _round_limit:
 		_settle_round()
+
+
+# 레인에 남은 핵심(정예·보스) — 살아 있든 시체 연출 중이든. 일반은 세지 않는다
+func _core_left() -> int:
+	var n: int = 0
+	for b in _bosses:
+		if str(b["entry"]["tier"]) != "normal":
+			n += 1
+	return n
 
 
 # ─── 입력 ─────────────────────────────────────────────────────────────────
@@ -2924,6 +2969,17 @@ func _press(mp: Vector2) -> void:
 	_mouse_down_at = mp
 	var prep: bool = _phase == Phase.PREP
 
+	# 팩 개봉 택1 — 제시 카드는 **드래그(격자·줄로 바로 배치)**와 **클릭(트레이로)** 둘 다
+	# 받는다(사용자 확정 2026-08-21 2차 — "팩에서 바로 전투에 넣는다").
+	# 갈림은 _release 에서: 안 움직였으면 택1, 움직였으면 목적지에 놓는다.
+	if prep and not _offer.is_empty():
+		for i in _offer.size():
+			if _offer_rect(i).has_point(mp):
+				_drag_kind = "offer"
+				_drag_from = i
+				return
+		return    # 제시 밖 클릭은 무시 — 택1이 먼저다
+
 	# 스킬 슬롯 — 전투 중의 유일한 입력. 정비에서는 눌러도 발동하지 않고 열람만 된다
 	for i in SKILL_SLOTS:
 		if not _skill_rect(i).has_point(mp):
@@ -2937,13 +2993,6 @@ func _press(mp: Vector2) -> void:
 		return
 
 	if prep:
-		# 팩 개봉 택1이 열려 있으면 그것부터 — 모달이라 뒤의 것을 가린다
-		if not _offer.is_empty():
-			for i in _offer.size():
-				if _offer_rect(i).has_point(mp):
-					_pick_offer(i)
-					return
-			return
 		for i in PACK_KINDS:
 			if _pack_rect(i).has_point(mp):
 				_try_buy_pack(str(PACKS[i]["id"]))
@@ -2955,9 +3004,10 @@ func _press(mp: Vector2) -> void:
 		if WALL_RECT.grow(10.0).has_point(mp):
 			_try_repair()
 			return
-		if _hold != null and HOLD_RECT.has_point(mp):
-			_drag_kind = "hold"
-			_drag_from = 0
+		var ti: int = _tray_at(mp)
+		if ti >= 0:
+			_drag_kind = "tray"
+			_drag_from = ti
 			return
 		for i in 9:
 			if _cell_rect(i).has_point(mp) and _cells[i] != null:
@@ -2977,8 +3027,10 @@ func _press(mp: Vector2) -> void:
 		if _tactic_rect(i).has_point(mp) and _tactics[i] != null:
 			_toggle_pin("tactic", i)
 			return
-	if not prep and _hold != null and HOLD_RECT.has_point(mp):
-		_toggle_pin("hold", 0)
+	# 트레이 열람 — 상점에서는 여기로 온다 (드래그는 배치 화면 전용)
+	var ti2: int = _tray_at(mp)
+	if ti2 >= 0:
+		_toggle_pin("tray", ti2)
 		return
 	if _phase == Phase.PREP and PREP_PANEL.has_point(mp):
 		var pi: int = _prep_row_at(mp)
@@ -3008,9 +3060,12 @@ func _release(mp: Vector2) -> void:
 	if kind == "":
 		return
 
-	# 제자리 클릭 = 상세 고정(핀). 클릭은 고정 용도다
+	# 제자리 클릭 — 제시 카드는 **택1(트레이로)**, 나머지는 상세 고정(핀)
 	if not moved:
-		_toggle_pin(kind, from)
+		if kind == "offer":
+			_pick_offer(from)
+		else:
+			_toggle_pin(kind, from)
 		return
 
 	if kind == "cell":
@@ -3027,21 +3082,34 @@ func _release(mp: Vector2) -> void:
 			_cells[from] = null
 		return
 
-	# 든 카드를 목적지로 놓는다 — **결제는 팩을 살 때 이미 끝났다.**
-	# 목적지가 문법을 정한다: 병사=빈 칸 / 유물=유물 줄 / 전술=전술 줄 / 스킬=스킬 줄
-	if _hold == null:
+	# 카드를 목적지로 놓는다 — **결제는 팩을 살 때 이미 끝났다.**
+	# 트레이에서 끌었으면 그 칸이 비고, **제시에서 바로 끌었으면 나머지 두 장이 소멸한다**
+	# (드래그로 끝난 택1 — 사용자 확정 2026-08-21 2차).
+	# (_drag_kind 는 함수 첫머리에서 이미 비워졌다 — 지역변수 kind/from 을 봐야 한다)
+	if kind == "tray" and from >= 0 and from < _tray.size():
+		if _apply_card(_tray[from], mp):
+			_tray.remove_at(from)
 		return
-	var card: Dictionary = _hold
+	if kind == "offer" and from >= 0 and from < _offer.size():
+		if _apply_card(_offer[from], mp):
+			_offer.clear()
+			_offer_pack = ""
+		return
+
+
+# 목적지가 문법을 정한다: 병사=빈 칸 / 유물=유물 줄 / 전술=전술 줄 / 스킬=스킬 줄.
+# 놓였으면 true — 호출자가 출처(트레이 칸·제시)를 정리한다
+func _apply_card(card: Dictionary, mp: Vector2) -> bool:
 	match str(card["kind"]):
 		"unit":
 			var to2: int = _cell_at(mp)
 			if to2 < 0 or _cells[to2] != null:
-				return          # **빈 칸에만 놓인다.** 합류제는 폐지됐다(2026-08-20)
+				return false    # **빈 칸에만 놓인다.** 합류제는 폐지됐다(2026-08-20)
 			_cells[to2] = _make_squad(card["def"], int(card["count"]))
 		"relic":
 			var slot: int = _relic_at(mp)
 			if slot < 0 or _has_relic(str(card["def"]["uid"])):
-				return
+				return false
 			_relics[slot] = card["def"]
 			for sq in _cells:
 				if sq != null:
@@ -3049,17 +3117,17 @@ func _release(mp: Vector2) -> void:
 		"tactic":
 			var tslot: int = _tactic_at(mp)
 			if tslot < 0 or _has_tactic(str(card["def"]["id"])):
-				return
+				return false
 			_tactics[tslot] = card["def"]
 		"skill":
 			var sslot: int = _skill_at(mp)
 			if sslot < 0 or _has_skill_card(str(card["def"]["id"])):
-				return
+				return false
 			# **슬롯이 꽉 차면 교환이다** — 버린 카드의 처분은 「미결」이라 소멸을 골랐다
 			_skills[sslot] = card["def"]
 		_:
-			return
-	_hold = null
+			return false
+	return true
 
 
 func _toggle_pin(kind: String, idx: int) -> void:
@@ -3081,7 +3149,7 @@ func _cell_at(mp: Vector2) -> int:
 # 하단 밴드 위 — 부대를 여기에 떨군 것은 빼내려던 게 아니라 오조작으로 본다.
 # 오클릭이 부대 상실이 되면 안 된다.
 func _band_area(mp: Vector2) -> bool:
-	return mp.y >= PACK_ORIGIN.y
+	return mp.y >= TRAY_ORIGIN.y
 
 
 func _relic_at(mp: Vector2) -> int:
@@ -3113,8 +3181,20 @@ func _cell_rect(idx: int) -> Rect2:
 		Vector2(CELL - CELL_PAD, CELL - CELL_PAD))
 
 
+# 팩 진열 — 정비의 레인 자리(적 목록 아래). 격자는 왼쪽에 계속 떠 있다
 func _pack_rect(idx: int) -> Rect2:
-	return Rect2(PACK_ORIGIN + Vector2(float(idx) * (PACK.x + PACK_GAP), 0.0), PACK)
+	return Rect2(PACKROW_ORIGIN + Vector2(float(idx) * (PACK.x + PACK_GAP), 0.0), PACK)
+
+
+func _tray_rect(idx: int) -> Rect2:
+	return Rect2(TRAY_ORIGIN + Vector2(float(idx) * (TRAY_SLOT.x + TRAY_GAP), 0.0), TRAY_SLOT)
+
+
+func _tray_at(mp: Vector2) -> int:
+	for i in _tray.size():
+		if _tray_rect(i).has_point(mp):
+			return i
+	return -1
 
 
 # 팩 개봉 택1 — 화면 중앙 모달의 3장
@@ -3177,10 +3257,10 @@ func _boss_by_index(n: int):
 # 한 칸 안의 무리는 줄을 맞추지 않고 어긋나게 세운다. 정렬하면 오히려 빈약해 보인다.
 # 인원 상한이 아니라 **지금 서 있는 인원수**로 세운다 — 보이는 인원수가 곧 타격 분할이라
 # 화면이 거짓말하지 않는다. 부대가 자라면 실루엣이 그대로 두꺼워진다.
+# 최대 5마리 · 소형 scale 3 기준 — 개체가 커져서 9마리 시절보다 넓게 벌린다
 const MEMBER_SPOTS := [
-	Vector2(-38.0, -20.0), Vector2(-6.0, -26.0), Vector2(26.0, -18.0),
-	Vector2(-44.0, 4.0),   Vector2(-12.0, -2.0), Vector2(20.0, 6.0),
-	Vector2(-30.0, 26.0),  Vector2(2.0, 30.0),   Vector2(36.0, 22.0),
+	Vector2(-40.0, -18.0), Vector2(2.0, -24.0), Vector2(40.0, -14.0),
+	Vector2(-22.0, 16.0),  Vector2(24.0, 20.0),
 ]
 
 
@@ -3243,20 +3323,17 @@ func _sync_sprites() -> void:
 			var glow: float = maxf(float(sq["flash"]), float(sq["cast_flash"]))
 			s.modulate = Color.WHITE.lerp(Color(1.6, 1.5, 1.2), glow * 0.30)
 
-	# 카드 위의 무리 실루엣 — 택1 제시 3장 + 든 카드 1장.
+	# 카드 위의 무리 실루엣 — 택1 제시 3장.
 	# **카드에 담긴 마릿수 그대로** 세운다. 합류제가 사라져 이 실루엣이 곧 그 부대의
-	# 영구 인원이므로, 실루엣이 이전보다 더 정확히 "무엇을 사는지"를 말한다
+	# 영구 인원이므로, 실루엣이 이전보다 더 정확히 "무엇을 사는지"를 말한다.
+	# (트레이는 폭이 좁아 실루엣 없이 글자만 — 상세는 호버 카드가 답한다)
 	for i in OFFER_SLOTS + 1:
 		var row2: Array = _card_sprites[i]
 		var card = null
 		var c: Vector2 = Vector2.ZERO
-		if i < OFFER_SLOTS:
-			if i < _offer.size():
-				card = _offer[i]
-				c = _offer_rect(i).position + Vector2(CARD.x * 0.5, 126.0)
-		else:
-			card = _hold
-			c = HOLD_RECT.position + Vector2(HOLD_RECT.size.x * 0.5, 126.0)
+		if i < OFFER_SLOTS and i < _offer.size():
+			card = _offer[i]
+			c = _offer_rect(i).position + Vector2(CARD.x * 0.5, 126.0)
 		if card == null or str(card["kind"]) != "unit":
 			for s2 in row2:
 				s2.visible = false
@@ -3369,35 +3446,43 @@ func _draw_wall() -> void:
 	draw_rect(standing, Color(0.80, 0.84, 0.92), false, 3.0)
 
 
-# 팩 진열 + 든 카드 + 택1 제시. 스프라이트 아래에 깔리는 바탕만 여기서 그린다
+# 팩 진열 + 택1 제시 + 트레이. 스프라이트 아래에 깔리는 바탕만 여기서 그린다
 # (제시 카드의 무리 실루엣이 이 바탕 **위에** 서야 하기 때문이다).
+# 격자·성벽은 계속 그려진다 — 개봉이 보드를 가리지 않는 것이 이 화면의 핵심이다.
 func _draw_pack_bg() -> void:
-	var prep: bool = _phase == Phase.PREP
-	for i in PACK_KINDS:
-		var r: Rect2 = _pack_rect(i)
-		var p: Dictionary = PACKS[i]
-		var col: Color = p["color"]
-		var open: bool = prep and _gold >= int(p["price"]) and _offer.is_empty() and _hold == null
-		draw_rect(r, col.darkened(0.80 if open else 0.90))
-		draw_rect(r, col.darkened(0.15 if open else 0.62), false, 2.0)
-	# 든 카드 자리 — 비어 있어도 자리는 남는다(어디로 오는지가 보여야 한다)
-	if _hold == null:
-		draw_rect(HOLD_RECT, Color(0.10, 0.105, 0.13))
-		draw_rect(HOLD_RECT, Color(0.20, 0.21, 0.26), false, 2.0)
-	else:
-		var hc: Color = _card_color(_hold)
-		draw_rect(HOLD_RECT, hc.darkened(0.78))
-		draw_rect(HOLD_RECT, hc.darkened(0.10), false, 3.0)
-	# 택1 모달 — 뒤를 어둡게 덮어 "지금은 이것만 고른다"를 만든다
+	_draw_tray_bg()              # 전투 중에도 트레이는 보인다 — 배치는 못 하고 열람만
+	if _phase != Phase.PREP:
+		return
 	if not _offer.is_empty():
-		draw_rect(Rect2(0.0, 0.0, W, 690.0), Color(0.02, 0.02, 0.03, 0.72))
-		draw_rect(OFFER_PANEL, Color(0.10, 0.11, 0.15, 0.99))
+		# 택1 제시 — 레인 자리에 뜬다. 팩 진열이 있던 자리를 덮고, 격자는 그대로다
+		draw_rect(OFFER_PANEL, Color(0.09, 0.10, 0.14))
 		draw_rect(OFFER_PANEL, Color(0.62, 0.66, 0.78), false, 3.0)
 		for i in _offer.size():
 			var orr: Rect2 = _offer_rect(i)
 			var ocol: Color = _card_color(_offer[i])
 			draw_rect(orr, ocol.darkened(0.78))
 			draw_rect(orr, ocol.darkened(0.12), false, 2.0)
+		return
+	for i in PACK_KINDS:
+		var r: Rect2 = _pack_rect(i)
+		var p: Dictionary = PACKS[i]
+		var col: Color = p["color"]
+		var open: bool = _gold >= int(p["price"]) and _tray.size() < TRAY_SLOTS
+		draw_rect(r, col.darkened(0.78 if open else 0.90))
+		draw_rect(r, col.darkened(0.12 if open else 0.60), false, 2.0)
+
+
+# 트레이 바탕 — 정비·전투 같은 자리다 (전투 중에는 열람만)
+func _draw_tray_bg() -> void:
+	for i in TRAY_SLOTS:
+		var r: Rect2 = _tray_rect(i)
+		if i < _tray.size():
+			var c: Color = _card_color(_tray[i])
+			draw_rect(r, c.darkened(0.78))
+			draw_rect(r, c.darkened(0.10), false, 2.0)
+		else:
+			draw_rect(r, Color(0.10, 0.105, 0.13))
+			draw_rect(r, Color(0.20, 0.21, 0.26), false, 2.0)
 
 
 func _card_color(card: Dictionary) -> Color:
@@ -3524,12 +3609,19 @@ func _draw_overlay() -> void:
 	_resolve_detail()          # 칸·보스가 "지금 보고 있는 것"에 테두리를 치므로 먼저 정한다
 	_draw_top_hud()
 	_draw_pops()               # 패널보다 먼저 — 수치는 레인의 것이고 상세를 가리면 안 된다
-	_draw_boss_banner()        # 막보스 상시 표시
 	_draw_cells_hud()
 	_draw_bosses_hud()
+	# 막보스 상시 표시는 이름표·HP바 **위에** 깐다 — 스폰 지점이 배너 밑이라, 갓 나온 적의
+	# 이름표가 배너를 뚫고 올라오면 매번 글자끼리 섞인다(3차 리뷰와 같은 겹침). 배경이
+	# 거의 불투명이라 적은 배너 뒤를 지나 1~2초 만에 온전히 드러난다 — 정보 손실이 없다
+	_draw_boss_banner()
 	if _phase == Phase.PREP:
-		_draw_prep_panel()     # 다음 라운드에 올 적들 + 「전투 시작」
-	_draw_pack_text()
+		if _offer.is_empty():
+			# 개봉 택1이 열려 있으면 숨긴다 — 제시 패널이 같은 레인 자리를 쓴다
+			_draw_prep_panel()     # 다음 던전에 올 적들 + 「전투 시작」 + 팩 진열 글자
+		else:
+			_draw_offer_text()     # 택1 제시 — 격자로 바로 끌거나, 클릭해 트레이로
+	_draw_tray_text()
 	_draw_morale_and_skills()
 	_draw_relic_row()
 	_draw_tactic_row()
@@ -3574,12 +3666,11 @@ func _draw_top_hud() -> void:
 	_txt(_font, Vector2(308.0, 50.0), "성벽 %d / %d" % [int(_wall_hp), int(_wall_max)], 24,
 		Color(0.12, 0.13, 0.18) if ratio > 0.35 else Color(0.98, 0.92, 0.92))
 
-	# 막 · 라운드 — 런 어디쯤인지
+	# 막 = 던전 — 런 어디쯤인지
 	var r_idx: int = mini(_round_idx, RUN_ROUNDS - 1)
 	var ai: int = _act_of_round(r_idx)
-	_txt(_font, Vector2(700.0, 50.0), "%s · R%d" % [str(ACTS[ai]["name"]),
-		_slot_of_round(r_idx) + 1], 26, Color(ACTS[ai]["tint"]))
-	_txt(_font_s, Vector2(700.0, 74.0), "라운드 %d / %d" % [r_idx + 1, RUN_ROUNDS], 18,
+	_txt(_font, Vector2(700.0, 50.0), str(ACTS[ai]["name"]), 26, Color(ACTS[ai]["tint"]))
+	_txt(_font_s, Vector2(700.0, 74.0), "던전 %d / %d" % [r_idx + 1, RUN_ROUNDS], 18,
 		Color(0.60, 0.63, 0.70))
 
 	if _phase == Phase.PREP:
@@ -3594,8 +3685,14 @@ func _draw_top_hud() -> void:
 		Color(0.92, 0.94, 1.0) if left > 8.0 else Color(1.0, 0.50, 0.44))
 	_bar(Rect2(940.0, 62.0, 320.0, 10.0), 1.0 - clampf(left / maxf(1.0, _round_limit), 0.0, 1.0),
 		Color(0.86, 0.58, 0.36), Color(0.16, 0.16, 0.20))
-	var remain: int = _lane_alive() + (_round_sched.size() - _next_spawn)
-	_txt(_font_s, Vector2(1290.0, 52.0), "남은 적 %d" % remain, 20, Color(0.78, 0.82, 0.90))
+	# 일반은 무한이라 세지 않는다 — 던전을 끝내는 것은 핵심(정예·보스)뿐이다
+	var core_live: int = 0
+	for b in _bosses:
+		if not b["dead"] and str(b["entry"]["tier"]) != "normal":
+			core_live += 1
+	var remain: int = core_live + (_round_sched.size() - _next_spawn)
+	_txt(_font_s, Vector2(1290.0, 52.0), "남은 정예·보스 %d" % remain, 20,
+		Color(0.78, 0.82, 0.90))
 
 
 # **막보스 상시 표시.** 3차의 「예고 슬롯」 자리를 그대로 쓴다 — 다만 다음 한 마리가 아니라
@@ -3611,10 +3708,9 @@ func _draw_boss_banner() -> void:
 	_overlay.draw_rect(r, tint.darkened(0.30), false, 3.0)
 	_txt(_font_s, r.position + Vector2(12.0, 24.0),
 		"막보스 · %s" % str(act["name"]), 18, Color(0.60, 0.63, 0.70))
-	var rounds_left: int = ROUNDS_PER_ACT - 1 - _slot_of_round(mini(_round_idx, RUN_ROUNDS - 1))
-	_txt(_font_b, r.position + Vector2(r.size.x - 92.0, 26.0),
-		("이번 라운드" if rounds_left <= 0 else "%d라운드 뒤" % rounds_left), 19,
-		Color(1.0, 0.50, 0.44) if rounds_left <= 0 else Color(0.95, 0.82, 0.45))
+	# 던전 = 막이라 보스는 언제나 이번 던전에 있다
+	_txt(_font_b, r.position + Vector2(r.size.x - 92.0, 26.0), "이번 던전", 19,
+		Color(1.0, 0.50, 0.44))
 	_txtw(_font_b, r.position + Vector2(12.0, 58.0), str(e["name"]), 26, tint, r.size.x - 24.0)
 	# 접두사 — 정비에서 본 단어가 전투에서 그대로 다시 보인다
 	_txtw(_font_s, r.position + Vector2(12.0, 84.0), " · ".join(_entry_tags(e)), 19,
@@ -3755,10 +3851,11 @@ func _draw_prep_panel() -> void:
 	_overlay.draw_rect(r, Color(0.36, 0.40, 0.50), false, 2.0)
 	var ai: int = _act_of_round(mini(_round_idx, RUN_ROUNDS - 1))
 	_txt(_font_b, r.position + Vector2(14.0, 30.0),
-		"다음 라운드 — 적 %d마리" % _round_sched.size(), 24, Color(0.92, 0.94, 1.0))
+		"다음 던전 — 정예 %d + 보스 1 · 일반은 계속 나온다" % (_round_sched.size() - 1),
+		24, Color(0.92, 0.94, 1.0))
 	_txt(_font_s, r.position + Vector2(14.0, 50.0),
-		"제한시간 %.0fs · 시간이 끝나면 남은 적이 성벽에 정산한다" % _round_limit, 17,
-		Color(0.60, 0.63, 0.70))
+		"제한시간 %.0fs · 정예·보스를 다 잡으면 끝난다 · 시간이 끝나면 남은 적이 성벽에 정산한다"
+		% _round_limit, 17, Color(0.60, 0.63, 0.70))
 	for i in _round_sched.size():
 		var e: Dictionary = _round_sched[i]
 		var rr: Rect2 = _prep_row_rect(i)
@@ -3791,55 +3888,60 @@ func _draw_prep_panel() -> void:
 	if not placed:
 		_txt(_font_s, START_BUTTON.position + Vector2(6.0, START_BUTTON.size.y + 20.0),
 			"격자가 비어 있다 — 그래도 시작은 된다", 17, Color(0.90, 0.62, 0.58))
-	_txt(_font_s, Vector2(PACK_ORIGIN.x, 690.0 - 6.0),
-		"정비 — 팩을 사서 열고, 카드를 칸·줄에 놓는다. 성벽 클릭 = 수리 / 우클릭 = 최대 HP",
-		17, Color(0.55, 0.58, 0.66))
-
-
-# 팩 진열 + 든 카드 + 택1 제시. 바탕은 _draw_pack_bg 가 이미 깔았다
-func _draw_pack_text() -> void:
-	var prep: bool = _phase == Phase.PREP
+	# 팩 진열 글자 — 바탕은 _draw_pack_bg 가 깔았다. 개봉이 열리면 이 자리는 제시가 덮는다
 	for i in PACK_KINDS:
-		var r: Rect2 = _pack_rect(i)
+		var pr: Rect2 = _pack_rect(i)
 		var p: Dictionary = PACKS[i]
-		var col: Color = p["color"]
-		var afford: bool = _gold >= int(p["price"])
-		var open: bool = prep and afford and _offer.is_empty() and _hold == null
-		_txt(_font_b, r.position + Vector2(12.0, 40.0), str(p["name"]), 26,
+		var pcol: Color = p["color"]
+		var open: bool = _gold >= int(p["price"]) and _tray.size() < TRAY_SLOTS
+		_txt(_font_b, pr.position + Vector2(10.0, 32.0), str(p["name"]), 23,
 			Color(0.97, 0.97, 1.0) if open else Color(0.55, 0.55, 0.60))
 		# 팩 얼굴 — 뜯지 않은 봉투. 무엇이 들었는지는 이름과 한 줄이 말한다
-		var face := Rect2(r.position + Vector2(12.0, 58.0), Vector2(r.size.x - 24.0, 108.0))
-		_overlay.draw_rect(face, col.darkened(0.62 if open else 0.80))
-		_overlay.draw_rect(face, col.darkened(0.30), false, 2.0)
-		_overlay.draw_line(face.position + Vector2(0.0, 0.0), face.position + face.size,
-			col.darkened(0.35), 2.0)
+		var face := Rect2(pr.position + Vector2(10.0, 46.0), Vector2(pr.size.x - 20.0, 100.0))
+		_overlay.draw_rect(face, pcol.darkened(0.60 if open else 0.80))
+		_overlay.draw_rect(face, pcol.darkened(0.28), false, 2.0)
+		_overlay.draw_line(face.position, face.position + face.size, pcol.darkened(0.35), 2.0)
 		_overlay.draw_line(face.position + Vector2(face.size.x, 0.0),
-			face.position + Vector2(0.0, face.size.y), col.darkened(0.35), 2.0)
-		_txtw(_font_s, r.position + Vector2(12.0, 186.0), str(p["desc"]), 17,
-			Color(0.78, 0.82, 0.90) if open else Color(0.48, 0.50, 0.56), r.size.x - 24.0)
-		_txt(_font_b, r.position + Vector2(12.0, r.size.y - 14.0), "%dG" % int(p["price"]), 24,
+			face.position + Vector2(0.0, face.size.y), pcol.darkened(0.35), 2.0)
+		_txtw(_font_s, pr.position + Vector2(10.0, 166.0), str(p["desc"]), 16,
+			Color(0.78, 0.82, 0.90) if open else Color(0.48, 0.50, 0.56), pr.size.x - 20.0)
+		_txt(_font_b, pr.position + Vector2(10.0, pr.size.y - 12.0), "%dG" % int(p["price"]), 22,
 			Color(1.0, 0.88, 0.45) if open else Color(0.60, 0.42, 0.35))
+	# 정비 도움말 — 트레이 라벨(x 56, y 700)과 겹치지 않게 팩 줄 아래에 둔다
+	_txtw(_font_s, Vector2(700.0, PACKROW_ORIGIN.y + PACK.y + 18.0),
+		"팩을 열어 격자로 바로 끌거나, 클릭해 트레이로. 성벽 클릭 수리 · 우클릭 강화",
+		17, Color(0.55, 0.58, 0.66), 700.0)
 
-	var target = _preview_target()
-	# 든 카드 — 여기서 목적지로 끌어다 놓는다
-	_txt(_font_s, HOLD_RECT.position + Vector2(0.0, -6.0), "든 카드", 17,
-		Color(0.55, 0.58, 0.66))
-	if _hold != null:
-		_draw_card_face(HOLD_RECT, _hold, target)
-		_txt(_font_s, HOLD_RECT.position + Vector2(10.0, HOLD_RECT.size.y - 14.0),
-			"목적지로 끌어다 놓는다", 17, Color(0.86, 0.90, 0.98))
-	else:
-		_txt(_font_s, HOLD_RECT.position + Vector2(16.0, 130.0), "팩을 열면 여기로 온다", 17,
+
+# 하단 밴드의 트레이 글자. 바탕은 _draw_pack_bg/_draw_tray_bg 가 이미 깔았다
+func _draw_tray_text() -> void:
+	# 트레이 — 개봉에서 클릭으로 담아둔 카드들. 목적지로 끌어다 놓는다
+	_txt(_font_s, TRAY_ORIGIN + Vector2(0.0, -6.0),
+		"트레이 %d/%d" % [_tray.size(), TRAY_SLOTS], 17, Color(0.55, 0.58, 0.66))
+	for i in _tray.size():
+		var r: Rect2 = _tray_rect(i)
+		var card: Dictionary = _tray[i]
+		_txtw(_font, r.position + Vector2(8.0, 26.0), str(card["def"]["name"]), 19,
+			Color(0.96, 0.96, 1.0), r.size.x - 16.0)
+		if str(card["kind"]) == "unit":
+			_txt(_font_s, r.position + Vector2(8.0, 50.0), "×%d" % int(card["count"]), 18,
+				Color(0.82, 0.86, 0.94))
+		_txt(_font_s, r.position + Vector2(8.0, r.size.y - 14.0),
+			"칸으로" if str(card["kind"]) == "unit" else "줄로", 15, Color(0.62, 0.66, 0.74))
+	if _tray.is_empty():
+		_txt(_font_s, TRAY_ORIGIN + Vector2(14.0, 130.0), "개봉에서 클릭한 카드가 온다", 17,
 			Color(0.42, 0.45, 0.52))
 
-	# 택1 모달 — **3장 중 1장, 나머지는 소멸한다**
-	if _offer.is_empty():
-		return
+
+# 택1 제시 — 레인 자리. **격자를 가리지 않으므로 제시 카드에서 바로 끌어다 놓을 수 있다**
+# (사용자 확정 2026-08-21 2차). 바탕·카드 몸통은 _draw_pack_bg, 여기는 글자와 카드 얼굴만.
+func _draw_offer_text() -> void:
+	var target = _preview_target()
 	_txt(_font_b, OFFER_PANEL.position + Vector2(24.0, 36.0),
-		"%s — 한 장을 고른다" % str(_pack_by_id(_offer_pack).get("name", "팩")), 28,
-		Color(0.96, 0.96, 1.0))
+		"%s — 격자로 바로 끌거나, 클릭해 트레이로" % str(_pack_by_id(_offer_pack).get("name", "팩")),
+		24, Color(0.96, 0.96, 1.0))
 	_txt(_font_s, OFFER_PANEL.position + Vector2(24.0, 60.0),
-		"고르지 않은 두 장은 사라진다", 18, Color(0.90, 0.70, 0.62))
+		"한 장을 놓거나 고르면 나머지 두 장은 사라진다", 18, Color(0.90, 0.70, 0.62))
 	for i in _offer.size():
 		_draw_card_face(_offer_rect(i), _offer[i], target)
 
@@ -3918,9 +4020,10 @@ func _draw_morale_and_skills() -> void:
 		b += MORALE_BAND
 	_txt(_font_b, r.position + Vector2(10.0, 26.0), "사기 %d" % int(_morale), 22,
 		Color(0.10, 0.11, 0.15) if _morale > 20.0 else Color(0.86, 0.90, 0.98))
-	_txt(_font_s, r.position + Vector2(r.size.x - 150.0, 25.0),
+	# 막대 안에서 끝나게 잡는다 — -150에서는 글자가 막대를 넘어 유물 슬롯 라벨을 뚫었다
+	_txtw(_font_s, r.position + Vector2(r.size.x - 245.0, 25.0),
 		"구간 %d — 전 부대 데미지 +%d%%" % [band, int(round(MORALE_BAND_DMG * band * 100.0))],
-		17, Color(0.92, 0.95, 1.0))
+		17, Color(0.92, 0.95, 1.0), 238.0)
 
 	for i in SKILL_SLOTS:
 		var sr: Rect2 = _skill_rect(i)
@@ -4160,7 +4263,10 @@ func _draw_stats_panel() -> void:
 	_overlay.draw_rect(STATS_RECT, Color(0.28, 0.30, 0.36), false, 2.0)
 	var p: Vector2 = STATS_RECT.position
 	_txt(_font_b, p + Vector2(14.0, 34.0), "측정", 22, Color(0.80, 0.84, 0.92))
-	_txt(_font_s, p + Vector2(14.0, 62.0), "평균 처치 소요  %.1fs" % _avg_kill(), 18,
+	# 단별 분리 — 일반은 짧아야 하고 정예·막보스는 「접근 중 → 초읽기」 두 단계가 서야 한다.
+	# 합산 평균 하나로는 이게 안 보인다 (4차 남은 작업)
+	_txt(_font_s, p + Vector2(14.0, 62.0), "처치 일반 %.1f · 정예 %.1f · 보스 %.1fs" %
+		[_avg_kill_tier("normal"), _avg_kill_tier("elite"), _avg_kill_tier("boss")], 18,
 		Color(0.72, 0.76, 0.84))
 	_txt(_font_s, p + Vector2(14.0, 86.0), "마지막 처치     %.1fs" %
 		(float(_log_kill_times[-1]) if not _log_kill_times.is_empty() else 0.0), 18,
@@ -4190,6 +4296,16 @@ func _avg_kill() -> float:
 	for t in _log_kill_times:
 		s += float(t)
 	return s / float(_log_kill_times.size())
+
+
+func _avg_kill_tier(tier: String) -> float:
+	var arr: Array = _log_kill_tier.get(tier, [])
+	if arr.is_empty():
+		return 0.0
+	var s: float = 0.0
+	for t in arr:
+		s += float(t)
+	return s / float(arr.size())
 
 
 func _skill_fire_total() -> int:
@@ -4255,11 +4371,12 @@ func _draw_drag() -> void:
 		return
 	var label: String = ""
 	var col: Color = Color(0.7, 0.7, 0.8)
-	if _drag_kind == "hold":
-		if _hold == null:
+	if _drag_kind == "tray":
+		var dc = _drag_card()
+		if dc == null:
 			return
-		label = str(_hold["def"]["name"])
-		col = _card_color(_hold)
+		label = str(dc["def"]["name"])
+		col = _card_color(dc)
 	else:
 		var sq = _cells[_drag_from]
 		if sq == null:
@@ -4306,29 +4423,39 @@ func _draw_drag() -> void:
 
 # **병사카드는 빈 칸에만 놓인다.** 합류제 폐지(2026-08-20)로 「같은 유닛의 칸」이 사라졌다 —
 # 점유된 칸은 아예 밝히지 않는다. 칸을 갈아치우려면 기존 부대를 먼저 빼내야 한다.
+# 지금 끌고 있는 카드 — 트레이에서든 제시에서든. 없으면 null
+func _drag_card() -> Variant:
+	if _drag_kind == "tray" and _drag_from >= 0 and _drag_from < _tray.size():
+		return _tray[_drag_from]
+	if _drag_kind == "offer" and _drag_from >= 0 and _drag_from < _offer.size():
+		return _offer[_drag_from]
+	return null
+
+
 func _valid_cell_drop(cell_idx: int) -> bool:
 	if _drag_kind == "cell":
 		return cell_idx != _drag_from
-	if _drag_kind != "hold" or _hold == null:
-		return false
-	if str(_hold["kind"]) != "unit":
+	var dc = _drag_card()
+	if dc == null or str(dc["kind"]) != "unit":
 		return false
 	return _cells[cell_idx] == null
 
 
 func _valid_tactic_drop(slot: int) -> bool:
-	if _drag_kind != "hold" or _hold == null or str(_hold["kind"]) != "tactic":
+	var dc = _drag_card()
+	if dc == null or str(dc["kind"]) != "tactic":
 		return false
-	if _has_tactic(str(_hold["def"]["id"])):
+	if _has_tactic(str(dc["def"]["id"])):
 		return false
 	return _tactics[slot] == null
 
 
 # 스킬 슬롯은 꽉 차면 **교환**이다(기획 확정) — 빈 칸이 아니어도 목적지가 된다
 func _valid_skill_drop(slot: int) -> bool:
-	if _drag_kind != "hold" or _hold == null or str(_hold["kind"]) != "skill":
+	var dc = _drag_card()
+	if dc == null or str(dc["kind"]) != "skill":
 		return false
-	return not _has_skill_card(str(_hold["def"]["id"]))
+	return not _has_skill_card(str(dc["def"]["id"]))
 
 
 # 전술카드 상세 — 세 종류 공통으로 **영향 칸 3×3 표시**와 **역사 유래 한 줄**이 붙는다.
@@ -4371,9 +4498,10 @@ func _view_tactic(t, equipped: bool) -> Dictionary:
 
 
 func _valid_relic_drop(slot: int) -> bool:
-	if _drag_kind != "hold" or _hold == null or str(_hold["kind"]) != "relic":
+	var dc = _drag_card()
+	if dc == null or str(dc["kind"]) != "relic":
 		return false
-	if _has_relic(str(_hold["def"]["uid"])):
+	if _has_relic(str(dc["def"]["uid"])):
 		return false
 	return _relics[slot] == null
 
@@ -4392,15 +4520,17 @@ func _resolve_detail() -> void:
 					_detail_idx = i
 					return
 			return
-		if _hold != null and HOLD_RECT.has_point(_mouse):
-			_detail_kind = "hold"
-			_detail_idx = 0
+		var ti: int = _tray_at(_mouse)
+		if ti >= 0:
+			_detail_kind = "tray"
+			_detail_idx = ti
 			return
-		for i in PACK_KINDS:
-			if _pack_rect(i).has_point(_mouse):
-				_detail_kind = "pack"
-				_detail_idx = i
-				return
+		if _phase == Phase.PREP:
+			for i in PACK_KINDS:
+				if _pack_rect(i).has_point(_mouse):
+					_detail_kind = "pack"
+					_detail_idx = i
+					return
 		for i in SKILL_SLOTS:
 			if _skill_rect(i).has_point(_mouse) and _skills[i] != null:
 				_detail_kind = "skill"
@@ -4426,7 +4556,7 @@ func _resolve_detail() -> void:
 			_detail_idx = 0
 			return
 		# 정비 패널의 적 목록 — **접두사 상세까지 뜯어보는 자리다**
-		if _phase == Phase.PREP:
+		if _phase == Phase.PREP and _offer.is_empty():
 			var pi: int = _prep_row_at(_mouse)
 			if pi >= 0:
 				_detail_kind = "preprow"
@@ -4452,8 +4582,8 @@ func _pin_alive(kind: String, idx: int) -> bool:
 	match kind:
 		"offer":
 			return idx >= 0 and idx < _offer.size()
-		"hold":
-			return _hold != null
+		"tray":
+			return idx >= 0 and idx < _tray.size()
 		"pack":
 			return idx >= 0 and idx < PACK_KINDS
 		"skill":
@@ -4481,8 +4611,8 @@ func _detail_view() -> Dictionary:
 			return _view_cell(_detail_idx)
 		"offer":
 			return _view_card(_offer[_detail_idx])
-		"hold":
-			return _view_card(_hold)
+		"tray":
+			return _view_card(_tray[_detail_idx])
 		"pack":
 			return _view_pack(_detail_idx)
 		"skill":
@@ -4526,8 +4656,9 @@ func _detail_rect_now(h: float) -> Rect2:
 		"offer":
 			var orr := _offer_rect(_detail_idx)
 			p = Vector2(orr.position.x, orr.end.y + 10.0)
-		"hold":
-			p = Vector2(HOLD_RECT.position.x, HOLD_RECT.position.y - h - 10.0)
+		"tray":
+			var tr0 := _tray_rect(_detail_idx)
+			p = Vector2(tr0.position.x, tr0.position.y - h - 10.0)
 		"pack":
 			var pr := _pack_rect(_detail_idx)
 			p = Vector2(pr.position.x, pr.position.y - h - 10.0)
@@ -4705,8 +4836,8 @@ func _view_pack(i: int) -> Dictionary:
 	l.append("~고르지 않은 두 장은 사라진다")
 	if _phase != Phase.PREP:
 		l.append("!전투 중에는 살 수 없다")
-	elif _hold != null:
-		l.append("!든 카드를 먼저 놓아야 한다")
+	elif _tray.size() >= TRAY_SLOTS:
+		l.append("!트레이가 가득 찼다 — 배치로 가서 비운다")
 	elif _gold < int(p["price"]):
 		l.append("!골드가 모자라다")
 	return {"title": str(p["name"]), "color": Color(p["color"]), "lines": l}
@@ -4727,7 +4858,8 @@ func _view_skill(c) -> Dictionary:
 	if _morale < float(c["cost"]):
 		l.append("!사기가 모자라다 (%d / %d)" % [int(_morale), int(c["cost"])])
 	elif after < _morale_band():
-		l.append("!쓰면 구간 %d → %d — 전 부대 버프를 잃는다" % [_morale_band(), after])
+		# 카드 폭(298)에서 끝까지 읽혀야 한다 — 긴 문장은 「잃는다」가 잘려 나갔다
+		l.append("!쓰면 구간 %d → %d — 버프 상실" % [_morale_band(), after])
 	else:
 		l.append("구간 유지 %d — 버프를 잃지 않는다" % _morale_band())
 	return {"title": str(c["name"]), "color": Color(c["color"]), "lines": l}
@@ -4870,11 +5002,11 @@ func _draw_end_panel() -> void:
 	_txt(_font_b, panel.position + Vector2(36.0, 74.0), "클리어" if win else "성벽 붕괴", 46,
 		Color(0.60, 0.92, 0.66) if win else Color(0.94, 0.44, 0.42))
 	var rows: Array = [
-		"라운드 %d / %d · 처치 %d · 전투 경과 %.0fs" % [mini(_round_idx, RUN_ROUNDS),
+		"던전 %d / %d · 처치 %d · 전투 경과 %.0fs" % [mini(_round_idx, RUN_ROUNDS),
 			RUN_ROUNDS, _killed, _elapsed],
 		"성벽 %d / %d (총 손실 %d · 정산 %d)" % [int(_wall_hp), int(_wall_max),
 			int(_log_wall_lost), int(_log_settle_dmg)],
-		"정산으로 끝난 라운드 %d / %d" % [_log_settle_rounds, mini(_round_idx, RUN_ROUNDS)],
+		"정산으로 끝난 던전 %d / %d" % [_log_settle_rounds, mini(_round_idx, RUN_ROUNDS)],
 		"평균 처치 소요 %.1fs · 최대 겹침 %d마리" % [_avg_kill(), _log_overlap_peak],
 		"딜 0 타격 %.0f%% · 빗나감 %.0f%% · 물리 감산 손실 %.0f%%"
 			% [_zero_ratio(), _miss_ratio(), _phys_loss()],
